@@ -1,5 +1,5 @@
 {
-  "name": "personal-site2-blog",
+  "name": "deanna-troy-travels",
   "version": "0.0.1",
   "scripts": {
     "dev": "next dev",
@@ -8,6 +8,11 @@
     "lint": "next lint"
   },
   "sideEffects": false,
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
   "lint-staged": {
     "**/*.{js,jsx,ts,tsx}": [
       "eslint",
@@ -34,6 +39,7 @@
     "eslint": "^8.19.0",
     "eslint-config-next": "^12.2.0",
     "eslint-config-prettier": "^8.5.0",
+    "husky": "^8.0.1",
     "js-isort": "^3.2.0",
     "lint-staged": "^13.0.3",
     "prettier": "^2.7.1",

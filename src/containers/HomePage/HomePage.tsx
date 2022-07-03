@@ -30,6 +30,7 @@ export async function getStaticProps() {
     accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
   });
 
+  //
   const heroVideo = await client.getAsset(`61uNl3b3SlkXLYHU1vWEVB`);
 
   console.log(JSON.stringify(heroVideo, null, 2));
