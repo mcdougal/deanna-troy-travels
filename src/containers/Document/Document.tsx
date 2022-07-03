@@ -1,5 +1,5 @@
 /* eslint-disable @next/next/no-document-import-in-page */
-import createEmotionServer from '@emotion/server/types/create-instance';
+import createEmotionServer from '@emotion/server/create-instance';
 import { AppType } from 'next/dist/shared/lib/utils';
 import NextDocument, {
   DocumentContext,
