@@ -13,12 +13,10 @@
     "**/*.{js,jsx,ts,tsx}": [
       "eslint",
       "js-isort --write",
-      "prettier --write",
-      "git add"
+      "prettier --write"
     ],
     "**/*.{md,mdx,json}": [
-      "prettier --write",
-      "git add"
+      "prettier --write"
     ]
   },
   "dependencies": {
