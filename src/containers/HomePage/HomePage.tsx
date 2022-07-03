@@ -1,6 +1,7 @@
+import Button from '@mui/material/Button';
 import { createClient } from 'contentful';
 import type { GetStaticPropsContext, InferGetStaticPropsType } from 'next';
-import Button from '@mui/material/Button';
+
 import styles from './HomePage.module.css';
 
 export default function HomePage({
@@ -30,7 +31,6 @@ export async function getStaticProps() {
     accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
   });
 
-  //
   const heroVideo = await client.getAsset(`61uNl3b3SlkXLYHU1vWEVB`);
 
   console.log(JSON.stringify(heroVideo, null, 2));
