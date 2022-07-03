@@ -58,6 +58,7 @@
       { "selfClosing": "tag-aligned", "nonEmpty": "after-props" }
     ],
     "react/jsx-filename-extension": ["error", { "extensions": [".tsx"] }],
+    "react/jsx-sort-props": "error",
     "react/jsx-wrap-multilines": [
       "error",
       {
@@ -70,6 +71,7 @@
         "prop": "ignore"
       }
     ],
-    "react/prefer-stateless-function": "error"
+    "react/prefer-stateless-function": "error",
+    "spaced-comment": ["error", "always"]
   }
 }

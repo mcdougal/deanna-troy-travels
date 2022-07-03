@@ -1,4 +1,4 @@
-import Button from '@mui/material/Button';
+import { Typography } from '@mui/material';
 import type { GetStaticProps, InferGetStaticPropsType } from 'next';
 
 import { getClient } from '@lib/contentful';
@@ -14,17 +14,21 @@ const HomePage = ({
 }: InferGetStaticPropsType<typeof getStaticProps>): React.ReactElement => {
   return (
     <div>
-      <Button variant="contained">Hello World</Button>
-      <video
-        className={styles.heroVideo}
-        playsInline
-        muted
-        loop
-        autoPlay
-        src={heroVideoUrl}
-        data-src-mobile={heroVideoUrl}
-        data-src-desktop={heroVideoUrl}
-      />
+      <div className={styles.heroContainer}>
+        <video
+          autoPlay
+          className={styles.heroVideo}
+          data-src-desktop={heroVideoUrl}
+          data-src-mobile={heroVideoUrl}
+          loop
+          muted
+          playsInline
+          src={heroVideoUrl}
+        />
+        <Typography className={styles.heroTitle} variant="h1">
+          Deanna Troy Travels
+        </Typography>
+      </div>
     </div>
   );
 };

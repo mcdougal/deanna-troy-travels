@@ -1,5 +1,5 @@
 import { red } from '@mui/material/colors';
-import { createTheme } from '@mui/material/styles';
+import { createTheme, responsiveFontSizes } from '@mui/material/styles';
 
 // Create a theme instance.
 const theme = createTheme({
@@ -14,6 +14,9 @@ const theme = createTheme({
       main: red.A400,
     },
   },
+  typography: {
+    fontFamily: `Playfair Display, Arial`,
+  },
 });
 
-export default theme;
+export default responsiveFontSizes(theme);

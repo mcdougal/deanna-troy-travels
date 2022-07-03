@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-page-custom-font */
 /* eslint-disable @next/next/no-document-import-in-page */
 import createEmotionServer from '@emotion/server/create-instance';
 import { AppType } from 'next/dist/shared/lib/utils';
@@ -17,7 +18,19 @@ class Document extends NextDocument<ExtendedDocumentInitialProps> {
   render(): React.ReactElement {
     return (
       <Html>
-        <Head>{this.props.emotionStyleTags}</Head>
+        <Head>
+          <link href="https://fonts.googleapis.com" rel="preconnect" />
+          <link
+            crossOrigin=""
+            href="https://fonts.gstatic.com"
+            rel="preconnect"
+          />
+          <link
+            href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,500&display=swap"
+            rel="stylesheet"
+          />
+          {this.props.emotionStyleTags}
+        </Head>
         <body>
           <Main />
           <NextScript />
