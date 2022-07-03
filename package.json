@@ -13,7 +13,6 @@
   "sideEffects": false,
   "lint-staged": {
     "**/*.{js,jsx,ts,tsx}": [
-      "eslint",
       "js-isort --config tsconfig.json --write",
       "prettier --write"
     ],
