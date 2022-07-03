@@ -1,0 +1,14 @@
+# Dependencies
+node_modules
+
+# Temporary editor files
+.DS_Store
+*.swp
+*~
+*.temp
+
+# VSCode editor setings
+.vscode
+
+# Next.js
+.next/
