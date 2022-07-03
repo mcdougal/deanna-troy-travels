@@ -11,6 +11,7 @@
   "lint-staged": {
     "**/*.{js,jsx,ts,tsx}": [
       "eslint",
+      "js-isort --write",
       "prettier --write",
       "git add"
     ],
@@ -20,7 +21,9 @@
     ]
   },
   "dependencies": {
+    "@mui/material": "^5.8.6",
     "classnames": "^2.3.1",
+    "contentful": "^9.1.32",
     "next": "^12.2.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
@@ -31,6 +34,7 @@
     "eslint": "^8.19.0",
     "eslint-config-next": "^12.2.0",
     "eslint-config-prettier": "^8.5.0",
+    "js-isort": "^3.2.0",
     "lint-staged": "^13.0.3",
     "prettier": "^2.7.1",
     "typescript": "^4.7.4"
