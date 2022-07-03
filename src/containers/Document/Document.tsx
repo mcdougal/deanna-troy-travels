@@ -73,9 +73,9 @@ class Document extends NextDocument<ExtendedDocumentInitialProps> {
       return (
         <style
           key={style.key}
-          data-emotion={`${style.key} ${style.ids.join(` `)}`}
           // eslint-disable-next-line react/no-danger
           dangerouslySetInnerHTML={{ __html: style.css }}
+          data-emotion={`${style.key} ${style.ids.join(` `)}`}
         />
       );
     });

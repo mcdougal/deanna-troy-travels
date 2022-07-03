@@ -58,7 +58,12 @@
       { "selfClosing": "tag-aligned", "nonEmpty": "after-props" }
     ],
     "react/jsx-filename-extension": ["error", { "extensions": [".tsx"] }],
-    "react/jsx-sort-props": "error",
+    "react/jsx-sort-props": [
+      "error",
+      {
+        "reservedFirst": true
+      }
+    ],
     "react/jsx-wrap-multilines": [
       "error",
       {
