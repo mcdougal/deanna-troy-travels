@@ -1,3 +1,75 @@
 {
-  "extends": ["next/core-web-vitals", "prettier"]
+  "extends": [
+    "eslint:recommended",
+    "next/core-web-vitals",
+    "plugin:react/recommended",
+    "plugin:react/jsx-runtime",
+    "plugin:@typescript-eslint/recommended",
+    "prettier"
+  ],
+  "globals": {
+    "React": "readonly"
+  },
+  "plugins": ["react-hooks", "filenames"],
+  "rules": {
+    "@typescript-eslint/array-type": ["error", { "default": "generic" }],
+    "@typescript-eslint/explicit-function-return-type": "error",
+    "@typescript-eslint/explicit-module-boundary-types": "error",
+    "@typescript-eslint/no-explicit-any": "error",
+    "@typescript-eslint/no-shadow": "error",
+    "@typescript-eslint/no-unused-vars": "error",
+    "@typescript-eslint/no-use-before-define": "error",
+    "@typescript-eslint/no-useless-constructor": "error",
+    "@typescript-eslint/quotes": ["error", "backtick"],
+    "arrow-body-style": ["error", "always"],
+    "arrow-parens": ["error", "always"],
+    "curly": ["error", "all"],
+    "filenames/match-regex": ["error", "^[A-Za-z0-9.]+$"],
+    "filenames/match-exported": "error",
+    "func-style": ["error", "expression", { "allowArrowFunctions": true }],
+    "import/extensions": ["error", "never"],
+    "import/first": "error",
+    "import/no-cycle": "error",
+    "import/order": [
+      "error",
+      {
+        "newlines-between": "always",
+        "groups": [
+          "builtin",
+          "external",
+          "internal",
+          "parent",
+          "sibling",
+          "index"
+        ]
+      }
+    ],
+    "import/prefer-default-export": "off",
+    "no-console": "error",
+    "no-constant-condition": "error",
+    "no-throw-literal": "error",
+    "object-curly-spacing": ["error", "always"],
+    "prefer-const": "error",
+    "quotes": ["error", "backtick"],
+    "react-hooks/exhaustive-deps": "error",
+    "react-hooks/rules-of-hooks": "error",
+    "react/jsx-closing-bracket-location": [
+      "error",
+      { "selfClosing": "tag-aligned", "nonEmpty": "after-props" }
+    ],
+    "react/jsx-filename-extension": ["error", { "extensions": [".tsx"] }],
+    "react/jsx-wrap-multilines": [
+      "error",
+      {
+        "declaration": "parens-new-line",
+        "assignment": "parens-new-line",
+        "return": "parens-new-line",
+        "arrow": "parens-new-line",
+        "condition": "parens-new-line",
+        "logical": "ignore",
+        "prop": "ignore"
+      }
+    ],
+    "react/prefer-stateless-function": "error"
+  }
 }

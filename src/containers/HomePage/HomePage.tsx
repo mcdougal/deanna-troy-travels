@@ -1,14 +1,20 @@
 import Button from '@mui/material/Button';
-import { createClient } from 'contentful';
-import type { GetStaticPropsContext, InferGetStaticPropsType } from 'next';
+import type { GetStaticProps, InferGetStaticPropsType } from 'next';
+
+import { getClient } from '@lib/contentful';
 
 import styles from './HomePage.module.css';
 
-export default function HomePage({
+interface Props {
+  heroVideoUrl: string;
+}
+
+const HomePage = ({
   heroVideoUrl,
-}: InferGetStaticPropsType<typeof getStaticProps>): React.ReactElement {
+}: InferGetStaticPropsType<typeof getStaticProps>): React.ReactElement => {
   return (
     <div>
+      <Button variant="contained">Hello World</Button>
       <video
         className={styles.heroVideo}
         playsInline
@@ -21,20 +27,10 @@ export default function HomePage({
       />
     </div>
   );
-}
+};
 
-export async function getStaticProps() {
-  console.log(`HomePage.getStaticProps`);
-
-  const client = createClient({
-    space: process.env.CONTENTFUL_SPACE_ID,
-    accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
-  });
-
-  //
-  const heroVideo = await client.getAsset(`61uNl3b3SlkXLYHU1vWEVB`);
-
-  console.log(JSON.stringify(heroVideo, null, 2));
+export const getStaticProps: GetStaticProps<Props> = async () => {
+  const heroVideo = await getClient().getAsset(`61uNl3b3SlkXLYHU1vWEVB`);
 
   return {
     props: {
@@ -42,4 +38,6 @@ export async function getStaticProps() {
     },
     //revalidate: 60,
   };
-}
+};
+
+export default HomePage;
