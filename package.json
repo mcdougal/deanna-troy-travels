@@ -11,6 +11,13 @@
     "types": "tsc"
   },
   "sideEffects": false,
+  "browser": {
+    "child_process": false,
+    "fs": false,
+    "http2": false,
+    "net": false,
+    "tls": false
+  },
   "lint-staged": {
     "**/*.{js,jsx,ts,tsx}": [
       "js-isort --config tsconfig.json --write",
@@ -29,6 +36,7 @@
     "@mui/material": "^5.8.6",
     "classnames": "^2.3.1",
     "contentful": "^9.1.32",
+    "googleapis": "^105.0.0",
     "next": "^12.2.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"

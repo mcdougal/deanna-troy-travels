@@ -1,4 +1,5 @@
 import { Box, Button, Container, Link, Typography } from '@mui/material';
+import { google } from 'googleapis';
 import type { GetStaticProps, InferGetStaticPropsType } from 'next';
 import Image from 'next/image';
 
@@ -17,6 +18,15 @@ interface Props {
   aboutMePhotoUrl: string;
   heroVideoPosterUrl: string;
   heroVideoUrl: string;
+  recentVideos: Array<{
+    thumbnail: {
+      height: number;
+      url: string;
+      width: number;
+    };
+    title: string;
+    videoId: string;
+  }>;
   youTubeLogoUrl: string;
 }
 
@@ -24,6 +34,7 @@ const HomePage = ({
   aboutMePhotoUrl,
   heroVideoPosterUrl,
   heroVideoUrl,
+  recentVideos,
   youTubeLogoUrl,
 }: InferGetStaticPropsType<typeof getStaticProps>): React.ReactElement => {
   return (
@@ -116,6 +127,13 @@ const HomePage = ({
           src={aboutMePhotoUrl}
           width={YOUTUBE_LOGO_WIDTH}
         />
+        {recentVideos.map((video) => {
+          return (
+            <Typography key={video.videoId} paragraph variant="body1">
+              {video.title}
+            </Typography>
+          );
+        })}
       </Container>
       <Box component="footer" sx={styles.footer}>
         <Container maxWidth="xl" sx={styles.footerContainer}>
@@ -165,11 +183,39 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
   const heroVideo = await client.getAsset(`61uNl3b3SlkXLYHU1vWEVB`);
   const youTubeLogo = await client.getAsset(`6o9bRHadNfh3CztgulcHqn`);
 
+  const youtube = google.youtube({
+    version: `v3`,
+    auth: process.env.GOOGLE_CLOUD_API_KEY,
+  });
+
+  // const channels = await youtube.channels.list({
+  //   forUsername: `deannatroytravels`,
+  //   part: `contentDetails`,
+  // });
+
+  const videosResponse = await youtube.playlistItems.list({
+    part: [`snippet`, `contentDetails`, `status`],
+    playlistId: `PLupawb160v0xF0_SUX5yHJE2GQogd7lx-`,
+  });
+
+  const videos = videosResponse.data.items || [];
+
+  if (!videos) {
+    throw new Error(`No recent YouTube videos found`);
+  }
+
   return {
     props: {
       aboutMePhotoUrl: aboutMePhoto.fields.file.url,
       heroVideoPosterUrl: heroVideoPoster.fields.file.url,
       heroVideoUrl: heroVideo.fields.file.url,
+      recentVideos: videos.map((video) => {
+        return {
+          thumbnailUrl: video.snippet?.thumbnails?.default,
+          title: video.snippet?.title,
+          videoId: video.snippet?.resourceId?.videoId,
+        };
+      }),
       youTubeLogoUrl: youTubeLogo.fields.file.url,
     },
     revalidate: 60,
