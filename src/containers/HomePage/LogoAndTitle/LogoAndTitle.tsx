@@ -2,7 +2,7 @@ import { Box, Container, Grid, Typography } from '@mui/material';
 
 import { ContentfulImage } from '@components/contentful';
 
-import { AssetUrls } from '../fetchAssetsUrls';
+import { AssetUrls } from '../types';
 
 import sx from './sx';
 
