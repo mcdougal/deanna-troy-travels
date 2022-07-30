@@ -11,13 +11,6 @@
     "types": "tsc"
   },
   "sideEffects": false,
-  "browser": {
-    "child_process": false,
-    "fs": false,
-    "http2": false,
-    "net": false,
-    "tls": false
-  },
   "lint-staged": {
     "**/*.{js,jsx,ts,tsx}": [
       "js-isort --config tsconfig.json --write",
