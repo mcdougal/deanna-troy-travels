@@ -2,7 +2,7 @@ import { Box, ButtonBase } from '@mui/material';
 
 import { ContentfulImage } from '@components/contentful';
 
-import sx from './MediaCard.sx';
+import sx from './MediaCard.styles';
 import MediaCardAction from './MediaCardAction';
 
 interface Props {

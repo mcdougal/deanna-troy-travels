@@ -4,7 +4,7 @@ import { ContentfulImage } from '@components/contentful';
 
 import { AssetUrls } from '../types';
 
-import sx from './sx';
+import sx from './LogoAndTitle.styles';
 
 const YOUTUBE_LOGO_RATIO = 1.189;
 const YOUTUBE_LOGO_HEIGHT = 88;

@@ -1,6 +1,6 @@
 import { Box, Typography } from '@mui/material';
 
-import sx from './MediaCardAction.sx';
+import sx from './MediaCardAction.styles';
 
 interface Props {
   icon: React.ReactElement;

@@ -1,6 +1,6 @@
 import { Container } from '@mui/material';
 
-import sx from './SectionContainer.sx';
+import sx from './SectionContainer.styles';
 
 interface Props {
   children: React.ReactNode;

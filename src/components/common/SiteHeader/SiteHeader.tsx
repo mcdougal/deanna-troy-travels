@@ -3,7 +3,7 @@ import { AppBar, ButtonBase, Toolbar } from '@mui/material';
 
 import { Amazon, Poshmark, TikTok } from '@components/icons';
 
-import sx from './sx';
+import sx from './SiteHeader.styles';
 
 const SiteHeader = (): JSX.Element => {
   return (

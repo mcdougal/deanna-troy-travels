@@ -6,7 +6,7 @@ import { ContentfulImage } from '@components/contentful';
 
 import FeaturedVideos from './FeaturedVideos';
 import getStaticProps from './getStaticProps';
-import sx from './HomePage.sx';
+import sx from './HomePage.styles';
 import LogoAndTitle from './LogoAndTitle';
 
 const HomePage = ({

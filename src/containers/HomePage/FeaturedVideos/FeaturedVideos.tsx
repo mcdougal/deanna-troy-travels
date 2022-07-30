@@ -5,7 +5,7 @@ import { MediaCard, SectionContainer, SectionTitle } from '@components/common';
 
 import { RecentVideo } from '../types';
 
-import sx from './FeaturedVideos.sx';
+import sx from './FeaturedVideos.styles';
 
 interface Props {
   recentVideos: Array<RecentVideo>;
