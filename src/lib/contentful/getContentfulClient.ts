@@ -1,6 +1,6 @@
 import { ContentfulClientApi, createClient } from 'contentful';
 
-const getClient = (): ContentfulClientApi => {
+export default (): ContentfulClientApi => {
   const space = process.env.CONTENTFUL_SPACE_ID;
   const accessToken = process.env.CONTENTFUL_ACCESS_TOKEN;
 
@@ -17,5 +17,3 @@ const getClient = (): ContentfulClientApi => {
     accessToken,
   });
 };
-
-export default getClient;

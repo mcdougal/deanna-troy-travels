@@ -1,36 +1,53 @@
 import { red } from '@mui/material/colors';
 import { createTheme, responsiveFontSizes } from '@mui/material/styles';
 
-import colors from './colors';
-
 // Create a theme instance.
 const theme = createTheme({
   palette: {
     primary: {
-      main: `#556cd6`,
-    },
-    secondary: {
-      light: colors.salmonLight,
-      main: colors.salmonMain,
-      dark: colors.salmonDark,
+      light: `#386bc2`,
+      main: `#4686F2`,
+      dark: `#6b9ef5`,
     },
     error: {
       main: red.A400,
     },
   },
   typography: {
-    fontFamily: `'Open Sans', Arial`,
+    fontFamily: `Fredoka, Arial`,
+    fontWeightLight: 300,
+    fontWeightRegular: 400,
+    fontWeightMedium: 600,
+    fontWeightBold: 700,
     h1: {
-      fontFamily: `Playfair Display, Arial`,
+      letterSpacing: `0.1em`,
+      fontWeight: 700,
     },
     h2: {
-      fontFamily: `Playfair Display, Arial`,
+      letterSpacing: `0.1em`,
+      fontWeight: 700,
     },
     h3: {
-      fontFamily: `Playfair Display, Arial`,
+      letterSpacing: `0.1em`,
+      fontWeight: 700,
     },
     h4: {
-      fontFamily: `Playfair Display, Arial`,
+      letterSpacing: `0.1em`,
+      fontWeight: 700,
+    },
+    h5: {
+      letterSpacing: `0.1em`,
+      fontWeight: 700,
+    },
+    h6: {
+      letterSpacing: `0.1em`,
+      fontWeight: 700,
+    },
+    subtitle1: {
+      letterSpacing: `0.1em`,
+    },
+    subtitle2: {
+      letterSpacing: `0.1em`,
     },
     body1: {
       letterSpacing: `0.1em`,
@@ -40,6 +57,9 @@ const theme = createTheme({
       letterSpacing: `0.1em`,
     },
     caption: {
+      letterSpacing: `0.1em`,
+    },
+    overline: {
       letterSpacing: `0.1em`,
     },
     button: {

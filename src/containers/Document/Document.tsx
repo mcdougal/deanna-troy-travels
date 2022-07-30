@@ -26,7 +26,7 @@ class Document extends NextDocument<ExtendedDocumentInitialProps> {
             rel="preconnect"
           />
           <link
-            href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Playfair+Display:ital,wght@1,400&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;600;700&display=swap"
             rel="stylesheet"
           />
           {this.props.emotionStyleTags}

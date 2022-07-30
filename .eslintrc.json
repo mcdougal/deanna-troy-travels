@@ -29,6 +29,7 @@
     "func-style": ["error", "expression", { "allowArrowFunctions": true }],
     "import/extensions": ["error", "never"],
     "import/first": "error",
+    "import/no-anonymous-default-export": "off",
     "import/no-cycle": "error",
     "import/order": [
       "error",

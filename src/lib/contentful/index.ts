@@ -1,3 +1,4 @@
-import getClient from './getClient';
+import fetchAssetUrl from './fetchAssetUrl';
+import getContentfulClient from './getContentfulClient';
 
-export { getClient };
+export { fetchAssetUrl, getContentfulClient };
