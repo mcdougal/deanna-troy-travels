@@ -11,4 +11,9 @@ export default {
   playArrowIcon: {
     fontSize: 30,
   },
+  allVideosContainer: {
+    display: `flex`,
+    justifyContent: `center`,
+    marginTop: 6,
+  },
 };

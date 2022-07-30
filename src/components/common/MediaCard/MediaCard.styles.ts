@@ -2,6 +2,7 @@ import { Theme } from '@mui/material';
 
 export default {
   mediaCardContainer: {
+    marginBottom: 4,
     position: `relative`,
     width: `100%`,
   },

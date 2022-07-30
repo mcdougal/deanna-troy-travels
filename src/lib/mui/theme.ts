@@ -3,6 +3,20 @@ import { createTheme, responsiveFontSizes } from '@mui/material/styles';
 
 // Create a theme instance.
 const theme = createTheme({
+  components: {
+    MuiButton: {
+      styleOverrides: {
+        root: {
+          borderRadius: `0.85em`,
+          paddingBottom: `12px`,
+          paddingLeft: `32px`,
+          paddingRight: `32px`,
+          paddingTop: `12px`,
+          textTransform: `none`,
+        },
+      },
+    },
+  },
   palette: {
     primary: {
       light: `#386bc2`,
@@ -64,6 +78,7 @@ const theme = createTheme({
     },
     button: {
       letterSpacing: `0.1em`,
+      fontSize: `0.9rem`,
     },
   },
 });

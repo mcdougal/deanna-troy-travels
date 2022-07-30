@@ -1,5 +1,10 @@
-import { ModeComment, PlayArrow, ThumbUp } from '@mui/icons-material';
-import { Box, Grid } from '@mui/material';
+import {
+  ArrowForward,
+  ModeComment,
+  PlayArrow,
+  ThumbUp,
+} from '@mui/icons-material';
+import { Box, Button, Grid } from '@mui/material';
 
 import { MediaCard, SectionContainer, SectionTitle } from '@components/common';
 
@@ -17,7 +22,7 @@ const FeaturedVideos = ({ recentVideos }: Props): JSX.Element => {
       <Box sx={sx.sectionTitleContainer}>
         <SectionTitle>Featured Videos</SectionTitle>
       </Box>
-      <Grid container flexDirection="column" spacing={8}>
+      <Grid container flexDirection="column" spacing={4}>
         {recentVideos.map((recentVideo) => {
           return (
             <Grid key={recentVideo.videoId} item>
@@ -43,6 +48,15 @@ const FeaturedVideos = ({ recentVideos }: Props): JSX.Element => {
           );
         })}
       </Grid>
+      <Box sx={sx.allVideosContainer}>
+        <Button
+          color="primary"
+          endIcon={<ArrowForward fontSize="small" />}
+          size="large"
+          variant="contained">
+          All Videos
+        </Button>
+      </Box>
     </SectionContainer>
   );
 };
