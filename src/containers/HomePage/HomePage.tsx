@@ -13,8 +13,6 @@ const HomePage = ({
   assetUrls,
   recentVideos,
 }: InferGetStaticPropsType<typeof getStaticProps>): React.ReactElement => {
-  console.log(recentVideos);
-
   return (
     <>
       <SiteHeader />
