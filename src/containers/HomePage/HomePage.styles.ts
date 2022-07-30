@@ -8,6 +8,9 @@ export default {
     position: `relative`,
   },
   featuredVideosContainer: {
+    marginBottom: 8,
+  },
+  workWithMeContainer: {
     marginBottom: 20,
   },
 };

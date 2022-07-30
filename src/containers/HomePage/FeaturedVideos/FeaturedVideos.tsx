@@ -48,7 +48,7 @@ const FeaturedVideos = ({ recentVideos }: Props): JSX.Element => {
           );
         })}
       </Grid>
-      <Box sx={sx.allVideosContainer}>
+      <Box sx={sx.ctaContainer}>
         <Button
           color="primary"
           endIcon={<ArrowForward fontSize="small" />}

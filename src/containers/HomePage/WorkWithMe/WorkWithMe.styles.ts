@@ -2,14 +2,13 @@ export default {
   sectionTitleContainer: {
     marginBottom: 4,
   },
-  thumbUpIcon: {
-    fontSize: 14,
-  },
-  modeCommentIcon: {
-    fontSize: 14,
-  },
-  playArrowIcon: {
-    fontSize: 30,
+  imageContainer: {
+    borderRadius: 4,
+    height: 360,
+    marginBottom: 3,
+    overflow: `hidden`,
+    position: `relative`,
+    width: `100%`,
   },
   ctaContainer: {
     display: `flex`,

@@ -9,4 +9,5 @@ export interface RecentVideo {
 export interface AssetUrls {
   heroImageMobile: string;
   youTubeLogo: string;
+  workWithMe: string;
 }

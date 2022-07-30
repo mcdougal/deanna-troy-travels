@@ -8,6 +8,7 @@ import FeaturedVideos from './FeaturedVideos';
 import getStaticProps from './getStaticProps';
 import sx from './HomePage.styles';
 import LogoAndTitle from './LogoAndTitle';
+import WorkWithMe from './WorkWithMe';
 
 const HomePage = ({
   assetUrls,
@@ -31,6 +32,9 @@ const HomePage = ({
       </Box>
       <Box sx={sx.featuredVideosContainer}>
         <FeaturedVideos recentVideos={recentVideos} />
+      </Box>
+      <Box sx={sx.workWithMeContainer}>
+        <WorkWithMe assetUrls={assetUrls} />
       </Box>
     </>
   );
