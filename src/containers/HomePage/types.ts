@@ -1,11 +1,7 @@
 export interface RecentVideo {
   commentCount: number;
   likeCount: number;
-  thumbnail: {
-    height: number;
-    url: string;
-    width: number;
-  };
+  thumbnailUrl: string;
   title: string;
   videoId: string;
 }

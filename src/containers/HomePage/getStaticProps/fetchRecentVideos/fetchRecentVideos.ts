@@ -16,13 +16,11 @@ export default async (): Promise<Array<RecentVideo>> => {
     const video = videos[i];
 
     return {
-      commentCount: parseInt(video.statistics.likeCount, 10),
+      commentCount: parseInt(video.statistics.commentCount, 10),
       likeCount: parseInt(video.statistics.likeCount, 10),
-      thumbnail: {
-        height: playlistItem.snippet.thumbnails.medium.height,
-        url: playlistItem.snippet.thumbnails.medium.url,
-        width: playlistItem.snippet.thumbnails.medium.width,
-      },
+      thumbnailUrl:
+        playlistItem.snippet.thumbnails.standard?.url ||
+        playlistItem.snippet.thumbnails.high.url,
       title: playlistItem.snippet.title,
       videoId: playlistItem.contentDetails.videoId,
     };

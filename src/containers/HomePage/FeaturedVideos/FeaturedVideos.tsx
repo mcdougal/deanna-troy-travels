@@ -35,7 +35,7 @@ const FeaturedVideos = ({ recentVideos }: Props): JSX.Element => {
                 }}
                 thumbnail={{
                   alt: recentVideo.title,
-                  url: recentVideo.thumbnail.url,
+                  url: recentVideo.thumbnailUrl,
                 }}
                 url={`https://www.youtube.com/watch?v=${recentVideo.videoId}`}
               />

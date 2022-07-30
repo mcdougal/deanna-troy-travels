@@ -9,9 +9,8 @@ export default {
     borderRadius: 6,
     boxShadow: `0 4px 20px rgba(0, 0, 0, 0.06)`,
     filter: `brightness(95%)`,
-    height: `200px`,
+    height: `180px`,
     overflow: `hidden`,
-    paddingTop: `56.25%`,
     position: `relative`,
     width: `100%`,
   },
@@ -25,7 +24,7 @@ export default {
     },
     position: `absolute`,
     right: (theme: Theme): string => {
-      return theme.spacing(4);
+      return theme.spacing(3);
     },
   },
   actionsLeft: {

@@ -1,6 +1,5 @@
 import { Box, ButtonBase } from '@mui/material';
-
-import { ContentfulImage } from '@components/contentful';
+import Image from 'next/image';
 
 import sx from './MediaCard.styles';
 import MediaCardAction from './MediaCardAction';
@@ -34,12 +33,11 @@ const MediaCard = ({
   return (
     <ButtonBase href={url} sx={sx.mediaCardContainer}>
       <Box sx={sx.thumbnail}>
-        <ContentfulImage
+        <Image
           alt={thumbnail.alt}
           layout="fill"
           objectFit="cover"
-          objectPosition="top"
-          priority
+          objectPosition="center"
           src={thumbnail.url}
         />
       </Box>
