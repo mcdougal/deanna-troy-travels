@@ -1,7 +1,5 @@
 import { Typography } from '@mui/material';
 
-import sx from './sx';
-
 interface Props {
   children: React.ReactNode;
 }

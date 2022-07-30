@@ -1,11 +1,50 @@
-import { SectionTitle } from '@components/common';
+import { ModeComment, PlayArrow, ThumbUp } from '@mui/icons-material';
+import { Box, Grid } from '@mui/material';
 
-import sx from './sx';
+import { MediaCard, SectionContainer, SectionTitle } from '@components/common';
 
-interface Props {}
+import { RecentVideo } from '../types';
 
-const FeaturedVideos = ({}: Props): JSX.Element => {
-  return <SectionTitle>Featured Videos</SectionTitle>;
+import sx from './FeaturedVideos.sx';
+
+interface Props {
+  recentVideos: Array<RecentVideo>;
+}
+
+const FeaturedVideos = ({ recentVideos }: Props): JSX.Element => {
+  return (
+    <SectionContainer>
+      <Box sx={sx.sectionTitleContainer}>
+        <SectionTitle>Featured Videos</SectionTitle>
+      </Box>
+      <Grid container flexDirection="column" spacing={8}>
+        {recentVideos.map((recentVideo) => {
+          return (
+            <Grid key={recentVideo.videoId} item>
+              <MediaCard
+                action1={{
+                  icon: <ThumbUp sx={sx.thumbUpIcon} />,
+                  value: `${recentVideo.likeCount}`,
+                }}
+                action2={{
+                  icon: <ModeComment sx={sx.modeCommentIcon} />,
+                  value: `${recentVideo.commentCount}`,
+                }}
+                action3={{
+                  icon: <PlayArrow sx={sx.playArrowIcon} />,
+                }}
+                thumbnail={{
+                  alt: recentVideo.title,
+                  url: recentVideo.thumbnail.url,
+                }}
+                url={`https://www.youtube.com/watch?v=${recentVideo.videoId}`}
+              />
+            </Grid>
+          );
+        })}
+      </Grid>
+    </SectionContainer>
+  );
 };
 
 export default FeaturedVideos;

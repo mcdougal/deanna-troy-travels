@@ -7,5 +7,7 @@ export default {
     height: `400px`,
     position: `relative`,
   },
-  featuredVideosContainer: {},
+  featuredVideosContainer: {
+    marginBottom: 20,
+  },
 };

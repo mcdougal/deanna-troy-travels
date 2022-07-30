@@ -13,6 +13,8 @@ const HomePage = ({
   assetUrls,
   recentVideos,
 }: InferGetStaticPropsType<typeof getStaticProps>): React.ReactElement => {
+  console.log(recentVideos);
+
   return (
     <>
       <SiteHeader />
@@ -25,11 +27,12 @@ const HomePage = ({
           layout="fill"
           objectFit="cover"
           objectPosition="top"
+          priority
           src={assetUrls.heroImageMobile}
         />
       </Box>
       <Box sx={sx.featuredVideosContainer}>
-        <FeaturedVideos />
+        <FeaturedVideos recentVideos={recentVideos} />
       </Box>
     </>
   );

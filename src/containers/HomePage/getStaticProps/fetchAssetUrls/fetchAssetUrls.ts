@@ -1,6 +1,6 @@
 import { fetchAssetUrl } from '@lib/contentful';
 
-import { AssetUrls } from '../types';
+import { AssetUrls } from '../../types';
 
 export default async (): Promise<AssetUrls> => {
   return {
