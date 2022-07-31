@@ -1,6 +1,5 @@
 export default {
   heroSectionContainer: {
-    marginTop: 6,
     textAlign: `center`,
   },
   title: {
