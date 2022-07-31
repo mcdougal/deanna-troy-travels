@@ -1,33 +1,52 @@
-import { Facebook, Instagram, Menu, YouTube } from '@mui/icons-material';
-import { AppBar, ButtonBase, Toolbar } from '@mui/material';
+import { Menu } from '@mui/icons-material';
+import {
+  AppBar,
+  Box,
+  Grow,
+  Toolbar,
+  Typography,
+  useScrollTrigger,
+} from '@mui/material';
 
-import { Amazon, Poshmark, TikTok } from '@components/icons';
+import { ContentfulImage } from '@components/contentful';
 
 import sx from './SiteHeader.styles';
 
-const SiteHeader = (): JSX.Element => {
+const YOUTUBE_LOGO_RATIO = 1.189;
+const YOUTUBE_LOGO_HEIGHT = 40;
+const YOUTUBE_LOGO_WIDTH = YOUTUBE_LOGO_HEIGHT * YOUTUBE_LOGO_RATIO;
+
+interface Props {
+  hideLogoUntilScroll?: boolean;
+  youtubeLogoUrl: string;
+}
+
+const SiteHeader = ({
+  hideLogoUntilScroll,
+  youtubeLogoUrl,
+}: Props): JSX.Element => {
+  const trigger = useScrollTrigger();
+
   return (
     <AppBar color="inherit" elevation={0} position="sticky">
       <Toolbar sx={sx.toolbar}>
+        <Grow appear={false} in={!hideLogoUntilScroll || trigger}>
+          <Box sx={sx.logoContainer}>
+            <ContentfulImage
+              alt="Deanna Troy Travels logo"
+              height={YOUTUBE_LOGO_HEIGHT}
+              layout="fixed"
+              src={youtubeLogoUrl}
+              width={YOUTUBE_LOGO_WIDTH}
+            />
+            <Typography sx={sx.logoText} variant="h6">
+              <b>
+                <Box sx={sx.deannaTroy}>Deanna Troy</Box> Travels
+              </b>
+            </Typography>
+          </Box>
+        </Grow>
         <Menu sx={sx.menu} />
-        <ButtonBase href="https://www.youtube.com/deannatroytravels">
-          <YouTube sx={[sx.socialLogo, sx.youTube]} />
-        </ButtonBase>
-        <ButtonBase href="https://www.instagram.com/deanna_troy_travels">
-          <Instagram sx={[sx.socialLogo, sx.instagram]} />
-        </ButtonBase>
-        <ButtonBase href="https://www.facebook.com/deannatroytravels">
-          <Facebook sx={[sx.socialLogo, sx.facebook]} />
-        </ButtonBase>
-        <ButtonBase href="https://poshmark.com/closet/deannatroyshop">
-          <Poshmark sx={[sx.socialLogo, sx.poshmark]} />
-        </ButtonBase>
-        <ButtonBase href="https://www.tiktok.com/@deannatroytravels">
-          <TikTok sx={[sx.socialLogo, sx.tikTok]} />
-        </ButtonBase>
-        <ButtonBase href="https://www.amazon.com/shop/deannatroytravels">
-          <Amazon sx={[sx.socialLogo, sx.amazon]} />
-        </ButtonBase>
       </Toolbar>
     </AppBar>
   );

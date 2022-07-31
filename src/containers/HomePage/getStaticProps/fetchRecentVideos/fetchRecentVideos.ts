@@ -1,7 +1,13 @@
-import { RecentVideo } from '../../types';
-
 import fetchAllVideosPlaylistItems from './fetchAllVideosPlaylistItems';
 import fetchVideo from './fetchVideo';
+
+export interface RecentVideo {
+  commentCount: number;
+  likeCount: number;
+  thumbnailUrl: string;
+  title: string;
+  videoId: string;
+}
 
 export default async (): Promise<Array<RecentVideo>> => {
   const playlistItems = await fetchAllVideosPlaylistItems();

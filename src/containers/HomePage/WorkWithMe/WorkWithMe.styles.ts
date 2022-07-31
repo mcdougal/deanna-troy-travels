@@ -3,7 +3,7 @@ export default {
     marginBottom: 4,
   },
   imageContainer: {
-    borderRadius: 4,
+    borderRadius: 5,
     height: 360,
     marginBottom: 3,
     overflow: `hidden`,

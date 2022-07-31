@@ -1,15 +1,11 @@
-import {
-  ArrowForward,
-  ModeComment,
-  PlayArrow,
-  ThumbUp,
-} from '@mui/icons-material';
-import { Box, Button, Grid, Typography } from '@mui/material';
+import { ArrowForward } from '@mui/icons-material';
+import { Box, Button, Typography } from '@mui/material';
+import Link from 'next/link';
 
-import { MediaCard, SectionContainer, SectionTitle } from '@components/common';
+import { SectionContainer, SectionTitle } from '@components/common';
 import { ContentfulImage } from '@components/contentful';
 
-import { AssetUrls } from '../types';
+import { AssetUrls } from '../getStaticProps';
 
 import sx from './WorkWithMe.styles';
 
@@ -37,14 +33,15 @@ const WorkWithMe = ({ assetUrls }: Props): JSX.Element => {
         ranging from travel vlogs, travel advice, story-times and more!
       </Typography>
       <Box sx={sx.ctaContainer}>
-        <Button
-          color="primary"
-          endIcon={<ArrowForward fontSize="small" />}
-          href="https://www.youtube.com/deannatroytravels"
-          size="large"
-          variant="contained">
-          Learn More
-        </Button>
+        <Link href="/work-with-me">
+          <Button
+            color="primary"
+            endIcon={<ArrowForward fontSize="small" />}
+            size="large"
+            variant="contained">
+            Learn More
+          </Button>
+        </Link>
       </Box>
     </SectionContainer>
   );

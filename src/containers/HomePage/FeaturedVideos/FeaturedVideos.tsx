@@ -8,7 +8,7 @@ import { Box, Button, Grid } from '@mui/material';
 
 import { MediaCard, SectionContainer, SectionTitle } from '@components/common';
 
-import { RecentVideo } from '../types';
+import { RecentVideo } from '../getStaticProps';
 
 import sx from './FeaturedVideos.styles';
 

@@ -10,7 +10,9 @@ export default {
     borderRadius: 6,
     boxShadow: `0 4px 20px rgba(0, 0, 0, 0.06)`,
     filter: `brightness(95%)`,
-    height: `180px`,
+    height: (theme: Theme): string => {
+      return theme.spacing(20);
+    },
     overflow: `hidden`,
     position: `relative`,
     width: `100%`,

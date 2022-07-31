@@ -16,7 +16,7 @@ const HomePage = ({
 }: InferGetStaticPropsType<typeof getStaticProps>): React.ReactElement => {
   return (
     <>
-      <SiteHeader />
+      <SiteHeader hideLogoUntilScroll youtubeLogoUrl={assetUrls.youTubeLogo} />
       <Box sx={sx.logoAndTitleContainer}>
         <LogoAndTitle assetUrls={assetUrls} />
       </Box>
