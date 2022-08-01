@@ -1,3 +1,5 @@
-import buildAssetUrl from './buildAssetUrl';
+import fetchBlogFeatures, { BlogFeature } from './fetchBlogFeatures';
 
-export { buildAssetUrl };
+export type { BlogFeature };
+
+export { fetchBlogFeatures };

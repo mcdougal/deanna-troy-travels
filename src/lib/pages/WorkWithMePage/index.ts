@@ -1,4 +1,5 @@
-import WorkWithMePage, { getStaticProps } from './WorkWithMePage';
+import getStaticProps from './getStaticProps';
+import WorkWithMePage from './WorkWithMePage';
 
 export { getStaticProps };
 

@@ -39,6 +39,4 @@ const HomePage = ({
   );
 };
 
-export { getStaticProps };
-
 export default HomePage;

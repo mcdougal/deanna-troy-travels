@@ -1,4 +1,5 @@
-import HomePage, { getStaticProps } from './HomePage';
+import getStaticProps from './getStaticProps';
+import HomePage from './HomePage';
 
 export { getStaticProps };
 

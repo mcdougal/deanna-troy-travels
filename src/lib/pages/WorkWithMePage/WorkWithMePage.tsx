@@ -3,15 +3,16 @@ import type { InferGetStaticPropsType } from 'next';
 
 import { SiteHeader } from '@components/common';
 
+import BlogFeaturesSection from './BlogFeaturesSection';
 //import BlogFeaturesSection from './BlogFeaturesSection';
 import getStaticProps from './getStaticProps';
 import HeroSection from './HeroSection';
 import IntroSection from './IntroSection';
 import sx from './WorkWithMePage.styles';
 
-const WorkWithMePage = ({}: InferGetStaticPropsType<
-  typeof getStaticProps
->): React.ReactElement => {
+const WorkWithMePage = ({
+  blogFeatures,
+}: InferGetStaticPropsType<typeof getStaticProps>): React.ReactElement => {
   return (
     <>
       <SiteHeader />
@@ -21,9 +22,9 @@ const WorkWithMePage = ({}: InferGetStaticPropsType<
       <Box sx={sx.introSectionContainer}>
         <IntroSection />
       </Box>
-      {/* <Box sx={sx.blogFeaturesSectionContainer}>
-        <BlogFeaturesSection />
-      </Box> */}
+      <Box sx={sx.blogFeaturesSectionContainer}>
+        <BlogFeaturesSection blogFeatures={blogFeatures} />
+      </Box>
     </>
   );
 };
