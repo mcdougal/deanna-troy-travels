@@ -1,2 +1,5 @@
+/* eslint-disable filenames/match-exported */
 /* eslint-disable filenames/match-regex */
-export { App as default } from '@lib/pages';
+import App from 'src/containers/App';
+
+export default App;

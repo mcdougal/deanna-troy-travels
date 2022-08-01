@@ -1,2 +1,5 @@
+/* eslint-disable filenames/match-exported */
 /* eslint-disable filenames/match-regex */
-export { Document as default } from '@lib/pages';
+import Document from 'src/containers/Document';
+
+export default Document;

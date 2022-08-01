@@ -36,12 +36,10 @@ const MediaCard = ({
         <Image
           alt={thumbnail.alt}
           layout="fill"
-          loader={({ src }): string => {
-            return src;
-          }}
           objectFit="cover"
           objectPosition="center"
           src={thumbnail.url}
+          unoptimized
         />
       </Box>
       <Box sx={sx.actions}>

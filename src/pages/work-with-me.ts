@@ -1,5 +1,8 @@
+/* eslint-disable filenames/match-exported */
 /* eslint-disable filenames/match-regex */
-export {
-  WorkWithMePage as default,
-  workWithMeGetStaticProps as getStaticProps,
-} from '@lib/pages';
+import WorkWithMePage from 'src/containers/WorkWithMePage';
+import getStaticProps from 'src/containers/WorkWithMePage/getStaticProps';
+
+export { getStaticProps };
+
+export default WorkWithMePage;
