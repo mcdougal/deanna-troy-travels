@@ -1,6 +1,4 @@
-/* eslint-disable filenames/match-exported */
-import HomePage, { getStaticProps } from 'src/containers/HomePage';
-
-export { getStaticProps };
-
-export default HomePage;
+export {
+  HomePage as default,
+  homePageGetStaticProps as getStaticProps,
+} from '@lib/pages';

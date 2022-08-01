@@ -1,31 +1,24 @@
 import { Download } from '@mui/icons-material';
 import { Box, Button, Typography } from '@mui/material';
+import Image from 'next/image';
 
 import { SectionContainer, SectionTitle } from '@components/common';
-import { ContentfulImage } from '@components/contentful';
-
-import { AssetUrls } from '../getStaticProps';
 
 import sx from './IntroSection.styles';
 
-interface Props {
-  assetUrls: AssetUrls;
-}
-
-const IntroSection = ({ assetUrls }: Props): JSX.Element => {
+const IntroSection = (): JSX.Element => {
   return (
     <SectionContainer>
       <Box sx={sx.sectionTitleContainer}>
         <SectionTitle>Hi!</SectionTitle>
       </Box>
       <Box sx={sx.imageContainer}>
-        <ContentfulImage
+        <Image
           alt="Deanna posing with a quokka"
           layout="fill"
           objectFit="cover"
           objectPosition="top"
-          priority
-          src={assetUrls.workWithMeIntro}
+          src="/deanna-troy-travels/work-with-me/hello.png"
         />
       </Box>
       <Typography paragraph variant="body1">

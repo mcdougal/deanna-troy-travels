@@ -3,27 +3,27 @@ import type { InferGetStaticPropsType } from 'next';
 
 import { SiteHeader } from '@components/common';
 
-import BlogFeaturesSection from './BlogFeaturesSection';
+//import BlogFeaturesSection from './BlogFeaturesSection';
 import getStaticProps from './getStaticProps';
 import HeroSection from './HeroSection';
 import IntroSection from './IntroSection';
 import sx from './WorkWithMePage.styles';
 
-const WorkWithMePage = ({
-  assetUrls,
-}: InferGetStaticPropsType<typeof getStaticProps>): React.ReactElement => {
+const WorkWithMePage = ({}: InferGetStaticPropsType<
+  typeof getStaticProps
+>): React.ReactElement => {
   return (
     <>
-      <SiteHeader youtubeLogoUrl={assetUrls.youTubeLogo} />
+      <SiteHeader />
       <Box sx={sx.heroSectionContainer}>
-        <HeroSection assetUrls={assetUrls} />
+        <HeroSection />
       </Box>
       <Box sx={sx.introSectionContainer}>
-        <IntroSection assetUrls={assetUrls} />
+        <IntroSection />
       </Box>
-      <Box sx={sx.blogFeaturesSectionContainer}>
+      {/* <Box sx={sx.blogFeaturesSectionContainer}>
         <BlogFeaturesSection />
-      </Box>
+      </Box> */}
     </>
   );
 };

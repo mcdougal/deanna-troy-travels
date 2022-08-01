@@ -7,8 +7,7 @@ import {
   Typography,
   useScrollTrigger,
 } from '@mui/material';
-
-import { ContentfulImage } from '@components/contentful';
+import Image from 'next/image';
 
 import sx from './SiteHeader.styles';
 
@@ -26,13 +25,13 @@ const SiteHeader = ({ hideLogoUntilScroll }: Props): JSX.Element => {
   return (
     <AppBar color="inherit" elevation={0} position="sticky">
       <Toolbar sx={sx.toolbar}>
-        <Grow appear={false} in={!hideLogoUntilScroll || trigger}>
+        <Grow appear={false} in={!hideLogoUntilScroll || trigger} mountOnEnter>
           <Box sx={sx.logoContainer}>
-            <ContentfulImage
+            <Image
               alt="Deanna Troy Travels logo"
               height={YOUTUBE_LOGO_HEIGHT}
               layout="fixed"
-              src="https://images.ctfassets.net/ijmdpat1c3ub/6o9bRHadNfh3CztgulcHqn/e79596a5f3dd42cb86d4150cb88d54c0/Deanna_Troy_Travels-YouTube_Logo_Picture.png"
+              src="/deanna-troy-travels/logo.png"
               width={YOUTUBE_LOGO_WIDTH}
             />
             <Typography sx={sx.logoText} variant="h6">

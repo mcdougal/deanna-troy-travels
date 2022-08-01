@@ -1,8 +1,8 @@
 import { Box } from '@mui/material';
 import type { InferGetStaticPropsType } from 'next';
+import Image from 'next/image';
 
 import { SiteHeader } from '@components/common';
-import { ContentfulImage } from '@components/contentful';
 
 import FeaturedVideosSection from './FeaturedVideosSection';
 import getStaticProps from './getStaticProps';
@@ -11,30 +11,29 @@ import LogoAndTitle from './LogoAndTitle';
 import WorkWithMeSection from './WorkWithMeSection';
 
 const HomePage = ({
-  assetUrls,
   recentVideos,
 }: InferGetStaticPropsType<typeof getStaticProps>): React.ReactElement => {
   return (
     <>
       <SiteHeader hideLogoUntilScroll />
       <Box sx={sx.logoAndTitleContainer}>
-        <LogoAndTitle assetUrls={assetUrls} />
+        <LogoAndTitle />
       </Box>
       <Box sx={sx.heroImageContainer}>
-        <ContentfulImage
-          alt="Deanna Troy Travels"
+        <Image
+          alt="Deanna Troy Travels logo"
           layout="fill"
           objectFit="cover"
           objectPosition="top"
           priority
-          src={assetUrls.heroImageMobile}
+          src="/deanna-troy-travels/home/hero-mobile.png"
         />
       </Box>
       <Box sx={sx.featuredVideosContainer}>
         <FeaturedVideosSection recentVideos={recentVideos} />
       </Box>
       <Box sx={sx.workWithMeContainer}>
-        <WorkWithMeSection assetUrls={assetUrls} />
+        <WorkWithMeSection />
       </Box>
     </>
   );
