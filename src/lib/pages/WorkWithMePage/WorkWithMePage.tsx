@@ -4,7 +4,6 @@ import type { InferGetStaticPropsType } from 'next';
 import { SiteHeader } from '@components/common';
 
 import BlogFeaturesSection from './BlogFeaturesSection';
-//import BlogFeaturesSection from './BlogFeaturesSection';
 import getStaticProps from './getStaticProps';
 import HeroSection from './HeroSection';
 import IntroSection from './IntroSection';
