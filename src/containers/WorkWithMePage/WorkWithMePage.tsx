@@ -2,14 +2,14 @@ import { Box } from '@mui/material';
 import type { InferGetStaticPropsType } from 'next';
 
 import { SiteHeader } from '@components/common';
-import { ContentfulImage } from '@components/contentful';
 
+import BlogFeaturesSection from './BlogFeaturesSection';
 import getStaticProps from './getStaticProps';
 import HeroSection from './HeroSection';
 import IntroSection from './IntroSection';
-import sx from './WorkWithMe.styles';
+import sx from './WorkWithMePage.styles';
 
-const WorkWithMe = ({
+const WorkWithMePage = ({
   assetUrls,
 }: InferGetStaticPropsType<typeof getStaticProps>): React.ReactElement => {
   return (
@@ -21,10 +21,13 @@ const WorkWithMe = ({
       <Box sx={sx.introSectionContainer}>
         <IntroSection assetUrls={assetUrls} />
       </Box>
+      <Box sx={sx.blogFeaturesSectionContainer}>
+        <BlogFeaturesSection />
+      </Box>
     </>
   );
 };
 
 export { getStaticProps };
 
-export default WorkWithMe;
+export default WorkWithMePage;

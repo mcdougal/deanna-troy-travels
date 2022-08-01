@@ -1,15 +1,15 @@
 import type { GetStaticProps } from 'next';
 
-import fetchAssetUrls, { AssetUrls } from './fetchAssetUrls';
+import fetchBlogFeatures, { BlogFeature } from './fetchBlogFeatures';
 
 interface Props {
-  assetUrls: AssetUrls;
+  blogFeatures: Array<BlogFeature>;
 }
 
 const getStaticProps: GetStaticProps<Props> = async () => {
   return {
     props: {
-      assetUrls: await fetchAssetUrls(),
+      blogFeatures: await fetchBlogFeatures(),
     },
     revalidate: 60,
   };

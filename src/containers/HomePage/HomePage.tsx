@@ -4,11 +4,11 @@ import type { InferGetStaticPropsType } from 'next';
 import { SiteHeader } from '@components/common';
 import { ContentfulImage } from '@components/contentful';
 
-import FeaturedVideos from './FeaturedVideos';
+import FeaturedVideosSection from './FeaturedVideosSection';
 import getStaticProps from './getStaticProps';
 import sx from './HomePage.styles';
 import LogoAndTitle from './LogoAndTitle';
-import WorkWithMe from './WorkWithMe';
+import WorkWithMeSection from './WorkWithMeSection';
 
 const HomePage = ({
   assetUrls,
@@ -16,7 +16,7 @@ const HomePage = ({
 }: InferGetStaticPropsType<typeof getStaticProps>): React.ReactElement => {
   return (
     <>
-      <SiteHeader hideLogoUntilScroll youtubeLogoUrl={assetUrls.youTubeLogo} />
+      <SiteHeader hideLogoUntilScroll />
       <Box sx={sx.logoAndTitleContainer}>
         <LogoAndTitle assetUrls={assetUrls} />
       </Box>
@@ -31,10 +31,10 @@ const HomePage = ({
         />
       </Box>
       <Box sx={sx.featuredVideosContainer}>
-        <FeaturedVideos recentVideos={recentVideos} />
+        <FeaturedVideosSection recentVideos={recentVideos} />
       </Box>
       <Box sx={sx.workWithMeContainer}>
-        <WorkWithMe assetUrls={assetUrls} />
+        <WorkWithMeSection assetUrls={assetUrls} />
       </Box>
     </>
   );

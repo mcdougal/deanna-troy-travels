@@ -7,13 +7,13 @@ import { ContentfulImage } from '@components/contentful';
 
 import { AssetUrls } from '../getStaticProps';
 
-import sx from './WorkWithMe.styles';
+import sx from './WorkWithMeSection.styles';
 
 interface Props {
   assetUrls: AssetUrls;
 }
 
-const WorkWithMe = ({ assetUrls }: Props): JSX.Element => {
+const WorkWithMeSection = ({ assetUrls }: Props): JSX.Element => {
   return (
     <SectionContainer>
       <Box sx={sx.sectionTitleContainer}>
@@ -47,4 +47,4 @@ const WorkWithMe = ({ assetUrls }: Props): JSX.Element => {
   );
 };
 
-export default WorkWithMe;
+export default WorkWithMeSection;

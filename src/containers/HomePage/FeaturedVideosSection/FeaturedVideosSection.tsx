@@ -10,13 +10,13 @@ import { MediaCard, SectionContainer, SectionTitle } from '@components/common';
 
 import { RecentVideo } from '../getStaticProps';
 
-import sx from './FeaturedVideos.styles';
+import sx from './FeaturedVideosSection.styles';
 
 interface Props {
   recentVideos: Array<RecentVideo>;
 }
 
-const FeaturedVideos = ({ recentVideos }: Props): JSX.Element => {
+const FeaturedVideosSection = ({ recentVideos }: Props): JSX.Element => {
   return (
     <SectionContainer>
       <Box sx={sx.sectionTitleContainer}>
@@ -63,4 +63,4 @@ const FeaturedVideos = ({ recentVideos }: Props): JSX.Element => {
   );
 };
 
-export default FeaturedVideos;
+export default FeaturedVideosSection;

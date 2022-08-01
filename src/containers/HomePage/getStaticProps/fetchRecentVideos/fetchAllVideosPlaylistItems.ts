@@ -58,8 +58,14 @@ interface PlaylistItemsData {
 }
 
 export default async (): Promise<Array<PlaylistItem>> => {
+  const { GOOGLE_CLOUD_API_KEY } = process.env;
+
+  if (!GOOGLE_CLOUD_API_KEY) {
+    throw new Error(`Missing environment variable: GOOGLE_CLOUD_API_KEY`);
+  }
+
   const playlistItemsUrl = `https://www.googleapis.com/youtube/v3/playlistItems?${[
-    `key=${process.env.GOOGLE_CLOUD_API_KEY}`,
+    `key=${GOOGLE_CLOUD_API_KEY}`,
     `maxResults=3`,
     `part=contentDetails,snippet,status`,
     `playlistId=PLupawb160v0xF0_SUX5yHJE2GQogd7lx-`,

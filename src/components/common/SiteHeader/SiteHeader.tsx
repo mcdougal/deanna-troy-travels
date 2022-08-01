@@ -18,13 +18,9 @@ const YOUTUBE_LOGO_WIDTH = YOUTUBE_LOGO_HEIGHT * YOUTUBE_LOGO_RATIO;
 
 interface Props {
   hideLogoUntilScroll?: boolean;
-  youtubeLogoUrl: string;
 }
 
-const SiteHeader = ({
-  hideLogoUntilScroll,
-  youtubeLogoUrl,
-}: Props): JSX.Element => {
+const SiteHeader = ({ hideLogoUntilScroll }: Props): JSX.Element => {
   const trigger = useScrollTrigger({ disableHysteresis: true });
 
   return (
@@ -36,7 +32,7 @@ const SiteHeader = ({
               alt="Deanna Troy Travels logo"
               height={YOUTUBE_LOGO_HEIGHT}
               layout="fixed"
-              src={youtubeLogoUrl}
+              src="https://images.ctfassets.net/ijmdpat1c3ub/6o9bRHadNfh3CztgulcHqn/e79596a5f3dd42cb86d4150cb88d54c0/Deanna_Troy_Travels-YouTube_Logo_Picture.png"
               width={YOUTUBE_LOGO_WIDTH}
             />
             <Typography sx={sx.logoText} variant="h6">

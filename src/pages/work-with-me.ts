@@ -1,7 +1,7 @@
 /* eslint-disable filenames/match-regex */
 /* eslint-disable filenames/match-exported */
-import WorkWithMe, { getStaticProps } from 'src/containers/WorkWithMe';
+import WorkWithMePage, { getStaticProps } from 'src/containers/WorkWithMePage';
 
 export { getStaticProps };
 
-export default WorkWithMe;
+export default WorkWithMePage;
