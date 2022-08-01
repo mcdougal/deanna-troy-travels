@@ -54,6 +54,7 @@ const FeaturedVideos = ({ recentVideos }: Props): JSX.Element => {
           endIcon={<ArrowForward fontSize="small" />}
           href="https://www.youtube.com/deannatroytravels"
           size="large"
+          target="_blank"
           variant="contained">
           All Videos
         </Button>

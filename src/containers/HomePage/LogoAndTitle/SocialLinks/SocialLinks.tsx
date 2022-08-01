@@ -9,32 +9,44 @@ const SocialLinks = (): JSX.Element => {
   return (
     <Grid container spacing={2}>
       <Grid item>
-        <ButtonBase href="https://www.youtube.com/deannatroytravels">
+        <ButtonBase
+          href="https://www.youtube.com/deannatroytravels"
+          target="_blank">
           <YouTube sx={[sx.socialLogo, sx.youTube]} />
         </ButtonBase>
       </Grid>
       <Grid item>
-        <ButtonBase href="https://www.instagram.com/deanna_troy_travels">
+        <ButtonBase
+          href="https://www.instagram.com/deanna_troy_travels"
+          target="_blank">
           <Instagram sx={[sx.socialLogo, sx.instagram]} />
         </ButtonBase>
       </Grid>
       <Grid item>
-        <ButtonBase href="https://www.facebook.com/deannatroytravels">
+        <ButtonBase
+          href="https://www.facebook.com/deannatroytravels"
+          target="_blank">
           <Facebook sx={[sx.socialLogo, sx.facebook]} />
         </ButtonBase>
       </Grid>
       <Grid item>
-        <ButtonBase href="https://poshmark.com/closet/deannatroyshop">
+        <ButtonBase
+          href="https://poshmark.com/closet/deannatroyshop"
+          target="_blank">
           <Poshmark sx={[sx.socialLogo, sx.poshmark]} />
         </ButtonBase>
       </Grid>
       <Grid item>
-        <ButtonBase href="https://www.tiktok.com/@deannatroytravels">
+        <ButtonBase
+          href="https://www.tiktok.com/@deannatroytravels"
+          target="_blank">
           <TikTok sx={[sx.socialLogo, sx.tikTok]} />
         </ButtonBase>
       </Grid>
       <Grid item>
-        <ButtonBase href="https://www.amazon.com/shop/deannatroytravels">
+        <ButtonBase
+          href="https://www.amazon.com/shop/deannatroytravels"
+          target="_blank">
           <Amazon sx={[sx.socialLogo, sx.amazon]} />
         </ButtonBase>
       </Grid>

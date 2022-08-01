@@ -31,7 +31,7 @@ const MediaCard = ({
   url,
 }: Props): JSX.Element => {
   return (
-    <ButtonBase href={url} sx={sx.mediaCardContainer}>
+    <ButtonBase href={url} sx={sx.mediaCardContainer} target="_blank">
       <Box sx={sx.thumbnail}>
         <Image
           alt={thumbnail.alt}

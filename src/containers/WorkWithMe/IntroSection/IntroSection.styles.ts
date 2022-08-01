@@ -7,7 +7,7 @@ export default {
   imageContainer: {
     borderRadius: 5,
     height: (theme: Theme): string => {
-      return theme.spacing(45);
+      return theme.spacing(35);
     },
     marginBottom: 3,
     overflow: `hidden`,

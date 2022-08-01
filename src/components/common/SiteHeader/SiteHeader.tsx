@@ -25,7 +25,7 @@ const SiteHeader = ({
   hideLogoUntilScroll,
   youtubeLogoUrl,
 }: Props): JSX.Element => {
-  const trigger = useScrollTrigger();
+  const trigger = useScrollTrigger({ disableHysteresis: true });
 
   return (
     <AppBar color="inherit" elevation={0} position="sticky">
