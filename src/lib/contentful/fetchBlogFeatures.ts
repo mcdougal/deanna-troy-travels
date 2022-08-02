@@ -1,4 +1,4 @@
-import fetchGraphQl from './utils';
+import { fetchGraphQl } from './utils';
 
 export interface BlogFeature {
   blogPostTitle: string;
