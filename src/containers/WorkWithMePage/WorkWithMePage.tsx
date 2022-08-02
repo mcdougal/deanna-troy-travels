@@ -28,6 +28,4 @@ const WorkWithMePage = ({
   );
 };
 
-export { getStaticProps };
-
 export default WorkWithMePage;
