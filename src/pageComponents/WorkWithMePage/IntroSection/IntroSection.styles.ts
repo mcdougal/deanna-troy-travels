@@ -17,6 +17,6 @@ export default {
   ctaContainer: {
     display: `flex`,
     justifyContent: `center`,
-    marginTop: 6,
+    marginTop: 4,
   },
 };
