@@ -16,13 +16,12 @@ const BlogFeaturesSection = ({ blogFeatures }: Props): JSX.Element => {
       <Box sx={sx.sectionTitleContainer}>
         <SectionTitle>Blog Features</SectionTitle>
       </Box>
-      <Box sx={sx.blogFeaturesContainer}>
+      <Box>
         {blogFeatures.map((blogFeature) => {
           return (
-            <BlogFeature
-              key={blogFeature.blogPostTitle}
-              blogFeature={blogFeature}
-            />
+            <Box key={blogFeature.blogPostTitle} sx={sx.blogFeatureContainer}>
+              <BlogFeature blogFeature={blogFeature} />
+            </Box>
           );
         })}
       </Box>

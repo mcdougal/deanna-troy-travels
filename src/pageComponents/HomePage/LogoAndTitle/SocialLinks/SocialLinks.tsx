@@ -10,6 +10,7 @@ const SocialLinks = (): JSX.Element => {
     <Grid container spacing={2}>
       <Grid item>
         <ButtonBase
+          focusRipple
           href="https://www.youtube.com/deannatroytravels"
           target="_blank">
           <YouTube sx={[sx.socialLogo, sx.youTube]} />
@@ -17,6 +18,7 @@ const SocialLinks = (): JSX.Element => {
       </Grid>
       <Grid item>
         <ButtonBase
+          focusRipple
           href="https://www.instagram.com/deanna_troy_travels"
           target="_blank">
           <Instagram sx={[sx.socialLogo, sx.instagram]} />
@@ -24,6 +26,7 @@ const SocialLinks = (): JSX.Element => {
       </Grid>
       <Grid item>
         <ButtonBase
+          focusRipple
           href="https://www.facebook.com/deannatroytravels"
           target="_blank">
           <Facebook sx={[sx.socialLogo, sx.facebook]} />
@@ -31,6 +34,7 @@ const SocialLinks = (): JSX.Element => {
       </Grid>
       <Grid item>
         <ButtonBase
+          focusRipple
           href="https://poshmark.com/closet/deannatroyshop"
           target="_blank">
           <Poshmark sx={[sx.socialLogo, sx.poshmark]} />
@@ -38,6 +42,7 @@ const SocialLinks = (): JSX.Element => {
       </Grid>
       <Grid item>
         <ButtonBase
+          focusRipple
           href="https://www.tiktok.com/@deannatroytravels"
           target="_blank">
           <TikTok sx={[sx.socialLogo, sx.tikTok]} />
@@ -45,6 +50,7 @@ const SocialLinks = (): JSX.Element => {
       </Grid>
       <Grid item>
         <ButtonBase
+          focusRipple
           href="https://www.amazon.com/shop/deannatroytravels"
           target="_blank">
           <Amazon sx={[sx.socialLogo, sx.amazon]} />

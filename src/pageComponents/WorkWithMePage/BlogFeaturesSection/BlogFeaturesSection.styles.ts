@@ -2,9 +2,7 @@ export default {
   sectionTitleContainer: {
     marginBottom: 4,
   },
-  blogFeaturesContainer: {
-    '& > *': {
-      marginTop: 5,
-    },
+  blogFeatureContainer: {
+    marginTop: 4,
   },
 };

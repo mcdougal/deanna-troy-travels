@@ -10,6 +10,6 @@ export default {
   },
   blogFeaturesSectionContainer: {
     marginBottom: 20,
-    marginTop: 8,
+    marginTop: 7,
   },
 };

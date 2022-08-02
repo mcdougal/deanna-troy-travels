@@ -1,4 +1,4 @@
-import { Box, Typography, useTheme } from '@mui/material';
+import { Box, ButtonBase, Typography, useTheme } from '@mui/material';
 
 import { ContentfulImage } from '@components/contentful';
 import { BlogFeature as IBlogFeature } from '@lib/contentful';
@@ -19,7 +19,11 @@ const BlogFeature = ({ blogFeature }: Props): JSX.Element => {
   const websiteLogoWidth = websiteLogoHeight / websiteLogoAspectRatio;
 
   return (
-    <Box>
+    <ButtonBase
+      focusRipple
+      href={blogFeature.blogPostUrl}
+      sx={sx.blogFeatureButtonBase}
+      target="_blank">
       <ContentfulImage
         alt={`${blogFeature.websiteName} logo`}
         height={websiteLogoHeight}
@@ -40,7 +44,7 @@ const BlogFeature = ({ blogFeature }: Props): JSX.Element => {
           {blogFeature.blogPostTitle}
         </Typography>
       </Box>
-    </Box>
+    </ButtonBase>
   );
 };
 

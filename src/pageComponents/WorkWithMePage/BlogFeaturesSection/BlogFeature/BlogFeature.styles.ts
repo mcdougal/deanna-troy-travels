@@ -1,6 +1,9 @@
 import { Theme } from '@mui/material';
 
 export default {
+  blogFeatureButtonBase: {
+    display: `block`,
+  },
   thumbnailAndTitle: {
     display: `flex`,
   },

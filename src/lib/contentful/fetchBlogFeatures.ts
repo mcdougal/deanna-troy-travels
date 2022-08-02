@@ -2,6 +2,7 @@ import { fetchGraphQl } from './utils';
 
 export interface BlogFeature {
   blogPostTitle: string;
+  blogPostUrl: string;
   thumbnail: {
     url: string;
   };
@@ -23,6 +24,7 @@ export default async (): Promise<Array<BlogFeature>> => {
       blogFeatureCollection {
         items {
           blogPostTitle
+          blogPostUrl
           thumbnail {
             url
           }
