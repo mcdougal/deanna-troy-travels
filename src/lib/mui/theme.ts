@@ -64,17 +64,17 @@ const theme = createTheme({
       letterSpacing: `0.1em`,
     },
     body1: {
-      letterSpacing: `0.1em`,
+      letterSpacing: `0.04em`,
       lineHeight: 1.8,
     },
     body2: {
-      letterSpacing: `0.1em`,
+      letterSpacing: `0.04em`,
     },
     caption: {
-      letterSpacing: `0.1em`,
+      letterSpacing: `0.04em`,
     },
     overline: {
-      letterSpacing: `0.1em`,
+      letterSpacing: `0.04em`,
     },
     button: {
       letterSpacing: `0.1em`,

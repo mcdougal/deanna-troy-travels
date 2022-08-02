@@ -7,15 +7,17 @@ export default {
   thumbnailContainer: {
     borderRadius: 4,
     height: (theme: Theme): string => {
-      return theme.spacing(10);
+      return theme.spacing(9);
     },
     overflow: `hidden`,
     position: `relative`,
     width: (theme: Theme): string => {
-      return theme.spacing(10);
+      return theme.spacing(9);
     },
   },
   blogPostTitle: {
     flex: 1,
+    lineHeight: 1.5,
+    marginLeft: 2,
   },
 };

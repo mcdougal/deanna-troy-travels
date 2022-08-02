@@ -1,11 +1,7 @@
-import { Download } from '@mui/icons-material';
-import { Box, Button, Typography } from '@mui/material';
+import { Box } from '@mui/material';
 
 import { SectionContainer, SectionTitle } from '@components/common';
-import { ContentfulImage } from '@components/contentful';
 import { BlogFeature as IBlogFeature } from '@lib/contentful';
-
-import { AssetUrls } from '../getStaticProps';
 
 import BlogFeature from './BlogFeature';
 import sx from './BlogFeaturesSection.styles';
