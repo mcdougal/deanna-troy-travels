@@ -1,7 +1,7 @@
 /* eslint-disable filenames/match-exported */
 /* eslint-disable filenames/match-regex */
-import HomePage from 'src/containers/HomePage';
-import getStaticProps from 'src/containers/HomePage/getStaticProps';
+import HomePage from 'src/pageComponents/HomePage';
+import getStaticProps from 'src/pageComponents/HomePage/getStaticProps';
 
 export { getStaticProps };
 
