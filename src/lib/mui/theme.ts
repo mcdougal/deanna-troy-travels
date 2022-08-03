@@ -14,6 +14,15 @@ const theme = createTheme({
           paddingTop: `12px`,
           textTransform: `none`,
         },
+        text: {
+          paddingLeft: `16px`,
+          paddingRight: `16px`,
+        },
+      },
+    },
+    MuiDialogTitle: {
+      defaultProps: {
+        variant: `h4`,
       },
     },
   },

@@ -23,6 +23,7 @@ const ContactDialog = ({ onClose, open }: Props): JSX.Element => {
       <Dialog
         disablePortal
         fullScreen={isFullScreen}
+        keepMounted
         onClose={onClose}
         open={open}>
         <DialogTitle>Get In Touch</DialogTitle>
@@ -35,6 +36,7 @@ const ContactDialog = ({ onClose, open }: Props): JSX.Element => {
             label="Your Name"
             margin="normal"
             name="name"
+            required
             variant="outlined"
           />
           <TextField
@@ -43,6 +45,7 @@ const ContactDialog = ({ onClose, open }: Props): JSX.Element => {
             label="Your Email"
             margin="normal"
             name="email"
+            required
             type="email"
             variant="outlined"
           />
@@ -54,6 +57,7 @@ const ContactDialog = ({ onClose, open }: Props): JSX.Element => {
             maxRows={20}
             multiline
             name="message"
+            required
             rows={8}
             variant="outlined"
           />
