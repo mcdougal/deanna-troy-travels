@@ -29,6 +29,7 @@ const ContactDialog = ({ onClose, open }: Props): JSX.Element => {
         <DialogContent>
           <input name="form-name" type="hidden" value="contact" />
           <TextField
+            autoFocus
             fullWidth
             id="contact-dialog-name"
             label="Your Name"
