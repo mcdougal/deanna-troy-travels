@@ -29,10 +29,6 @@ export default {
     right: (theme: Theme): string => {
       return theme.spacing(3);
     },
-  },
-  actionsLeft: {
-    display: `flex`,
-    flex: 1,
     '& > * + *': {
       marginLeft: 1,
     },

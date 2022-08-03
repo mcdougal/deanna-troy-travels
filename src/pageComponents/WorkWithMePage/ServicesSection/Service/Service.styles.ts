@@ -1,6 +1,24 @@
 import { Theme } from '@mui/material';
 
 export default {
+  serviceContainer: {
+    boxShadow: `0 4px 20px rgba(0, 0, 0, 0.06)`,
+    borderRadius: 5,
+    padding: 2,
+  },
+  titleContainer: {
+    alignItems: `center`,
+    color: `primary.main`,
+    display: `flex`,
+    justifyContent: `center`,
+    marginBottom: 2,
+  },
+  iconContainer: {
+    display: `flex`,
+  },
+  title: {
+    marginLeft: 1,
+  },
   thumbnailContainer: {
     borderRadius: 5,
     boxShadow: `0 4px 20px rgba(0, 0, 0, 0.06)`,
@@ -11,33 +29,8 @@ export default {
     position: `relative`,
     width: `100%`,
   },
-  actionContainer: {
-    paddingLeft: 3,
-    paddingRight: 3,
-    marginTop: -2,
-    position: `relative`,
-  },
-  actionButton: {
-    alignItems: `center`,
-    backgroundColor: `common.white`,
-    borderRadius: 2,
-    boxShadow: `0 2px 12px rgba(0, 0, 0, 0.1)`,
-    color: `primary.main`,
-    display: `flex`,
-    justifyContent: `center`,
-    paddingLeft: 1,
-    paddingRight: 1,
-    height: (theme: Theme): string => {
-      return theme.spacing(5);
-    },
-  },
-  iconContainer: {
-    display: `flex`,
-  },
-  labelContainer: {
-    marginLeft: 1,
-  },
   description: {
+    lineHeight: 1.5,
     marginTop: 2,
     paddingLeft: 3,
     paddingRight: 3,

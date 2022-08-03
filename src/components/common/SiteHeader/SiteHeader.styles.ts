@@ -6,16 +6,19 @@ export default {
     paddingBottom: 1,
     paddingTop: 1,
   },
+  left: {
+    flex: 1,
+  },
   logoContainer: {
     alignItems: `center`,
-    display: `flex`,
+    display: `inline-flex`,
     marginLeft: `-4px`,
-    marginTop: `-2px`,
+    marginTop: `-3px`,
   },
   logoText: {
     lineHeight: 1,
     marginLeft: 1,
-    marginTop: `-2px`,
+    marginTop: `-1px`,
   },
   deannaTroy: {
     color: `primary.main`,

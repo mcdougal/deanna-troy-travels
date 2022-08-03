@@ -3,7 +3,7 @@ export default {
     marginTop: 6,
   },
   introSectionContainer: {
-    marginTop: 8,
+    marginTop: 6,
   },
   servicesSectionContainer: {
     marginTop: 8,

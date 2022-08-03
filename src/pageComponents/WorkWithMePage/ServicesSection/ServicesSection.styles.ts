@@ -1,6 +1,6 @@
 export default {
   sectionTitleContainer: {
-    marginBottom: 4,
+    marginBottom: 3,
   },
   servicesContainer: {
     '& > * + *': {
@@ -8,9 +8,11 @@ export default {
     },
   },
   advertiseIcon: {
-    fontSize: 20,
+    fontSize: 25,
+    marginTop: `1px`,
   },
   appearIcon: {
-    fontSize: 18,
+    fontSize: 20,
+    marginTop: `1px`,
   },
 };

@@ -20,7 +20,13 @@ const Service = ({
   thumbnail,
 }: Props): JSX.Element => {
   return (
-    <Box>
+    <Box sx={sx.serviceContainer}>
+      <Box sx={sx.titleContainer}>
+        <Box sx={sx.iconContainer}>{icon}</Box>
+        <Typography sx={sx.title} variant="h6">
+          <b>{label}</b>
+        </Typography>
+      </Box>
       <Box sx={sx.thumbnailContainer}>
         <Image
           alt={thumbnail.alt}
@@ -29,14 +35,6 @@ const Service = ({
           objectPosition="top"
           src={thumbnail.url}
         />
-      </Box>
-      <Box sx={sx.actionContainer}>
-        <Box sx={sx.actionButton}>
-          <Box sx={sx.iconContainer}>{icon}</Box>
-          <Typography sx={sx.labelContainer} variant="caption">
-            <b>{label}</b>
-          </Typography>
-        </Box>
       </Box>
       <Typography sx={sx.description} variant="body1">
         {description}

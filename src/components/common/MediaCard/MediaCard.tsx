@@ -13,9 +13,6 @@ interface Props {
     icon: React.ReactElement;
     value: string;
   };
-  action3: {
-    icon: React.ReactElement;
-  };
   thumbnail: {
     alt: string;
     url: string;
@@ -26,7 +23,6 @@ interface Props {
 const MediaCard = ({
   action1,
   action2,
-  action3,
   thumbnail,
   url,
 }: Props): JSX.Element => {
@@ -47,11 +43,8 @@ const MediaCard = ({
         />
       </Box>
       <Box sx={sx.actions}>
-        <Box sx={sx.actionsLeft}>
-          <MediaCardAction icon={action1.icon} value={action1.value} />
-          <MediaCardAction icon={action2.icon} value={action2.value} />
-        </Box>
-        <MediaCardAction icon={action3.icon} />
+        <MediaCardAction icon={action1.icon} value={action1.value} />
+        <MediaCardAction icon={action2.icon} value={action2.value} />
       </Box>
     </ButtonBase>
   );

@@ -1,6 +1,11 @@
 export default {
   sectionTitleContainer: {
-    marginBottom: 4,
+    marginBottom: 3,
+  },
+  featuredVideoContainer: {
+    '& + &': {
+      marginTop: 3,
+    },
   },
   thumbUpIcon: {
     fontSize: 14,
@@ -8,12 +13,9 @@ export default {
   modeCommentIcon: {
     fontSize: 14,
   },
-  playArrowIcon: {
-    fontSize: 30,
-  },
   ctaContainer: {
     display: `flex`,
     justifyContent: `center`,
-    marginTop: 6,
+    marginTop: 5,
   },
 };

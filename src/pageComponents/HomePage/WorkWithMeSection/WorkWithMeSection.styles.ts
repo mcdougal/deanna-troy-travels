@@ -2,14 +2,14 @@ import { Theme } from '@mui/material';
 
 export default {
   sectionTitleContainer: {
-    marginBottom: 4,
+    marginBottom: 3,
   },
   imageContainer: {
     borderRadius: 5,
     height: (theme: Theme): string => {
       return theme.spacing(45);
     },
-    marginBottom: 3,
+    marginBottom: 2,
     overflow: `hidden`,
     position: `relative`,
     width: `100%`,
@@ -17,6 +17,6 @@ export default {
   ctaContainer: {
     display: `flex`,
     justifyContent: `center`,
-    marginTop: 6,
+    marginTop: 4,
   },
 };

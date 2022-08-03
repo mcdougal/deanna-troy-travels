@@ -2,6 +2,7 @@ import { Menu } from '@mui/icons-material';
 import {
   AppBar,
   Box,
+  ButtonBase,
   Grow,
   Toolbar,
   Typography,
@@ -25,22 +26,27 @@ const SiteHeader = ({ hideLogoUntilScroll }: Props): JSX.Element => {
   return (
     <AppBar color="inherit" elevation={0} position="sticky">
       <Toolbar sx={sx.toolbar}>
-        <Grow appear={false} in={!hideLogoUntilScroll || trigger} mountOnEnter>
-          <Box sx={sx.logoContainer}>
-            <Image
-              alt="Deanna Troy Travels logo"
-              height={YOUTUBE_LOGO_HEIGHT}
-              layout="fixed"
-              src="/deanna-troy-travels/logo.png"
-              width={YOUTUBE_LOGO_WIDTH}
-            />
-            <Typography sx={sx.logoText} variant="h6">
-              <b>
-                <Box sx={sx.deannaTroy}>Deanna Troy</Box> Travels
-              </b>
-            </Typography>
-          </Box>
-        </Grow>
+        <Box sx={sx.left}>
+          <Grow
+            appear={false}
+            in={!hideLogoUntilScroll || trigger}
+            mountOnEnter>
+            <ButtonBase href="/" sx={sx.logoContainer}>
+              <Image
+                alt="Deanna Troy Travels logo"
+                height={YOUTUBE_LOGO_HEIGHT}
+                layout="fixed"
+                src="/deanna-troy-travels/logo.png"
+                width={YOUTUBE_LOGO_WIDTH}
+              />
+              <Typography sx={sx.logoText} variant="h6">
+                <b>
+                  <Box sx={sx.deannaTroy}>Deanna Troy</Box> Travels
+                </b>
+              </Typography>
+            </ButtonBase>
+          </Grow>
+        </Box>
         <Menu sx={sx.menu} />
       </Toolbar>
     </AppBar>

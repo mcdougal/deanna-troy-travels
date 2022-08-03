@@ -1,9 +1,4 @@
-import {
-  ArrowForward,
-  ModeComment,
-  PlayArrow,
-  ThumbUp,
-} from '@mui/icons-material';
+import { ArrowForward, ModeComment, ThumbUp } from '@mui/icons-material';
 import { Box, Button, Grid } from '@mui/material';
 
 import { MediaCard, SectionContainer, SectionTitle } from '@components/common';
@@ -22,32 +17,27 @@ const FeaturedVideosSection = ({ recentVideos }: Props): JSX.Element => {
       <Box sx={sx.sectionTitleContainer}>
         <SectionTitle>Featured Videos</SectionTitle>
       </Box>
-      <Grid container flexDirection="column" spacing={4}>
-        {recentVideos.map((recentVideo) => {
-          return (
-            <Grid key={recentVideo.videoId} item>
-              <MediaCard
-                action1={{
-                  icon: <ThumbUp sx={sx.thumbUpIcon} />,
-                  value: `${recentVideo.likeCount}`,
-                }}
-                action2={{
-                  icon: <ModeComment sx={sx.modeCommentIcon} />,
-                  value: `${recentVideo.commentCount}`,
-                }}
-                action3={{
-                  icon: <PlayArrow sx={sx.playArrowIcon} />,
-                }}
-                thumbnail={{
-                  alt: recentVideo.title,
-                  url: recentVideo.thumbnailUrl,
-                }}
-                url={`https://www.youtube.com/watch?v=${recentVideo.videoId}`}
-              />
-            </Grid>
-          );
-        })}
-      </Grid>
+      {recentVideos.map((recentVideo) => {
+        return (
+          <Box key={recentVideo.videoId} sx={sx.featuredVideoContainer}>
+            <MediaCard
+              action1={{
+                icon: <ThumbUp sx={sx.thumbUpIcon} />,
+                value: `${recentVideo.likeCount}`,
+              }}
+              action2={{
+                icon: <ModeComment sx={sx.modeCommentIcon} />,
+                value: `${recentVideo.commentCount}`,
+              }}
+              thumbnail={{
+                alt: recentVideo.title,
+                url: recentVideo.thumbnailUrl,
+              }}
+              url={`https://www.youtube.com/watch?v=${recentVideo.videoId}`}
+            />
+          </Box>
+        );
+      })}
       <Box sx={sx.ctaContainer}>
         <Button
           color="primary"
