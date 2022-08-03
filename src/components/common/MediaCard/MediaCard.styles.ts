@@ -1,36 +1,29 @@
-import { Theme } from '@mui/material';
+import { spacing } from '@lib/mui';
 
 export default {
   mediaCardContainer: {
-    marginBottom: 4,
+    boxShadow: `0 4px 20px rgba(0, 0, 0, 0.06)`,
+    borderRadius: 5,
+    display: `block`,
+    padding: 1,
+    paddingBottom: 0,
     position: `relative`,
     width: `100%`,
   },
-  thumbnail: {
-    borderRadius: 6,
-    boxShadow: `0 4px 20px rgba(0, 0, 0, 0.06)`,
+  thumbnailContainer: {
+    borderRadius: 4,
     filter: `brightness(95%)`,
-    height: (theme: Theme): string => {
-      return theme.spacing(20);
-    },
+    height: spacing(18),
     overflow: `hidden`,
     position: `relative`,
     width: `100%`,
   },
-  actions: {
-    bottom: (theme: Theme): string => {
-      return theme.spacing(-4);
-    },
+  details: {
     display: `flex`,
-    left: (theme: Theme): string => {
-      return theme.spacing(3);
-    },
-    position: `absolute`,
-    right: (theme: Theme): string => {
-      return theme.spacing(3);
-    },
+    marginLeft: 2,
+    marginTop: `-2px`,
     '& > * + *': {
-      marginLeft: 1,
+      marginLeft: 2,
     },
   },
 };

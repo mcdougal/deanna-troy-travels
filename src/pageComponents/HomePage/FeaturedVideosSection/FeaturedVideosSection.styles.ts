@@ -12,10 +12,11 @@ export default {
   },
   modeCommentIcon: {
     fontSize: 14,
+    marginBottom: `-1px`,
   },
   ctaContainer: {
     display: `flex`,
     justifyContent: `center`,
-    marginTop: 5,
+    marginTop: 4,
   },
 };

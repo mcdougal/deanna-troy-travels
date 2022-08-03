@@ -23,11 +23,11 @@ const FeaturedVideosSection = ({ recentVideos }: Props): JSX.Element => {
         return (
           <Box key={recentVideo.videoId} sx={sx.featuredVideoContainer}>
             <MediaCard
-              action1={{
+              detail1={{
                 icon: <ThumbUp sx={sx.thumbUpIcon} />,
                 value: `${recentVideo.likeCount}`,
               }}
-              action2={{
+              detail2={{
                 icon: <ModeComment sx={sx.modeCommentIcon} />,
                 value: `${recentVideo.commentCount}`,
               }}

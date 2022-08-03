@@ -2,14 +2,14 @@ import { Box, ButtonBase } from '@mui/material';
 import Image from 'next/image';
 
 import sx from './MediaCard.styles';
-import MediaCardAction from './MediaCardAction';
+import MediaCardDetail from './MediaCardDetail';
 
 interface Props {
-  action1: {
+  detail1: {
     icon: React.ReactElement;
     value: string;
   };
-  action2: {
+  detail2: {
     icon: React.ReactElement;
     value: string;
   };
@@ -21,8 +21,8 @@ interface Props {
 }
 
 const MediaCard = ({
-  action1,
-  action2,
+  detail1,
+  detail2,
   thumbnail,
   url,
 }: Props): JSX.Element => {
@@ -32,7 +32,7 @@ const MediaCard = ({
       href={url}
       sx={sx.mediaCardContainer}
       target="_blank">
-      <Box sx={sx.thumbnail}>
+      <Box sx={sx.thumbnailContainer}>
         <Image
           alt={thumbnail.alt}
           layout="fill"
@@ -42,9 +42,9 @@ const MediaCard = ({
           unoptimized
         />
       </Box>
-      <Box sx={sx.actions}>
-        <MediaCardAction icon={action1.icon} value={action1.value} />
-        <MediaCardAction icon={action2.icon} value={action2.value} />
+      <Box sx={sx.details}>
+        <MediaCardDetail icon={detail1.icon} label={detail1.value} />
+        <MediaCardDetail icon={detail2.icon} label={detail2.value} />
       </Box>
     </ButtonBase>
   );
