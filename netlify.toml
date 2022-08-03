@@ -10,6 +10,6 @@
       default-src 'self';
       form-action 'self';
       img-src 'self';
-      script-src 'self https://netlify-cdp-loader.netlify.app https://cdn.segment.com';
+      script-src 'self' https://netlify-cdp-loader.netlify.app;
       style-src 'unsafe-inline';
     """
