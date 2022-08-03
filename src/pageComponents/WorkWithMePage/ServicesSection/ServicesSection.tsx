@@ -1,4 +1,5 @@
-import { Campaign, VideoCameraFront } from '@mui/icons-material';
+import Campaign from '@mui/icons-material/Campaign';
+import VideoCameraFront from '@mui/icons-material/VideoCameraFront';
 import { Box } from '@mui/material';
 
 import { SectionContainer, SectionTitle } from '@components/common';

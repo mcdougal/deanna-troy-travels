@@ -1,4 +1,6 @@
-import { ArrowForward, ModeComment, ThumbUp } from '@mui/icons-material';
+import ArrowForward from '@mui/icons-material/ArrowForward';
+import ModeComment from '@mui/icons-material/ModeComment';
+import ThumbUp from '@mui/icons-material/ThumbUp';
 import { Box, Button } from '@mui/material';
 
 import { MediaCard, SectionContainer, SectionTitle } from '@components/common';

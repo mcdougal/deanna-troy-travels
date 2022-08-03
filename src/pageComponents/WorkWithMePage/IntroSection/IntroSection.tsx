@@ -1,4 +1,4 @@
-import { Download } from '@mui/icons-material';
+import Download from '@mui/icons-material/Download';
 import { Box, Button, Typography } from '@mui/material';
 import Image from 'next/image';
 

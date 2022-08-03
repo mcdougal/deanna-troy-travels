@@ -1,4 +1,6 @@
-import { Facebook, Instagram, YouTube } from '@mui/icons-material';
+import Facebook from '@mui/icons-material/Facebook';
+import Instagram from '@mui/icons-material/Instagram';
+import YouTube from '@mui/icons-material/YouTube';
 import { ButtonBase, Grid } from '@mui/material';
 
 import { Amazon, Poshmark, TikTok } from '@components/icons';
