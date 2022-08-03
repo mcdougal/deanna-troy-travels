@@ -5,6 +5,7 @@ import Head from 'next/head';
 import { SiteHeader } from '@components/common';
 
 import BlogFeaturesSection from './BlogFeaturesSection';
+import ContactSection from './ContactSection';
 import getStaticProps from './getStaticProps';
 import HeroSection from './HeroSection';
 import IntroSection from './IntroSection';
@@ -40,6 +41,9 @@ const WorkWithMePage = ({
       </Box>
       <Box sx={sx.blogFeaturesSectionContainer}>
         <BlogFeaturesSection blogFeatures={blogFeatures} />
+      </Box>
+      <Box sx={sx.contactSectionContainer}>
+        <ContactSection />
       </Box>
     </>
   );

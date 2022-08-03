@@ -1,8 +1,6 @@
 import { Box, Link as MuiLink, Typography } from '@mui/material';
 import { useState } from 'react';
 
-import sx from './Testimonial.styles';
-
 const COLLAPSED_LENGTH = 100;
 
 interface Props {
