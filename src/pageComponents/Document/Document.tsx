@@ -51,6 +51,7 @@ class Document extends NextDocument<ExtendedDocumentInitialProps> {
           <meta content="#da532c" name="msapplication-TileColor" />
           <meta content="#ffffff" name="theme-color" />
           <meta content="en" httpEquiv="Content-Language" />
+          <meta key="og:type" content="website" property="og:type" />
           {this.props.emotionStyleTags}
         </Head>
         <body>

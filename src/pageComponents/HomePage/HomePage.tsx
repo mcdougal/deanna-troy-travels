@@ -21,9 +21,8 @@ const HomePage = ({
     <>
       <Head>
         <title>{PAGE_TITLE}</title>
-        <meta content={PAGE_DESCRIPTION} name="description" />
-        <meta content={PAGE_TITLE} property="og:title" />
-        <meta content="website" property="og:type" />
+        <meta key="description" content={PAGE_DESCRIPTION} name="description" />
+        <meta key="og:title" content={PAGE_TITLE} property="og:title" />
       </Head>
       <SiteHeader hideLogoUntilScroll />
       <Box sx={sx.logoAndTitleContainer}>

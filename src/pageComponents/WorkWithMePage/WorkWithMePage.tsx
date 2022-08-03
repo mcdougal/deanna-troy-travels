@@ -1,5 +1,6 @@
 import { Box } from '@mui/material';
 import type { InferGetStaticPropsType } from 'next';
+import Head from 'next/head';
 
 import { SiteHeader } from '@components/common';
 
@@ -11,11 +12,19 @@ import ServicesSection from './ServicesSection';
 import TestimonialsSection from './TestimonialsSection';
 import sx from './WorkWithMePage.styles';
 
+const PAGE_TITLE = `Work With Me | Deanna Troy Travels`;
+const PAGE_DESCRIPTION = `Travel videos from a backpacker who spent two years traveling around Asia! Japan, Vietnam, Malaysia and more! Deanna Troy Travels`;
+
 const WorkWithMePage = ({
   blogFeatures,
 }: InferGetStaticPropsType<typeof getStaticProps>): React.ReactElement => {
   return (
     <>
+      <Head>
+        <title>{PAGE_TITLE}</title>
+        <meta key="description" content={PAGE_DESCRIPTION} name="description" />
+        <meta key="og:title" content={PAGE_TITLE} property="og:title" />
+      </Head>
       <SiteHeader />
       <Box sx={sx.heroSectionContainer}>
         <HeroSection />
