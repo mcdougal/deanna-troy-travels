@@ -3,7 +3,7 @@ import { useState } from 'react';
 
 import sx from './Testimonial.styles';
 
-const COLLAPSED_LENGTH = 110;
+const COLLAPSED_LENGTH = 100;
 
 interface Props {
   company: string;
@@ -18,29 +18,25 @@ const Testimonial = ({ company, person, testimonial }: Props): JSX.Element => {
     testimonial.length > COLLAPSED_LENGTH && !isReadMoreClicked;
 
   return (
-    <Box sx={sx.testimonialContainer}>
-      <Typography
-        sx={isCollapsed ? sx.testimonialContentCollapsed : null}
-        variant="body1">
+    <Box>
+      <Typography variant="body1">
         {isCollapsed ? (
           <>“{testimonial.slice(0, COLLAPSED_LENGTH)}...</>
         ) : (
           <>“{testimonial}”</>
         )}
-        {isCollapsed && (
+      </Typography>
+      {isCollapsed && (
+        <Box>
           <MuiLink
             onClick={(): void => {
               setIsReadMoreClicked(true);
-            }}
-            sx={sx.readMoreLink}>
+            }}>
             Read More
           </MuiLink>
-        )}
-      </Typography>
-      <Typography
-        color="textSecondary"
-        sx={sx.personAndCompany}
-        variant="caption">
+        </Box>
+      )}
+      <Typography color="textSecondary" variant="caption">
         {person} — {company}
       </Typography>
     </Box>
