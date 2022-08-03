@@ -8,8 +8,11 @@ export default {
   servicesSectionContainer: {
     marginTop: 8,
   },
+  testimonialsSectionContainer: {
+    marginTop: 7,
+  },
   blogFeaturesSectionContainer: {
     marginBottom: 20,
-    marginTop: 7,
+    marginTop: 6,
   },
 };

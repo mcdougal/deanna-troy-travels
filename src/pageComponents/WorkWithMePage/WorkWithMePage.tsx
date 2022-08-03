@@ -8,6 +8,7 @@ import getStaticProps from './getStaticProps';
 import HeroSection from './HeroSection';
 import IntroSection from './IntroSection';
 import ServicesSection from './ServicesSection';
+import TestimonialsSection from './TestimonialsSection';
 import sx from './WorkWithMePage.styles';
 
 const WorkWithMePage = ({
@@ -24,6 +25,9 @@ const WorkWithMePage = ({
       </Box>
       <Box sx={sx.servicesSectionContainer}>
         <ServicesSection />
+      </Box>
+      <Box sx={sx.testimonialsSectionContainer}>
+        <TestimonialsSection />
       </Box>
       <Box sx={sx.blogFeaturesSectionContainer}>
         <BlogFeaturesSection blogFeatures={blogFeatures} />

@@ -4,7 +4,7 @@ export default {
   },
   servicesContainer: {
     '& > * + *': {
-      marginTop: 4,
+      marginTop: 3,
     },
   },
   advertiseIcon: {

@@ -1,9 +1,9 @@
 export default {
   sectionTitleContainer: {
-    marginBottom: 3,
+    marginBottom: 2,
   },
-  blogFeatureContainer: {
-    '& + &': {
+  testimonialsContainer: {
+    '& > * + *': {
       marginTop: 3,
     },
   },

@@ -1,5 +1,5 @@
 import { ArrowForward, ModeComment, ThumbUp } from '@mui/icons-material';
-import { Box, Button, Grid } from '@mui/material';
+import { Box, Button } from '@mui/material';
 
 import { MediaCard, SectionContainer, SectionTitle } from '@components/common';
 
