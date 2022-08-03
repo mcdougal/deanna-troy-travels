@@ -1,3 +1,5 @@
-import getClient from './getClient';
+import fetchBlogFeatures, { BlogFeature } from './fetchBlogFeatures';
 
-export { getClient };
+export type { BlogFeature };
+
+export { fetchBlogFeatures };

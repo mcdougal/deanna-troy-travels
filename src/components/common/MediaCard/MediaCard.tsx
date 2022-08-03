@@ -1,0 +1,53 @@
+import { Box, ButtonBase } from '@mui/material';
+import Image from 'next/image';
+
+import sx from './MediaCard.styles';
+import MediaCardAction from './MediaCardAction';
+
+interface Props {
+  action1: {
+    icon: React.ReactElement;
+    value: string;
+  };
+  action2: {
+    icon: React.ReactElement;
+    value: string;
+  };
+  thumbnail: {
+    alt: string;
+    url: string;
+  };
+  url: string;
+}
+
+const MediaCard = ({
+  action1,
+  action2,
+  thumbnail,
+  url,
+}: Props): JSX.Element => {
+  return (
+    <ButtonBase
+      focusRipple
+      href={url}
+      sx={sx.mediaCardContainer}
+      target="_blank">
+      <Box sx={sx.thumbnail}>
+        <Image
+          alt={thumbnail.alt}
+          layout="fill"
+          objectFit="cover"
+          objectPosition="center"
+          src={thumbnail.url}
+          unoptimized
+        />
+      </Box>
+      <Box sx={sx.actions}>
+        <MediaCardAction icon={action1.icon} value={action1.value} />
+        <MediaCardAction icon={action2.icon} value={action2.value} />
+      </Box>
+    </ButtonBase>
+  );
+};
+
+export default MediaCard;
