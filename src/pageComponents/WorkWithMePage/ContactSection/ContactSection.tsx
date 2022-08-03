@@ -18,7 +18,6 @@ const ContactSection = (): JSX.Element => {
           name="contact">
           <input name="form-name" type="hidden" value="contact" />
           <TextField
-            autoFocus
             fullWidth
             id="contact-section-name"
             label="Your Name"
