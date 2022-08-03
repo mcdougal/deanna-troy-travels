@@ -2,7 +2,12 @@ import { Theme } from '@mui/material';
 
 export default {
   blogFeatureButtonBase: {
+    backgroundColor: `common.white`,
+    borderRadius: 5,
+    boxShadow: `0 4px 20px rgba(0, 0, 0, 0.06)`,
     display: `block`,
+    padding: 2,
+    paddingTop: 1,
   },
   thumbnailAndTitle: {
     display: `flex`,
