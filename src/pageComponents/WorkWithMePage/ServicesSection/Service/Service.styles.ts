@@ -4,7 +4,9 @@ export default {
   serviceContainer: {
     boxShadow: `0 4px 20px rgba(0, 0, 0, 0.06)`,
     borderRadius: 5,
+    display: `block`,
     padding: 2,
+    width: `100%`,
   },
   titleContainer: {
     alignItems: `center`,
