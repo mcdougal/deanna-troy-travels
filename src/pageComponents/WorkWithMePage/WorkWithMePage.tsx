@@ -42,6 +42,7 @@ const WorkWithMePage = ({
         <BlogFeaturesSection blogFeatures={blogFeatures} />
       </Box>
       <form action="/success" data-netlify="true" method="POST" name="contact">
+        <input name="form-name" type="hidden" value="contact" />
         <p>
           <label>
             Your Name: <input name="name" type="text" />
