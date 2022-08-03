@@ -1,4 +1,4 @@
-import Download from '@mui/icons-material/Download';
+import OpenInNew from '@mui/icons-material/OpenInNew';
 import { Box, Button, Typography } from '@mui/material';
 import Image from 'next/image';
 
@@ -33,9 +33,10 @@ const IntroSection = (): JSX.Element => {
       <Box sx={sx.ctaContainer}>
         <Button
           color="primary"
-          endIcon={<Download fontSize="small" />}
+          endIcon={<OpenInNew />}
           href="https://www.canva.com/design/DAFC8WJcrUQ/KCXr38E-PosgRiECPzH-yQ/view?utm_content=DAFC8WJcrUQ&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton"
           size="large"
+          sx={sx.ctaButton}
           target="_blank"
           variant="contained">
           Media Kit

@@ -19,4 +19,9 @@ export default {
     justifyContent: `center`,
     marginTop: 4,
   },
+  ctaButton: {
+    '& .MuiButton-endIcon > *:nth-of-type(1)': {
+      fontSize: 18,
+    },
+  },
 };
