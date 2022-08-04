@@ -15,11 +15,10 @@ export interface BlogPost {
   keywords: string;
   slug: string;
   sys: {
-    firstPublishedAt: string;
     publishedAt: string;
   };
   title: string;
-  videoUrl: string | null;
+  youTubeVideoId: string | null;
 }
 
 export default async (slug: string): Promise<BlogPost> => {
@@ -44,11 +43,10 @@ export default async (slug: string): Promise<BlogPost> => {
             keywords
             slug
             sys {
-              firstPublishedAt
               publishedAt
             }
             title
-            videoUrl
+            youTubeVideoId
           }
         }
       }

@@ -1,6 +1,7 @@
 import ArrowForward from '@mui/icons-material/ArrowForward';
 import ModeComment from '@mui/icons-material/ModeComment';
 import ThumbUp from '@mui/icons-material/ThumbUp';
+import Visibility from '@mui/icons-material/Visibility';
 import { Box, Button, Container } from '@mui/material';
 
 import { MediaCard, SectionTitle } from '@components/common';
@@ -23,14 +24,23 @@ const FeaturedVideosSection = ({ recentVideos }: Props): JSX.Element => {
         return (
           <Box key={recentVideo.videoId} sx={sx.featuredVideoContainer}>
             <MediaCard
-              detail1={{
-                icon: <ThumbUp sx={sx.thumbUpIcon} />,
-                value: `${recentVideo.likeCount}`,
-              }}
-              detail2={{
-                icon: <ModeComment sx={sx.modeCommentIcon} />,
-                value: `${recentVideo.commentCount}`,
-              }}
+              details={[
+                {
+                  key: `views`,
+                  icon: <Visibility sx={sx.viewsIcon} />,
+                  value: recentVideo.viewCount.toLocaleString(),
+                },
+                {
+                  key: `likes`,
+                  icon: <ThumbUp sx={sx.likesIcon} />,
+                  value: recentVideo.likeCount.toLocaleString(),
+                },
+                {
+                  key: `comments`,
+                  icon: <ModeComment sx={sx.commentsIcon} />,
+                  value: recentVideo.commentCount.toLocaleString(),
+                },
+              ]}
               thumbnail={{
                 alt: recentVideo.title,
                 url: recentVideo.thumbnailUrl,

@@ -13,10 +13,11 @@ import PageMetadata from './PageMetadata';
 
 const BlogPostPage = ({
   blogPost,
+  blogPostVideo,
 }: InferGetStaticPropsType<typeof getStaticProps>): React.ReactElement => {
   return (
     <>
-      <PageMetadata blogPost={blogPost} />
+      <PageMetadata blogPost={blogPost} blogPostVideo={blogPostVideo} />
       <Head>
         <title>{blogPost.title}</title>
         <meta key="description" content={blogPost.excerpt} name="description" />

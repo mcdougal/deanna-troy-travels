@@ -4,15 +4,15 @@ import sx from './MediaCardDetail.styles';
 
 interface Props {
   icon: React.ReactElement;
-  label: string;
+  value: string;
 }
 
-const MediaCardDetail = ({ icon, label }: Props): JSX.Element => {
+const MediaCardDetail = ({ icon, value }: Props): JSX.Element => {
   return (
     <Box sx={sx.mediaCardDetailContainer}>
       <Box sx={sx.iconContainer}>{icon}</Box>
-      <Typography sx={sx.label} variant="caption">
-        <b>{label}</b>
+      <Typography sx={sx.value} variant="caption">
+        <b>{value}</b>
       </Typography>
     </Box>
   );

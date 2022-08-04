@@ -3,6 +3,7 @@ import { ParsedUrlQuery } from 'querystring';
 import type { GetStaticProps } from 'next';
 
 import fetchBlogPost, { BlogPost } from './fetchBlogPost';
+import fetchBlogPostVideo, { BlogPostVideo } from './fetchBlogPostVideo';
 
 interface Params extends ParsedUrlQuery {
   slug: string;
@@ -10,6 +11,7 @@ interface Params extends ParsedUrlQuery {
 
 interface Props {
   blogPost: BlogPost;
+  blogPostVideo: BlogPostVideo | null;
 }
 
 const getStaticProps: GetStaticProps<Props, Params> = async ({ params }) => {
@@ -19,9 +21,13 @@ const getStaticProps: GetStaticProps<Props, Params> = async ({ params }) => {
     throw new Error(`URL missing slug`);
   }
 
+  const blogPost = await fetchBlogPost(slug);
+  const blogPostVideo = await fetchBlogPostVideo(blogPost);
+
   return {
     props: {
-      blogPost: await fetchBlogPost(slug),
+      blogPost,
+      blogPostVideo,
     },
     revalidate: 60,
   };

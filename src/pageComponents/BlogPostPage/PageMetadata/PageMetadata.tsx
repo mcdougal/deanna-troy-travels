@@ -7,58 +7,72 @@ import {
   StructuredData,
 } from '@lib/structuredData';
 
-import { BlogPost } from '../getStaticProps';
+import { BlogPost, BlogPostVideo } from '../getStaticProps';
 
-const PageMetadata = (blogPost: BlogPost): JSX.Element => {
+interface Props {
+  blogPost: BlogPost;
+  blogPostVideo: BlogPostVideo | null;
+}
+
+const PageMetadata = ({ blogPost, blogPostVideo }: Props): JSX.Element => {
   const title = `${blogPost.title} | Deanna Troy Travels`;
   const description = blogPost.excerpt;
   const canonicalUrl = `https://www.deannatroytravels.com/post/${blogPost.slug}`;
   const imageUrl = blogPost.coverImage.url;
 
-  const videoStructuredData: StructuredData = {
-    // Thing > CreativeWork > MediaObject > VideoObject
-    '@type': `VideoObject`,
-
-    // Thing
-    description: null,
-    image: null,
-    name: null,
-    url: null,
-
-    // CreativeWork
-    author: getDeannaTroyTravelsPerson(),
-    interactionStatistic: [
-      {
-        '@type': `InteractionCounter`,
-        interactionService: {
-          '@type': `WebSite`,
-          '@id': `https://youtube.com`,
-          name: `YouTube`,
-        },
-        interactionType: `LikeAction`,
-        userInteractionCount: `18`,
-      },
-      {
-        '@type': `InteractionCounter`,
-        interactionService: {
-          '@id': `https://youtube.com`,
-          '@type': `WebSite`,
-          name: `YouTube`,
-        },
-        interactionType: `CommentAction`,
-        userInteractionCount: `18`,
-      },
-    ],
-    keywords: null,
-
-    // MediaObject
-    duration: null,
-    embedUrl: null,
-    uploadDate: null,
-
-    // VideoObject
-    thumbnail: null,
+  const youTubeWebSiteStructuredData: StructuredData = {
+    '@type': `WebSite`,
+    '@id': `https://youtube.com`,
+    name: `YouTube`,
   };
+
+  const videoStructuredData: StructuredData | null = blogPostVideo
+    ? {
+        // Thing > CreativeWork > MediaObject > VideoObject
+        '@type': `VideoObject`,
+
+        // Thing
+        description: blogPostVideo.description,
+        image: blogPostVideo.thumbnailUrl,
+        name: blogPostVideo.title,
+        url: `https://www.youtube.com/watch?v=${blogPostVideo.videoId}`,
+
+        // CreativeWork
+        author: getDeannaTroyTravelsPerson(),
+        interactionStatistic: [
+          {
+            '@type': `InteractionCounter`,
+            interactionService: youTubeWebSiteStructuredData,
+            interactionType: `ViewAction`,
+            userInteractionCount: blogPostVideo.viewCount,
+          },
+          {
+            '@type': `InteractionCounter`,
+            interactionService: youTubeWebSiteStructuredData,
+            interactionType: `LikeAction`,
+            userInteractionCount: blogPostVideo.likeCount,
+          },
+          {
+            '@type': `InteractionCounter`,
+            interactionService: youTubeWebSiteStructuredData,
+            interactionType: `CommentAction`,
+            userInteractionCount: blogPostVideo.commentCount,
+          },
+        ],
+        keywords: blogPostVideo.tags.join(`,`),
+
+        // MediaObject
+        duration: blogPostVideo.duration,
+        embedUrl: `https://www.youtube.com/embed/${blogPostVideo.videoId}`,
+        uploadDate: blogPostVideo.publishedAt,
+
+        // VideoObject
+        thumbnail: {
+          '@type': `ImageObject`,
+          url: blogPostVideo.thumbnailUrl,
+        },
+      }
+    : null;
 
   const blogPostingStructuredData: StructuredData = {
     // Thing > CreativeWork > Article > SocialMediaPosting > BlogPosting
@@ -79,7 +93,7 @@ const PageMetadata = (blogPost: BlogPost): JSX.Element => {
     articleBody: documentToPlainTextString(blogPost.content.json),
 
     // SocialMediaPosting
-    sharedContent: videoStructuredData,
+    ...(videoStructuredData ? { sharedContent: videoStructuredData } : {}),
   };
 
   const structuredData: StructuredData = {

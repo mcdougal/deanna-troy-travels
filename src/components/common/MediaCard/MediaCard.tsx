@@ -5,14 +5,11 @@ import sx from './MediaCard.styles';
 import MediaCardDetail from './MediaCardDetail';
 
 interface Props {
-  detail1: {
+  details: Array<{
+    key: string;
     icon: React.ReactElement;
     value: string;
-  };
-  detail2: {
-    icon: React.ReactElement;
-    value: string;
-  };
+  }>;
   thumbnail: {
     alt: string;
     url: string;
@@ -20,12 +17,7 @@ interface Props {
   url: string;
 }
 
-const MediaCard = ({
-  detail1,
-  detail2,
-  thumbnail,
-  url,
-}: Props): JSX.Element => {
+const MediaCard = ({ details, thumbnail, url }: Props): JSX.Element => {
   return (
     <ButtonBase
       focusRipple
@@ -43,8 +35,15 @@ const MediaCard = ({
         />
       </Box>
       <Box sx={sx.details}>
-        <MediaCardDetail icon={detail1.icon} label={detail1.value} />
-        <MediaCardDetail icon={detail2.icon} label={detail2.value} />
+        {details.map((detail) => {
+          return (
+            <MediaCardDetail
+              key={detail.key}
+              icon={detail.icon}
+              value={detail.value}
+            />
+          );
+        })}
       </Box>
     </ButtonBase>
   );

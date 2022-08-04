@@ -7,10 +7,14 @@ export default {
       marginTop: 3,
     },
   },
-  thumbUpIcon: {
+  viewsIcon: {
+    fontSize: 14,
+    marginBottom: `-1px`,
+  },
+  likesIcon: {
     fontSize: 14,
   },
-  modeCommentIcon: {
+  commentsIcon: {
     fontSize: 14,
     marginBottom: `-1px`,
   },

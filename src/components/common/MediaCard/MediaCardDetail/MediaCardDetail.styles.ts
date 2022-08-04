@@ -10,7 +10,7 @@ export default {
   iconContainer: {
     display: `flex`,
   },
-  label: {
-    marginLeft: 1,
+  value: {
+    marginLeft: `6px`,
   },
 };

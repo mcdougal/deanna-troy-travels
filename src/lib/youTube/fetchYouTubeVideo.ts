@@ -1,22 +1,21 @@
 import axios from 'axios';
 
-interface PlaylistItem {
+export interface YouTubeVideo {
   id: string;
   contentDetails: {
-    videoId: string;
-    videoPublishedAt: string;
+    caption: string;
+    definition: string;
+    dimension: string;
+    duration: string;
+    licensedContent: boolean;
+    projection: string;
   };
   snippet: {
     channelId: string;
     channelTitle: string;
     description: string;
-    playlistId: string;
-    position: number;
     publishedAt: string;
-    resourceId: {
-      kind: string;
-      videoId: string;
-    };
+    tags: Array<string>;
     thumbnails: {
       default: {
         url: string;
@@ -45,35 +44,41 @@ interface PlaylistItem {
       };
     };
     title: string;
-    videoOwnerChannelId: string;
-    videoOwnerChannelTitle: string;
+  };
+  statistics: {
+    commentCount: string;
+    favoriteCount: string;
+    likeCount: string;
+    viewCount: string;
   };
   status: {
+    embeddable: boolean;
+    license: string;
     privacyStatus: string;
+    uploadStatus: string;
   };
 }
 
-interface PlaylistItemsData {
-  items: Array<PlaylistItem>;
-}
-
-export default async (): Promise<Array<PlaylistItem>> => {
+export default async (videoId: string): Promise<YouTubeVideo> => {
   const { GOOGLE_CLOUD_API_KEY } = process.env;
 
   if (!GOOGLE_CLOUD_API_KEY) {
     throw new Error(`Missing environment variable: GOOGLE_CLOUD_API_KEY`);
   }
 
-  const playlistItemsUrl = `https://www.googleapis.com/youtube/v3/playlistItems?${[
+  const videoUrl = `https://www.googleapis.com/youtube/v3/videos?${[
     `key=${GOOGLE_CLOUD_API_KEY}`,
-    `maxResults=3`,
-    `part=contentDetails,snippet,status`,
-    `playlistId=PLupawb160v0xF0_SUX5yHJE2GQogd7lx-`,
+    `id=${videoId}`,
+    `part=contentDetails,snippet,statistics,status`,
   ].join(`&`)}`;
 
-  const playlistItemsResponse = await axios.get<PlaylistItemsData>(
-    playlistItemsUrl,
+  const videoResponse = await axios.get<{ items: Array<YouTubeVideo> }>(
+    videoUrl,
   );
 
-  return playlistItemsResponse.data.items;
+  if (videoResponse.data.items.length === 0) {
+    throw new Error(`No YouTube video found for video ID: ${videoId}`);
+  }
+
+  return videoResponse.data.items[0];
 };
