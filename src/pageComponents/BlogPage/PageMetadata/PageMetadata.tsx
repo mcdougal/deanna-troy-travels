@@ -15,7 +15,7 @@ const PageMetadata = ({ blogPosts }: Props): JSX.Element => {
   const title = `Blog`;
   const description = `Get the scoop on your next travel destination.`;
   const canonicalUrl = `https://www.deannatroytravels.com/blog`;
-  const imageUrl = `https://res.cloudinary.com/cedricmcdougal/image/upload/v1659648901/deanna-troy-travels/blog/og-image.jpg`;
+  const imageUrl = `https://res.cloudinary.com/cedricmcdougal/image/upload/v1659650024/deanna-troy-travels/blog/hero.jpg`;
 
   const blogPostsStructuredData: Array<StructuredData> = blogPosts.map(
     (blogPost) => {

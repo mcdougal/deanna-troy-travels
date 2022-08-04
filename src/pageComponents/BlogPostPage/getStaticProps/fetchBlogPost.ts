@@ -11,6 +11,7 @@ export interface BlogPost {
     url: string;
   };
   date: string;
+  excerpt: string;
   slug: string;
   sys: {
     publishedAt: string;
@@ -38,6 +39,7 @@ export default async (slug: string): Promise<BlogPost> => {
               url
             }
             date
+            excerpt
             slug
             sys {
               publishedAt
