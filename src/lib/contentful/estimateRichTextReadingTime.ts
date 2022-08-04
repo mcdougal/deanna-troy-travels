@@ -3,5 +3,5 @@ import { documentToPlainTextString } from '@contentful/rich-text-plain-text-rend
 export default (
   richText: Parameters<typeof documentToPlainTextString>[0],
 ): number => {
-  return Math.round(documentToPlainTextString(richText).length / 3000);
+  return Math.round(documentToPlainTextString(richText).length / 1000);
 };
