@@ -9,12 +9,14 @@ import BlogPostCoverImage from './BlogPostCoverImage';
 import BlogPostHeader from './BlogPostHeader';
 import sx from './BlogPostPage.styles';
 import getStaticProps from './getStaticProps';
+import PageMetadata from './PageMetadata';
 
 const BlogPostPage = ({
   blogPost,
 }: InferGetStaticPropsType<typeof getStaticProps>): React.ReactElement => {
   return (
     <>
+      <PageMetadata blogPost={blogPost} />
       <Head>
         <title>{blogPost.title}</title>
         <meta key="description" content={blogPost.excerpt} name="description" />

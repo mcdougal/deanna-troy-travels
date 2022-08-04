@@ -30,7 +30,7 @@ const contentfulRichTextOptions = (): Options => {
         const embedUrl = embedUrls && embedUrls[i];
 
         return (
-          <React.Fragment key={i}>
+          <React.Fragment key={embedUrl || textPart}>
             {textPart}
             {embedUrl && <EmbeddedYouTubeVideo url={embedUrl} />}
           </React.Fragment>

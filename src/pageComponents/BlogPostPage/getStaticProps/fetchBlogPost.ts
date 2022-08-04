@@ -12,8 +12,14 @@ export interface BlogPost {
   };
   date: string;
   excerpt: string;
+  keywords: string;
   slug: string;
+  sys: {
+    firstPublishedAt: string;
+    publishedAt: string;
+  };
   title: string;
+  videoUrl: string | null;
 }
 
 export default async (slug: string): Promise<BlogPost> => {
@@ -35,8 +41,14 @@ export default async (slug: string): Promise<BlogPost> => {
             }
             date
             excerpt
+            keywords
             slug
+            sys {
+              firstPublishedAt
+              publishedAt
+            }
             title
+            videoUrl
           }
         }
       }

@@ -18,6 +18,7 @@ const BlogPostCoverImage = ({ blogPost }: Props): JSX.Element => {
         layout="fill"
         objectFit="cover"
         objectPosition="center"
+        priority
         src={blogPost.coverImage.url}
       />
     </Box>

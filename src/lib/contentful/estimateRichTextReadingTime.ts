@@ -1,7 +1,7 @@
-import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
+import { documentToPlainTextString } from '@contentful/rich-text-plain-text-renderer';
 
 export default (
-  richText: Parameters<typeof documentToReactComponents>[0],
+  richText: Parameters<typeof documentToPlainTextString>[0],
 ): number => {
-  return Math.round(JSON.stringify(richText).length / 3000);
+  return Math.round(documentToPlainTextString(richText).length / 3000);
 };

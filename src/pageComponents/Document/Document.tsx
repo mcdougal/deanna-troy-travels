@@ -52,6 +52,11 @@ class Document extends NextDocument<ExtendedDocumentInitialProps> {
           <meta content="#ffffff" name="theme-color" />
           <meta content="en" httpEquiv="Content-Language" />
           <meta key="og:type" content="website" property="og:type" />
+          <meta
+            key="og:site_name"
+            content="Deanna Troy Travels"
+            property="site_name"
+          />
           {this.props.emotionStyleTags}
         </Head>
         <body>
