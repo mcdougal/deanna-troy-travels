@@ -30,7 +30,7 @@
     "import/extensions": ["error", "never"],
     "import/first": "error",
     "import/no-anonymous-default-export": "off",
-    "import/no-cycle": "error",
+    "import/no-cycle": ["error", { "ignoreExternal": true }],
     "import/order": [
       "error",
       {

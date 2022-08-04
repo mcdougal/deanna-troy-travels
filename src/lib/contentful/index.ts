@@ -1,5 +1,3 @@
-import fetchBlogFeatures, { BlogFeature } from './fetchBlogFeatures';
+import fetchContentfulGraphQl from './fetchContentfulGraphQl';
 
-export type { BlogFeature };
-
-export { fetchBlogFeatures };
+export { fetchContentfulGraphQl };

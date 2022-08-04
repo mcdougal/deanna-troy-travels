@@ -41,10 +41,10 @@ const ContactSection = (): JSX.Element => {
             label="Message"
             margin="normal"
             maxRows={20}
+            minRows={8}
             multiline
             name="message"
             required
-            rows={8}
             variant="outlined"
           />
           <Button

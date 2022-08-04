@@ -1,6 +1,6 @@
 import type { GetStaticProps } from 'next';
 
-import { BlogFeature, fetchBlogFeatures } from '@lib/contentful';
+import fetchBlogFeatures, { BlogFeature } from './fetchBlogFeatures';
 
 interface Props {
   blogFeatures: Array<BlogFeature>;
