@@ -23,4 +23,19 @@ export default {
     marginBottom: 1,
     marginTop: 2,
   },
+  table: {
+    marginBottom: 4,
+  },
+  tableCell: {
+    verticalAlign: `top`,
+    '& *': {
+      margin: 0,
+    },
+  },
+  tableHeaderCell: {
+    verticalAlign: `top`,
+    '& *': {
+      margin: 0,
+    },
+  },
 };
