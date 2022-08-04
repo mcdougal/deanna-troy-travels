@@ -33,7 +33,8 @@ const PageMetadata = (): JSX.Element => {
 
     // WebPage
     breadcrumb: {
-      type: `BreadcrumbList`,
+      '@type': `BreadcrumbList`,
+      name: `Breadcrumbs`,
       itemListElement: [
         {
           '@type': `ListItem`,

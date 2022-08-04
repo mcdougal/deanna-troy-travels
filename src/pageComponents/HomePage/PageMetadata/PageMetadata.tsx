@@ -28,12 +28,6 @@ const PageMetadata = (): JSX.Element => {
     isPartOf: getDeannaTroyTravelsWebSite(),
     keywords: `travel,vlog,blog,southeast asia,budget travel`,
     publisher: getDeannaTroyTravelsOrganization(),
-
-    // WebPage
-    breadcrumb: {
-      type: `BreadcrumbList`,
-      itemListElement: [],
-    },
   };
 
   return (
