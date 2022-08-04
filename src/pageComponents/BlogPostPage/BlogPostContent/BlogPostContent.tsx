@@ -84,7 +84,14 @@ const contentfulRichTextOptions = (): Options => {
 
         return (
           <React.Fragment key={embedUrl || textPart}>
-            {textPart}
+            {textPart.split(`\n`).map((t, j) => {
+              return (
+                <React.Fragment key={i}>
+                  {j > 0 && <br />}
+                  {t}
+                </React.Fragment>
+              );
+            })}
             {embedUrl && <EmbeddedYouTubeVideo url={embedUrl} />}
           </React.Fragment>
         );
