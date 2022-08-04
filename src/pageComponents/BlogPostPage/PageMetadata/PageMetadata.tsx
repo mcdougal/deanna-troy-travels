@@ -88,7 +88,7 @@ const PageMetadata = ({ blogPost, blogPostVideo }: Props): JSX.Element => {
     // CreativeWork
     author: getDeannaTroyTravelsPerson(),
     headline: title,
-    keywords: blogPost.keywords,
+    keywords: blogPost.tags.join(`,`),
     publisher: getDeannaTroyTravelsOrganization(),
 
     // Article
@@ -111,7 +111,7 @@ const PageMetadata = ({ blogPost, blogPostVideo }: Props): JSX.Element => {
 
     // CreativeWork
     author: getDeannaTroyTravelsPerson(),
-    keywords: blogPost.keywords,
+    keywords: blogPost.tags.join(`,`),
     mainEntity: blogPostingStructuredData,
     publisher: getDeannaTroyTravelsOrganization(),
 

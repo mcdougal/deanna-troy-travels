@@ -8,6 +8,7 @@ import BlogPostContent from './BlogPostContent';
 import BlogPostCoverImage from './BlogPostCoverImage';
 import BlogPostHeader from './BlogPostHeader';
 import sx from './BlogPostPage.styles';
+import BlogPostTags from './BlogPostTags';
 import getStaticProps from './getStaticProps';
 import PageMetadata from './PageMetadata';
 
@@ -31,6 +32,9 @@ const BlogPostPage = ({
         <BlogPostHeader blogPost={blogPost} />
         <Box sx={sx.contentContainer}>
           <BlogPostContent blogPost={blogPost} />
+        </Box>
+        <Box sx={sx.tagsContainer}>
+          <BlogPostTags blogPost={blogPost} />
         </Box>
       </Container>
     </>

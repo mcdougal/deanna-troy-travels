@@ -8,4 +8,7 @@ export default {
   contentContainer: {
     marginTop: 3,
   },
+  tagsContainer: {
+    marginTop: 5,
+  },
 };

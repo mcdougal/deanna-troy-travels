@@ -12,11 +12,11 @@ export interface BlogPost {
   };
   date: string;
   excerpt: string;
-  keywords: string;
   slug: string;
   sys: {
     publishedAt: string;
   };
+  tags: Array<string>;
   title: string;
   youTubeVideoId: string | null;
 }
@@ -40,11 +40,11 @@ export default async (slug: string): Promise<BlogPost> => {
             }
             date
             excerpt
-            keywords
             slug
             sys {
               publishedAt
             }
+            tags
             title
             youTubeVideoId
           }
