@@ -14,6 +14,7 @@ const PageMetadata = (): JSX.Element => {
   const structuredData = {
     // Thing > CreativeWork > WebPage
     '@type': `WebPage`,
+    '@id': canonicalUrl,
     '@context': `http://schema.org`,
 
     // Thing

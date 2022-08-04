@@ -15,7 +15,7 @@ interface Props {
 }
 
 const PageMetadata = ({ blogPost, blogPostVideo }: Props): JSX.Element => {
-  const title = `${blogPost.title} | Deanna Troy Travels`;
+  const title = blogPost.title;
   const description = blogPost.excerpt;
   const canonicalUrl = `https://www.deannatroytravels.com/post/${blogPost.slug}`;
   const imageUrl = blogPost.coverImage.url;
@@ -142,7 +142,7 @@ const PageMetadata = ({ blogPost, blogPostVideo }: Props): JSX.Element => {
       description={description}
       imageUrl={imageUrl}
       structuredData={structuredData}
-      title={title}
+      title={`${title} | Deanna Troy Travels`}
     />
   );
 };
