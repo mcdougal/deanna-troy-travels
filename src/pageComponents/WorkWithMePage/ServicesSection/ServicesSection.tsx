@@ -1,13 +1,9 @@
 import Campaign from '@mui/icons-material/Campaign';
 import VideoCameraFront from '@mui/icons-material/VideoCameraFront';
-import { Box } from '@mui/material';
+import { Box, Container } from '@mui/material';
 import { useState } from 'react';
 
-import {
-  ContactDialog,
-  SectionContainer,
-  SectionTitle,
-} from '@components/common';
+import { ContactDialog, SectionTitle } from '@components/common';
 
 import Service from './Service';
 import sx from './ServicesSection.styles';
@@ -25,7 +21,7 @@ const ServicesSection = (): JSX.Element => {
 
   return (
     <>
-      <SectionContainer>
+      <Container maxWidth="md">
         <Box sx={sx.sectionTitleContainer}>
           <SectionTitle>Advertise Your...</SectionTitle>
         </Box>
@@ -49,7 +45,7 @@ const ServicesSection = (): JSX.Element => {
             }}
           />
         </Box>
-      </SectionContainer>
+      </Container>
       <ContactDialog onClose={closeContactDialog} open={isContactDialogOpen} />
     </>
   );

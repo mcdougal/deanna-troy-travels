@@ -1,13 +1,13 @@
-import { Box, Button, TextField } from '@mui/material';
+import { Box, Button, Container, TextField } from '@mui/material';
 
-import { SectionContainer, SectionTitle } from '@components/common';
+import { SectionTitle } from '@components/common';
 
 import sx from './ContactSection.styles';
 
 const ContactSection = (): JSX.Element => {
   return (
     <>
-      <SectionContainer>
+      <Container maxWidth="md">
         <Box sx={sx.sectionTitleContainer}>
           <SectionTitle>Let’s Chat!</SectionTitle>
         </Box>
@@ -56,7 +56,7 @@ const ContactSection = (): JSX.Element => {
             Send
           </Button>
         </form>
-      </SectionContainer>
+      </Container>
     </>
   );
 };

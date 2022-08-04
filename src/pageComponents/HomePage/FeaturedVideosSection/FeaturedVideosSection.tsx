@@ -1,9 +1,9 @@
 import ArrowForward from '@mui/icons-material/ArrowForward';
 import ModeComment from '@mui/icons-material/ModeComment';
 import ThumbUp from '@mui/icons-material/ThumbUp';
-import { Box, Button } from '@mui/material';
+import { Box, Button, Container } from '@mui/material';
 
-import { MediaCard, SectionContainer, SectionTitle } from '@components/common';
+import { MediaCard, SectionTitle } from '@components/common';
 
 import { RecentVideo } from '../getStaticProps';
 
@@ -15,7 +15,7 @@ interface Props {
 
 const FeaturedVideosSection = ({ recentVideos }: Props): JSX.Element => {
   return (
-    <SectionContainer>
+    <Container maxWidth="md">
       <Box sx={sx.sectionTitleContainer}>
         <SectionTitle>Featured Videos</SectionTitle>
       </Box>
@@ -51,7 +51,7 @@ const FeaturedVideosSection = ({ recentVideos }: Props): JSX.Element => {
           All Videos
         </Button>
       </Box>
-    </SectionContainer>
+    </Container>
   );
 };
 

@@ -20,6 +20,14 @@ const theme = createTheme({
         },
       },
     },
+    MuiContainer: {
+      styleOverrides: {
+        root: {
+          paddingLeft: `32px`,
+          paddingRight: `32px`,
+        },
+      },
+    },
     MuiDialogTitle: {
       defaultProps: {
         variant: `h4`,

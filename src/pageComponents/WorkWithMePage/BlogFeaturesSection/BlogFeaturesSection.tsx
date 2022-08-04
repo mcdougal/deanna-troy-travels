@@ -1,4 +1,4 @@
-import { Box } from '@mui/material';
+import { Box, Container } from '@mui/material';
 
 import { SectionContainer, SectionTitle } from '@components/common';
 import { BlogFeature as IBlogFeature } from '@lib/contentful';
@@ -12,7 +12,7 @@ interface Props {
 
 const BlogFeaturesSection = ({ blogFeatures }: Props): JSX.Element => {
   return (
-    <SectionContainer>
+    <Container maxWidth="md">
       <Box sx={sx.sectionTitleContainer}>
         <SectionTitle>Blog Features</SectionTitle>
       </Box>
@@ -25,7 +25,7 @@ const BlogFeaturesSection = ({ blogFeatures }: Props): JSX.Element => {
           );
         })}
       </Box>
-    </SectionContainer>
+    </Container>
   );
 };
 

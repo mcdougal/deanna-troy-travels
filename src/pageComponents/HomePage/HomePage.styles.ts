@@ -8,6 +8,7 @@ export default {
   },
   featuredVideosContainer: {
     marginBottom: 8,
+    marginTop: 6,
   },
   workWithMeContainer: {
     marginBottom: 20,

@@ -1,14 +1,14 @@
 import OpenInNew from '@mui/icons-material/OpenInNew';
-import { Box, Button, Typography } from '@mui/material';
+import { Box, Button, Container, Typography } from '@mui/material';
 import Image from 'next/image';
 
-import { SectionContainer, SectionTitle } from '@components/common';
+import { SectionTitle } from '@components/common';
 
 import sx from './IntroSection.styles';
 
 const IntroSection = (): JSX.Element => {
   return (
-    <SectionContainer>
+    <Container maxWidth="md">
       <Box sx={sx.sectionTitleContainer}>
         <SectionTitle>Hi!</SectionTitle>
       </Box>
@@ -42,7 +42,7 @@ const IntroSection = (): JSX.Element => {
           Media Kit
         </Button>
       </Box>
-    </SectionContainer>
+    </Container>
   );
 };
 
