@@ -14,7 +14,7 @@ const HeroSection = (): JSX.Element => {
         <Box sx={sx.workWith}>Work With</Box> Me
       </Typography>
       <Image
-        alt="Deanna Troy Travels"
+        alt="A globe surrounded by company logos that Deanna has worked with"
         height={AS_SEEN_ON_GLOBE_HEIGHT}
         layout="responsive"
         priority

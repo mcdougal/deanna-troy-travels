@@ -1,7 +1,8 @@
 import { Box, Container } from '@mui/material';
 
-import { SectionContainer, SectionTitle } from '@components/common';
-import { BlogFeature as IBlogFeature } from '@lib/contentful';
+import { SectionTitle } from '@components/common';
+
+import { BlogFeature as IBlogFeature } from '../getStaticProps';
 
 import BlogFeature from './BlogFeature';
 import sx from './BlogFeaturesSection.styles';

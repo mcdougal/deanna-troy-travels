@@ -15,7 +15,7 @@ const WorkWithMeSection = (): JSX.Element => {
       </Box>
       <Box sx={sx.imageContainer}>
         <Image
-          alt="Deanna Troy Travels"
+          alt="Deanna eating a dumpling with chopsticks with Asian lanterns in the background"
           layout="fill"
           objectFit="cover"
           objectPosition="center"

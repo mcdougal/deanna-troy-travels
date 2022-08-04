@@ -7,8 +7,10 @@ export interface BlogPost {
     json: Parameters<typeof documentToReactComponents>[0];
   };
   coverImage: {
+    description: string | null;
     url: string;
   };
+  date: string;
   excerpt: string;
   slug: string;
   title: string;
@@ -28,8 +30,10 @@ export default async (slug: string): Promise<BlogPost> => {
               json
             }
             coverImage {
+              description
               url
             }
+            date
             excerpt
             slug
             title

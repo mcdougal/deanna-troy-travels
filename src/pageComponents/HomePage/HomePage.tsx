@@ -30,7 +30,7 @@ const HomePage = ({
       </Box>
       <Box sx={sx.heroImageContainer}>
         <Image
-          alt="Deanna Troy Travels logo"
+          alt="Three photos: Deanna lying on a sand dune, Deanna doing a yoga pose on a beach, and Deanna in front of a mosque in Malaysia"
           layout="fill"
           objectFit="cover"
           objectPosition="top"

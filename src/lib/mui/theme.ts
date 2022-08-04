@@ -23,8 +23,8 @@ const theme = createTheme({
     MuiContainer: {
       styleOverrides: {
         root: {
-          paddingLeft: `32px`,
-          paddingRight: `32px`,
+          paddingLeft: `24px`,
+          paddingRight: `24px`,
         },
       },
     },
@@ -51,27 +51,21 @@ const theme = createTheme({
     fontWeightMedium: 600,
     fontWeightBold: 700,
     h1: {
-      letterSpacing: `0.1em`,
       fontWeight: 700,
     },
     h2: {
-      letterSpacing: `0.1em`,
       fontWeight: 700,
     },
     h3: {
-      letterSpacing: `0.1em`,
       fontWeight: 700,
     },
     h4: {
-      letterSpacing: `0.1em`,
       fontWeight: 700,
     },
     h5: {
-      letterSpacing: `0.1em`,
       fontWeight: 700,
     },
     h6: {
-      letterSpacing: `0.1em`,
       fontWeight: 700,
     },
     subtitle1: {
