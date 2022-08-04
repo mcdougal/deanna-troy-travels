@@ -11,7 +11,6 @@ interface Props {
 }
 
 const BlogPostHeader = ({ blogPost }: Props): JSX.Element => {
-  console.log(blogPost);
   return (
     <>
       <Typography component="h1" sx={sx.title} variant="h3">

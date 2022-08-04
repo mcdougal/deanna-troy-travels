@@ -2,13 +2,12 @@ import {
   documentToReactComponents,
   Options,
 } from '@contentful/rich-text-react-renderer';
-import { BLOCKS, MARKS } from '@contentful/rich-text-types';
+import { BLOCKS } from '@contentful/rich-text-types';
 import { Typography } from '@mui/material';
 import React from 'react';
 
 import { BlogPost } from '../getStaticProps';
 
-import sx from './BlogPostContent.styles';
 import EmbeddedYouTubeVideo from './EmbeddedYouTubeVideo';
 
 // Replace YouTube embed URLs with an iframe
