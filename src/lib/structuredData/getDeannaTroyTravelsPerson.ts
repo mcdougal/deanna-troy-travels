@@ -7,6 +7,7 @@ export default (): StructuredData => {
 
     // Thing
     name: `Deanna Troy Henry`,
+    url: `https://www.youtube.com/deannatroytravels`,
 
     // Person
     affiliation: getDeannaTroyTravelsOrganization(),
