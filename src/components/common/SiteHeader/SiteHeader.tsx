@@ -1,31 +1,29 @@
-import { useState } from 'react';
+import { AppBar, Box, Toolbar } from '@mui/material';
 
-import MenuDrawer from './MenuDrawer';
-import SiteHeaderBar from './SiteHeaderBar';
+import DesktopNav from './DesktopNav';
+import MobileNav from './MobileNav';
+import sx from './SiteHeader.styles';
+import SiteLogoButton from './SiteLogoButton';
 
 interface Props {
   hideLogoUntilScroll?: boolean;
 }
 
-const SiteHeader = ({ hideLogoUntilScroll }: Props): JSX.Element => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  const openMenu = (): void => {
-    setIsMenuOpen(true);
-  };
-
-  const closeMenu = (): void => {
-    setIsMenuOpen(false);
-  };
-
+const SiteHeader = ({ hideLogoUntilScroll = false }: Props): JSX.Element => {
   return (
-    <>
-      <SiteHeaderBar
-        hideLogoUntilScroll={hideLogoUntilScroll}
-        onClickOpenMenu={openMenu}
-      />
-      <MenuDrawer onClose={closeMenu} open={isMenuOpen} />
-    </>
+    <AppBar color="inherit" elevation={0} position="sticky">
+      <Toolbar sx={sx.toolbar}>
+        <Box sx={sx.left}>
+          <SiteLogoButton hideLogoUntilScroll={hideLogoUntilScroll} />
+        </Box>
+        <Box sx={sx.mobileNav}>
+          <MobileNav />
+        </Box>
+        <Box sx={sx.desktopNav}>
+          <DesktopNav />
+        </Box>
+      </Toolbar>
+    </AppBar>
   );
 };
 

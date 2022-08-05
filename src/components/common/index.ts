@@ -4,6 +4,7 @@ import HtmlHead from './HtmlHead';
 import MediaCard from './MediaCard';
 import SectionTitle from './SectionTitle';
 import SiteHeader from './SiteHeader';
+import SiteLogo from './SiteLogo';
 
 export {
   ContactDialog,
@@ -12,4 +13,5 @@ export {
   MediaCard,
   SectionTitle,
   SiteHeader,
+  SiteLogo,
 };

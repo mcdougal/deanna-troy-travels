@@ -9,9 +9,9 @@ const SiteMenu = (): JSX.Element => {
       url: `/`,
     },
     {
-      key: `about`,
-      label: `About`,
-      url: `/about`,
+      key: `workWithMe`,
+      label: `Work With Me`,
+      url: `/work-with-me`,
     },
     {
       key: `blog`,
@@ -19,9 +19,9 @@ const SiteMenu = (): JSX.Element => {
       url: `/blog`,
     },
     {
-      key: `workWithMe`,
-      label: `Work With Me`,
-      url: `/work-with-me`,
+      key: `about`,
+      label: `About`,
+      url: `/about`,
     },
   ];
 
