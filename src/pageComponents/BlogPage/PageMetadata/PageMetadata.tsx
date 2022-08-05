@@ -12,10 +12,10 @@ interface Props {
 }
 
 const PageMetadata = ({ blogPosts }: Props): JSX.Element => {
-  const title = `Blog`;
-  const description = `Get the scoop on your next travel destination.`;
+  const title = `Budget Travel Blog`;
+  const description = blogPosts[0].excerpt;
   const canonicalUrl = `https://www.deannatroytravels.com/blog`;
-  const imageUrl = `https://res.cloudinary.com/cedricmcdougal/image/upload/v1659650024/deanna-troy-travels/blog/hero.jpg`;
+  const imageUrl = blogPosts[0].coverImage.url;
 
   const blogPostsStructuredData: Array<StructuredData> = blogPosts.map(
     (blogPost) => {

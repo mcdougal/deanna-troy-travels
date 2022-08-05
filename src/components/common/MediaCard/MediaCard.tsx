@@ -1,10 +1,12 @@
-import { Box, ButtonBase } from '@mui/material';
+import { Box, ButtonBase, Typography } from '@mui/material';
 import Image from 'next/image';
 
 import sx from './MediaCard.styles';
 import MediaCardDetail from './MediaCardDetail';
 
 interface Props {
+  alignDetails?: `left` | `right`;
+  description?: string;
   details: Array<{
     key: string;
     icon: React.ReactElement;
@@ -14,10 +16,17 @@ interface Props {
     alt: string;
     url: string;
   };
+  title?: string;
   url: string;
 }
 
-const MediaCard = ({ details, thumbnail, url }: Props): JSX.Element => {
+const MediaCard = ({
+  alignDetails = `left`,
+  details,
+  thumbnail,
+  title,
+  url,
+}: Props): JSX.Element => {
   return (
     <ButtonBase
       focusRipple
@@ -34,7 +43,12 @@ const MediaCard = ({ details, thumbnail, url }: Props): JSX.Element => {
           unoptimized
         />
       </Box>
-      <Box sx={sx.details}>
+      {title && (
+        <Typography sx={sx.title} variant="h6">
+          {title}
+        </Typography>
+      )}
+      <Box sx={[sx.details, alignDetails === `right` && sx.alignRight]}>
         {details.map((detail) => {
           return (
             <MediaCardDetail

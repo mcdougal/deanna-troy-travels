@@ -11,7 +11,7 @@ const HeroSection = (): JSX.Element => {
   return (
     <Container maxWidth="xl" sx={sx.heroSectionContainer}>
       <Typography component="h1" sx={sx.title} variant="h2">
-        <Box sx={sx.workWith}>Work With</Box> Me
+        <Box sx={sx.titlePrimary}>Work With</Box> Me
       </Typography>
       <Image
         alt="A globe surrounded by company logos that Deanna has worked with"

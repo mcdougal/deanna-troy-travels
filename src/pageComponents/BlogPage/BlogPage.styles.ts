@@ -1,15 +1,19 @@
-import { spacing } from '@lib/mui';
-
 export default {
   title: {
     marginBottom: 4,
     marginTop: 5,
     textAlign: `center`,
   },
-  heroImageContainer: {
-    borderRadius: 5,
-    height: spacing(25),
-    overflow: `hidden`,
-    position: `relative`,
+  titlePrimary: {
+    color: `primary.main`,
+    display: `inline`,
+  },
+  featuredPostContainer: {
+    marginBottom: 1,
+    marginTop: 1,
+  },
+  blogPostsSectionContainer: {
+    marginBottom: 20,
+    marginTop: 6,
   },
 };

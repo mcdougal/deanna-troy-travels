@@ -18,12 +18,21 @@ export default {
     position: `relative`,
     width: `100%`,
   },
+  title: {
+    fontWeight: `fontWeightRegular`,
+    marginBottom: 1,
+    marginTop: `12px`,
+    marginX: 2,
+  },
   details: {
     display: `flex`,
-    marginLeft: 2,
     marginTop: `-2px`,
+    paddingX: 2,
     '& > * + *': {
       marginLeft: 2,
     },
+  },
+  alignRight: {
+    justifyContent: `flex-end`,
   },
 };

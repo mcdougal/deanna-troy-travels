@@ -7,6 +7,7 @@ export interface BlogPost {
   };
   date: string;
   excerpt: string;
+  location: string;
   slug: string;
   title: string;
 }
@@ -19,7 +20,7 @@ export default async (): Promise<Array<BlogPost>> => {
   }>(
     `
       query BlogPageGetStaticPropsBlogPosts {
-        blogPostCollection {
+        blogPostCollection(order: date_DESC) {
           items {
             coverImage {
               description
@@ -27,6 +28,7 @@ export default async (): Promise<Array<BlogPost>> => {
             }
             date
             excerpt
+            location
             slug
             title
           }
