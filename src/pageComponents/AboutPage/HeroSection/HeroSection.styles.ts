@@ -7,6 +7,7 @@ export default {
     marginTop: 4,
   },
   heroImageContainer: {
+    boxShadow: `0 4px 20px rgba(0, 0, 0, 0.15)`,
     borderRadius: 4,
     height: spacing(40),
     overflow: `hidden`,
