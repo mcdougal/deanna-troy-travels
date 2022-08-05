@@ -14,6 +14,6 @@ export default {
   },
   featuredPostsContainer: {
     marginBottom: 20,
-    marginTop: 6,
+    marginTop: 8,
   },
 };
