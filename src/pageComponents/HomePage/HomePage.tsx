@@ -4,6 +4,7 @@ import Image from 'next/image';
 
 import { SiteHeader } from '@components/common';
 
+import FeaturedPosts from './FeaturedPostsSection';
 import FeaturedVideosSection from './FeaturedVideosSection';
 import getStaticProps from './getStaticProps';
 import sx from './HomePage.styles';
@@ -12,6 +13,7 @@ import PageMetadata from './PageMetadata';
 import WorkWithMeSection from './WorkWithMeSection';
 
 const HomePage = ({
+  recentBlogPosts,
   recentVideos,
 }: InferGetStaticPropsType<typeof getStaticProps>): React.ReactElement => {
   return (
@@ -36,6 +38,9 @@ const HomePage = ({
       </Box>
       <Box sx={sx.workWithMeContainer}>
         <WorkWithMeSection />
+      </Box>
+      <Box sx={sx.featuredPostsContainer}>
+        <FeaturedPosts recentBlogPosts={recentBlogPosts} />
       </Box>
     </>
   );

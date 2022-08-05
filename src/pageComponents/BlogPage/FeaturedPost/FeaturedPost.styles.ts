@@ -6,7 +6,7 @@ export default {
     borderRadius: 5,
     paddingBottom: 3,
     paddingTop: 2,
-    paddingX: 1,
+    paddingX: 2,
   },
   featuredPostLabel: {
     display: `block`,
@@ -15,7 +15,7 @@ export default {
   },
   coverImageContainer: {
     borderRadius: 4,
-    height: spacing(25),
+    height: spacing(20),
     overflow: `hidden`,
     position: `relative`,
   },
@@ -24,11 +24,12 @@ export default {
   },
   title: {
     fontWeight: `fontWeightRegular`,
-    marginTop: 2,
+    marginTop: 3,
+    lineHeight: 1.5,
   },
   excerpt: {
     lineHeight: 1.7,
-    marginBottom: 3,
+    marginBottom: 4,
     marginTop: 2,
   },
 };

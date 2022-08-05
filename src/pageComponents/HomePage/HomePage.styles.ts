@@ -7,10 +7,13 @@ export default {
     position: `relative`,
   },
   featuredVideosContainer: {
-    marginBottom: 8,
     marginTop: 6,
   },
   workWithMeContainer: {
+    marginTop: 8,
+  },
+  featuredPostsContainer: {
     marginBottom: 20,
+    marginTop: 6,
   },
 };

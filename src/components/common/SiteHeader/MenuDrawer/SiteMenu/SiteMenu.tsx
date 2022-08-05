@@ -1,4 +1,5 @@
 import { List, ListItem, ListItemButton, ListItemText } from '@mui/material';
+import Link from 'next/link';
 
 const SiteMenu = (): JSX.Element => {
   const menuItems = [
@@ -29,9 +30,11 @@ const SiteMenu = (): JSX.Element => {
       {menuItems.map(({ key, label, url }) => {
         return (
           <ListItem key={key}>
-            <ListItemButton href={url}>
-              <ListItemText primary={label} />
-            </ListItemButton>
+            <Link href={url} passHref>
+              <ListItemButton>
+                <ListItemText primary={label} />
+              </ListItemButton>
+            </Link>
           </ListItem>
         );
       })}

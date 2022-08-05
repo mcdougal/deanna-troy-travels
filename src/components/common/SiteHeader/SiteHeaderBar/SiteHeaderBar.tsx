@@ -10,6 +10,7 @@ import {
   useScrollTrigger,
 } from '@mui/material';
 import Image from 'next/image';
+import Link from 'next/link';
 
 import sx from './SiteHeaderBar.styles';
 
@@ -36,20 +37,24 @@ const SiteHeaderBar = ({
             appear={false}
             in={!hideLogoUntilScroll || trigger}
             mountOnEnter>
-            <ButtonBase href="/" sx={sx.logoContainer}>
-              <Image
-                alt="Deanna Troy Travels logo"
-                height={YOUTUBE_LOGO_HEIGHT}
-                layout="fixed"
-                src="/deanna-troy-travels/logo.png"
-                width={YOUTUBE_LOGO_WIDTH}
-              />
-              <Typography sx={sx.logoText} variant="h6">
-                <b>
-                  <Box sx={sx.deannaTroy}>Deanna Troy</Box> Travels
-                </b>
-              </Typography>
-            </ButtonBase>
+            <Box>
+              <Link href="/" passHref>
+                <ButtonBase sx={sx.logoContainer}>
+                  <Image
+                    alt="Deanna Troy Travels logo"
+                    height={YOUTUBE_LOGO_HEIGHT}
+                    layout="fixed"
+                    src="/deanna-troy-travels/logo.png"
+                    width={YOUTUBE_LOGO_WIDTH}
+                  />
+                  <Typography sx={sx.logoText} variant="h6">
+                    <b>
+                      <Box sx={sx.deannaTroy}>Deanna Troy</Box> Travels
+                    </b>
+                  </Typography>
+                </ButtonBase>
+              </Link>
+            </Box>
           </Grow>
         </Box>
         <IconButton
