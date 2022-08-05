@@ -1,4 +1,4 @@
-import { Theme } from '@mui/material';
+import { spacing } from '@lib/mui';
 
 export default {
   toolbar: {
@@ -23,9 +23,7 @@ export default {
   deannaTroy: {
     color: `primary.main`,
   },
-  menu: {
-    fontSize: (theme: Theme): string => {
-      return theme.spacing(5);
-    },
+  openMenuIcon: {
+    fontSize: spacing(5),
   },
 };

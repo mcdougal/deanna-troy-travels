@@ -10,7 +10,7 @@ const IntroSection = (): JSX.Element => {
   return (
     <Container maxWidth="md">
       <Box sx={sx.sectionTitleContainer}>
-        <SectionTitle>Hi!</SectionTitle>
+        <SectionTitle>👋 Hey!</SectionTitle>
       </Box>
       <Box sx={sx.imageContainer}>
         <Image

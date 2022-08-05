@@ -1,11 +1,15 @@
 export default {
-  socialButton: {
-    '& + &': {
-      marginLeft: 2,
-    },
+  socialButtonsContainer: {
+    alignItems: `center`,
+    bottom: 0,
+    display: `flex`,
+    left: 0,
+    paddingBottom: 4,
+    paddingLeft: 8,
+    position: `absolute`,
   },
-  socialLogo: {
-    color: `grey.400`,
+  socialButton: {
+    marginRight: 3,
   },
   youTubeIcon: {
     fontSize: 24,

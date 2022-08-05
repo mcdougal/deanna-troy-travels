@@ -10,39 +10,39 @@ import sx from './SocialLinks.styles';
 const SocialLinks = (): JSX.Element => {
   const socials = [
     {
-      icon: <YouTube sx={[sx.socialLogo, sx.youTubeIcon]} />,
+      icon: <YouTube sx={sx.youTubeIcon} />,
       label: `YouTube`,
       url: `https://www.youtube.com/deannatroytravels`,
     },
     {
-      icon: <Instagram sx={[sx.socialLogo, sx.instagramIcon]} />,
+      icon: <Instagram sx={sx.instagramIcon} />,
       label: `Instagram`,
       url: `https://www.instagram.com/deanna_troy_travels`,
     },
     {
-      icon: <Facebook sx={[sx.socialLogo, sx.facebookIcon]} />,
+      icon: <Facebook sx={sx.facebookIcon} />,
       label: `Facebook`,
       url: `https://www.facebook.com/deannatroytravels`,
     },
     {
-      icon: <Poshmark sx={[sx.socialLogo, sx.poshmarkIcon]} />,
+      icon: <Poshmark sx={sx.poshmarkIcon} />,
       label: `Poshmark`,
       url: `https://poshmark.com/closet/deannatroyshop`,
     },
     {
-      icon: <TikTok sx={[sx.socialLogo, sx.tikTokIcon]} />,
+      icon: <TikTok sx={sx.tikTokIcon} />,
       label: `TikTok`,
       url: `https://www.tiktok.com/@deannatroytravels`,
     },
     {
-      icon: <Amazon sx={[sx.socialLogo, sx.amazonIcon]} />,
+      icon: <Amazon sx={sx.amazonIcon} />,
       label: `Amazon`,
       url: `https://www.amazon.com/shop/deannatroytravels`,
     },
   ];
 
   return (
-    <Box>
+    <Box sx={sx.socialButtonsContainer}>
       {socials.map(({ icon, label, url }) => {
         return (
           <ButtonBase
