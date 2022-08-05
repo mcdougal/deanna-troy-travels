@@ -22,7 +22,7 @@ const LogoAndTitle = (): JSX.Element => {
         <Box sx={sx.deannaTroy}>Deanna Troy</Box> Travels
       </Typography>
       <Typography sx={sx.subtitle} variant="caption">
-        Budget Travel Vlog
+        Budget Travel Vlogs
       </Typography>
       <Box sx={sx.socialLinksContainer}>
         <SocialLinks />
