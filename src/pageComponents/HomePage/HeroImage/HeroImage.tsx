@@ -4,8 +4,6 @@ import Image from 'next/image';
 import sx from './HeroImage.styles';
 
 const HeroImage = (): JSX.Element => {
-  const emojis = [`😎`, `✈️`, `🏝️`, `⛰️`, `🏖️`, `🗽`, `⛴️`];
-
   return (
     <Box sx={sx.heroSectionContainer}>
       <Box sx={sx.circleAndImageContainer}>
@@ -21,13 +19,6 @@ const HeroImage = (): JSX.Element => {
           />
         </Box>
       </Box>
-      {emojis.map((emoji, i) => {
-        return (
-          <Box key={emoji} sx={[sx.emoji, sx[`emoji${i + 1}`]]}>
-            {emoji}
-          </Box>
-        );
-      })}
     </Box>
   );
 };

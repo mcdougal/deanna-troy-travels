@@ -1,6 +1,6 @@
 import { SvgIcon, SvgIconProps } from '@mui/material';
 
-const Poshmark = (props: SvgIconProps): JSX.Element => {
+const PoshmarkIcon = (props: SvgIconProps): JSX.Element => {
   return (
     <SvgIcon fill="none" height={96} viewBox="0 0 96 96" width={96} {...props}>
       <path
@@ -15,4 +15,4 @@ const Poshmark = (props: SvgIconProps): JSX.Element => {
   );
 };
 
-export default Poshmark;
+export default PoshmarkIcon;

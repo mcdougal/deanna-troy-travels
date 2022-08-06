@@ -3,11 +3,11 @@ import type { InferGetStaticPropsType } from 'next';
 
 import { SiteHeader } from '@components/common';
 
-import FeaturedPosts from './FeaturedPostsSection';
 import FeaturedVideosSection from './FeaturedVideosSection';
 import getStaticProps from './getStaticProps';
 import HeroImage from './HeroImage';
 import sx from './HomePage.styles';
+import LatestPostsSection from './LatestPostsSection';
 import LogoAndTitle from './LogoAndTitle';
 import PageMetadata from './PageMetadata';
 import WorkWithMeSection from './WorkWithMeSection';
@@ -33,7 +33,7 @@ const HomePage = ({
         <WorkWithMeSection />
       </Box>
       <Box sx={sx.featuredPostsContainer}>
-        <FeaturedPosts recentBlogPosts={recentBlogPosts} />
+        <LatestPostsSection recentBlogPosts={recentBlogPosts} />
       </Box>
     </>
   );

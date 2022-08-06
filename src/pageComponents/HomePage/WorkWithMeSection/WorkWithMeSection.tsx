@@ -1,4 +1,4 @@
-import ArrowForward from '@mui/icons-material/ArrowForward';
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import { Box, Button, Container, Typography } from '@mui/material';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -9,7 +9,7 @@ import sx from './WorkWithMeSection.styles';
 
 const WorkWithMeSection = (): JSX.Element => {
   return (
-    <Container maxWidth="md">
+    <Container component="section" maxWidth="md">
       <Box sx={sx.sectionTitleContainer}>
         <SectionTitle>Work With Me</SectionTitle>
       </Box>
@@ -30,7 +30,7 @@ const WorkWithMeSection = (): JSX.Element => {
         <Link href="/work-with-me" passHref>
           <Button
             color="primary"
-            endIcon={<ArrowForward fontSize="small" />}
+            endIcon={<ArrowForwardIcon fontSize="small" />}
             size="large"
             variant="contained">
             Learn More

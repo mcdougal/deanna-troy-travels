@@ -1,5 +1,5 @@
-import Campaign from '@mui/icons-material/Campaign';
-import VideoCameraFront from '@mui/icons-material/VideoCameraFront';
+import CampaignIcon from '@mui/icons-material/Campaign';
+import VideoCameraFrontIcon from '@mui/icons-material/VideoCameraFront';
 import { Box, Container } from '@mui/material';
 import { useState } from 'react';
 
@@ -21,13 +21,13 @@ const ServicesSection = (): JSX.Element => {
 
   return (
     <>
-      <Container maxWidth="md">
+      <Container component="section" maxWidth="md">
         <Box sx={sx.sectionTitleContainer}>
           <SectionTitle>Advertise Your...</SectionTitle>
         </Box>
         <Box sx={sx.servicesContainer}>
           <Service
-            icon={<Campaign sx={sx.advertiseIcon} />}
+            icon={<CampaignIcon sx={sx.advertiseIcon} />}
             label="Product"
             onClick={openContactDialog}
             thumbnail={{
@@ -36,7 +36,7 @@ const ServicesSection = (): JSX.Element => {
             }}
           />
           <Service
-            icon={<VideoCameraFront sx={sx.appearIcon} />}
+            icon={<VideoCameraFrontIcon sx={sx.appearIcon} />}
             label="Experience"
             onClick={openContactDialog}
             thumbnail={{

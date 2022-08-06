@@ -1,49 +1,49 @@
-import Facebook from '@mui/icons-material/Facebook';
-import Instagram from '@mui/icons-material/Instagram';
-import YouTube from '@mui/icons-material/YouTube';
+import FacebookIcon from '@mui/icons-material/Facebook';
+import InstagramIcon from '@mui/icons-material/Instagram';
+import YouTubeIcon from '@mui/icons-material/YouTube';
 import { Box, Button, Container } from '@mui/material';
 
 import { SectionTitle } from '@components/common';
-import { Amazon, Poshmark, TikTok } from '@components/icons';
+import { AmazonIcon, PoshmarkIcon, TikTokIcon } from '@components/icons';
 
 import sx from './SocialSection.styles';
 
 const SocialSection = (): JSX.Element => {
   const socials = [
     {
-      icon: <YouTube sx={sx.youTubeIcon} />,
+      icon: <YouTubeIcon sx={sx.youTubeIcon} />,
       label: `YouTube`,
       url: `https://www.youtube.com/deannatroytravels`,
     },
     {
-      icon: <Instagram sx={sx.instagramIcon} />,
+      icon: <InstagramIcon sx={sx.instagramIcon} />,
       label: `Instagram`,
       url: `https://www.instagram.com/deanna_troy_travels`,
     },
     {
-      icon: <Facebook sx={sx.facebookIcon} />,
+      icon: <FacebookIcon sx={sx.facebookIcon} />,
       label: `Facebook`,
       url: `https://www.facebook.com/deannatroytravels`,
     },
     {
-      icon: <Poshmark sx={sx.poshmarkIcon} />,
+      icon: <PoshmarkIcon sx={sx.poshmarkIcon} />,
       label: `Poshmark`,
       url: `https://poshmark.com/closet/deannatroyshop`,
     },
     {
-      icon: <TikTok sx={sx.tikTokIcon} />,
+      icon: <TikTokIcon sx={sx.tikTokIcon} />,
       label: `TikTok`,
       url: `https://www.tiktok.com/@deannatroytravels`,
     },
     {
-      icon: <Amazon sx={sx.amazonIcon} />,
+      icon: <AmazonIcon sx={sx.amazonIcon} />,
       label: `Amazon`,
       url: `https://www.amazon.com/shop/deannatroytravels`,
     },
   ];
 
   return (
-    <Container maxWidth="md">
+    <Container component="section" maxWidth="md">
       <Box sx={sx.sectionTitleContainer}>
         <SectionTitle>Follow Me</SectionTitle>
       </Box>

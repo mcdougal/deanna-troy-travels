@@ -1,7 +1,21 @@
 export default {
-  button: {
+  desktopNavContainer: {
+    alignItems: `center`,
+    display: `flex`,
+  },
+  socialLinksContainer: {
+    marginRight: 3,
+  },
+  navButton: {
+    paddingX: 2,
+    paddingY: 1,
     '& + &': {
-      marginLeft: 3,
+      marginLeft: 1,
     },
+  },
+  youTubeSubscribeButtonContainer: {
+    height: 24,
+    marginLeft: 2,
+    width: 110,
   },
 };

@@ -1,6 +1,6 @@
 import { SvgIcon, SvgIconProps } from '@mui/material';
 
-const TikTok = (props: SvgIconProps): JSX.Element => {
+const TikTokIcon = (props: SvgIconProps): JSX.Element => {
   return (
     <SvgIcon fill="none" height={96} viewBox="0 0 96 96" width={96} {...props}>
       <path
@@ -13,4 +13,4 @@ const TikTok = (props: SvgIconProps): JSX.Element => {
   );
 };
 
-export default TikTok;
+export default TikTokIcon;

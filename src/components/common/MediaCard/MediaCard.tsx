@@ -44,7 +44,7 @@ const MediaCard = ({
         />
       </Box>
       {title && (
-        <Typography sx={sx.title} variant="h6">
+        <Typography sx={sx.title} variant="body1">
           {title}
         </Typography>
       )}

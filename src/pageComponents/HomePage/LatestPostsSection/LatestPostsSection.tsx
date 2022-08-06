@@ -1,6 +1,6 @@
-import ArrowForward from '@mui/icons-material/ArrowForward';
-import Place from '@mui/icons-material/Place';
-import Today from '@mui/icons-material/Today';
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+import PlaceIcon from '@mui/icons-material/Place';
+import TodayIcon from '@mui/icons-material/Today';
 import { Box, Button, Container } from '@mui/material';
 import Link from 'next/link';
 
@@ -8,17 +8,17 @@ import { MediaCard, SectionTitle } from '@components/common';
 
 import { RecentBlogPost } from '../getStaticProps';
 
-import sx from './FeaturedPostsSection.styles';
+import sx from './LatestPostsSection.styles';
 
 interface Props {
   recentBlogPosts: Array<RecentBlogPost>;
 }
 
-const FeaturedPostsSection = ({ recentBlogPosts }: Props): JSX.Element => {
+const LatestPostsSection = ({ recentBlogPosts }: Props): JSX.Element => {
   return (
-    <Container maxWidth="md">
+    <Container component="section" maxWidth="md">
       <Box sx={sx.sectionTitleContainer}>
-        <SectionTitle>Featured Posts</SectionTitle>
+        <SectionTitle>Latest Posts</SectionTitle>
       </Box>
       {recentBlogPosts.map((blogPost) => {
         return (
@@ -27,12 +27,12 @@ const FeaturedPostsSection = ({ recentBlogPosts }: Props): JSX.Element => {
               details={[
                 {
                   key: `date`,
-                  icon: <Today sx={sx.blogPostDateIcon} />,
+                  icon: <TodayIcon sx={sx.blogPostDateIcon} />,
                   value: new Date(blogPost.date).toLocaleDateString(),
                 },
                 {
                   key: `location`,
-                  icon: <Place sx={sx.blogPostLocationIcon} />,
+                  icon: <PlaceIcon sx={sx.blogPostLocationIcon} />,
                   value: blogPost.location,
                 },
               ]}
@@ -52,7 +52,7 @@ const FeaturedPostsSection = ({ recentBlogPosts }: Props): JSX.Element => {
         <Link href="/blog" passHref>
           <Button
             color="primary"
-            endIcon={<ArrowForward fontSize="small" />}
+            endIcon={<ArrowForwardIcon fontSize="small" />}
             size="large"
             variant="contained">
             All Posts
@@ -63,4 +63,4 @@ const FeaturedPostsSection = ({ recentBlogPosts }: Props): JSX.Element => {
   );
 };
 
-export default FeaturedPostsSection;
+export default LatestPostsSection;

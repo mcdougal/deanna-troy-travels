@@ -1,7 +1,10 @@
-import { Button } from '@mui/material';
+import { Box, Button } from '@mui/material';
 import Link from 'next/link';
 
+import { YouTubeSubscribeButton } from '@components/youTube';
+
 import sx from './DesktopNav.styles';
+import SocialLinks from './SocialLinks';
 
 const DesktopNav = (): JSX.Element => {
   const menuItems = [
@@ -23,17 +26,27 @@ const DesktopNav = (): JSX.Element => {
   ];
 
   return (
-    <>
+    <Box sx={sx.desktopNavContainer}>
+      <Box sx={sx.socialLinksContainer}>
+        <SocialLinks />
+      </Box>
       {menuItems.map(({ key, label, url }) => {
         return (
           <Link key={key} href={url} passHref>
-            <Button color="inherit" size="large" sx={sx.button} variant="text">
+            <Button
+              color="inherit"
+              size="large"
+              sx={sx.navButton}
+              variant="text">
               {label}
             </Button>
           </Link>
         );
       })}
-    </>
+      <Box sx={sx.youTubeSubscribeButtonContainer}>
+        <YouTubeSubscribeButton />
+      </Box>
+    </Box>
   );
 };
 

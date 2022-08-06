@@ -29,43 +29,4 @@ export default {
     transform: `translateX(-50%)`,
     width: `100%`,
   },
-  emoji: {
-    alignItems: `center`,
-    background: `#f9f9f9`,
-    borderRadius: `100%`,
-    display: { xs: `none`, lg: `flex` },
-    fontSize: 20,
-    height: spacing(6),
-    justifyContent: `center`,
-    position: `absolute`,
-    width: spacing(6),
-  },
-  emoji1: {
-    left: 100,
-    top: 100,
-  },
-  emoji2: {
-    right: 100,
-    top: 50,
-  },
-  emoji3: {
-    left: 250,
-    top: -50,
-  },
-  emoji4: {
-    right: 300,
-    top: -100,
-  },
-  emoji5: {
-    left: 75,
-    top: -175,
-  },
-  emoji6: {
-    left: 350,
-    top: -215,
-  },
-  emoji7: {
-    right: 50,
-    top: -175,
-  },
 };

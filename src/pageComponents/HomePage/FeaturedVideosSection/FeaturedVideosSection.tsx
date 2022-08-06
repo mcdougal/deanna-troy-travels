@@ -1,7 +1,7 @@
-import ArrowForward from '@mui/icons-material/ArrowForward';
-import ModeComment from '@mui/icons-material/ModeComment';
-import ThumbUp from '@mui/icons-material/ThumbUp';
-import Visibility from '@mui/icons-material/Visibility';
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+import ModeCommentIcon from '@mui/icons-material/ModeComment';
+import ThumbUpIcon from '@mui/icons-material/ThumbUp';
+import VisibilityIcon from '@mui/icons-material/Visibility';
 import { Box, Button, Container } from '@mui/material';
 
 import { MediaCard, SectionTitle } from '@components/common';
@@ -16,7 +16,7 @@ interface Props {
 
 const FeaturedVideosSection = ({ recentVideos }: Props): JSX.Element => {
   return (
-    <Container maxWidth="md">
+    <Container component="section" maxWidth="md">
       <Box sx={sx.sectionTitleContainer}>
         <SectionTitle>Featured Videos</SectionTitle>
       </Box>
@@ -27,17 +27,17 @@ const FeaturedVideosSection = ({ recentVideos }: Props): JSX.Element => {
               details={[
                 {
                   key: `views`,
-                  icon: <Visibility sx={sx.viewsIcon} />,
+                  icon: <VisibilityIcon sx={sx.viewsIcon} />,
                   value: recentVideo.viewCount.toLocaleString(),
                 },
                 {
                   key: `likes`,
-                  icon: <ThumbUp sx={sx.likesIcon} />,
+                  icon: <ThumbUpIcon sx={sx.likesIcon} />,
                   value: recentVideo.likeCount.toLocaleString(),
                 },
                 {
                   key: `comments`,
-                  icon: <ModeComment sx={sx.commentsIcon} />,
+                  icon: <ModeCommentIcon sx={sx.commentsIcon} />,
                   value: recentVideo.commentCount.toLocaleString(),
                 },
               ]}
@@ -53,7 +53,7 @@ const FeaturedVideosSection = ({ recentVideos }: Props): JSX.Element => {
       <Box sx={sx.ctaContainer}>
         <Button
           color="primary"
-          endIcon={<ArrowForward fontSize="small" />}
+          endIcon={<ArrowForwardIcon fontSize="small" />}
           href="https://www.youtube.com/deannatroytravels"
           size="large"
           target="_blank"

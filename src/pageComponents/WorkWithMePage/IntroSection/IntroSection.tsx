@@ -1,4 +1,4 @@
-import OpenInNew from '@mui/icons-material/OpenInNew';
+import OpenInNewIcon from '@mui/icons-material/OpenInNew';
 import { Box, Button, Container, Typography } from '@mui/material';
 import Image from 'next/image';
 
@@ -8,7 +8,7 @@ import sx from './IntroSection.styles';
 
 const IntroSection = (): JSX.Element => {
   return (
-    <Container maxWidth="md">
+    <Container component="section" maxWidth="md">
       <Box sx={sx.sectionTitleContainer}>
         <SectionTitle>👋 Hey there!</SectionTitle>
       </Box>
@@ -33,7 +33,7 @@ const IntroSection = (): JSX.Element => {
       <Box sx={sx.ctaContainer}>
         <Button
           color="primary"
-          endIcon={<OpenInNew />}
+          endIcon={<OpenInNewIcon />}
           href="https://www.canva.com/design/DAFC8WJcrUQ/KCXr38E-PosgRiECPzH-yQ/view?utm_content=DAFC8WJcrUQ&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton"
           size="large"
           sx={sx.ctaButton}

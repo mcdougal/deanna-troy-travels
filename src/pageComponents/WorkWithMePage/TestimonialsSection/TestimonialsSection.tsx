@@ -7,7 +7,7 @@ import sx from './TestimonialsSection.styles';
 
 const TestimonialsSection = (): JSX.Element => {
   return (
-    <Container maxWidth="md">
+    <Container component="section" maxWidth="md">
       <Box sx={sx.sectionTitleContainer}>
         <SectionTitle>What People Say</SectionTitle>
       </Box>

@@ -16,7 +16,7 @@ export default {
     marginTop: 1,
     textTransform: `uppercase`,
   },
-  socialLinksContainer: {
-    marginTop: 1,
+  subscribeButtonContainer: {
+    marginTop: 2,
   },
 };

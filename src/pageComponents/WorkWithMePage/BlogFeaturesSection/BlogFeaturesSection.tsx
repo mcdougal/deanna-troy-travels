@@ -13,7 +13,7 @@ interface Props {
 
 const BlogFeaturesSection = ({ blogFeatures }: Props): JSX.Element => {
   return (
-    <Container maxWidth="md">
+    <Container component="section" maxWidth="md">
       <Box sx={sx.sectionTitleContainer}>
         <SectionTitle>Blog Features</SectionTitle>
       </Box>

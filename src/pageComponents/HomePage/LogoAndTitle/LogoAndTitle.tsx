@@ -1,8 +1,8 @@
-import { Box, Typography } from '@mui/material';
+import YouTubeIcon from '@mui/icons-material/YouTube';
+import { Box, Button, Typography } from '@mui/material';
 import Image from 'next/image';
 
 import sx from './LogoAndTitle.styles';
-import SocialLinks from './SocialLinks';
 
 const YOUTUBE_LOGO_RATIO = 1.189;
 const YOUTUBE_LOGO_HEIGHT = 88;
@@ -24,8 +24,16 @@ const LogoAndTitle = (): JSX.Element => {
       <Typography sx={sx.subtitle} variant="caption">
         Budget Travel Vlogs
       </Typography>
-      <Box sx={sx.socialLinksContainer}>
-        <SocialLinks />
+      <Box sx={sx.subscribeButtonContainer}>
+        <Button
+          color="secondary"
+          href="https://www.youtube.com/channel/UCJeRZkaH3ORHkNWUNqfXJEg?sub_confirmation=1"
+          size="large"
+          startIcon={<YouTubeIcon />}
+          target="_blank"
+          variant="contained">
+          Subscribe
+        </Button>
       </Box>
     </Box>
   );

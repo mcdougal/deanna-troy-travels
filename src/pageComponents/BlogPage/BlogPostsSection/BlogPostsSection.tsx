@@ -1,5 +1,5 @@
-import Place from '@mui/icons-material/Place';
-import Today from '@mui/icons-material/Today';
+import PlaceIcon from '@mui/icons-material/Place';
+import TodayIcon from '@mui/icons-material/Today';
 import { Box } from '@mui/material';
 
 import { MediaCard, SectionTitle } from '@components/common';
@@ -26,12 +26,12 @@ const BlogPostsSection = ({ blogPosts }: Props): JSX.Element => {
                 details={[
                   {
                     key: `date`,
-                    icon: <Today sx={sx.blogPostDateIcon} />,
+                    icon: <TodayIcon sx={sx.blogPostDateIcon} />,
                     value: new Date(blogPost.date).toLocaleDateString(),
                   },
                   {
                     key: `location`,
-                    icon: <Place sx={sx.blogPostLocationIcon} />,
+                    icon: <PlaceIcon sx={sx.blogPostLocationIcon} />,
                     value: blogPost.location,
                   },
                 ]}

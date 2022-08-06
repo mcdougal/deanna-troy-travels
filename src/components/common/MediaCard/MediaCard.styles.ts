@@ -19,7 +19,6 @@ export default {
     width: `100%`,
   },
   title: {
-    fontWeight: `fontWeightRegular`,
     marginBottom: 1,
     marginTop: `12px`,
     marginX: 2,

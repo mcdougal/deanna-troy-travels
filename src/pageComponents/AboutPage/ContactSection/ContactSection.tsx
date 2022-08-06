@@ -7,7 +7,7 @@ import sx from './ContactSection.styles';
 const ContactSection = (): JSX.Element => {
   return (
     <>
-      <Container maxWidth="md">
+      <Container component="section" maxWidth="md">
         <Box sx={sx.sectionTitleContainer}>
           <SectionTitle>Let’s Chat!</SectionTitle>
         </Box>

@@ -1,6 +1,6 @@
 import { SvgIcon, SvgIconProps } from '@mui/material';
 
-const Amazon = (props: SvgIconProps): JSX.Element => {
+const AmazonIcon = (props: SvgIconProps): JSX.Element => {
   return (
     <SvgIcon fill="none" height={96} viewBox="0 0 96 96" width={96} {...props}>
       <path
@@ -11,4 +11,4 @@ const Amazon = (props: SvgIconProps): JSX.Element => {
   );
 };
 
-export default Amazon;
+export default AmazonIcon;
