@@ -1,10 +1,8 @@
 import { Box, Button } from '@mui/material';
 import Link from 'next/link';
-
-import { YouTubeSubscribeButton } from '@components/youTube';
+import React from 'react';
 
 import sx from './DesktopNav.styles';
-import SocialLinks from './SocialLinks';
 
 const DesktopNav = (): JSX.Element => {
   const menuItems = [
@@ -19,6 +17,11 @@ const DesktopNav = (): JSX.Element => {
       url: `/blog`,
     },
     {
+      key: `videos`,
+      label: `Videos`,
+      url: `https://www.youtube.com/deannatroytravels`,
+    },
+    {
       key: `about`,
       label: `About`,
       url: `/about`,
@@ -27,25 +30,34 @@ const DesktopNav = (): JSX.Element => {
 
   return (
     <Box sx={sx.desktopNavContainer}>
-      <Box sx={sx.socialLinksContainer}>
-        <SocialLinks />
-      </Box>
       {menuItems.map(({ key, label, url }) => {
+        const isInternal = url.startsWith(`/`);
+
+        const button = (
+          <Button
+            color="inherit"
+            component="a"
+            href={isInternal ? undefined : url}
+            size="large"
+            sx={sx.navButton}
+            target={isInternal ? undefined : `_blank`}
+            variant="text">
+            {label}
+          </Button>
+        );
+
         return (
-          <Link key={key} href={url} passHref>
-            <Button
-              color="inherit"
-              size="large"
-              sx={sx.navButton}
-              variant="text">
-              {label}
-            </Button>
-          </Link>
+          <React.Fragment key={key}>
+            {isInternal ? (
+              <Link href={url} passHref>
+                {button}
+              </Link>
+            ) : (
+              button
+            )}
+          </React.Fragment>
         );
       })}
-      <Box sx={sx.youTubeSubscribeButtonContainer}>
-        <YouTubeSubscribeButton />
-      </Box>
     </Box>
   );
 };
