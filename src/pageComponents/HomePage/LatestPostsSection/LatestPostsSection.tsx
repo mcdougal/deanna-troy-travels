@@ -5,6 +5,7 @@ import { Box, Button, Container } from '@mui/material';
 import Link from 'next/link';
 
 import { MediaCard, SectionTitle } from '@components/common';
+import { contentfulLoader } from '@lib/contentful';
 
 import { RecentBlogPost } from '../getStaticProps';
 
@@ -40,6 +41,7 @@ const LatestPostsSection = ({ recentBlogPosts }: Props): JSX.Element => {
                 alt:
                   blogPost.coverImage.description ||
                   `${blogPost.title} thumbnail`,
+                loader: contentfulLoader,
                 url: blogPost.coverImage.url,
               }}
               title={blogPost.title}
