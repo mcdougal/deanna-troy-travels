@@ -1,6 +1,8 @@
 import { Box, ButtonBase, Typography } from '@mui/material';
 import Image from 'next/image';
 
+import { cloudinaryLoader } from '@lib/cloudinary';
+
 import sx from './Service.styles';
 
 interface Props {
@@ -27,6 +29,7 @@ const Service = ({ icon, label, onClick, thumbnail }: Props): JSX.Element => {
           <Image
             alt={thumbnail.alt}
             layout="fill"
+            loader={cloudinaryLoader}
             objectFit="cover"
             objectPosition="top"
             src={thumbnail.url}

@@ -1,6 +1,7 @@
 import { Box } from '@mui/material';
+import Image from 'next/image';
 
-import { ContentfulImage } from '@components/contentful';
+import { contentfulLoader } from '@lib/contentful';
 
 import { BlogPost } from '../getStaticProps';
 
@@ -13,9 +14,10 @@ interface Props {
 const BlogPostCoverImage = ({ blogPost }: Props): JSX.Element => {
   return (
     <Box sx={sx.coverImageContainer}>
-      <ContentfulImage
+      <Image
         alt={blogPost.coverImage.description || `${blogPost.title} cover image`}
         layout="fill"
+        loader={contentfulLoader}
         objectFit="cover"
         objectPosition="center"
         priority

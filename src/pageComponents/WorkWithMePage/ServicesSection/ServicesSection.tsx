@@ -32,7 +32,7 @@ const ServicesSection = (): JSX.Element => {
             onClick={openContactDialog}
             thumbnail={{
               alt: `Photo of Deanna advertising a portable Bluetooth speaker`,
-              url: `/deanna-troy-travels/work-with-me/advertise.jpg`,
+              url: `/upload/deanna-troy-travels/work-with-me/advertise.jpg`,
             }}
           />
           <Service
@@ -41,7 +41,7 @@ const ServicesSection = (): JSX.Element => {
             onClick={openContactDialog}
             thumbnail={{
               alt: `Photo of Deanna at the Da Nang Home Cooking Class`,
-              url: `/deanna-troy-travels/work-with-me/appear.jpg`,
+              url: `/upload/deanna-troy-travels/work-with-me/appear.jpg`,
             }}
           />
         </Box>

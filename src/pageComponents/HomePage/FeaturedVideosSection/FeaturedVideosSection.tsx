@@ -5,6 +5,7 @@ import VisibilityIcon from '@mui/icons-material/Visibility';
 import { Box, Button, Container } from '@mui/material';
 
 import { MediaCard, SectionTitle } from '@components/common';
+import { cloudinaryLoader } from '@lib/cloudinary';
 
 import { RecentVideo } from '../getStaticProps';
 
@@ -43,7 +44,8 @@ const FeaturedVideosSection = ({ recentVideos }: Props): JSX.Element => {
               ]}
               thumbnail={{
                 alt: recentVideo.title,
-                url: recentVideo.thumbnailUrl,
+                loader: cloudinaryLoader,
+                url: `/youtube/${recentVideo.videoId}`,
               }}
               url={`https://www.youtube.com/watch?v=${recentVideo.videoId}`}
             />

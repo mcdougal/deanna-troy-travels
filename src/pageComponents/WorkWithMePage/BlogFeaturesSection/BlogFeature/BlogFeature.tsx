@@ -1,6 +1,7 @@
 import { Box, ButtonBase, Typography, useTheme } from '@mui/material';
+import Image from 'next/image';
 
-import { ContentfulImage } from '@components/contentful';
+import { contentfulLoader } from '@lib/contentful';
 
 import { BlogFeature as IBlogFeature } from '../../getStaticProps';
 
@@ -25,23 +26,25 @@ const BlogFeature = ({ blogFeature }: Props): JSX.Element => {
       href={blogFeature.blogPostUrl}
       sx={sx.blogFeatureButtonBase}
       target="_blank">
-      <ContentfulImage
+      <Image
         alt={
           blogFeature.websiteLogo.description ||
           `${blogFeature.websiteName} logo`
         }
         height={websiteLogoHeight}
+        loader={contentfulLoader}
         src={blogFeature.websiteLogo.url}
         width={websiteLogoWidth}
       />
       <Box sx={sx.thumbnailAndTitle}>
         <Box sx={sx.thumbnailContainer}>
-          <ContentfulImage
+          <Image
             alt={
               blogFeature.thumbnail.description ||
               `${blogFeature.websiteName} blog post thumbnail`
             }
             layout="fill"
+            loader={contentfulLoader}
             objectFit="cover"
             objectPosition="center"
             src={blogFeature.thumbnail.url}

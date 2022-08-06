@@ -1,6 +1,8 @@
 import { Box } from '@mui/material';
 import Image from 'next/image';
 
+import { cloudinaryLoader } from '@lib/cloudinary';
+
 import sx from './HeroImage.styles';
 
 const HeroImage = (): JSX.Element => {
@@ -12,10 +14,11 @@ const HeroImage = (): JSX.Element => {
           <Image
             alt="Three photos: Deanna lying on a sand dune, Deanna doing a yoga pose on a beach, and Deanna in front of a mosque in Malaysia"
             layout="fill"
+            loader={cloudinaryLoader}
             objectFit="cover"
             objectPosition="top"
             priority
-            src="/deanna-troy-travels/home/hero.png"
+            src="/upload/deanna-troy-travels/home/hero.png"
           />
         </Box>
       </Box>

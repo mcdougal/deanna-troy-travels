@@ -3,6 +3,7 @@ import { Box, Button, Container, Typography } from '@mui/material';
 import Image from 'next/image';
 
 import { SectionTitle } from '@components/common';
+import { cloudinaryLoader } from '@lib/cloudinary';
 
 import sx from './IntroSection.styles';
 
@@ -16,9 +17,10 @@ const IntroSection = (): JSX.Element => {
         <Image
           alt="Deanna posing with a quokka"
           layout="fill"
+          loader={cloudinaryLoader}
           objectFit="cover"
           objectPosition="top"
-          src="/deanna-troy-travels/work-with-me/hello.png"
+          src="/upload/deanna-troy-travels/work-with-me/hello.png"
         />
       </Box>
       <Typography paragraph variant="body1">

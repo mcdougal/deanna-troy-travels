@@ -1,19 +1,22 @@
 import { Box, Container, Typography } from '@mui/material';
 import Image from 'next/image';
 
+import { cloudinaryLoader } from '@lib/cloudinary';
+
 import sx from './HeroSection.styles';
 
 const HeroSection = (): JSX.Element => {
   return (
-    <Container maxWidth="xl">
+    <Container maxWidth="md">
       <Box sx={sx.heroImageContainer}>
         <Image
           alt="Deanna copying a statue with many arms by hiding people behind her with their arms out"
           layout="fill"
+          loader={cloudinaryLoader}
           objectFit="cover"
           objectPosition="center"
           priority
-          src="/deanna-troy-travels/about/hero.jpg"
+          src="/upload/deanna-troy-travels/about/hero.jpg"
         />
       </Box>
       <Typography component="h1" sx={sx.title} variant="h2">

@@ -1,6 +1,8 @@
 import { Box, Container, Typography } from '@mui/material';
 import Image from 'next/image';
 
+import { cloudinaryLoader } from '@lib/cloudinary';
+
 import sx from './HeroSection.styles';
 
 const AS_SEEN_ON_GLOBE_RATIO = 1.0964;
@@ -17,8 +19,9 @@ const HeroSection = (): JSX.Element => {
         alt="A globe surrounded by company logos that Deanna has worked with"
         height={AS_SEEN_ON_GLOBE_HEIGHT}
         layout="responsive"
+        loader={cloudinaryLoader}
         priority
-        src="/deanna-troy-travels/work-with-me/as-seen-on-globe.jpg"
+        src="/upload/deanna-troy-travels/work-with-me/as-seen-on-globe.jpg"
         width={AS_SEEN_ON_GLOBE_WIDTH}
       />
     </Container>

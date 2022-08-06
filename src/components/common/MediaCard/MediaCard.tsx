@@ -1,5 +1,5 @@
 import { Box, ButtonBase, Typography } from '@mui/material';
-import Image from 'next/image';
+import Image, { ImageLoader } from 'next/image';
 
 import sx from './MediaCard.styles';
 import MediaCardDetail from './MediaCardDetail';
@@ -14,6 +14,7 @@ interface Props {
   }>;
   thumbnail: {
     alt: string;
+    loader: ImageLoader;
     url: string;
   };
   title?: string;
@@ -31,16 +32,16 @@ const MediaCard = ({
     <ButtonBase
       focusRipple
       href={url}
-      sx={sx.mediaCardContainer}
+      sx={sx.mediaCardButtonBase}
       target="_blank">
       <Box sx={sx.thumbnailContainer}>
         <Image
           alt={thumbnail.alt}
           layout="fill"
+          loader={thumbnail.loader}
           objectFit="cover"
           objectPosition="center"
           src={thumbnail.url}
-          unoptimized
         />
       </Box>
       {title && (

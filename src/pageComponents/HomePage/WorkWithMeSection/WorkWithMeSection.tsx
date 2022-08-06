@@ -4,6 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 import { SectionTitle } from '@components/common';
+import { cloudinaryLoader } from '@lib/cloudinary';
 
 import sx from './WorkWithMeSection.styles';
 
@@ -17,9 +18,10 @@ const WorkWithMeSection = (): JSX.Element => {
         <Image
           alt="Deanna eating a dumpling with chopsticks with Asian lanterns in the background"
           layout="fill"
+          loader={cloudinaryLoader}
           objectFit="cover"
           objectPosition="center"
-          src="/deanna-troy-travels/home/work-with-me.png"
+          src="/upload/deanna-troy-travels/home/work-with-me.png"
         />
       </Box>
       <Typography variant="body1">

@@ -3,6 +3,7 @@ import TodayIcon from '@mui/icons-material/Today';
 import { Box } from '@mui/material';
 
 import { MediaCard, SectionTitle } from '@components/common';
+import { contentfulLoader } from '@lib/contentful';
 
 import { BlogPost } from '../getStaticProps';
 
@@ -39,6 +40,7 @@ const BlogPostsSection = ({ blogPosts }: Props): JSX.Element => {
                   alt:
                     blogPost.coverImage.description ||
                     `${blogPost.title} thumbnail`,
+                  loader: contentfulLoader,
                   url: blogPost.coverImage.url,
                 }}
                 title={blogPost.title}
