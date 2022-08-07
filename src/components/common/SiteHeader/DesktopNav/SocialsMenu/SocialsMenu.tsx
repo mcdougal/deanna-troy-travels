@@ -20,32 +20,32 @@ interface Props {
 const SocialsMenu = ({ anchor, onClose }: Props): JSX.Element => {
   const socials = [
     {
-      icon: <YouTubeIcon sx={sx.icon} />,
+      icon: <YouTubeIcon />,
       label: `YouTube`,
       url: `https://www.youtube.com/deannatroytravels`,
     },
     {
-      icon: <InstagramIcon sx={sx.icon} />,
+      icon: <InstagramIcon />,
       label: `Instagram`,
       url: `https://www.instagram.com/deanna_troy_travels`,
     },
     {
-      icon: <FacebookIcon sx={sx.icon} />,
+      icon: <FacebookIcon />,
       label: `Facebook`,
       url: `https://www.facebook.com/deannatroytravels`,
     },
     {
-      icon: <PoshmarkIcon sx={sx.icon} />,
+      icon: <PoshmarkIcon />,
       label: `Poshmark`,
       url: `https://poshmark.com/closet/deannatroyshop`,
     },
     {
-      icon: <TikTokIcon sx={sx.icon} />,
+      icon: <TikTokIcon />,
       label: `TikTok`,
       url: `https://www.tiktok.com/@deannatroytravels`,
     },
     {
-      icon: <AmazonIcon sx={sx.icon} />,
+      icon: <AmazonIcon />,
       label: `Amazon`,
       url: `https://www.amazon.com/shop/deannatroytravels`,
     },
