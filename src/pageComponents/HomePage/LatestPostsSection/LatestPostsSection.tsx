@@ -7,12 +7,12 @@ import Link from 'next/link';
 import { MediaCard, SectionTitle } from '@components/common';
 import { contentfulLoader } from '@lib/contentful';
 
-import { RecentBlogPost } from '../getStaticProps';
+import { BlogPost } from '../getStaticProps';
 
 import sx from './LatestPostsSection.styles';
 
 interface Props {
-  recentBlogPosts: Array<RecentBlogPost>;
+  recentBlogPosts: Array<BlogPost>;
 }
 
 const LatestPostsSection = ({ recentBlogPosts }: Props): JSX.Element => {

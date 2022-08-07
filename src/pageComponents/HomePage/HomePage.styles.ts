@@ -8,6 +8,9 @@ export default {
   workWithMeContainer: {
     marginTop: { xs: 8, md: 10 },
   },
+  instagramContainer: {
+    marginTop: { xs: 8, md: 10 },
+  },
   featuredPostsContainer: {
     marginBottom: 20,
     marginTop: { xs: 8, md: 10 },

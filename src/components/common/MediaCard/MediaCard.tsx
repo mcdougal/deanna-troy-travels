@@ -43,6 +43,7 @@ const MediaCard = ({
           loader={thumbnail.loader}
           objectFit="cover"
           objectPosition="center"
+          sizes="300px"
           src={thumbnail.url}
         />
       </Box>

@@ -16,6 +16,7 @@ const HeroSection = (): JSX.Element => {
           objectFit="cover"
           objectPosition="center"
           priority
+          sizes="800px"
           src="/upload/deanna-troy-travels/about/hero.jpg"
         />
       </Box>

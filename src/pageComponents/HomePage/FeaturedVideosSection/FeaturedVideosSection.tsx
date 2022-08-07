@@ -7,12 +7,12 @@ import { Box, Button, Container, Grid } from '@mui/material';
 import { MediaCard, SectionTitle } from '@components/common';
 import { cloudinaryLoader } from '@lib/cloudinary';
 
-import { RecentVideo } from '../getStaticProps';
+import { YouTubeVideo } from '../getStaticProps';
 
 import sx from './FeaturedVideosSection.styles';
 
 interface Props {
-  recentVideos: Array<RecentVideo>;
+  recentVideos: Array<YouTubeVideo>;
 }
 
 const FeaturedVideosSection = ({ recentVideos }: Props): JSX.Element => {

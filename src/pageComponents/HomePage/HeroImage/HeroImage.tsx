@@ -1,4 +1,4 @@
-import { Box } from '@mui/material';
+import { Box, useTheme } from '@mui/material';
 import Image from 'next/image';
 
 import { cloudinaryLoader } from '@lib/cloudinary';
@@ -6,6 +6,8 @@ import { cloudinaryLoader } from '@lib/cloudinary';
 import sx from './HeroImage.styles';
 
 const HeroImage = (): JSX.Element => {
+  const theme = useTheme();
+
   return (
     <Box sx={sx.heroSectionContainer}>
       <Box sx={sx.circleAndImageContainer}>
@@ -18,6 +20,10 @@ const HeroImage = (): JSX.Element => {
             objectFit="cover"
             objectPosition="top"
             priority
+            sizes={[
+              `(max-width: ${theme.breakpoints.values.sm}px) 100vw`,
+              `800px`,
+            ].join(`,`)}
             src="/upload/deanna-troy-travels/home/hero.png"
           />
         </Box>

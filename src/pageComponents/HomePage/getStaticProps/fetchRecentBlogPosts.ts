@@ -1,6 +1,6 @@
 import { fetchContentfulGraphQl } from '@lib/contentful';
 
-export interface RecentBlogPost {
+export interface BlogPost {
   coverImage: {
     description: string | null;
     url: string;
@@ -12,10 +12,10 @@ export interface RecentBlogPost {
   title: string;
 }
 
-export default async (): Promise<Array<RecentBlogPost>> => {
+export default async (): Promise<Array<BlogPost>> => {
   const response = await fetchContentfulGraphQl<{
     blogPostCollection: {
-      items: Array<RecentBlogPost>;
+      items: Array<BlogPost>;
     };
   }>(
     `

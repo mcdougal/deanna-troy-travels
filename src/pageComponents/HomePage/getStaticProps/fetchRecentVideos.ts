@@ -1,6 +1,6 @@
 import { fetchAllVideosPlaylistItems, fetchYouTubeVideo } from '@lib/youTube';
 
-export interface RecentVideo {
+export interface YouTubeVideo {
   commentCount: number;
   likeCount: number;
   title: string;
@@ -8,7 +8,7 @@ export interface RecentVideo {
   viewCount: number;
 }
 
-export default async (): Promise<Array<RecentVideo>> => {
+export default async (): Promise<Array<YouTubeVideo>> => {
   const playlistItems = await fetchAllVideosPlaylistItems();
 
   const videos = await Promise.all(

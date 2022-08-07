@@ -19,7 +19,7 @@ export default {
   thumbnailContainer: {
     borderRadius: 4,
     filter: `brightness(95%)`,
-    height: spacing({ xs: 20, md: 20 }),
+    height: spacing(20),
     overflow: `hidden`,
     position: `relative`,
     width: `100%`,
