@@ -33,6 +33,13 @@ const theme = createTheme({
         variant: `h4`,
       },
     },
+    MuiPopover: {
+      styleOverrides: {
+        paper: {
+          borderRadius: 16,
+        },
+      },
+    },
   },
   palette: {
     primary: {
