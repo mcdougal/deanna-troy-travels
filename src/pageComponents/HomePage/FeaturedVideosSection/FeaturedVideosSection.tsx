@@ -43,6 +43,7 @@ const FeaturedVideosSection = ({ recentVideos }: Props): JSX.Element => {
                     value: recentVideo.commentCount.toLocaleString(),
                   },
                 ]}
+                target="_blank"
                 thumbnail={{
                   alt: recentVideo.title,
                   loader: cloudinaryLoader,

@@ -12,6 +12,7 @@ interface Props {
     icon: React.ReactElement;
     value: string;
   }>;
+  target?: `_blank`;
   thumbnail: {
     alt: string;
     loader: ImageLoader;
@@ -24,6 +25,7 @@ interface Props {
 const MediaCard = ({
   alignDetails = `left`,
   details,
+  target,
   thumbnail,
   title,
   url,
@@ -33,7 +35,7 @@ const MediaCard = ({
       focusRipple
       href={url}
       sx={sx.mediaCardButtonBase}
-      target="_blank">
+      target={target}>
       <Box sx={sx.thumbnailContainer}>
         <Image
           alt={thumbnail.alt}
