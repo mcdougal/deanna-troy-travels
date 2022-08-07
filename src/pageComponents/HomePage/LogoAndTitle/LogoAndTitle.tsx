@@ -21,7 +21,7 @@ const LogoAndTitle = (): JSX.Element => {
         src="/upload/deanna-troy-travels/logo.png"
         width={YOUTUBE_LOGO_WIDTH}
       />
-      <Typography component="h1" sx={sx.title} variant="h4">
+      <Typography component="h1" sx={sx.title} variant="h3">
         <Box sx={sx.deannaTroy}>Deanna Troy</Box> Travels
       </Typography>
       <Typography sx={sx.subtitle} variant="caption">

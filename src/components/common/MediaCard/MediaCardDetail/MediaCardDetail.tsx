@@ -12,7 +12,7 @@ const MediaCardDetail = ({ icon, value }: Props): JSX.Element => {
     <Box sx={sx.mediaCardDetailContainer}>
       <Box sx={sx.iconContainer}>{icon}</Box>
       <Typography sx={sx.value} variant="caption">
-        <b>{value}</b>
+        {value}
       </Typography>
     </Box>
   );

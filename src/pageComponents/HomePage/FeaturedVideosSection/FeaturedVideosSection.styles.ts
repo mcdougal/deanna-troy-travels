@@ -9,7 +9,6 @@ export default {
   },
   viewsIcon: {
     fontSize: 14,
-    marginBottom: `-1px`,
   },
   likesIcon: {
     fontSize: 14,
