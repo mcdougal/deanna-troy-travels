@@ -3,7 +3,6 @@ import { fetchAllVideosPlaylistItems, fetchYouTubeVideo } from '@lib/youTube';
 export interface RecentVideo {
   commentCount: number;
   likeCount: number;
-  thumbnailUrl: string;
   title: string;
   videoId: string;
   viewCount: number;
@@ -24,9 +23,6 @@ export default async (): Promise<Array<RecentVideo>> => {
     return {
       commentCount: parseInt(video.statistics.commentCount, 10),
       likeCount: parseInt(video.statistics.likeCount, 10),
-      thumbnailUrl:
-        playlistItem.snippet.thumbnails.standard?.url ||
-        playlistItem.snippet.thumbnails.high.url,
       title: playlistItem.snippet.title,
       videoId: playlistItem.contentDetails.videoId,
       viewCount: parseInt(video.statistics.viewCount, 10),

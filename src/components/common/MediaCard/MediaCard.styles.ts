@@ -1,8 +1,13 @@
+import { spacing } from '@lib/mui';
+
 export default {
   mediaCardButtonBase: {
+    alignItems: `flex-start`,
     boxShadow: `0 4px 20px rgba(0, 0, 0, 0.06)`,
     borderRadius: 5,
-    display: `block`,
+    display: `flex`,
+    flexDirection: `column`,
+    height: `100%`,
     padding: 1,
     paddingBottom: 0,
     position: `relative`,
@@ -15,15 +20,13 @@ export default {
   thumbnailContainer: {
     borderRadius: 4,
     filter: `brightness(95%)`,
-    height: {
-      xs: 20 * 8,
-      md: 50 * 8,
-    },
+    height: spacing({ xs: 20, md: 20 }),
     overflow: `hidden`,
     position: `relative`,
     width: `100%`,
   },
   title: {
+    flex: 1,
     marginBottom: 1,
     marginTop: `12px`,
     marginX: 2,

@@ -2,9 +2,12 @@ export default {
   sectionTitleContainer: {
     marginBottom: 3,
   },
+  featuredVideosContainer: {
+    display: { xs: `block`, md: `flex` },
+  },
   featuredVideoContainer: {
     '& + &': {
-      marginTop: 3,
+      marginTop: { xs: 3, md: 0 },
     },
   },
   viewsIcon: {
