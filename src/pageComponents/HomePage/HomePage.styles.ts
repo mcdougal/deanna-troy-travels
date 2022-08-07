@@ -3,13 +3,13 @@ export default {
     paddingBottom: 2,
   },
   featuredVideosContainer: {
-    marginTop: 6,
+    marginTop: { xs: 6, md: 10 },
   },
   workWithMeContainer: {
-    marginTop: 8,
+    marginTop: { xs: 8, md: 10 },
   },
   featuredPostsContainer: {
     marginBottom: 20,
-    marginTop: 8,
+    marginTop: { xs: 8, md: 10 },
   },
 };

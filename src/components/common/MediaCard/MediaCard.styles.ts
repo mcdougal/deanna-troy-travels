@@ -9,7 +9,6 @@ export default {
     flexDirection: `column`,
     height: `100%`,
     padding: 1,
-    paddingBottom: 0,
     position: `relative`,
     transition: `all 0.1s ease-in-out`,
     width: `100%`,
@@ -33,10 +32,11 @@ export default {
   },
   details: {
     display: `flex`,
-    marginTop: `-2px`,
+    flexWrap: `wrap`,
+    marginTop: `4px`,
     paddingX: 2,
-    '& > * + *': {
-      marginLeft: 2,
+    '& > *': {
+      marginRight: 2,
     },
   },
   alignRight: {

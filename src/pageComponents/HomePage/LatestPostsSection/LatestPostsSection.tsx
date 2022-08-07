@@ -19,7 +19,7 @@ const LatestPostsSection = ({ recentBlogPosts }: Props): JSX.Element => {
   return (
     <Container component="section" maxWidth="md">
       <Box sx={sx.sectionTitleContainer}>
-        <SectionTitle>Latest Posts</SectionTitle>
+        <SectionTitle>Latest Posts 📰</SectionTitle>
       </Box>
       <Grid alignItems="stretch" container spacing={2}>
         {recentBlogPosts.map((blogPost) => {

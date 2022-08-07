@@ -1,4 +1,4 @@
-import { Theme } from '@mui/material';
+import { spacing } from '@lib/mui';
 
 export default {
   sectionTitleContainer: {
@@ -6,13 +6,14 @@ export default {
   },
   imageContainer: {
     borderRadius: 5,
-    height: (theme: Theme): string => {
-      return theme.spacing(45);
-    },
+    height: spacing(45),
     marginBottom: 2,
     overflow: `hidden`,
     position: `relative`,
     width: `100%`,
+  },
+  description: {
+    paddingX: { xs: 0, md: 4 },
   },
   ctaContainer: {
     display: `flex`,

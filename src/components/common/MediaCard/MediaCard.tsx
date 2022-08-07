@@ -18,7 +18,7 @@ interface Props {
     loader: ImageLoader;
     url: string;
   };
-  title?: string;
+  title: string;
   url: string;
 }
 
@@ -46,11 +46,9 @@ const MediaCard = ({
           src={thumbnail.url}
         />
       </Box>
-      {title && (
-        <Typography sx={sx.title} variant="body1">
-          {title}
-        </Typography>
-      )}
+      <Typography sx={sx.title} variant="body1">
+        {title}
+      </Typography>
       <Box sx={[sx.details, alignDetails === `right` && sx.alignRight]}>
         {details.map((detail) => {
           return (

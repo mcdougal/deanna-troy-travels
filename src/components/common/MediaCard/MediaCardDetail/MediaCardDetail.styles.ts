@@ -5,7 +5,7 @@ export default {
     alignItems: `center`,
     color: `primary.main`,
     display: `flex`,
-    height: spacing(5),
+    height: spacing(3),
   },
   iconContainer: {
     display: `flex`,

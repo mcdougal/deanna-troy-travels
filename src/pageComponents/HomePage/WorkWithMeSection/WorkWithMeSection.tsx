@@ -12,7 +12,7 @@ const WorkWithMeSection = (): JSX.Element => {
   return (
     <Container component="section" maxWidth="md">
       <Box sx={sx.sectionTitleContainer}>
-        <SectionTitle>Work With Me</SectionTitle>
+        <SectionTitle>Work With Me 🤝</SectionTitle>
       </Box>
       <Box sx={sx.imageContainer}>
         <Image
@@ -24,7 +24,7 @@ const WorkWithMeSection = (): JSX.Element => {
           src="/upload/deanna-troy-travels/home/work-with-me.png"
         />
       </Box>
-      <Typography variant="body1">
+      <Typography sx={sx.description} variant="body1">
         I am a fun, outgoing and quirky Travel YouTuber. I produce travel videos
         ranging from travel vlogs, travel advice, story-times and more!
       </Typography>
