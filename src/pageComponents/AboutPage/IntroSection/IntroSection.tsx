@@ -3,9 +3,9 @@ import Image from 'next/image';
 
 import { cloudinaryLoader } from '@lib/cloudinary';
 
-import sx from './HeroSection.styles';
+import sx from './IntroSection.styles';
 
-const HeroSection = (): JSX.Element => {
+const IntroSection = (): JSX.Element => {
   const theme = useTheme();
 
   return (
@@ -28,7 +28,7 @@ const HeroSection = (): JSX.Element => {
       <Typography component="h1" sx={sx.title} variant="h2">
         Hello!
       </Typography>
-      <Typography paragraph sx={sx.firstParagraph} variant="h5">
+      <Typography component="p" paragraph sx={sx.firstParagraph} variant="h5">
         Deanna Troy Travels started in 2016 during a two year long backpacking
         adventure. From 2016 to 2018, my now husband and I traveled all over
         Southeast Asia.
@@ -54,4 +54,4 @@ const HeroSection = (): JSX.Element => {
   );
 };
 
-export default HeroSection;
+export default IntroSection;

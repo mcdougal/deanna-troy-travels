@@ -4,7 +4,7 @@ import { SiteHeader } from '@components/common';
 
 import sx from './AboutPage.styles';
 import ContactSection from './ContactSection';
-import HeroSection from './HeroSection';
+import IntroSection from './IntroSection';
 import PageMetadata from './PageMetadata';
 import SocialSection from './SocialSection';
 
@@ -13,8 +13,8 @@ const AboutPage = (): React.ReactElement => {
     <>
       <PageMetadata />
       <SiteHeader />
-      <Box sx={sx.heroSectionContainer}>
-        <HeroSection />
+      <Box sx={sx.introSectionContainer}>
+        <IntroSection />
       </Box>
       <Box sx={sx.socialSectionContainer}>
         <SocialSection />

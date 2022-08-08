@@ -1,5 +1,5 @@
 export default {
-  heroSectionContainer: {
+  introSectionContainer: {
     marginTop: 3,
   },
   socialSectionContainer: {

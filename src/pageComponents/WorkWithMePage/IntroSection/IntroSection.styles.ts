@@ -6,10 +6,10 @@ export default {
   },
   imageContainer: {
     borderRadius: 5,
-    height: spacing({ xs: 35, sm: 50 }),
+    height: spacing({ xs: 35, sm: 60 }),
     marginBottom: 2,
     marginRight: { xs: 0, sm: 4 },
-    minWidth: spacing(35),
+    minWidth: spacing({ sm: 38, md: 45 }),
     overflow: `hidden`,
     position: `relative`,
     width: `100%`,
@@ -23,6 +23,11 @@ export default {
   },
   sectionTitleContainerMobile: {
     display: { xs: `block`, sm: `none` },
+    marginBottom: 3,
+  },
+  firstParagraph: {
+    fontWeight: `fontWeightRegular`,
+    lineHeight: 1.7,
   },
   ctaContainer: {
     display: `flex`,
