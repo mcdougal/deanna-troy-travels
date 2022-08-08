@@ -2,11 +2,6 @@ export default {
   sectionTitleContainer: {
     marginBottom: 3,
   },
-  blogPosts: {
-    '& > * + *': {
-      marginTop: 3,
-    },
-  },
   blogPostDateIcon: {
     fontSize: 16,
   },

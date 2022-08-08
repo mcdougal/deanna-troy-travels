@@ -1,6 +1,6 @@
 import PlaceIcon from '@mui/icons-material/Place';
 import TodayIcon from '@mui/icons-material/Today';
-import { Box } from '@mui/material';
+import { Box, Grid } from '@mui/material';
 
 import { MediaCard, SectionTitle } from '@components/common';
 import { contentfulLoader } from '@lib/contentful';
@@ -19,10 +19,10 @@ const BlogPostsSection = ({ blogPosts }: Props): JSX.Element => {
       <Box sx={sx.sectionTitleContainer}>
         <SectionTitle>Recent Posts</SectionTitle>
       </Box>
-      <Box sx={sx.blogPosts}>
+      <Grid alignItems="stretch" container spacing={3}>
         {blogPosts.map((blogPost) => {
           return (
-            <Box key={blogPost.slug}>
+            <Grid key={blogPost.slug} item sm={4} xs={12}>
               <MediaCard
                 details={[
                   {
@@ -46,10 +46,10 @@ const BlogPostsSection = ({ blogPosts }: Props): JSX.Element => {
                 title={blogPost.title}
                 url={`/post/${blogPost.slug}`}
               />
-            </Box>
+            </Grid>
           );
         })}
-      </Box>
+      </Grid>
     </>
   );
 };

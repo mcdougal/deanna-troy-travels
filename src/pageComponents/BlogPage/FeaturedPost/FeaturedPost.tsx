@@ -41,7 +41,7 @@ const FeaturedPost = ({ blogPost }: Props): JSX.Element => {
         <Typography sx={sx.title} variant="h4">
           {blogPost.title}
         </Typography>
-        <Typography color="textSecondary" sx={sx.excerpt} variant="body2">
+        <Typography color="textSecondary" sx={sx.excerpt} variant="body1">
           {blogPost.excerpt}
         </Typography>
         <Link href={`/post/${blogPost.slug}`} passHref>
