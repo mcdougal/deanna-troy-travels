@@ -1,4 +1,4 @@
-import { Box, Container } from '@mui/material';
+import { Box, Container, Grid } from '@mui/material';
 
 import { SectionTitle } from '@components/common';
 
@@ -17,15 +17,15 @@ const BlogFeaturesSection = ({ blogFeatures }: Props): JSX.Element => {
       <Box sx={sx.sectionTitleContainer}>
         <SectionTitle>Blog Features</SectionTitle>
       </Box>
-      <Box>
+      <Grid alignItems="stretch" container spacing={3}>
         {blogFeatures.map((blogFeature) => {
           return (
-            <Box key={blogFeature.blogPostTitle} sx={sx.blogFeatureContainer}>
+            <Grid key={blogFeature.blogPostTitle} item sm={6} xs={12}>
               <BlogFeature blogFeature={blogFeature} />
-            </Box>
+            </Grid>
           );
         })}
-      </Box>
+      </Grid>
     </Container>
   );
 };

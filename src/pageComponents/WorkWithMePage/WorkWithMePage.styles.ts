@@ -12,7 +12,7 @@ export default {
     marginTop: { xs: 7, md: 10 },
   },
   blogFeaturesSectionContainer: {
-    marginTop: { xs: 6, md: 10 },
+    marginTop: { xs: 6, md: 8 },
   },
   contactSectionContainer: {
     marginBottom: 20,

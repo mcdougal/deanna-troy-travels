@@ -1,7 +1,7 @@
-import { Box, Link as MuiLink, Typography } from '@mui/material';
-import { useState } from 'react';
+import FormatQuoteIcon from '@mui/icons-material/FormatQuote';
+import { Box, Typography } from '@mui/material';
 
-const COLLAPSED_LENGTH = 100;
+import sx from './Testimonial.styles';
 
 interface Props {
   company: string;
@@ -10,33 +10,17 @@ interface Props {
 }
 
 const Testimonial = ({ company, person, testimonial }: Props): JSX.Element => {
-  const [isReadMoreClicked, setIsReadMoreClicked] = useState(false);
-
-  const isCollapsed =
-    testimonial.length > COLLAPSED_LENGTH && !isReadMoreClicked;
-
   return (
-    <Box>
-      <Typography variant="body1">
-        {isCollapsed ? (
-          <>“{testimonial.slice(0, COLLAPSED_LENGTH)}...</>
-        ) : (
-          <>“{testimonial}”</>
-        )}
-      </Typography>
-      {isCollapsed && (
-        <Box>
-          <MuiLink
-            onClick={(): void => {
-              setIsReadMoreClicked(true);
-            }}>
-            Read More
-          </MuiLink>
-        </Box>
-      )}
-      <Typography color="textSecondary" variant="caption">
-        {person} — {company}
-      </Typography>
+    <Box sx={sx.testimonialContainer}>
+      <FormatQuoteIcon color="primary" sx={sx.quoteIcon} />
+      <Box>
+        <Typography sx={sx.testimonialContent} variant="body1">
+          {testimonial}”
+        </Typography>
+        <Typography color="textSecondary" variant="caption">
+          {person} — {company}
+        </Typography>
+      </Box>
     </Box>
   );
 };
