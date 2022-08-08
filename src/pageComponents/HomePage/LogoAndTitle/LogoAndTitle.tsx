@@ -1,26 +1,14 @@
 import YouTubeIcon from '@mui/icons-material/YouTube';
 import { Box, Button, Typography } from '@mui/material';
-import Image from 'next/image';
 
-import { cloudinaryLoader } from '@lib/cloudinary';
+import { SiteLogo } from '@components/common';
 
 import sx from './LogoAndTitle.styles';
-
-const YOUTUBE_LOGO_RATIO = 1.189;
-const YOUTUBE_LOGO_HEIGHT = 88;
-const YOUTUBE_LOGO_WIDTH = YOUTUBE_LOGO_HEIGHT * YOUTUBE_LOGO_RATIO;
 
 const LogoAndTitle = (): JSX.Element => {
   return (
     <Box sx={sx.logoAndTitleContainer}>
-      <Image
-        alt="Deanna Troy Travels logo"
-        height={YOUTUBE_LOGO_HEIGHT}
-        layout="fixed"
-        loader={cloudinaryLoader}
-        src="/upload/deanna-troy-travels/logo.png"
-        width={YOUTUBE_LOGO_WIDTH}
-      />
+      <SiteLogo height={11} />
       <Typography component="h1" sx={sx.title} variant="h3">
         <Box sx={sx.deannaTroy}>Deanna Troy</Box> Travels
       </Typography>

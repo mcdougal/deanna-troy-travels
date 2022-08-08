@@ -11,14 +11,14 @@ const AS_SEEN_ON_GLOBE_HEIGHT = AS_SEEN_ON_GLOBE_WIDTH / AS_SEEN_ON_GLOBE_RATIO;
 
 const HeroSection = (): JSX.Element => {
   return (
-    <Container maxWidth="xl" sx={sx.heroSectionContainer}>
+    <Container maxWidth="md" sx={sx.heroSectionContainer}>
       <Typography component="h1" sx={sx.title} variant="h2">
         <Box sx={sx.titlePrimary}>Work With</Box> Me
       </Typography>
       <Image
         alt="A globe surrounded by company logos that Deanna has worked with"
         height={AS_SEEN_ON_GLOBE_HEIGHT}
-        layout="responsive"
+        layout="intrinsic"
         loader={cloudinaryLoader}
         priority
         src="/upload/deanna-troy-travels/work-with-me/as-seen-on-globe.jpg"

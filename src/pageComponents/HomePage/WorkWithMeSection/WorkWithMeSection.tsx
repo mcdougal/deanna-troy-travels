@@ -1,5 +1,5 @@
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
-import { Box, Button, Container, Typography } from '@mui/material';
+import { Box, Button, Container, Typography, useTheme } from '@mui/material';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -9,6 +9,8 @@ import { cloudinaryLoader } from '@lib/cloudinary';
 import sx from './WorkWithMeSection.styles';
 
 const WorkWithMeSection = (): JSX.Element => {
+  const theme = useTheme();
+
   return (
     <Container component="section" maxWidth="md">
       <Box sx={sx.sectionTitleContainer}>
@@ -21,6 +23,10 @@ const WorkWithMeSection = (): JSX.Element => {
           loader={cloudinaryLoader}
           objectFit="cover"
           objectPosition="center"
+          sizes={[
+            `(max-width: ${theme.breakpoints.values.sm}px) 100vw`,
+            `900px`,
+          ].join(`,`)}
           src="/upload/deanna-troy-travels/home/work-with-me.png"
         />
       </Box>

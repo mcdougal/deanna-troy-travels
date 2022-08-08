@@ -29,7 +29,7 @@ const SiteLogoButton = ({ hideLogoUntilScroll }: Props): JSX.Element => {
         <Box sx={sx.logoLinkContainer}>
           <Link href="/" passHref>
             <ButtonBase focusRipple sx={sx.logoContainer}>
-              <SiteLogo />
+              <SiteLogo height={5} />
             </ButtonBase>
           </Link>
         </Box>

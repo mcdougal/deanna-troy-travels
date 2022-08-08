@@ -9,7 +9,7 @@ export default {
   heroImageContainer: {
     boxShadow: `0 4px 20px rgba(0, 0, 0, 0.15)`,
     borderRadius: 4,
-    height: spacing(40),
+    height: spacing({ xs: 40, md: 60 }),
     overflow: `hidden`,
     position: `relative`,
   },

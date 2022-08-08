@@ -1,30 +1,40 @@
-import { Box, Typography } from '@mui/material';
+import { Box, Typography, useTheme } from '@mui/material';
 import Image from 'next/image';
 
 import { cloudinaryLoader } from '@lib/cloudinary';
 
 import sx from './SiteLogo.styles';
 
-const YOUTUBE_LOGO_RATIO = 1.189;
-const YOUTUBE_LOGO_HEIGHT = 40;
-const YOUTUBE_LOGO_WIDTH = YOUTUBE_LOGO_HEIGHT * YOUTUBE_LOGO_RATIO;
+const YOUTUBE_LOGO_RATIO = 1.18518;
 
-const SiteLogo = (): JSX.Element => {
+interface Props {
+  height: number;
+  variant?: `logoOnly` | `logoAndTitle`;
+}
+
+const SiteLogo = ({ height, variant = `logoOnly` }: Props): JSX.Element => {
+  const theme = useTheme();
+
+  const heightPx = parseInt(theme.spacing(height).replace(/px$/, ``), 10);
+  const widthPx = heightPx * YOUTUBE_LOGO_RATIO;
+
   return (
     <Box sx={sx.logoContainer}>
       <Image
         alt="Deanna Troy Travels logo"
-        height={YOUTUBE_LOGO_HEIGHT}
+        height={heightPx}
         layout="fixed"
         loader={cloudinaryLoader}
         src="/upload/deanna-troy-travels/logo.png"
-        width={YOUTUBE_LOGO_WIDTH}
+        width={widthPx}
       />
-      <Typography sx={sx.logoText} variant="h6">
-        <b>
-          <Box sx={sx.deannaTroy}>Deanna Troy</Box> Travels
-        </b>
-      </Typography>
+      {variant === `logoAndTitle` && (
+        <Typography component="span" sx={sx.logoText} variant="h6">
+          <b>
+            <Box sx={sx.deannaTroy}>Deanna Troy</Box> Travels
+          </b>
+        </Typography>
+      )}
     </Box>
   );
 };
