@@ -15,7 +15,7 @@ export default {
   },
   coverImageContainer: {
     borderRadius: 4,
-    height: spacing(20),
+    height: spacing({ xs: 20, sm: 50 }),
     overflow: `hidden`,
     position: `relative`,
   },

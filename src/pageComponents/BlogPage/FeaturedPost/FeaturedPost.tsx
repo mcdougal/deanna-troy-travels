@@ -1,5 +1,6 @@
-import { Box, Button, Typography } from '@mui/material';
+import { Box, Button, Typography, useTheme } from '@mui/material';
 import Image from 'next/image';
+import Link from 'next/link';
 
 import { contentfulLoader } from '@lib/contentful';
 
@@ -12,6 +13,8 @@ interface Props {
 }
 
 const FeaturedPost = ({ blogPost }: Props): JSX.Element => {
+  const theme = useTheme();
+
   return (
     <Box sx={sx.featuredPostContainer}>
       <Typography sx={sx.featuredPostLabel} variant="body1">
@@ -27,6 +30,10 @@ const FeaturedPost = ({ blogPost }: Props): JSX.Element => {
           objectFit="cover"
           objectPosition="center"
           priority
+          sizes={[
+            `(max-width: ${theme.breakpoints.values.md}px) 100vw`,
+            `900px`,
+          ].join(`,`)}
           src={blogPost.coverImage.url}
         />
       </Box>
@@ -37,9 +44,16 @@ const FeaturedPost = ({ blogPost }: Props): JSX.Element => {
         <Typography color="textSecondary" sx={sx.excerpt} variant="body2">
           {blogPost.excerpt}
         </Typography>
-        <Button color="primary" fullWidth size="large" variant="contained">
-          Read Post
-        </Button>
+        <Link href={`/post/${blogPost.slug}`} passHref>
+          <Button
+            color="primary"
+            component="a"
+            fullWidth
+            size="large"
+            variant="contained">
+            Read Post
+          </Button>
+        </Link>
       </Box>
     </Box>
   );

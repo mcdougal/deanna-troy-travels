@@ -18,7 +18,7 @@ const BlogPage = ({
       <SiteHeader />
       <Container maxWidth="md">
         <Typography component="h1" sx={sx.title} variant="h2">
-          <Box sx={sx.titlePrimary}>Budget Travel</Box> Blog
+          <Box sx={sx.titlePrimary}>Travel</Box> Blog
         </Typography>
         <Box sx={sx.featuredPostContainer}>
           <FeaturedPost blogPost={blogPosts[0]} />
