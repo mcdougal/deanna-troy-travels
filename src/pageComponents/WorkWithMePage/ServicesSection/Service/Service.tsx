@@ -1,4 +1,4 @@
-import { Box, ButtonBase, Typography } from '@mui/material';
+import { Box, ButtonBase, Typography, useTheme } from '@mui/material';
 import Image from 'next/image';
 
 import { cloudinaryLoader } from '@lib/cloudinary';
@@ -16,6 +16,8 @@ interface Props {
 }
 
 const Service = ({ icon, label, onClick, thumbnail }: Props): JSX.Element => {
+  const theme = useTheme();
+
   return (
     <Box>
       <ButtonBase focusRipple onClick={onClick} sx={sx.serviceContainer}>
@@ -32,6 +34,10 @@ const Service = ({ icon, label, onClick, thumbnail }: Props): JSX.Element => {
             loader={cloudinaryLoader}
             objectFit="cover"
             objectPosition="top"
+            sizes={[
+              `(max-width: ${theme.breakpoints.values.sm}px) 100vw`,
+              `400px`,
+            ].join(`,`)}
             src={thumbnail.url}
           />
         </Box>

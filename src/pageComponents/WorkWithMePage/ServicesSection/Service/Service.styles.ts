@@ -28,7 +28,7 @@ export default {
   thumbnailContainer: {
     borderRadius: 5,
     boxShadow: `0 4px 20px rgba(0, 0, 0, 0.06)`,
-    height: spacing(22),
+    height: spacing({ xs: 22, sm: 30 }),
     overflow: `hidden`,
     position: `relative`,
     width: `100%`,

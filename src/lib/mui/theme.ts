@@ -28,6 +28,23 @@ const theme = createTheme({
         },
       },
     },
+    MuiDialog: {
+      styleOverrides: {
+        paper: {
+          borderRadius: 16,
+        },
+        paperFullScreen: {
+          borderRadius: 0,
+        },
+      },
+    },
+    MuiDialogActions: {
+      styleOverrides: {
+        root: {
+          padding: `24px`,
+        },
+      },
+    },
     MuiDialogTitle: {
       defaultProps: {
         variant: `h4`,
