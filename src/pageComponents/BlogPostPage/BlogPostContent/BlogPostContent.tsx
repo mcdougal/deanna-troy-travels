@@ -76,7 +76,7 @@ const contentfulRichTextOptions = (): Options => {
       },
       [BLOCKS.PARAGRAPH]: (node, children): React.ReactNode => {
         return (
-          <Typography paragraph variant="body1">
+          <Typography component="p" paragraph sx={sx.paragraph} variant="h6">
             {children}
           </Typography>
         );

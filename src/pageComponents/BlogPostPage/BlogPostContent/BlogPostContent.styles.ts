@@ -23,6 +23,10 @@ export default {
     marginBottom: 1,
     marginTop: 2,
   },
+  paragraph: {
+    fontWeight: `fontWeightRegular`,
+    lineHeight: 1.8,
+  },
   table: {
     marginBottom: 4,
   },

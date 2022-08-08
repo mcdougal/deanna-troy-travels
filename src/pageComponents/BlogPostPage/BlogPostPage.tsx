@@ -22,7 +22,7 @@ const BlogPostPage = ({
       <Box sx={sx.coverImageContainer}>
         <BlogPostCoverImage blogPost={blogPost} />
       </Box>
-      <Container maxWidth="md" sx={sx.headerAndContentContainer}>
+      <Container maxWidth={false} sx={sx.headerAndContentContainer}>
         <BlogPostHeader blogPost={blogPost} />
         <Box sx={sx.contentContainer}>
           <BlogPostContent blogPost={blogPost} />

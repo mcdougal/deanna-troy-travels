@@ -19,7 +19,7 @@ const BlogPostCoverImage = ({ blogPost }: Props): JSX.Element => {
         layout="fill"
         loader={contentfulLoader}
         objectFit="cover"
-        objectPosition="center"
+        objectPosition="50% 25%"
         priority
         src={blogPost.coverImage.url}
       />
