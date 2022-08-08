@@ -1,5 +1,5 @@
 export default {
   title: {
-    marginBottom: 1,
+    marginBottom: { xs: 1, sm: 2 },
   },
 };

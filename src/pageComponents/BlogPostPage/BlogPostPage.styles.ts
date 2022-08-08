@@ -1,17 +1,15 @@
 import { spacing } from '@lib/mui';
 
 export default {
-  coverImageContainer: {
-    marginBottom: { xs: 3, sm: 5 },
-  },
-  headerAndContentContainer: {
+  blogPostPageContainer: {
     marginBottom: 20,
-    maxWidth: spacing(100),
+    marginTop: { xs: 3, sm: 8 },
+    maxWidth: spacing(90),
   },
   contentContainer: {
-    marginTop: 3,
+    marginTop: { xs: 3, sm: 5 },
   },
   tagsContainer: {
-    marginTop: 5,
+    marginTop: { xs: 5, sm: 7 },
   },
 };
