@@ -19,7 +19,7 @@ export default {
   },
   sectionTitleContainerDesktop: {
     display: { xs: `none`, sm: `block` },
-    marginTop: 2,
+    marginTop: 1,
   },
   sectionTitleContainerMobile: {
     display: { xs: `block`, sm: `none` },

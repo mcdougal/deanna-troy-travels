@@ -1,6 +1,6 @@
-import CampaignIcon from '@mui/icons-material/Campaign';
-import VideoCameraFrontIcon from '@mui/icons-material/VideoCameraFront';
-import { Box, Container } from '@mui/material';
+import LocalActivityIcon from '@mui/icons-material/LocalActivity';
+import SellIcon from '@mui/icons-material/Sell';
+import { Box, Container, Grid } from '@mui/material';
 import { useState } from 'react';
 
 import { ContactDialog, SectionTitle } from '@components/common';
@@ -25,26 +25,30 @@ const ServicesSection = (): JSX.Element => {
         <Box sx={sx.sectionTitleContainer}>
           <SectionTitle>Advertise Your...</SectionTitle>
         </Box>
-        <Box sx={sx.servicesContainer}>
-          <Service
-            icon={<CampaignIcon sx={sx.advertiseIcon} />}
-            label="Product"
-            onClick={openContactDialog}
-            thumbnail={{
-              alt: `Photo of Deanna advertising a portable Bluetooth speaker`,
-              url: `/upload/deanna-troy-travels/work-with-me/advertise.jpg`,
-            }}
-          />
-          <Service
-            icon={<VideoCameraFrontIcon sx={sx.appearIcon} />}
-            label="Experience"
-            onClick={openContactDialog}
-            thumbnail={{
-              alt: `Photo of Deanna at the Da Nang Home Cooking Class`,
-              url: `/upload/deanna-troy-travels/work-with-me/appear.jpg`,
-            }}
-          />
-        </Box>
+        <Grid alignItems="stretch" container spacing={3}>
+          <Grid item sm={6} xs={12}>
+            <Service
+              icon={<SellIcon sx={sx.advertiseIcon} />}
+              label="Product"
+              onClick={openContactDialog}
+              thumbnail={{
+                alt: `Photo of Deanna advertising a portable Bluetooth speaker`,
+                url: `/upload/deanna-troy-travels/work-with-me/advertise.jpg`,
+              }}
+            />
+          </Grid>
+          <Grid item sm={6} xs={12}>
+            <Service
+              icon={<LocalActivityIcon sx={sx.appearIcon} />}
+              label="Experience"
+              onClick={openContactDialog}
+              thumbnail={{
+                alt: `Photo of Deanna at the Da Nang Home Cooking Class`,
+                url: `/upload/deanna-troy-travels/work-with-me/appear.jpg`,
+              }}
+            />
+          </Grid>
+        </Grid>
       </Container>
       <ContactDialog onClose={closeContactDialog} open={isContactDialogOpen} />
     </>
