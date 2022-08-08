@@ -9,4 +9,7 @@ export default {
     color: `primary.main`,
     display: `inline`,
   },
+  imageContainer: {
+    position: `relative`,
+  },
 };
