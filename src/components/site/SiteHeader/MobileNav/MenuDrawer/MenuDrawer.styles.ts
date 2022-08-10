@@ -1,19 +1,23 @@
-import { spacing } from '@lib/mui';
-
 export default {
   menuDrawer: {
     '& .MuiDrawer-paper': {
-      paddingLeft: 4,
+      paddingLeft: 2,
       paddingRight: 2,
       width: `100%`,
     },
   },
-  menuHeader: {
-    paddingX: 2,
-    paddingY: 2,
-    textAlign: `right`,
+  subscribeButtonContainer: {
+    marginTop: 1,
+    paddingLeft: 2,
+    paddingRight: 2,
   },
-  closeIcon: {
-    fontSize: spacing(5),
+  subscribeButton: {
+    '& .MuiButton-startIcon > *:nth-of-type(1)': {
+      fontSize: 25,
+      marginTop: `-1px`,
+    },
+  },
+  siteMenuContainer: {
+    marginTop: 2,
   },
 };

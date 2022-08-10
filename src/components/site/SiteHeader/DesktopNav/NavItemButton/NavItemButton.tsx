@@ -1,4 +1,4 @@
-import { Button } from '@mui/material';
+import { Button, ButtonProps } from '@mui/material';
 import Link from 'next/link';
 
 import sx from './NavItemButton.styles';
@@ -9,7 +9,7 @@ export type NavItem =
       key: string;
       label: string;
       id: string;
-      onClick: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
+      onClick: ButtonProps[`onClick`];
     }
   | {
       type: `externalLink`;

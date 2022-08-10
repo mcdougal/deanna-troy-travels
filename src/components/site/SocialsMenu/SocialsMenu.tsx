@@ -8,7 +8,7 @@ import { AmazonIcon, PoshmarkIcon, TikTokIcon } from '@components/icons';
 import sx from './SocialsMenu.styles';
 
 export interface SocialsMenuAnchor {
-  element: HTMLButtonElement | null;
+  element: HTMLButtonElement | HTMLDivElement | null;
   elementId: string;
 }
 

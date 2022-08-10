@@ -1,9 +1,9 @@
-import CloseIcon from '@mui/icons-material/Close';
-import { Box, Drawer, IconButton } from '@mui/material';
+import YouTubeIcon from '@mui/icons-material/YouTube';
+import { Box, Button, Drawer } from '@mui/material';
 
 import sx from './MenuDrawer.styles';
+import MenuDrawerHeader from './MenuDrawerHeader';
 import SiteMenu from './SiteMenu';
-import SocialLinks from './SocialLinks';
 
 interface Props {
   onClose: () => void;
@@ -13,17 +13,25 @@ interface Props {
 const MenuDrawer = ({ onClose, open }: Props): JSX.Element => {
   return (
     <Drawer anchor="right" onClose={onClose} open={open} sx={sx.menuDrawer}>
-      <Box sx={sx.menuHeader}>
-        <IconButton
-          aria-label="Close Menu"
-          color="inherit"
-          edge="end"
-          onClick={onClose}>
-          <CloseIcon sx={sx.closeIcon} />
-        </IconButton>
+      <Box>
+        <MenuDrawerHeader onClickClose={onClose} />
       </Box>
-      <SiteMenu />
-      <SocialLinks />
+      <Box sx={sx.subscribeButtonContainer}>
+        <Button
+          color="secondary"
+          fullWidth
+          href="https://www.youtube.com/channel/UCJeRZkaH3ORHkNWUNqfXJEg?sub_confirmation=1"
+          size="large"
+          startIcon={<YouTubeIcon />}
+          sx={sx.subscribeButton}
+          target="_blank"
+          variant="outlined">
+          Subscribe
+        </Button>
+      </Box>
+      <Box sx={sx.siteMenuContainer}>
+        <SiteMenu />
+      </Box>
     </Drawer>
   );
 };
