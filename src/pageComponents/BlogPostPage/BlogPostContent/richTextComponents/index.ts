@@ -9,6 +9,7 @@ import HyperLink from './HyperLink';
 import ListItem from './ListItem';
 import OlList from './OlList';
 import Paragraph from './Paragraph';
+import Quote from './Quote';
 import Table from './Table';
 import TableCell from './TableCell';
 import TableHeaderCell from './TableHeaderCell';
@@ -28,6 +29,7 @@ export {
   ListItem,
   OlList,
   Paragraph,
+  Quote,
   Table,
   TableCell,
   TableHeaderCell,

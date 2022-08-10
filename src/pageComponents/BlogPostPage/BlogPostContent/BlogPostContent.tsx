@@ -16,6 +16,7 @@ import {
   ListItem,
   OlList,
   Paragraph,
+  Quote,
   Table,
   TableCell,
   TableHeaderCell,
@@ -56,8 +57,6 @@ interface Props {
 const BlogPostContent = ({ blogPost }: Props): JSX.Element => {
   const { json, links } = blogPost.content;
 
-  console.log(links);
-
   return (
     <article>
       {documentToReactComponents(json, {
@@ -76,6 +75,7 @@ const BlogPostContent = ({ blogPost }: Props): JSX.Element => {
           [BLOCKS.LIST_ITEM]: getRichTextElementRenderer(ListItem),
           [BLOCKS.OL_LIST]: getRichTextElementRenderer(OlList),
           [BLOCKS.PARAGRAPH]: getRichTextElementRenderer(Paragraph),
+          [BLOCKS.QUOTE]: getRichTextElementRenderer(Quote),
           [BLOCKS.TABLE]: getRichTextElementRenderer(Table),
           [BLOCKS.TABLE_CELL]: getRichTextElementRenderer(TableCell),
           [BLOCKS.TABLE_HEADER_CELL]:

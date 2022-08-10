@@ -6,7 +6,7 @@ import EmbeddedYouTubeVideo from './EmbeddedYouTubeVideo';
 
 // Replace YouTube embed URLs with an iframe
 const YOUTUBE_EMBED_REGEX =
-  /https:\/\/www\.youtube\.com\/embed\/[A-Za-z0-9-]+\/?/g;
+  /https:\/\/www\.youtube\.com\/embed\/[A-Za-z0-9_-]+\/?/g;
 
 interface Props {
   text: string;
