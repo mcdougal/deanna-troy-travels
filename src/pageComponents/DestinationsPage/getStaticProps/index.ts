@@ -1,7 +1,6 @@
-import { BlogPost, Destination } from './fetchDestination';
-import { YouTubeVideo } from './fetchRecentVideos';
+import { Destination } from './fetchDestinations';
 import getStaticProps from './getStaticProps';
 
-export type { BlogPost, Destination, YouTubeVideo };
+export type { Destination };
 
 export default getStaticProps;

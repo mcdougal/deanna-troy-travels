@@ -1,9 +1,7 @@
-import { Box, Container, Grid, Typography, useTheme } from '@mui/material';
+import { Box, Container, Grid, Typography } from '@mui/material';
 import type { InferGetStaticPropsType } from 'next';
-import Image from 'next/image';
 
 import { SiteHeader } from '@components/site';
-import { cloudinaryLoader } from '@lib/cloudinary';
 
 import sx from './DestinationsPage.styles';
 import getStaticProps from './getStaticProps';
@@ -12,8 +10,6 @@ import PageMetadata from './PageMetadata';
 const DestinationsPage = ({
   destinations,
 }: InferGetStaticPropsType<typeof getStaticProps>): React.ReactElement => {
-  const theme = useTheme();
-
   return (
     <>
       <PageMetadata />
@@ -22,7 +18,7 @@ const DestinationsPage = ({
         <Typography component="h1" sx={sx.title} variant="h2">
           Destinations
         </Typography>
-        <Box sx={sx.destinationsSectionContainer}>
+        <Box>
           <Grid alignItems="stretch" container spacing={3}>
             {destinations.map((destination) => {
               return (
