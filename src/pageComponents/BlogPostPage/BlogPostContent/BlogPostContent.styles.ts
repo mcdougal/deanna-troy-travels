@@ -31,9 +31,20 @@ export default {
     marginBottom: { xs: 1, sm: 2 },
     marginTop: { xs: 2, sm: 4 },
   },
+  listItem: {
+    '& > p': {
+      lineHeight: 1.5,
+      marginBottom: { xs: 2, sm: 3 },
+      marginLeft: 1,
+    },
+  },
+  olList: {
+    marginBottom: { xs: 3, sm: 4 },
+    paddingInlineStart: spacing({ xs: 3, sm: 5 }),
+  },
   paragraph: {
     fontWeight: `fontWeightRegular`,
-    lineHeight: 2.2,
+    lineHeight: { xs: 2, sm: 2.2 },
     marginBottom: { xs: 3, sm: 4 },
   },
   table: {
@@ -50,5 +61,9 @@ export default {
     '& *': {
       margin: 0,
     },
+  },
+  ulList: {
+    marginBottom: { xs: 3, sm: 4 },
+    paddingInlineStart: spacing({ xs: 3, sm: 5 }),
   },
 };

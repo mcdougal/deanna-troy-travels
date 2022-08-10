@@ -96,6 +96,20 @@ const contentfulRichTextOptions = (): Options => {
           </MuiLink>
         );
       },
+      [BLOCKS.LIST_ITEM]: (node, children): React.ReactNode => {
+        return (
+          <Box component="li" sx={sx.listItem}>
+            {children}
+          </Box>
+        );
+      },
+      [BLOCKS.OL_LIST]: (node, children): React.ReactNode => {
+        return (
+          <Box component="ol" sx={sx.olList}>
+            {children}
+          </Box>
+        );
+      },
       [BLOCKS.PARAGRAPH]: (node, children): React.ReactNode => {
         const anchorId = makeAnchorIdForNode(node);
 
@@ -127,6 +141,13 @@ const contentfulRichTextOptions = (): Options => {
       },
       [BLOCKS.TABLE_ROW]: (node, children): React.ReactNode => {
         return <TableRow>{children}</TableRow>;
+      },
+      [BLOCKS.UL_LIST]: (node, children): React.ReactNode => {
+        return (
+          <Box component="ul" sx={sx.ulList}>
+            {children}
+          </Box>
+        );
       },
     },
     renderText: (text): React.ReactNode => {
