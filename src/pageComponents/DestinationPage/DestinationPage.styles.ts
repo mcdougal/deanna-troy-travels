@@ -9,11 +9,13 @@ export default {
     display: `inline`,
   },
   featuredPostContainer: {
-    marginBottom: 1,
     marginTop: 1,
+  },
+  recentVideosContainer: {
+    marginTop: { xs: 8, md: 10 },
   },
   blogPostsSectionContainer: {
     marginBottom: 20,
-    marginTop: 6,
+    marginTop: { xs: 8, md: 10 },
   },
 };

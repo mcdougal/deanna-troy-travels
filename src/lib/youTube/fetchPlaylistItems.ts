@@ -53,7 +53,7 @@ interface PlaylistItem {
   };
 }
 
-export default async (): Promise<Array<PlaylistItem>> => {
+export default async (playlistId: string): Promise<Array<PlaylistItem>> => {
   const { GOOGLE_CLOUD_API_KEY } = process.env;
 
   if (!GOOGLE_CLOUD_API_KEY) {
@@ -64,7 +64,7 @@ export default async (): Promise<Array<PlaylistItem>> => {
     `key=${GOOGLE_CLOUD_API_KEY}`,
     `maxResults=3`,
     `part=contentDetails,snippet,status`,
-    `playlistId=PLupawb160v0xF0_SUX5yHJE2GQogd7lx-`,
+    `playlistId=${playlistId}`,
   ].join(`&`)}`;
 
   const playlistItemsResponse = await axios.get<{ items: Array<PlaylistItem> }>(

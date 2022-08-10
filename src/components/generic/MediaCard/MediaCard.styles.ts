@@ -1,5 +1,3 @@
-import { spacing } from '@lib/mui';
-
 export default {
   mediaCardButtonBase: {
     alignItems: `flex-start`,
@@ -19,8 +17,9 @@ export default {
   thumbnailContainer: {
     borderRadius: 4,
     filter: `brightness(95%)`,
-    height: spacing(20),
+    height: 0,
     overflow: `hidden`,
+    paddingTop: `56.25%`,
     position: `relative`,
     width: `100%`,
   },

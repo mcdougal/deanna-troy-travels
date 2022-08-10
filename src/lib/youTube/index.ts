@@ -1,4 +1,4 @@
-import fetchAllVideosPlaylistItems from './fetchAllVideosPlaylistItems';
+import fetchPlaylistItems from './fetchPlaylistItems';
 import fetchYouTubeVideo from './fetchYouTubeVideo';
 
-export { fetchAllVideosPlaylistItems, fetchYouTubeVideo };
+export { fetchPlaylistItems, fetchYouTubeVideo };

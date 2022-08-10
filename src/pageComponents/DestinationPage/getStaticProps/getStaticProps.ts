@@ -3,6 +3,7 @@ import { ParsedUrlQuery } from 'querystring';
 import type { GetStaticProps } from 'next';
 
 import fetchDestination, { Destination } from './fetchDestination';
+import fetchRecentVideos, { YouTubeVideo } from './fetchRecentVideos';
 
 interface Params extends ParsedUrlQuery {
   destinationSlug: string;
@@ -10,6 +11,7 @@ interface Params extends ParsedUrlQuery {
 
 interface Props {
   destination: Destination;
+  recentVideos: Array<YouTubeVideo>;
 }
 
 const getStaticProps: GetStaticProps<Props, Params> = async ({ params }) => {
@@ -19,9 +21,12 @@ const getStaticProps: GetStaticProps<Props, Params> = async ({ params }) => {
     throw new Error(`URL missing destination slug`);
   }
 
+  const destination = await fetchDestination(destinationSlug);
+
   return {
     props: {
-      destination: await fetchDestination(destinationSlug),
+      destination,
+      recentVideos: await fetchRecentVideos(destination.youTubePlaylistId),
     },
     revalidate: 60,
   };

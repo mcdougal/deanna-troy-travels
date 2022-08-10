@@ -27,6 +27,12 @@ const DesktopNav = (): JSX.Element => {
     },
     {
       type: `internalLink`,
+      key: `destinations`,
+      label: `Destinations`,
+      internalPath: `/destinations`,
+    },
+    {
+      type: `internalLink`,
       key: `blog`,
       label: `Blog`,
       internalPath: `/blog`,

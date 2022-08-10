@@ -8,9 +8,11 @@ import sx from './DestinationPage.styles';
 import FeaturedPost from './FeaturedPost';
 import getStaticProps from './getStaticProps';
 import PageMetadata from './PageMetadata';
+import RecentVideosSection from './RecentVideosSection';
 
 const DestinationPage = ({
   destination,
+  recentVideos,
 }: InferGetStaticPropsType<typeof getStaticProps>): React.ReactElement => {
   const blogPosts = destination.linkedFrom.blogPostCollection.items;
 
@@ -24,6 +26,9 @@ const DestinationPage = ({
         </Typography>
         <Box sx={sx.featuredPostContainer}>
           <FeaturedPost blogPost={blogPosts[0]} />
+        </Box>
+        <Box sx={sx.recentVideosContainer}>
+          <RecentVideosSection recentVideos={recentVideos} />
         </Box>
         <Box sx={sx.blogPostsSectionContainer}>
           <BlogPostsSection

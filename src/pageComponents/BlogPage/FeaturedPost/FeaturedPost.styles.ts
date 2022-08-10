@@ -1,5 +1,3 @@
-import { spacing } from '@lib/mui';
-
 export default {
   featuredPostContainer: {
     boxShadow: `0 4px 20px rgba(0, 0, 0, 0.06)`,
@@ -15,8 +13,9 @@ export default {
   },
   coverImageContainer: {
     borderRadius: 4,
-    height: spacing({ xs: 20, sm: 50 }),
+    height: 0,
     overflow: `hidden`,
+    paddingTop: `56.25%`,
     position: `relative`,
   },
   featuredPostContent: {
