@@ -25,7 +25,7 @@ export default {
   },
   paragraph: {
     fontWeight: `fontWeightRegular`,
-    lineHeight: 2,
+    lineHeight: 2.2,
   },
   table: {
     marginBottom: 4,

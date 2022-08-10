@@ -4,7 +4,7 @@ export default {
   blogPostPageContainer: {
     marginBottom: 20,
     marginTop: { xs: 3, sm: 8 },
-    maxWidth: spacing(90),
+    maxWidth: spacing(95),
   },
   contentContainer: {
     marginTop: { xs: 3, sm: 5 },

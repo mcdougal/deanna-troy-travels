@@ -13,10 +13,15 @@ const EmbeddedYouTubeVideo = ({ url }: Props): JSX.Element => {
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowFullScreen
         frameBorder="0"
-        height="100%"
         src={url}
+        style={{
+          height: `100%`,
+          left: 0,
+          position: `absolute` as const,
+          top: 0,
+          width: `100%`,
+        }}
         title="YouTube video player"
-        width="100%"
       />
     </Box>
   );
