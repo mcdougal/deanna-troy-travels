@@ -4,6 +4,7 @@ import {
 } from '@contentful/rich-text-react-renderer';
 import { BLOCKS, INLINES } from '@contentful/rich-text-types';
 import {
+  Box,
   Link as MuiLink,
   Table,
   TableBody,
@@ -17,6 +18,7 @@ import { BlogPost } from '../getStaticProps';
 
 import sx from './BlogPostContent.styles';
 import EmbeddedYouTubeVideo from './EmbeddedYouTubeVideo';
+import makeHeadingIdForNode, { HEADING_ID_REGEX } from './makeHeadingIdForNode';
 
 // Replace YouTube embed URLs with an iframe
 const YOUTUBE_EMBED_REGEX =
@@ -26,57 +28,77 @@ const contentfulRichTextOptions = (): Options => {
   return {
     renderNode: {
       [BLOCKS.HEADING_1]: (node, children): React.ReactNode => {
+        const headingId = makeHeadingIdForNode(node);
+
         return (
           <Typography component="h1" sx={sx.h1} variant="h3">
+            {headingId && <Box id={headingId} sx={sx.headingAnchor} />}
             {children}
           </Typography>
         );
       },
       [BLOCKS.HEADING_2]: (node, children): React.ReactNode => {
+        const headingId = makeHeadingIdForNode(node);
+
         return (
           <Typography component="h2" sx={sx.h2} variant="h4">
+            {headingId && <Box id={headingId} sx={sx.headingAnchor} />}
             {children}
           </Typography>
         );
       },
       [BLOCKS.HEADING_3]: (node, children): React.ReactNode => {
+        const headingId = makeHeadingIdForNode(node);
+
         return (
           <Typography component="h3" sx={sx.h3} variant="h5">
+            {headingId && <Box id={headingId} sx={sx.headingAnchor} />}
             {children}
           </Typography>
         );
       },
       [BLOCKS.HEADING_4]: (node, children): React.ReactNode => {
+        const headingId = makeHeadingIdForNode(node);
+
         return (
           <Typography component="h4" sx={sx.h4} variant="h6">
+            {headingId && <Box id={headingId} sx={sx.headingAnchor} />}
             {children}
           </Typography>
         );
       },
       [BLOCKS.HEADING_5]: (node, children): React.ReactNode => {
+        const headingId = makeHeadingIdForNode(node);
+
         return (
           <Typography component="h5" sx={sx.h5} variant="h6">
+            {headingId && <Box id={headingId} sx={sx.headingAnchor} />}
             {children}
           </Typography>
         );
       },
       [BLOCKS.HEADING_6]: (node, children): React.ReactNode => {
+        const headingId = makeHeadingIdForNode(node);
+
         return (
           <Typography component="h6" sx={sx.h6} variant="h6">
+            {headingId && <Box id={headingId} sx={sx.headingAnchor} />}
             {children}
           </Typography>
         );
       },
       [INLINES.HYPERLINK]: (node, children): React.ReactNode => {
         return (
-          <MuiLink href={node.data.uri} target="_blank">
+          <MuiLink
+            href={node.data.uri}
+            target={node.data.uri.startsWith(`http`) ? `_blank` : undefined}>
             {children}
           </MuiLink>
         );
       },
       [BLOCKS.PARAGRAPH]: (node, children): React.ReactNode => {
         return (
-          <Typography component="p" paragraph sx={sx.paragraph} variant="h6">
+          <Typography component="p" sx={sx.paragraph} variant="h6">
             {children}
           </Typography>
         );
@@ -103,8 +125,9 @@ const contentfulRichTextOptions = (): Options => {
       },
     },
     renderText: (text): React.ReactNode => {
-      const textParts = text.split(YOUTUBE_EMBED_REGEX);
-      const embedUrls = text.match(YOUTUBE_EMBED_REGEX);
+      const textWithoutHeadingId = text.replace(HEADING_ID_REGEX, ``);
+      const textParts = textWithoutHeadingId.split(YOUTUBE_EMBED_REGEX);
+      const embedUrls = textWithoutHeadingId.match(YOUTUBE_EMBED_REGEX);
 
       return textParts.map((textPart, i) => {
         const embedUrl = embedUrls && embedUrls[i];

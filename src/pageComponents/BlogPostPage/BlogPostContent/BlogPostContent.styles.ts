@@ -1,15 +1,23 @@
+import { spacing } from '@lib/mui';
+
 export default {
+  headingAnchor: {
+    display: `block`,
+    position: `relative`,
+    top: spacing(-10), // Offset fixed site header
+    visibility: `hidden`,
+  },
   h1: {
     marginBottom: { xs: 1, sm: 3 },
     marginTop: { xs: 4, sm: 6 },
   },
   h2: {
-    marginBottom: { xs: 1, sm: 3 },
+    marginBottom: { xs: 2, sm: 3 },
     marginTop: { xs: 4, sm: 6 },
   },
   h3: {
     marginBottom: { xs: 1, sm: 2 },
-    marginTop: { xs: 2, sm: 4 },
+    marginTop: { xs: 3, sm: 4 },
   },
   h4: {
     marginBottom: { xs: 1, sm: 2 },
@@ -26,6 +34,7 @@ export default {
   paragraph: {
     fontWeight: `fontWeightRegular`,
     lineHeight: 2.2,
+    marginBottom: { xs: 3, sm: 4 },
   },
   table: {
     marginBottom: 4,
