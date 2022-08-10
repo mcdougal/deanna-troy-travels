@@ -8,7 +8,13 @@ export interface BlogPost {
     links: {
       assets: {
         block: Array<{
+          description: string | null;
+          height: number;
+          sys: {
+            id: string;
+          };
           url: string;
+          width: number;
         }>;
       };
     };
@@ -43,7 +49,13 @@ export default async (slug: string): Promise<BlogPost> => {
               links {
                 assets {
                   block {
+                    description
+                    height
+                    sys {
+                      id
+                    }
                     url
+                    width
                   }
                 }
               }

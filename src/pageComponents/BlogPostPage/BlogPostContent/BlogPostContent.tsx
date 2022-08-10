@@ -5,6 +5,7 @@ import React from 'react';
 import { BlogPost } from '../getStaticProps';
 
 import {
+  EmbeddedAsset,
   Heading1,
   Heading2,
   Heading3,
@@ -30,15 +31,21 @@ type RichTextRenderFunction = (
 
 type RichTextElementComponent = (props: {
   children: React.ReactNode;
+  links?: BlogPost[`content`][`links`];
   node: Block | Inline;
-}) => JSX.Element;
+}) => JSX.Element | null;
 
 const getRichTextElementRenderer = (
   Component: RichTextElementComponent,
+  links?: BlogPost[`content`][`links`],
 ): RichTextRenderFunction => {
   // eslint-disable-next-line react/display-name
   return (node, children) => {
-    return <Component node={node}>{children}</Component>;
+    return (
+      <Component links={links} node={node}>
+        {children}
+      </Component>
+    );
   };
 };
 
@@ -47,13 +54,18 @@ interface Props {
 }
 
 const BlogPostContent = ({ blogPost }: Props): JSX.Element => {
+  const { json, links } = blogPost.content;
+
+  console.log(links);
+
   return (
     <article>
-      {documentToReactComponents(blogPost.content.json, {
+      {documentToReactComponents(json, {
         renderNode: {
-          [BLOCKS.EMBEDDED_ASSET]: (node, children): React.ReactNode => {
-            return children;
-          },
+          [BLOCKS.EMBEDDED_ASSET]: getRichTextElementRenderer(
+            EmbeddedAsset,
+            links,
+          ),
           [BLOCKS.HEADING_1]: getRichTextElementRenderer(Heading1),
           [BLOCKS.HEADING_2]: getRichTextElementRenderer(Heading2),
           [BLOCKS.HEADING_3]: getRichTextElementRenderer(Heading3),
