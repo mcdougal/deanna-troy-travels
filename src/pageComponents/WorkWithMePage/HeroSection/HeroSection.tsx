@@ -21,7 +21,11 @@ const HeroSection = (): JSX.Element => {
   return (
     <Container maxWidth="md" sx={sx.heroSectionContainer}>
       <Typography component="h1" sx={sx.title} variant="h2">
-        <Box sx={sx.titlePrimary}>Work With</Box> Me
+        <Box component="span" sx={sx.titlePrimary}>
+          Work With
+        </Box>
+        {` `}
+        Me
       </Typography>
       <Box sx={sx.imageContainer}>
         <Image

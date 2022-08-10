@@ -1,178 +1,44 @@
-import {
-  documentToReactComponents,
-  Options,
-} from '@contentful/rich-text-react-renderer';
-import { BLOCKS, INLINES } from '@contentful/rich-text-types';
-import {
-  Box,
-  Link as MuiLink,
-  Table,
-  TableBody,
-  TableCell,
-  TableRow,
-  Typography,
-} from '@mui/material';
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
+import { Block, BLOCKS, Inline, INLINES } from '@contentful/rich-text-types';
 import React from 'react';
 
 import { BlogPost } from '../getStaticProps';
 
-import sx from './BlogPostContent.styles';
-import EmbeddedYouTubeVideo from './EmbeddedYouTubeVideo';
-import makeAnchorIdForNode, { ANCHOR_ID_REGEX } from './makeAnchorIdForNode';
+import {
+  Heading1,
+  Heading2,
+  Heading3,
+  Heading4,
+  Heading5,
+  Heading6,
+  HyperLink,
+  ListItem,
+  OlList,
+  Paragraph,
+  Table,
+  TableCell,
+  TableHeaderCell,
+  TableRow,
+  Text,
+  UlList,
+} from './richTextComponents';
 
-// Replace YouTube embed URLs with an iframe
-const YOUTUBE_EMBED_REGEX =
-  /https:\/\/www\.youtube\.com\/embed\/[A-Za-z0-9-]+\/?/g;
+type RichTextRenderFunction = (
+  node: Block | Inline,
+  children: React.ReactNode,
+) => React.ReactNode;
 
-const contentfulRichTextOptions = (): Options => {
-  return {
-    renderNode: {
-      [BLOCKS.HEADING_1]: (node, children): React.ReactNode => {
-        const anchorId = makeAnchorIdForNode(node);
+type RichTextElementComponent = (props: {
+  children: React.ReactNode;
+  node: Block | Inline;
+}) => JSX.Element;
 
-        return (
-          <Typography component="h1" sx={sx.h1} variant="h3">
-            {anchorId && <Box id={anchorId} sx={sx.headingAnchor} />}
-            {children}
-          </Typography>
-        );
-      },
-      [BLOCKS.HEADING_2]: (node, children): React.ReactNode => {
-        const anchorId = makeAnchorIdForNode(node);
-
-        return (
-          <Typography component="h2" sx={sx.h2} variant="h4">
-            {anchorId && <Box id={anchorId} sx={sx.headingAnchor} />}
-            {children}
-          </Typography>
-        );
-      },
-      [BLOCKS.HEADING_3]: (node, children): React.ReactNode => {
-        const anchorId = makeAnchorIdForNode(node);
-
-        return (
-          <Typography component="h3" sx={sx.h3} variant="h5">
-            {anchorId && <Box id={anchorId} sx={sx.headingAnchor} />}
-            {children}
-          </Typography>
-        );
-      },
-      [BLOCKS.HEADING_4]: (node, children): React.ReactNode => {
-        const anchorId = makeAnchorIdForNode(node);
-
-        return (
-          <Typography component="h4" sx={sx.h4} variant="h6">
-            {anchorId && <Box id={anchorId} sx={sx.headingAnchor} />}
-            {children}
-          </Typography>
-        );
-      },
-      [BLOCKS.HEADING_5]: (node, children): React.ReactNode => {
-        const anchorId = makeAnchorIdForNode(node);
-
-        return (
-          <Typography component="h5" sx={sx.h5} variant="h6">
-            {anchorId && <Box id={anchorId} sx={sx.headingAnchor} />}
-            {children}
-          </Typography>
-        );
-      },
-      [BLOCKS.HEADING_6]: (node, children): React.ReactNode => {
-        const anchorId = makeAnchorIdForNode(node);
-
-        return (
-          <Typography component="h6" sx={sx.h6} variant="h6">
-            {anchorId && <Box id={anchorId} sx={sx.headingAnchor} />}
-            {children}
-          </Typography>
-        );
-      },
-      [INLINES.HYPERLINK]: (node, children): React.ReactNode => {
-        return (
-          <MuiLink
-            href={node.data.uri}
-            target={node.data.uri.startsWith(`http`) ? `_blank` : undefined}>
-            {children}
-          </MuiLink>
-        );
-      },
-      [BLOCKS.LIST_ITEM]: (node, children): React.ReactNode => {
-        return (
-          <Box component="li" sx={sx.listItem}>
-            {children}
-          </Box>
-        );
-      },
-      [BLOCKS.OL_LIST]: (node, children): React.ReactNode => {
-        return (
-          <Box component="ol" sx={sx.olList}>
-            {children}
-          </Box>
-        );
-      },
-      [BLOCKS.PARAGRAPH]: (node, children): React.ReactNode => {
-        const anchorId = makeAnchorIdForNode(node);
-
-        return (
-          <Typography component="p" sx={sx.paragraph} variant="h6">
-            {anchorId && (
-              <Box component="span" id={anchorId} sx={sx.headingAnchor} />
-            )}
-            {children}
-          </Typography>
-        );
-      },
-      [BLOCKS.TABLE]: (node, children): React.ReactNode => {
-        return (
-          <Table sx={sx.table}>
-            <TableBody>{children}</TableBody>
-          </Table>
-        );
-      },
-      [BLOCKS.TABLE_CELL]: (node, children): React.ReactNode => {
-        return <TableCell sx={sx.tableCell}>{children}</TableCell>;
-      },
-      [BLOCKS.TABLE_HEADER_CELL]: (node, children): React.ReactNode => {
-        return (
-          <TableCell sx={sx.tableHeaderCell}>
-            <b>{children}</b>
-          </TableCell>
-        );
-      },
-      [BLOCKS.TABLE_ROW]: (node, children): React.ReactNode => {
-        return <TableRow>{children}</TableRow>;
-      },
-      [BLOCKS.UL_LIST]: (node, children): React.ReactNode => {
-        return (
-          <Box component="ul" sx={sx.ulList}>
-            {children}
-          </Box>
-        );
-      },
-    },
-    renderText: (text): React.ReactNode => {
-      const textWithoutAnchorId = text.replace(ANCHOR_ID_REGEX, ``);
-      const textParts = textWithoutAnchorId.split(YOUTUBE_EMBED_REGEX);
-      const embedUrls = textWithoutAnchorId.match(YOUTUBE_EMBED_REGEX);
-
-      return textParts.map((textPart, i) => {
-        const embedUrl = embedUrls && embedUrls[i];
-
-        return (
-          <React.Fragment key={i}>
-            {textPart.split(`\n`).map((t, j) => {
-              return (
-                <React.Fragment key={j}>
-                  {j > 0 && <br />}
-                  {t}
-                </React.Fragment>
-              );
-            })}
-            {embedUrl && <EmbeddedYouTubeVideo url={embedUrl} />}
-          </React.Fragment>
-        );
-      });
-    },
+const getRichTextElementRenderer = (
+  Component: RichTextElementComponent,
+): RichTextRenderFunction => {
+  // eslint-disable-next-line react/display-name
+  return (node, children) => {
+    return <Component node={node}>{children}</Component>;
   };
 };
 
@@ -183,10 +49,32 @@ interface Props {
 const BlogPostContent = ({ blogPost }: Props): JSX.Element => {
   return (
     <article>
-      {documentToReactComponents(
-        blogPost.content.json,
-        contentfulRichTextOptions(),
-      )}
+      {documentToReactComponents(blogPost.content.json, {
+        renderNode: {
+          [BLOCKS.EMBEDDED_ASSET]: (node, children): React.ReactNode => {
+            return children;
+          },
+          [BLOCKS.HEADING_1]: getRichTextElementRenderer(Heading1),
+          [BLOCKS.HEADING_2]: getRichTextElementRenderer(Heading2),
+          [BLOCKS.HEADING_3]: getRichTextElementRenderer(Heading3),
+          [BLOCKS.HEADING_4]: getRichTextElementRenderer(Heading4),
+          [BLOCKS.HEADING_5]: getRichTextElementRenderer(Heading5),
+          [BLOCKS.HEADING_6]: getRichTextElementRenderer(Heading6),
+          [INLINES.HYPERLINK]: getRichTextElementRenderer(HyperLink),
+          [BLOCKS.LIST_ITEM]: getRichTextElementRenderer(ListItem),
+          [BLOCKS.OL_LIST]: getRichTextElementRenderer(OlList),
+          [BLOCKS.PARAGRAPH]: getRichTextElementRenderer(Paragraph),
+          [BLOCKS.TABLE]: getRichTextElementRenderer(Table),
+          [BLOCKS.TABLE_CELL]: getRichTextElementRenderer(TableCell),
+          [BLOCKS.TABLE_HEADER_CELL]:
+            getRichTextElementRenderer(TableHeaderCell),
+          [BLOCKS.TABLE_ROW]: getRichTextElementRenderer(TableRow),
+          [BLOCKS.UL_LIST]: getRichTextElementRenderer(UlList),
+        },
+        renderText: (text): React.ReactNode => {
+          return <Text text={text} />;
+        },
+      })}
     </article>
   );
 };

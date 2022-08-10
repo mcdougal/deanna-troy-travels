@@ -5,6 +5,13 @@ import { fetchContentfulGraphQl } from '@lib/contentful';
 export interface BlogPost {
   content: {
     json: Parameters<typeof documentToReactComponents>[0];
+    links: {
+      assets: {
+        block: Array<{
+          url: string;
+        }>;
+      };
+    };
   };
   coverImage: {
     description: string | null;
@@ -33,6 +40,13 @@ export default async (slug: string): Promise<BlogPost> => {
           items {
             content {
               json
+              links {
+                assets {
+                  block {
+                    url
+                  }
+                }
+              }
             }
             coverImage {
               description
