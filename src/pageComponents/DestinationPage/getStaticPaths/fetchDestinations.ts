@@ -1,6 +1,6 @@
 import { fetchContentfulGraphQl } from '@lib/contentful';
 
-interface BlogCategory {
+interface Destination {
   linkedFrom: {
     blogPostCollection: {
       items: Array<{
@@ -11,15 +11,15 @@ interface BlogCategory {
   slug: string;
 }
 
-export default async (): Promise<Array<BlogCategory>> => {
+export default async (): Promise<Array<Destination>> => {
   const response = await fetchContentfulGraphQl<{
-    blogCategoryCollection: {
-      items: Array<BlogCategory>;
+    destinationCollection: {
+      items: Array<Destination>;
     };
   }>(
     `
-      query BlogCategoryPageGetStaticPathsBlogCategories {
-        blogCategoryCollection {
+      query DestinationPageGetStaticPathsDestinations {
+        destinationCollection {
           items {
             linkedFrom {
               blogPostCollection {
@@ -35,5 +35,5 @@ export default async (): Promise<Array<BlogCategory>> => {
     `,
   );
 
-  return response.blogCategoryCollection.items;
+  return response.destinationCollection.items;
 };

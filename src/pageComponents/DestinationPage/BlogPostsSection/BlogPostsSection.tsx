@@ -6,15 +6,16 @@ import { MediaCard } from '@components/generic';
 import { SectionTitle } from '@components/site';
 import { contentfulLoader } from '@lib/contentful';
 
-import { BlogPost } from '../getStaticProps';
+import { BlogPost, Destination } from '../getStaticProps';
 
 import sx from './BlogPostsSection.styles';
 
 interface Props {
   blogPosts: Array<BlogPost>;
+  destination: Destination;
 }
 
-const BlogPostsSection = ({ blogPosts }: Props): JSX.Element => {
+const BlogPostsSection = ({ blogPosts, destination }: Props): JSX.Element => {
   return (
     <>
       <Box sx={sx.sectionTitleContainer}>
@@ -32,9 +33,9 @@ const BlogPostsSection = ({ blogPosts }: Props): JSX.Element => {
                     value: new Date(blogPost.date).toLocaleDateString(),
                   },
                   {
-                    key: `category`,
-                    icon: <PlaceIcon sx={sx.blogPostCategoryIcon} />,
-                    value: blogPost.category.label,
+                    key: `destination`,
+                    icon: <PlaceIcon sx={sx.blogPostDestinationIcon} />,
+                    value: destination.name,
                   },
                 ]}
                 thumbnail={{

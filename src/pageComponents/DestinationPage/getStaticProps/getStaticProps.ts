@@ -2,26 +2,26 @@ import { ParsedUrlQuery } from 'querystring';
 
 import type { GetStaticProps } from 'next';
 
-import fetchBlogCategory, { BlogCategory } from './fetchBlogCategory';
+import fetchDestination, { Destination } from './fetchDestination';
 
 interface Params extends ParsedUrlQuery {
-  slug: string;
+  destinationSlug: string;
 }
 
 interface Props {
-  blogCategory: BlogCategory;
+  destination: Destination;
 }
 
 const getStaticProps: GetStaticProps<Props, Params> = async ({ params }) => {
-  const { slug } = params || {};
+  const { destinationSlug } = params || {};
 
-  if (!slug) {
-    throw new Error(`URL missing slug`);
+  if (!destinationSlug) {
+    throw new Error(`URL missing destination slug`);
   }
 
   return {
     props: {
-      blogCategory: await fetchBlogCategory(slug),
+      destination: await fetchDestination(destinationSlug),
     },
     revalidate: 60,
   };

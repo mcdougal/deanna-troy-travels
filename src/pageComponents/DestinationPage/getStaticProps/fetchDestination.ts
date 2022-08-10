@@ -1,12 +1,9 @@
 import { fetchContentfulGraphQl } from '@lib/contentful';
 
-export interface BlogCategory {
+export interface Destination {
   linkedFrom: {
     blogPostCollection: {
       items: Array<{
-        category: {
-          label: string;
-        };
         coverImage: {
           description: string | null;
           url: string;
@@ -18,29 +15,27 @@ export interface BlogCategory {
       }>;
     };
   };
-  label: string;
+  name: string;
   slug: string;
+  youTubePlaylistId: string;
 }
 
 export type BlogPost =
-  BlogCategory[`linkedFrom`][`blogPostCollection`][`items`][number];
+  Destination[`linkedFrom`][`blogPostCollection`][`items`][number];
 
-export default async (slug: string): Promise<BlogCategory> => {
+export default async (slug: string): Promise<Destination> => {
   const response = await fetchContentfulGraphQl<{
-    blogCategoryCollection: {
-      items: Array<BlogCategory>;
+    destinationCollection: {
+      items: Array<Destination>;
     };
   }>(
     `
-      query BlogCategoryPageGetStaticPropsBlogCategories($slug: String!) {
-        blogCategoryCollection(where: { slug: $slug }) {
+      query DestinationPageGetStaticPropsDestinations($slug: String!) {
+        destinationCollection(where: { slug: $slug }) {
           items {
             linkedFrom {
               blogPostCollection(limit: 20) {
                 items {
-                  category {
-                    label
-                  }
                   coverImage {
                     description
                     url
@@ -52,8 +47,9 @@ export default async (slug: string): Promise<BlogCategory> => {
                 }
               }
             }
-            label
+            name
             slug
+            youTubePlaylistId
           }
         }
       }
@@ -63,14 +59,14 @@ export default async (slug: string): Promise<BlogCategory> => {
     },
   );
 
-  const blogCategory =
-    response.blogCategoryCollection.items.length > 0
-      ? response.blogCategoryCollection.items[0]
+  const destination =
+    response.destinationCollection.items.length > 0
+      ? response.destinationCollection.items[0]
       : null;
 
-  if (!blogCategory) {
-    throw new Error(`No blog category found for slug: ${slug}`);
+  if (!destination) {
+    throw new Error(`No destination found for slug: ${slug}`);
   }
 
-  return blogCategory;
+  return destination;
 };

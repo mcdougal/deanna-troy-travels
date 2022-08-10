@@ -5,18 +5,18 @@ import {
   StructuredData,
 } from '@lib/structuredData';
 
-import { BlogCategory } from '../getStaticProps';
+import { Destination } from '../getStaticProps';
 
 interface Props {
-  blogCategory: BlogCategory;
+  destination: Destination;
 }
 
-const PageMetadata = ({ blogCategory }: Props): JSX.Element => {
-  const blogPosts = blogCategory.linkedFrom.blogPostCollection.items;
+const PageMetadata = ({ destination }: Props): JSX.Element => {
+  const blogPosts = destination.linkedFrom.blogPostCollection.items;
 
-  const title = blogCategory.label;
+  const title = destination.name;
   const description = blogPosts[0].excerpt;
-  const canonicalUrl = `https://www.deannatroytravels.com/blog/categories/${blogCategory.slug}`;
+  const canonicalUrl = `https://www.deannatroytravels.com/${destination.slug}`;
   const imageUrl = blogPosts[0].coverImage.url;
 
   const structuredData: StructuredData = {
@@ -32,7 +32,7 @@ const PageMetadata = ({ blogCategory }: Props): JSX.Element => {
 
     // CreativeWork
     author: getDeannaTroyTravelsPerson(),
-    keywords: `travel,vlog,blog,southeast asia,budget travel,${blogCategory.slug},${blogCategory.slug} blog`,
+    keywords: `travel,vlog,blog,southeast asia,budget travel,${destination.name}`,
     publisher: getDeannaTroyTravelsOrganization(),
 
     // WebPage

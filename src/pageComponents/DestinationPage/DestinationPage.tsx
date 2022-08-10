@@ -3,34 +3,37 @@ import type { InferGetStaticPropsType } from 'next';
 
 import { SiteHeader } from '@components/site';
 
-import sx from './BlogCategoryPage.styles';
 import BlogPostsSection from './BlogPostsSection';
+import sx from './DestinationPage.styles';
 import FeaturedPost from './FeaturedPost';
 import getStaticProps from './getStaticProps';
 import PageMetadata from './PageMetadata';
 
-const BlogCategoryPage = ({
-  blogCategory,
+const DestinationPage = ({
+  destination,
 }: InferGetStaticPropsType<typeof getStaticProps>): React.ReactElement => {
-  const blogPosts = blogCategory.linkedFrom.blogPostCollection.items;
+  const blogPosts = destination.linkedFrom.blogPostCollection.items;
 
   return (
     <>
-      <PageMetadata blogCategory={blogCategory} />
+      <PageMetadata destination={destination} />
       <SiteHeader />
       <Container maxWidth="md">
         <Typography component="h1" sx={sx.title} variant="h2">
-          <Box sx={sx.titlePrimary}>{blogCategory.label}</Box>
+          <Box sx={sx.titlePrimary}>{destination.name}</Box>
         </Typography>
         <Box sx={sx.featuredPostContainer}>
           <FeaturedPost blogPost={blogPosts[0]} />
         </Box>
         <Box sx={sx.blogPostsSectionContainer}>
-          <BlogPostsSection blogPosts={blogPosts.slice(1)} />
+          <BlogPostsSection
+            blogPosts={blogPosts.slice(1)}
+            destination={destination}
+          />
         </Box>
       </Container>
     </>
   );
 };
 
-export default BlogCategoryPage;
+export default DestinationPage;

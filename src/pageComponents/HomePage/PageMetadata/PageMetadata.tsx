@@ -6,7 +6,7 @@ import {
 } from '@lib/structuredData';
 
 const PageMetadata = (): JSX.Element => {
-  const title = `Budget Travel Vlog`;
+  const title = `Budget Travel Vlogs`;
   const description = `Travel videos from a backpacker who spent two years traveling around Asia, Japan, Vietnam, Malaysia and more!`;
   const canonicalUrl = `https://www.deannatroytravels.com`;
   const imageUrl = `https://res.cloudinary.com/cedricmcdougal/image/upload/v1659612637/deanna-troy-travels/home/og-image.jpg`;

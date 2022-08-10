@@ -18,7 +18,7 @@ const getStaticProps: GetStaticProps<Props, Params> = async ({ params }) => {
   const { slug } = params || {};
 
   if (!slug) {
-    throw new Error(`URL missing slug`);
+    throw new Error(`URL missing blog post slug`);
   }
 
   const blogPost = await fetchBlogPost(slug);

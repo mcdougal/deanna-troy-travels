@@ -32,9 +32,9 @@ const BlogPostsSection = ({ blogPosts }: Props): JSX.Element => {
                     value: new Date(blogPost.date).toLocaleDateString(),
                   },
                   {
-                    key: `category`,
-                    icon: <PlaceIcon sx={sx.blogPostCategoryIcon} />,
-                    value: blogPost.category.label,
+                    key: `destination`,
+                    icon: <PlaceIcon sx={sx.blogPostDestinationIcon} />,
+                    value: blogPost.destination.name,
                   },
                 ]}
                 thumbnail={{
