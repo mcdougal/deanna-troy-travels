@@ -1,6 +1,6 @@
-import { BlogCategory } from './fetchBlogCategory';
+import { BlogCategory, BlogPost } from './fetchBlogCategory';
 import getStaticProps from './getStaticProps';
 
-export type { BlogCategory };
+export type { BlogCategory, BlogPost };
 
 export default getStaticProps;

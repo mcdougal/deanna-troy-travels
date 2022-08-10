@@ -14,7 +14,7 @@ interface Props {
 const PageMetadata = ({ blogCategory }: Props): JSX.Element => {
   const blogPosts = blogCategory.linkedFrom.blogPostCollection.items;
 
-  const title = `${blogCategory.label} Blog`;
+  const title = blogCategory.label;
   const description = blogPosts[0].excerpt;
   const canonicalUrl = `https://www.deannatroytravels.com/blog/categories/${blogCategory.slug}`;
   const imageUrl = blogPosts[0].coverImage.url;

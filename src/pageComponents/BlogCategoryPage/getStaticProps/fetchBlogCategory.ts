@@ -22,6 +22,9 @@ export interface BlogCategory {
   slug: string;
 }
 
+export type BlogPost =
+  BlogCategory[`linkedFrom`][`blogPostCollection`][`items`][number];
+
 export default async (slug: string): Promise<BlogCategory> => {
   const response = await fetchContentfulGraphQl<{
     blogCategoryCollection: {

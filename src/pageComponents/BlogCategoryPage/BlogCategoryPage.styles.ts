@@ -1,6 +1,6 @@
 export default {
   title: {
-    marginBottom: 4,
+    marginBottom: { xs: 4, sm: 6 },
     marginTop: 5,
     textAlign: `center`,
   },
