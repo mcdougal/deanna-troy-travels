@@ -1,6 +1,6 @@
 import { Box, Container } from '@mui/material';
 
-import { SectionTitle } from '@components/common';
+import { SectionTitle } from '@components/site';
 
 import Testimonial from './Testimonial';
 import sx from './TestimonialsSection.styles';

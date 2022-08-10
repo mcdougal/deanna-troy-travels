@@ -1,4 +1,4 @@
-import { HtmlHead } from '@components/common';
+import { HtmlHead } from '@components/generic';
 import {
   getDeannaTroyTravelsOrganization,
   getDeannaTroyTravelsPerson,

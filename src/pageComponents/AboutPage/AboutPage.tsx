@@ -1,6 +1,6 @@
 import { Box } from '@mui/material';
 
-import { SiteHeader } from '@components/common';
+import { SiteHeader } from '@components/site';
 
 import sx from './AboutPage.styles';
 import ContactSection from './ContactSection';

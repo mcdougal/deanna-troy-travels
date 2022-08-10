@@ -1,17 +1,17 @@
 import ContactDialog from './ContactDialog';
 import ContactForm from './ContactForm';
-import HtmlHead from './HtmlHead';
-import MediaCard from './MediaCard';
 import SectionTitle from './SectionTitle';
 import SiteHeader from './SiteHeader';
 import SiteLogo from './SiteLogo';
+import SocialsMenu, { SocialsMenuAnchor } from './SocialsMenu';
+
+export type { SocialsMenuAnchor };
 
 export {
   ContactDialog,
   ContactForm,
-  HtmlHead,
-  MediaCard,
   SectionTitle,
   SiteHeader,
   SiteLogo,
+  SocialsMenu,
 };

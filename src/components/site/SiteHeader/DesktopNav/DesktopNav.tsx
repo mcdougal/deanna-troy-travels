@@ -1,16 +1,16 @@
 import { Box } from '@mui/material';
 import { useState } from 'react';
 
+import SocialsMenu, { SocialsMenuAnchor } from '../../SocialsMenu';
+
 import sx from './DesktopNav.styles';
 import NavItemButton, { NavItem } from './NavItemButton';
-import SocialsMenu, { MenuAnchor } from './SocialsMenu';
 
 const SOCIALS_BUTTON_HTML_ID = `site-header-desktop-nav-socials-button`;
 
 const DesktopNav = (): JSX.Element => {
-  const [socialsMenuAnchor, setSocialsMenuAnchor] = useState<MenuAnchor | null>(
-    null,
-  );
+  const [socialsMenuAnchor, setSocialsMenuAnchor] =
+    useState<SocialsMenuAnchor | null>(null);
 
   const navItems: Array<NavItem> = [
     {
@@ -20,16 +20,16 @@ const DesktopNav = (): JSX.Element => {
       internalPath: `/work-with-me`,
     },
     {
+      type: `externalLink`,
+      key: `videos`,
+      label: `Videos`,
+      externalUrl: `https://www.youtube.com/deannatroytravels/videos`,
+    },
+    {
       type: `internalLink`,
       key: `blog`,
       label: `Blog`,
       internalPath: `/blog`,
-    },
-    {
-      type: `externalLink`,
-      key: `videos`,
-      label: `Videos`,
-      externalUrl: `https://www.youtube.com/deannatroytravels`,
     },
     {
       type: `internalLink`,

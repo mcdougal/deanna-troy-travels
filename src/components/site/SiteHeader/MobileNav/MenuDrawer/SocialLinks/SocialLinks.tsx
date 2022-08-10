@@ -1,7 +1,7 @@
 import FacebookIcon from '@mui/icons-material/Facebook';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import YouTubeIcon from '@mui/icons-material/YouTube';
-import { Box, ButtonBase } from '@mui/material';
+import { Box, ButtonBase, Grid } from '@mui/material';
 
 import { AmazonIcon, PoshmarkIcon, TikTokIcon } from '@components/icons';
 
@@ -43,19 +43,22 @@ const SocialLinks = (): JSX.Element => {
 
   return (
     <Box sx={sx.socialButtonsContainer}>
-      {socials.map(({ icon, label, url }) => {
-        return (
-          <ButtonBase
-            key={label}
-            aria-label={label}
-            focusRipple
-            href={url}
-            sx={sx.socialButton}
-            target="_blank">
-            {icon}
-          </ButtonBase>
-        );
-      })}
+      <Grid alignItems="center" container spacing={4}>
+        {socials.map(({ icon, label, url }) => {
+          return (
+            <Grid key={label} item xs={4}>
+              <ButtonBase
+                aria-label={label}
+                focusRipple
+                href={url}
+                sx={sx.socialButton}
+                target="_blank">
+                {icon}
+              </ButtonBase>
+            </Grid>
+          );
+        })}
+      </Grid>
     </Box>
   );
 };

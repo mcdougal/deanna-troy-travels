@@ -1,6 +1,6 @@
 import { Box, Container, Grid } from '@mui/material';
 
-import { SectionTitle } from '@components/common';
+import { SectionTitle } from '@components/site';
 
 import { BlogFeature as IBlogFeature } from '../getStaticProps';
 

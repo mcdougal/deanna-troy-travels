@@ -7,13 +7,13 @@ import { AmazonIcon, PoshmarkIcon, TikTokIcon } from '@components/icons';
 
 import sx from './SocialsMenu.styles';
 
-export interface MenuAnchor {
+export interface SocialsMenuAnchor {
   element: HTMLButtonElement | null;
   elementId: string;
 }
 
 interface Props {
-  anchor: MenuAnchor | null;
+  anchor: SocialsMenuAnchor | null;
   onClose: () => void;
 }
 

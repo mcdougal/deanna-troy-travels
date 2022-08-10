@@ -4,7 +4,8 @@ import ThumbUpIcon from '@mui/icons-material/ThumbUp';
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import { Box, Button, Container, Grid } from '@mui/material';
 
-import { MediaCard, SectionTitle } from '@components/common';
+import { MediaCard } from '@components/generic';
+import { SectionTitle } from '@components/site';
 import { cloudinaryLoader } from '@lib/cloudinary';
 
 import { YouTubeVideo } from '../getStaticProps';

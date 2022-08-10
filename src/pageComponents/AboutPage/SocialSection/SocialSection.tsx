@@ -3,8 +3,8 @@ import InstagramIcon from '@mui/icons-material/Instagram';
 import YouTubeIcon from '@mui/icons-material/YouTube';
 import { Box, Button, Container } from '@mui/material';
 
-import { SectionTitle } from '@components/common';
 import { AmazonIcon, PoshmarkIcon, TikTokIcon } from '@components/icons';
+import { SectionTitle } from '@components/site';
 
 import sx from './SocialSection.styles';
 

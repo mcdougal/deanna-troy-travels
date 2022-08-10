@@ -2,7 +2,7 @@ import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import { Box, Button, ButtonBase, Container, Grid } from '@mui/material';
 import Image from 'next/image';
 
-import { SectionTitle } from '@components/common';
+import { SectionTitle } from '@components/site';
 import { cloudinaryLoader } from '@lib/cloudinary';
 
 import { InstagramPost } from '../getStaticProps';

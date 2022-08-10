@@ -1,6 +1,6 @@
 import { Box, Container } from '@mui/material';
 
-import { ContactForm, SectionTitle } from '@components/common';
+import { ContactForm, SectionTitle } from '@components/site';
 
 import sx from './ContactSection.styles';
 

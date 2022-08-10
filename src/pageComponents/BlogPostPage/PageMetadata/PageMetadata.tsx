@@ -1,6 +1,6 @@
 import { documentToPlainTextString } from '@contentful/rich-text-plain-text-renderer';
 
-import { HtmlHead } from '@components/common';
+import { HtmlHead } from '@components/generic';
 import {
   getDeannaTroyTravelsOrganization,
   getDeannaTroyTravelsPerson,

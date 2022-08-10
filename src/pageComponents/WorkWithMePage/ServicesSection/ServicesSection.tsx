@@ -3,7 +3,7 @@ import SellIcon from '@mui/icons-material/Sell';
 import { Box, Container, Grid } from '@mui/material';
 import { useState } from 'react';
 
-import { ContactDialog, SectionTitle } from '@components/common';
+import { ContactDialog, SectionTitle } from '@components/site';
 
 import Service from './Service';
 import sx from './ServicesSection.styles';

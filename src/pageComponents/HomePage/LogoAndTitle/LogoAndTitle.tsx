@@ -1,7 +1,7 @@
 import YouTubeIcon from '@mui/icons-material/YouTube';
 import { Box, Button, Typography } from '@mui/material';
 
-import { SiteLogo } from '@components/common';
+import { SiteLogo } from '@components/site';
 
 import sx from './LogoAndTitle.styles';
 

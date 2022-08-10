@@ -2,7 +2,8 @@ import PlaceIcon from '@mui/icons-material/Place';
 import TodayIcon from '@mui/icons-material/Today';
 import { Box, Grid } from '@mui/material';
 
-import { MediaCard, SectionTitle } from '@components/common';
+import { MediaCard } from '@components/generic';
+import { SectionTitle } from '@components/site';
 import { contentfulLoader } from '@lib/contentful';
 
 import { BlogPost } from '../getStaticProps';

@@ -1,7 +1,7 @@
 import { Box } from '@mui/material';
 import type { InferGetStaticPropsType } from 'next';
 
-import { SiteHeader } from '@components/common';
+import { SiteHeader } from '@components/site';
 
 import FeaturedVideosSection from './FeaturedVideosSection';
 import getStaticProps from './getStaticProps';
