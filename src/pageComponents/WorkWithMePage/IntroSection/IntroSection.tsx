@@ -51,7 +51,7 @@ const IntroSection = (): JSX.Element => {
           <Button
             color="primary"
             endIcon={<OpenInNewIcon />}
-            href="https://www.canva.com/design/DAFC8WJcrUQ/KCXr38E-PosgRiECPzH-yQ/view?utm_content=DAFC8WJcrUQ&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton"
+            href="https://www.canva.com/design/DAFC8WJcrUQ/Z7MdgBzSOjugPpcQtf6IOQ/view"
             size="large"
             sx={sx.ctaButton}
             target="_blank"
