@@ -18,7 +18,7 @@ import { BlogPost } from '../getStaticProps';
 
 import sx from './BlogPostContent.styles';
 import EmbeddedYouTubeVideo from './EmbeddedYouTubeVideo';
-import makeHeadingIdForNode, { HEADING_ID_REGEX } from './makeHeadingIdForNode';
+import makeAnchorIdForNode, { ANCHOR_ID_REGEX } from './makeAnchorIdForNode';
 
 // Replace YouTube embed URLs with an iframe
 const YOUTUBE_EMBED_REGEX =
@@ -28,61 +28,61 @@ const contentfulRichTextOptions = (): Options => {
   return {
     renderNode: {
       [BLOCKS.HEADING_1]: (node, children): React.ReactNode => {
-        const headingId = makeHeadingIdForNode(node);
+        const anchorId = makeAnchorIdForNode(node);
 
         return (
           <Typography component="h1" sx={sx.h1} variant="h3">
-            {headingId && <Box id={headingId} sx={sx.headingAnchor} />}
+            {anchorId && <Box id={anchorId} sx={sx.headingAnchor} />}
             {children}
           </Typography>
         );
       },
       [BLOCKS.HEADING_2]: (node, children): React.ReactNode => {
-        const headingId = makeHeadingIdForNode(node);
+        const anchorId = makeAnchorIdForNode(node);
 
         return (
           <Typography component="h2" sx={sx.h2} variant="h4">
-            {headingId && <Box id={headingId} sx={sx.headingAnchor} />}
+            {anchorId && <Box id={anchorId} sx={sx.headingAnchor} />}
             {children}
           </Typography>
         );
       },
       [BLOCKS.HEADING_3]: (node, children): React.ReactNode => {
-        const headingId = makeHeadingIdForNode(node);
+        const anchorId = makeAnchorIdForNode(node);
 
         return (
           <Typography component="h3" sx={sx.h3} variant="h5">
-            {headingId && <Box id={headingId} sx={sx.headingAnchor} />}
+            {anchorId && <Box id={anchorId} sx={sx.headingAnchor} />}
             {children}
           </Typography>
         );
       },
       [BLOCKS.HEADING_4]: (node, children): React.ReactNode => {
-        const headingId = makeHeadingIdForNode(node);
+        const anchorId = makeAnchorIdForNode(node);
 
         return (
           <Typography component="h4" sx={sx.h4} variant="h6">
-            {headingId && <Box id={headingId} sx={sx.headingAnchor} />}
+            {anchorId && <Box id={anchorId} sx={sx.headingAnchor} />}
             {children}
           </Typography>
         );
       },
       [BLOCKS.HEADING_5]: (node, children): React.ReactNode => {
-        const headingId = makeHeadingIdForNode(node);
+        const anchorId = makeAnchorIdForNode(node);
 
         return (
           <Typography component="h5" sx={sx.h5} variant="h6">
-            {headingId && <Box id={headingId} sx={sx.headingAnchor} />}
+            {anchorId && <Box id={anchorId} sx={sx.headingAnchor} />}
             {children}
           </Typography>
         );
       },
       [BLOCKS.HEADING_6]: (node, children): React.ReactNode => {
-        const headingId = makeHeadingIdForNode(node);
+        const anchorId = makeAnchorIdForNode(node);
 
         return (
           <Typography component="h6" sx={sx.h6} variant="h6">
-            {headingId && <Box id={headingId} sx={sx.headingAnchor} />}
+            {anchorId && <Box id={anchorId} sx={sx.headingAnchor} />}
             {children}
           </Typography>
         );
@@ -97,8 +97,13 @@ const contentfulRichTextOptions = (): Options => {
         );
       },
       [BLOCKS.PARAGRAPH]: (node, children): React.ReactNode => {
+        const anchorId = makeAnchorIdForNode(node);
+
         return (
           <Typography component="p" sx={sx.paragraph} variant="h6">
+            {anchorId && (
+              <Box component="span" id={anchorId} sx={sx.headingAnchor} />
+            )}
             {children}
           </Typography>
         );
@@ -125,18 +130,18 @@ const contentfulRichTextOptions = (): Options => {
       },
     },
     renderText: (text): React.ReactNode => {
-      const textWithoutHeadingId = text.replace(HEADING_ID_REGEX, ``);
-      const textParts = textWithoutHeadingId.split(YOUTUBE_EMBED_REGEX);
-      const embedUrls = textWithoutHeadingId.match(YOUTUBE_EMBED_REGEX);
+      const textWithoutAnchorId = text.replace(ANCHOR_ID_REGEX, ``);
+      const textParts = textWithoutAnchorId.split(YOUTUBE_EMBED_REGEX);
+      const embedUrls = textWithoutAnchorId.match(YOUTUBE_EMBED_REGEX);
 
       return textParts.map((textPart, i) => {
         const embedUrl = embedUrls && embedUrls[i];
 
         return (
-          <React.Fragment key={embedUrl || textPart}>
+          <React.Fragment key={i}>
             {textPart.split(`\n`).map((t, j) => {
               return (
-                <React.Fragment key={i}>
+                <React.Fragment key={j}>
                   {j > 0 && <br />}
                   {t}
                 </React.Fragment>
