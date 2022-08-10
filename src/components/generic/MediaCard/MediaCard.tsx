@@ -1,5 +1,6 @@
 import { Box, ButtonBase, Typography } from '@mui/material';
 import Image, { ImageLoader } from 'next/image';
+import Link from 'next/link';
 
 import sx from './MediaCard.styles';
 import MediaCardDetail from './MediaCardDetail';
@@ -12,7 +13,6 @@ interface Props {
     icon: React.ReactElement;
     value: string;
   }>;
-  target?: `_blank`;
   thumbnail: {
     alt: string;
     loader: ImageLoader;
@@ -25,17 +25,12 @@ interface Props {
 const MediaCard = ({
   alignDetails = `left`,
   details,
-  target,
   thumbnail,
   title,
   url,
 }: Props): JSX.Element => {
-  return (
-    <ButtonBase
-      focusRipple
-      href={url}
-      sx={sx.mediaCardButtonBase}
-      target={target}>
+  const cardContent = (
+    <>
       <Box sx={sx.thumbnailContainer}>
         <Image
           alt={thumbnail.alt}
@@ -61,6 +56,27 @@ const MediaCard = ({
           );
         })}
       </Box>
+    </>
+  );
+
+  const buttonBaseProps = {
+    focusRipple: true,
+    sx: sx.mediaCardButtonBase,
+  };
+
+  if (url.startsWith(`/`)) {
+    return (
+      <Link href={url} passHref>
+        <ButtonBase {...buttonBaseProps} component="a">
+          {cardContent}
+        </ButtonBase>
+      </Link>
+    );
+  }
+
+  return (
+    <ButtonBase {...buttonBaseProps} href={url} target="_blank">
+      {cardContent}
     </ButtonBase>
   );
 };
