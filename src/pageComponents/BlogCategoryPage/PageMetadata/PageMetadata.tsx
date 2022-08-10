@@ -5,46 +5,19 @@ import {
   StructuredData,
 } from '@lib/structuredData';
 
-import { BlogPost } from '../getStaticProps';
+import { BlogCategory } from '../getStaticProps';
 
 interface Props {
-  blogPosts: Array<BlogPost>;
+  blogCategory: BlogCategory;
 }
 
-const PageMetadata = ({ blogPosts }: Props): JSX.Element => {
-  const title = `Travel Blog`;
+const PageMetadata = ({ blogCategory }: Props): JSX.Element => {
+  const blogPosts = blogCategory.linkedFrom.blogPostCollection.items;
+
+  const title = `${blogCategory.label} Blog`;
   const description = blogPosts[0].excerpt;
-  const canonicalUrl = `https://www.deannatroytravels.com/blog`;
+  const canonicalUrl = `https://www.deannatroytravels.com/blog/categories/${blogCategory.slug}`;
   const imageUrl = blogPosts[0].coverImage.url;
-
-  const blogPostsStructuredData: Array<StructuredData> = blogPosts.map(
-    (blogPost) => {
-      return {
-        '@type': `BlogPosting`,
-        '@id': `https://www.deannatroytravels.com/post/${blogPost.slug}`,
-      };
-    },
-  );
-
-  const blogStructuredData: StructuredData = {
-    // Thing > CreativeWork > Blog
-    '@type': `Blog`,
-
-    // Thing
-    description,
-    image: imageUrl,
-    name: title,
-    url: canonicalUrl,
-
-    // CreativeWork
-    author: getDeannaTroyTravelsPerson(),
-    headline: title,
-    keywords: `travel,vlog,blog,southeast asia,budget travel`,
-    publisher: getDeannaTroyTravelsOrganization(),
-
-    // Blog
-    blogPost: blogPostsStructuredData,
-  };
 
   const structuredData: StructuredData = {
     // Thing > CreativeWork > WebPage
@@ -59,8 +32,7 @@ const PageMetadata = ({ blogPosts }: Props): JSX.Element => {
 
     // CreativeWork
     author: getDeannaTroyTravelsPerson(),
-    keywords: `travel,vlog,blog,southeast asia,budget travel`,
-    mainEntity: blogStructuredData,
+    keywords: `travel,vlog,blog,southeast asia,budget travel,${blogCategory.slug},${blogCategory.slug} blog`,
     publisher: getDeannaTroyTravelsOrganization(),
 
     // WebPage

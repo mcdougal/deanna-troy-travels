@@ -5,7 +5,7 @@ export default {
   blogPostDateIcon: {
     fontSize: 16,
   },
-  blogPostLocationIcon: {
+  blogPostCategoryIcon: {
     fontSize: 16,
     marginRight: `-3px`,
     marginTop: `-2px`,

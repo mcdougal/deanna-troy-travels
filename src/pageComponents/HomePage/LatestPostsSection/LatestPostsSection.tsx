@@ -34,9 +34,9 @@ const LatestPostsSection = ({ recentBlogPosts }: Props): JSX.Element => {
                     value: new Date(blogPost.date).toLocaleDateString(),
                   },
                   {
-                    key: `location`,
-                    icon: <PlaceIcon sx={sx.blogPostLocationIcon} />,
-                    value: blogPost.location,
+                    key: `category`,
+                    icon: <PlaceIcon sx={sx.blogPostCategoryIcon} />,
+                    value: blogPost.category.label,
                   },
                 ]}
                 thumbnail={{
