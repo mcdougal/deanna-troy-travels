@@ -5,6 +5,7 @@ import fetchRecentInstagramPosts, {
   InstagramPost,
 } from './fetchRecentInstagramPosts';
 import fetchRecentVideos, { YouTubeVideo } from './fetchRecentVideos';
+import writeRssFeed from './writeRssFeed';
 
 interface Props {
   recentBlogPosts: Array<BlogPost>;
@@ -13,6 +14,8 @@ interface Props {
 }
 
 const getStaticProps: GetStaticProps<Props> = async () => {
+  await writeRssFeed();
+
   return {
     props: {
       recentBlogPosts: await fetchRecentBlogPosts(),
