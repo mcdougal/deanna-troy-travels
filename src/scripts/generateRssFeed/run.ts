@@ -1,38 +1,63 @@
 /* eslint-disable no-console */
 import fs from 'fs';
 
+import { Feed } from 'feed';
+
+import fetchRecentBlogPosts from './fetchRecentBlogPosts';
+
 const run = async (): Promise<void> => {
-  console.log(`Generating RSS feed...`);
+  console.log(`info  - Generating RSS feed...`);
 
-  const rssFeedXml = `
-  <?xml version="1.0" encoding="UTF-8" ?>
-  <rss version="2.0">
-  
-  <channel>
-    <title>W3Schools Home Page</title>
-    <link>https://www.w3schools.com</link>
-    <description>Free web building tutorials</description>
-    <item>
-      <title>RSS Tutorial</title>
-      <link>https://www.w3schools.com/xml/xml_rss.asp</link>
-      <description>New RSS tutorial on W3Schools</description>
-    </item>
-    <item>
-      <title>XML Tutorial</title>
-      <link>https://www.w3schools.com/xml</link>
-      <description>New XML tutorial on W3Schools</description>
-    </item>
-  </channel>
-  
-  </rss>
-  `.trim();
+  console.log(`info  - Fetching recent blog posts...`);
 
-  console.log(`Writing RSS feed files to disk...`);
+  const recentBlogPosts = await fetchRecentBlogPosts();
+
+  const feed = new Feed({
+    title: `Deanna Troy Travels`,
+    description: `Travel videos from a backpacker who spent two years traveling around Asia, Japan, Vietnam, Malaysia and more!`,
+    id: `https://www.deannatroytravels.com`,
+    link: `https://www.deannatroytravels.com`,
+    language: `en`,
+    image: `https://res.cloudinary.com/cedricmcdougal/image/upload/v1659612637/deanna-troy-travels/home/og-image.jpg`,
+    favicon: `https://www.deannatroytravels.com/favicon.ico`,
+    copyright: `© ${new Date().getFullYear()} Deanna Troy Travels. All rights reserved.`,
+    feedLinks: {
+      rss2: `https://www.deannatroytravels.com/rss/feed.xml`,
+      json: `https://www.deannatroytravels.com/rss/feed.json`,
+    },
+    author: {
+      name: `Deanna Troy Travels`,
+      email: `deanna.troy.henry@gmail.com`,
+      link: `https://www.deannatroytravels.com/about`,
+    },
+  });
+
+  recentBlogPosts.forEach((blogPost) => {
+    feed.addItem({
+      title: blogPost.title,
+      id: `https://www.deannatroytravels.com/post/${blogPost.slug}`,
+      link: `https://www.deannatroytravels.com/post/${blogPost.slug}`,
+      description: blogPost.excerpt,
+      content: blogPost.excerpt,
+      author: [
+        {
+          name: `Deanna Troy Travels`,
+          email: `deanna.troy.henry@gmail.com`,
+          link: `https://www.deannatroytravels.com/about`,
+        },
+      ],
+      date: new Date(blogPost.date),
+      image: blogPost.coverImage.url,
+    });
+  });
+
+  console.log(`info  - Writing RSS feed files to disk...`);
 
   fs.mkdirSync(`./public/rss`, { recursive: true });
-  fs.writeFileSync(`./public/rss/feed.xml`, rssFeedXml);
+  fs.writeFileSync(`./public/rss/feed.xml`, feed.rss2());
+  fs.writeFileSync(`./public/rss/feed.json`, feed.json1());
 
-  console.log(`Done generating RSS feed`);
+  console.log(`info  - RSS feed generated successfully`);
 };
 
 if (require.main === module) {
