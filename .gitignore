@@ -17,7 +17,7 @@ node_modules
 tsconfig.tsbuildinfo
 
 # Environment variables
-.env.local
+.env
 
 # Dynamically generated RSS feed
 public/rss/

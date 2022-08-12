@@ -1,4 +1,6 @@
 /* eslint-disable no-console */
+import 'dotenv/config';
+
 import fs from 'fs';
 
 import { Feed } from 'feed';

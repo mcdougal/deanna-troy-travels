@@ -2,7 +2,9 @@
   "name": "deanna-troy-travels",
   "version": "0.0.1",
   "scripts": {
-    "build": "ts-node src/scripts/generateRssFeed/run.ts && next build",
+    "build:next": "next build",
+    "build:rss": "ts-node -r tsconfig-paths/register src/scripts/generateRssFeed/run.ts",
+    "build": "npm run build:rss && npm run build:next",
     "check": "npx npm-check --skip-unused",
     "dev": "next dev",
     "lint": "eslint src",
@@ -31,19 +33,17 @@
     "@mui/icons-material": "^5.8.4",
     "@mui/material": "^5.10.0",
     "axios": "^0.27.2",
-    "classnames": "^2.3.1",
     "escape-html": "^1.0.3",
-    "feed": "^4.2.2",
     "next": "^12.2.5",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "ts-node": "^10.9.1"
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
     "@types/escape-html": "^1.0.2",
     "@types/node": "^18.7.2",
     "@types/react": "^18.0.17",
     "@typescript-eslint/eslint-plugin": "^5.33.0",
+    "dotenv": "^16.0.1",
     "eslint": "^8.21.0",
     "eslint-config-next": "^12.2.5",
     "eslint-config-prettier": "^8.5.0",
@@ -51,10 +51,13 @@
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-react": "^7.30.1",
     "eslint-plugin-react-hooks": "^4.6.0",
+    "feed": "^4.2.2",
     "husky": "^8.0.1",
     "js-isort": "^3.3.1",
     "lint-staged": "^13.0.3",
     "prettier": "^2.7.1",
+    "ts-node": "^10.9.1",
+    "tsconfig-paths": "^4.1.0",
     "typescript": "^4.7.4"
   }
 }
