@@ -1,15 +1,12 @@
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
-import PlaceIcon from '@mui/icons-material/Place';
-import TodayIcon from '@mui/icons-material/Today';
 import { Box, Button, Container, Grid } from '@mui/material';
 import Link from 'next/link';
 
-import { MediaCard } from '@components/generic';
 import { SectionTitle } from '@components/site';
-import { contentfulLoader } from '@lib/contentful';
 
 import { BlogPost } from '../getStaticProps';
 
+import BlogPostMediaCard from './BlogPostMediaCard';
 import sx from './LatestPostsSection.styles';
 
 interface Props {
@@ -26,29 +23,7 @@ const LatestPostsSection = ({ recentBlogPosts }: Props): JSX.Element => {
         {recentBlogPosts.map((blogPost) => {
           return (
             <Grid key={blogPost.slug} item sm={4} xs={12}>
-              <MediaCard
-                details={[
-                  {
-                    key: `date`,
-                    icon: <TodayIcon sx={sx.blogPostDateIcon} />,
-                    value: new Date(blogPost.date).toLocaleDateString(),
-                  },
-                  {
-                    key: `destination`,
-                    icon: <PlaceIcon sx={sx.blogPostDestinationIcon} />,
-                    value: blogPost.destination.name,
-                  },
-                ]}
-                thumbnail={{
-                  alt:
-                    blogPost.coverImage.description ||
-                    `${blogPost.title} thumbnail`,
-                  loader: contentfulLoader,
-                  url: blogPost.coverImage.url,
-                }}
-                title={blogPost.title}
-                url={`/post/${blogPost.slug}`}
-              />
+              <BlogPostMediaCard blogPost={blogPost} />
             </Grid>
           );
         })}

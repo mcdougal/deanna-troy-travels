@@ -1,4 +1,4 @@
-import { fetchPlaylistItems, fetchYouTubeVideo } from '@lib/youTube';
+import { fetchPlaylistItems, fetchYouTubeVideos } from '@lib/youTube';
 
 const ALL_VIDEOS_PLAYLIST_ID = `PLupawb160v0xF0_SUX5yHJE2GQogd7lx-`;
 
@@ -13,11 +13,11 @@ export interface YouTubeVideo {
 export default async (): Promise<Array<YouTubeVideo>> => {
   const playlistItems = await fetchPlaylistItems(ALL_VIDEOS_PLAYLIST_ID);
 
-  const videos = await Promise.all(
-    playlistItems.map(async (playlistItem) => {
-      return fetchYouTubeVideo(playlistItem.contentDetails.videoId);
-    }),
-  );
+  const videoIds = playlistItems.map((playlistItem) => {
+    return playlistItem.contentDetails.videoId;
+  });
+
+  const videos = await fetchYouTubeVideos(videoIds);
 
   return playlistItems.map((playlistItem, i) => {
     const video = videos[i];

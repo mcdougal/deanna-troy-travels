@@ -11,7 +11,6 @@ const BlogSubscribeForm = (): JSX.Element => {
       name="subscribe">
       <input name="form-name" type="hidden" value="subscribe" />
       <TextField
-        autoFocus
         fullWidth
         id="contact-dialog-name"
         label="Your Name"
