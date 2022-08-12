@@ -22,6 +22,7 @@ const getStaticProps: GetStaticProps<Props> = async () => {
       recentInstagramPosts: await fetchRecentInstagramPosts(),
       recentVideos: await fetchRecentVideos(),
     },
+    revalidate: 60,
   };
 };
 
