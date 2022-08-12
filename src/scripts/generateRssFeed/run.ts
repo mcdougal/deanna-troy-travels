@@ -1,6 +1,9 @@
+/* eslint-disable no-console */
 import fs from 'fs';
 
-export default async (): Promise<void> => {
+const run = async (): Promise<void> => {
+  console.log(`Generating RSS feed...`);
+
   const rssFeedXml = `
   <?xml version="1.0" encoding="UTF-8" ?>
   <rss version="2.0">
@@ -24,6 +27,18 @@ export default async (): Promise<void> => {
   </rss>
   `.trim();
 
+  console.log(`Writing RSS feed files to disk...`);
+
   fs.mkdirSync(`./public/rss`, { recursive: true });
   fs.writeFileSync(`./public/rss/feed.xml`, rssFeedXml);
+
+  console.log(`Done generating RSS feed`);
 };
+
+if (require.main === module) {
+  process.on(`unhandledRejection`, (error) => {
+    throw error;
+  });
+
+  run();
+}

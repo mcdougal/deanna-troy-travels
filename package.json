@@ -2,7 +2,7 @@
   "name": "deanna-troy-travels",
   "version": "0.0.1",
   "scripts": {
-    "build": "next build",
+    "build": "ts-node src/scripts/generateRssFeed/run.ts && next build",
     "check": "npx npm-check --skip-unused",
     "dev": "next dev",
     "lint": "eslint src",
