@@ -1,8 +1,7 @@
 import { Box, Container, Typography } from '@mui/material';
 import type { InferGetStaticPropsType } from 'next';
-import { useState } from 'react';
 
-import { BlogSubscribeDialog, SiteHeader } from '@components/site';
+import { SiteHeader } from '@components/site';
 
 import sx from './BlogPage.styles';
 import BlogPostsSection from './BlogPostsSection';
@@ -14,17 +13,6 @@ import SubscribeSection from './SubscribeSection';
 const BlogPage = ({
   blogPosts,
 }: InferGetStaticPropsType<typeof getStaticProps>): React.ReactElement => {
-  const [isBlogSubscribeDialogOpen, setIsBlogSubscribeDialogOpen] =
-    useState(false);
-
-  const openBlogSubscribeDialog = (): void => {
-    setIsBlogSubscribeDialogOpen(true);
-  };
-
-  const closeBlogSubscribeDialog = (): void => {
-    setIsBlogSubscribeDialogOpen(false);
-  };
-
   return (
     <>
       <PageMetadata blogPosts={blogPosts} />
@@ -47,10 +35,6 @@ const BlogPage = ({
           <SubscribeSection />
         </Box>
       </Container>
-      <BlogSubscribeDialog
-        onClose={closeBlogSubscribeDialog}
-        open={isBlogSubscribeDialogOpen}
-      />
     </>
   );
 };
