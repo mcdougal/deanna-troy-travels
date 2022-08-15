@@ -37,6 +37,8 @@ const run = async (): Promise<void> => {
   });
 
   recentBlogPosts.forEach((blogPost) => {
+    const thumbnail = getBlogPostThumbnail(blogPost);
+
     feed.addItem({
       title: blogPost.title,
       id: `https://www.deannatroytravels.com/post/${blogPost.slug}`,
@@ -51,7 +53,7 @@ const run = async (): Promise<void> => {
         },
       ],
       date: new Date(blogPost.publishedDate),
-      image: getBlogPostThumbnail(blogPost).url,
+      image: thumbnail.loader({ src: thumbnail.url, width: 1200 }),
     });
   });
 
