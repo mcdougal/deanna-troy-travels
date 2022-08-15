@@ -30,7 +30,9 @@ const BlogPostsSection = ({ blogPosts, destination }: Props): JSX.Element => {
                   {
                     key: `date`,
                     icon: <TodayIcon sx={sx.blogPostDateIcon} />,
-                    value: new Date(blogPost.date).toLocaleDateString(),
+                    value: new Date(
+                      blogPost.publishedDate,
+                    ).toLocaleDateString(),
                   },
                   {
                     key: `destination`,
