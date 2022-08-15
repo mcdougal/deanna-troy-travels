@@ -1,6 +1,7 @@
 import { documentToPlainTextString } from '@contentful/rich-text-plain-text-renderer';
 
 import { HtmlHead } from '@components/generic';
+import { getBlogPostThumbnail } from '@lib/blogPosts';
 import {
   getDeannaTroyTravelsOrganization,
   getDeannaTroyTravelsPerson,
@@ -18,7 +19,7 @@ const PageMetadata = ({ blogPost, blogPostVideo }: Props): JSX.Element => {
   const title = blogPost.title;
   const description = blogPost.excerpt;
   const canonicalUrl = `https://www.deannatroytravels.com/post/${blogPost.slug}`;
-  const imageUrl = blogPost.coverImage.url;
+  const imageUrl = getBlogPostThumbnail(blogPost).url;
 
   const youTubeWebSiteStructuredData: StructuredData = {
     '@type': `WebSite`,

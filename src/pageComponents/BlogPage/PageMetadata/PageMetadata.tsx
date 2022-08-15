@@ -1,4 +1,5 @@
 import { HtmlHead } from '@components/generic';
+import { getBlogPostThumbnail } from '@lib/blogPosts';
 import {
   getDeannaTroyTravelsOrganization,
   getDeannaTroyTravelsPerson,
@@ -15,7 +16,7 @@ const PageMetadata = ({ blogPosts }: Props): JSX.Element => {
   const title = `Travel Blog`;
   const description = blogPosts[0].excerpt;
   const canonicalUrl = `https://www.deannatroytravels.com/blog`;
-  const imageUrl = blogPosts[0].coverImage.url;
+  const imageUrl = getBlogPostThumbnail(blogPosts[0]).url;
 
   const blogPostsStructuredData: Array<StructuredData> = blogPosts.map(
     (blogPost) => {

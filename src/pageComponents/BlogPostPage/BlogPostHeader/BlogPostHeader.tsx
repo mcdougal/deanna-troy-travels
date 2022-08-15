@@ -17,8 +17,8 @@ const BlogPostHeader = ({ blogPost }: Props): JSX.Element => {
         {blogPost.title}
       </Typography>
       <Typography color="textSecondary" variant="body2">
-        <time dateTime={blogPost.date}>
-          {new Date(blogPost.date).toLocaleDateString()}
+        <time dateTime={blogPost.publishedDate}>
+          {new Date(blogPost.publishedDate).toLocaleDateString()}
         </time>
         {` • `}
         {estimateRichTextReadingTime(blogPost.content.json)} min

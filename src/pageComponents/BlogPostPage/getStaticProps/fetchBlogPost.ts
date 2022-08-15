@@ -22,9 +22,9 @@ export interface BlogPost {
   coverImage: {
     description: string | null;
     url: string;
-  };
-  date: string;
+  } | null;
   excerpt: string;
+  publishedDate: string;
   slug: string;
   sys: {
     publishedAt: string;
@@ -64,8 +64,8 @@ export default async (slug: string): Promise<BlogPost> => {
               description
               url
             }
-            date
             excerpt
+            publishedDate
             slug
             sys {
               publishedAt

@@ -2,8 +2,7 @@ import PlaceIcon from '@mui/icons-material/Place';
 import TodayIcon from '@mui/icons-material/Today';
 
 import { MediaCard } from '@components/generic';
-import { cloudinaryLoader } from '@lib/cloudinary';
-import { contentfulLoader } from '@lib/contentful';
+import { getBlogPostThumbnail } from '@lib/blogPosts';
 
 import { BlogPost } from '../../getStaticProps';
 
@@ -14,28 +13,6 @@ interface Props {
 }
 
 const BlogPostMediaCard = ({ blogPost }: Props): JSX.Element => {
-  let thumbnail: React.ComponentProps<typeof MediaCard>[`thumbnail`];
-
-  if (blogPost.youTubeVideoId) {
-    thumbnail = {
-      alt: blogPost.title,
-      loader: cloudinaryLoader,
-      url: `/youtube/${blogPost.youTubeVideoId}`,
-    };
-  } else if (blogPost.coverImage) {
-    thumbnail = {
-      alt: blogPost.coverImage.description || blogPost.title,
-      loader: contentfulLoader,
-      url: blogPost.coverImage.url,
-    };
-  } else {
-    thumbnail = {
-      alt: blogPost.title,
-      loader: cloudinaryLoader,
-      url: `/upload/deanna-troy-travels/logo.png`,
-    };
-  }
-
   return (
     <MediaCard
       details={[
@@ -50,7 +27,7 @@ const BlogPostMediaCard = ({ blogPost }: Props): JSX.Element => {
           value: blogPost.destination.name,
         },
       ]}
-      thumbnail={thumbnail}
+      thumbnail={getBlogPostThumbnail(blogPost)}
       title={blogPost.title}
       url={`/post/${blogPost.slug}`}
     />

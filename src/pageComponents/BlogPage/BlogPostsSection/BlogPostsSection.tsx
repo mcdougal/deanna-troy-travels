@@ -4,7 +4,7 @@ import { Box, Grid } from '@mui/material';
 
 import { MediaCard } from '@components/generic';
 import { SectionTitle } from '@components/site';
-import { contentfulLoader } from '@lib/contentful';
+import { getBlogPostThumbnail } from '@lib/blogPosts';
 
 import { BlogPost } from '../getStaticProps';
 
@@ -29,7 +29,9 @@ const BlogPostsSection = ({ blogPosts }: Props): JSX.Element => {
                   {
                     key: `date`,
                     icon: <TodayIcon sx={sx.blogPostDateIcon} />,
-                    value: new Date(blogPost.date).toLocaleDateString(),
+                    value: new Date(
+                      blogPost.publishedDate,
+                    ).toLocaleDateString(),
                   },
                   {
                     key: `destination`,
@@ -37,13 +39,7 @@ const BlogPostsSection = ({ blogPosts }: Props): JSX.Element => {
                     value: blogPost.destination.name,
                   },
                 ]}
-                thumbnail={{
-                  alt:
-                    blogPost.coverImage.description ||
-                    `${blogPost.title} thumbnail`,
-                  loader: contentfulLoader,
-                  url: blogPost.coverImage.url,
-                }}
+                thumbnail={getBlogPostThumbnail(blogPost)}
                 title={blogPost.title}
                 url={`/post/${blogPost.slug}`}
               />

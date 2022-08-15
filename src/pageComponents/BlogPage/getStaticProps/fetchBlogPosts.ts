@@ -4,14 +4,15 @@ export interface BlogPost {
   coverImage: {
     description: string | null;
     url: string;
-  };
-  date: string;
+  } | null;
   destination: {
     name: string;
   };
   excerpt: string;
+  publishedDate: string;
   slug: string;
   title: string;
+  youTubeVideoId: string | null;
 }
 
 export default async (): Promise<Array<BlogPost>> => {
@@ -22,19 +23,20 @@ export default async (): Promise<Array<BlogPost>> => {
   }>(
     `
       query BlogPageGetStaticPropsBlogPosts {
-        blogPostCollection(order: date_DESC) {
+        blogPostCollection(order: publishedDate_DESC) {
           items {
             coverImage {
               description
               url
             }
-            date
             destination {
               name
             }
             excerpt
+            publishedDate
             slug
             title
+            youTubeVideoId
           }
         }
       }
