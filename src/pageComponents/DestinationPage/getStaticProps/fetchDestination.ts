@@ -7,11 +7,12 @@ export interface Destination {
         coverImage: {
           description: string | null;
           url: string;
-        };
+        } | null;
         excerpt: string;
         publishedDate: string;
         slug: string;
         title: string;
+        youTubeVideoId: string | null;
       }>;
     };
   };
@@ -44,6 +45,7 @@ export default async (slug: string): Promise<Destination> => {
                   publishedDate
                   slug
                   title
+                  youTubeVideoId
                 }
               }
             }

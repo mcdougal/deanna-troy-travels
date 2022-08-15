@@ -2,7 +2,7 @@ import { Box, Button, Typography, useTheme } from '@mui/material';
 import Image from 'next/image';
 import Link from 'next/link';
 
-import { contentfulLoader } from '@lib/contentful';
+import { getBlogPostThumbnail } from '@lib/blogPosts';
 
 import { BlogPost } from '../getStaticProps';
 
@@ -14,6 +14,7 @@ interface Props {
 
 const FeaturedPost = ({ blogPost }: Props): JSX.Element => {
   const theme = useTheme();
+  const thumbnail = getBlogPostThumbnail(blogPost);
 
   return (
     <Box sx={sx.featuredPostContainer}>
@@ -22,11 +23,9 @@ const FeaturedPost = ({ blogPost }: Props): JSX.Element => {
       </Typography>
       <Box sx={sx.coverImageContainer}>
         <Image
-          alt={
-            blogPost.coverImage.description || `${blogPost.title} cover image`
-          }
+          alt={thumbnail.alt}
           layout="fill"
-          loader={contentfulLoader}
+          loader={thumbnail.loader}
           objectFit="cover"
           objectPosition="center"
           priority
@@ -34,7 +33,7 @@ const FeaturedPost = ({ blogPost }: Props): JSX.Element => {
             `(max-width: ${theme.breakpoints.values.md}px) 100vw`,
             `900px`,
           ].join(`,`)}
-          src={blogPost.coverImage.url}
+          src={thumbnail.url}
         />
       </Box>
       <Box sx={sx.featuredPostContent}>

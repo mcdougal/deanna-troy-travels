@@ -4,7 +4,7 @@ import { Box, Grid } from '@mui/material';
 
 import { MediaCard } from '@components/generic';
 import { SectionTitle } from '@components/site';
-import { contentfulLoader } from '@lib/contentful';
+import { getBlogPostThumbnail } from '@lib/blogPosts';
 
 import { BlogPost, Destination } from '../getStaticProps';
 
@@ -40,13 +40,7 @@ const BlogPostsSection = ({ blogPosts, destination }: Props): JSX.Element => {
                     value: destination.name,
                   },
                 ]}
-                thumbnail={{
-                  alt:
-                    blogPost.coverImage.description ||
-                    `${blogPost.title} thumbnail`,
-                  loader: contentfulLoader,
-                  url: blogPost.coverImage.url,
-                }}
+                thumbnail={getBlogPostThumbnail(blogPost)}
                 title={blogPost.title}
                 url={`/post/${blogPost.slug}`}
               />
