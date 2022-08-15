@@ -8,8 +8,8 @@ export interface Destination {
           description: string | null;
           url: string;
         };
-        date: string;
         excerpt: string;
+        publishedDate: string;
         slug: string;
         title: string;
       }>;
@@ -40,8 +40,8 @@ export default async (slug: string): Promise<Destination> => {
                     description
                     url
                   }
-                  date
                   excerpt
+                  publishedDate
                   slug
                   title
                 }

@@ -5,6 +5,8 @@ import fs from 'fs';
 
 import { Feed } from 'feed';
 
+import { getBlogPostThumbnail } from '@lib/blogPosts';
+
 import fetchRecentBlogPosts from './fetchRecentBlogPosts';
 
 const run = async (): Promise<void> => {
@@ -48,8 +50,8 @@ const run = async (): Promise<void> => {
           link: `https://www.deannatroytravels.com/about`,
         },
       ],
-      date: new Date(blogPost.date),
-      image: blogPost.coverImage.url,
+      date: new Date(blogPost.publishedDate),
+      image: getBlogPostThumbnail(blogPost).url,
     });
   });
 
