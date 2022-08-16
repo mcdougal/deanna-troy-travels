@@ -32,8 +32,23 @@ const BlogPage = ({
     }
   });
 
-  if (blogPostsWithoutDestination.length > 0) {
-    blogPostsByDestination[`Other`] = blogPostsWithoutDestination;
+  const blogPostCategories: { [key: string]: Array<BlogPost> } = {};
+  const otherBlogPosts: Array<BlogPost> = [];
+
+  Object.entries(blogPostsByDestination).forEach(
+    ([destinationName, destinationPosts]) => {
+      if (destinationPosts.length > 3) {
+        blogPostCategories[destinationName] = destinationPosts;
+      } else {
+        otherBlogPosts.push(...destinationPosts);
+      }
+    },
+  );
+
+  otherBlogPosts.push(...blogPostsWithoutDestination);
+
+  if (otherBlogPosts.length > 0) {
+    blogPostCategories[`And More!`] = otherBlogPosts;
   }
 
   return (
@@ -51,18 +66,13 @@ const BlogPage = ({
         <Box sx={sx.featuredPostContainer}>
           <FeaturedPost blogPost={featuredPost} />
         </Box>
-        {Object.entries(blogPostsByDestination).map(
-          ([destinationName, destinationPosts]) => {
-            return (
-              <Box key={destinationName} sx={sx.blogPostsSectionContainer}>
-                <BlogPostsSection
-                  blogPosts={destinationPosts}
-                  title={destinationName}
-                />
-              </Box>
-            );
-          },
-        )}
+        {Object.entries(blogPostCategories).map(([title, posts]) => {
+          return (
+            <Box key={title} sx={sx.blogPostsSectionContainer}>
+              <BlogPostsSection blogPosts={posts} title={title} />
+            </Box>
+          );
+        })}
         <Box sx={sx.subscribeSectionContainer}>
           <SubscribeSection />
         </Box>
