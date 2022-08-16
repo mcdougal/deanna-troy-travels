@@ -5,8 +5,10 @@ import React from 'react';
 import Anchor from '../../Anchor';
 
 import EmbeddedInstagramPost from './EmbeddedInstagramPost';
+import EmbeddedTikTokPost from './EmbeddedTikTokPost';
 import EmbeddedYouTubeVideo from './EmbeddedYouTubeVideo';
 import getInstagramEmbed from './getInstagramEmbed';
+import getTikTokEmbed from './getTikTokEmbed';
 import getYouTubeEmbed from './getYouTubeEmbed';
 import sx from './Paragraph.styles';
 
@@ -25,6 +27,16 @@ const Paragraph = ({ children, node }: Props): JSX.Element => {
           includeCaption={instagramEmbed.includeCaption}
           postId={instagramEmbed.postId}
         />
+      </Box>
+    );
+  }
+
+  const tikTokEmbed = getTikTokEmbed(node);
+
+  if (tikTokEmbed) {
+    return (
+      <Box sx={sx.embedContainer}>
+        <EmbeddedTikTokPost videoId={tikTokEmbed.videoId} />
       </Box>
     );
   }

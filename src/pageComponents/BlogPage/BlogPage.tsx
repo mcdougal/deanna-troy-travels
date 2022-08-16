@@ -32,6 +32,10 @@ const BlogPage = ({
     }
   });
 
+  if (blogPostsWithoutDestination.length > 0) {
+    blogPostsByDestination[`Other`] = blogPostsWithoutDestination;
+  }
+
   return (
     <>
       <PageMetadata blogPosts={blogPosts} />
