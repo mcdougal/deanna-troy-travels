@@ -1,5 +1,3 @@
-import Text, { INSTAGRAM_EMBED_REGEX, YOUTUBE_EMBED_REGEX } from './Text';
-
-export { INSTAGRAM_EMBED_REGEX, YOUTUBE_EMBED_REGEX };
+import Text from './Text';
 
 export default Text;
