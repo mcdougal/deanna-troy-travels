@@ -6,6 +6,7 @@ import { BlogPost } from '../getStaticProps';
 
 import {
   EmbeddedAsset,
+  EmbeddedEntry,
   Heading1,
   Heading2,
   Heading3,
@@ -63,6 +64,10 @@ const BlogPostContent = ({ blogPost }: Props): JSX.Element => {
         renderNode: {
           [BLOCKS.EMBEDDED_ASSET]: getRichTextElementRenderer(
             EmbeddedAsset,
+            links,
+          ),
+          [BLOCKS.EMBEDDED_ENTRY]: getRichTextElementRenderer(
+            EmbeddedEntry,
             links,
           ),
           [BLOCKS.HEADING_1]: getRichTextElementRenderer(Heading1),

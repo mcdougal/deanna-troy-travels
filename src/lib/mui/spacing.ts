@@ -15,11 +15,11 @@ export default (...args: Args): ((theme: Theme) => ReturnValue) => {
   return (theme) => {
     if (typeof args[0] === `object`) {
       return {
-        xs: args[0].xs ? theme.spacing(args[0].xs) : undefined,
-        sm: args[0].sm ? theme.spacing(args[0].sm) : undefined,
-        md: args[0].md ? theme.spacing(args[0].md) : undefined,
-        lg: args[0].lg ? theme.spacing(args[0].lg) : undefined,
-        xl: args[0].xl ? theme.spacing(args[0].xl) : undefined,
+        xs: args[0].xs !== undefined ? theme.spacing(args[0].xs) : undefined,
+        sm: args[0].sm !== undefined ? theme.spacing(args[0].sm) : undefined,
+        md: args[0].md !== undefined ? theme.spacing(args[0].md) : undefined,
+        lg: args[0].lg !== undefined ? theme.spacing(args[0].lg) : undefined,
+        xl: args[0].xl !== undefined ? theme.spacing(args[0].xl) : undefined,
       };
     }
 

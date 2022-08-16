@@ -2,6 +2,22 @@ import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 
 import { fetchContentfulGraphQl } from '@lib/contentful';
 
+export interface BlogPostImageGallery {
+  __typename: `BlogPostImageGallery`;
+  imagesCollection: {
+    items: Array<{
+      description: string;
+      sys: {
+        id: string;
+      };
+      url: string;
+    }>;
+  };
+  sys: {
+    id: string;
+  };
+}
+
 export interface BlogPost {
   content: {
     json: Parameters<typeof documentToReactComponents>[0];
@@ -16,6 +32,9 @@ export interface BlogPost {
           url: string;
           width: number;
         }>;
+      };
+      entries: {
+        block: Array<BlogPostImageGallery>;
       };
     };
   };
@@ -42,7 +61,7 @@ export default async (slug: string): Promise<BlogPost> => {
   }>(
     `
       query BlogPostPageGetStaticPropsBlogPosts($slug: String!) {
-        blogPostCollection(where: { slug: $slug }) {
+        blogPostCollection(where: { slug: $slug }, limit: 1) {
           items {
             content {
               json
@@ -56,6 +75,25 @@ export default async (slug: string): Promise<BlogPost> => {
                     }
                     url
                     width
+                  }
+                }
+                entries {
+                  block {
+                    ... on BlogPostImageGallery {
+                      __typename
+                      imagesCollection {
+                        items {
+                          description
+                          sys {
+                            id
+                          }
+                          url
+                        }
+                      }
+                      sys {
+                        id
+                      }
+                    }
                   }
                 }
               }

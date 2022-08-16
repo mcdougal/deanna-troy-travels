@@ -1,4 +1,5 @@
 import EmbeddedAsset from './EmbeddedAsset';
+import EmbeddedEntry from './EmbeddedEntry';
 import Heading1 from './Heading1';
 import Heading2 from './Heading2';
 import Heading3 from './Heading3';
@@ -19,6 +20,7 @@ import UlList from './UlList';
 
 export {
   EmbeddedAsset,
+  EmbeddedEntry,
   Heading1,
   Heading2,
   Heading3,
