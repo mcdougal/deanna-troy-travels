@@ -1,31 +1,30 @@
-import { Box, Typography } from '@mui/material';
-import Image from 'next/image';
+import YouTubeIcon from '@mui/icons-material/YouTube';
+import { Box, Button, Typography } from '@mui/material';
+
+import { SiteLogo } from '@components/site';
 
 import sx from './LogoAndTitle.styles';
-import SocialLinks from './SocialLinks';
-
-const YOUTUBE_LOGO_RATIO = 1.189;
-const YOUTUBE_LOGO_HEIGHT = 88;
-const YOUTUBE_LOGO_WIDTH = YOUTUBE_LOGO_HEIGHT * YOUTUBE_LOGO_RATIO;
 
 const LogoAndTitle = (): JSX.Element => {
   return (
     <Box sx={sx.logoAndTitleContainer}>
-      <Image
-        alt="Deanna Troy Travels logo"
-        height={YOUTUBE_LOGO_HEIGHT}
-        layout="fixed"
-        src="/deanna-troy-travels/logo.png"
-        width={YOUTUBE_LOGO_WIDTH}
-      />
-      <Typography component="h1" sx={sx.title} variant="h4">
+      <SiteLogo height={11} />
+      <Typography component="h1" sx={sx.title} variant="h3">
         <Box sx={sx.deannaTroy}>Deanna Troy</Box> Travels
       </Typography>
       <Typography sx={sx.subtitle} variant="caption">
-        Budget Travel Vlog
+        Budget Travel Vlogs
       </Typography>
-      <Box sx={sx.socialLinksContainer}>
-        <SocialLinks />
+      <Box sx={sx.subscribeButtonContainer}>
+        <Button
+          color="secondary"
+          href="https://www.youtube.com/channel/UCJeRZkaH3ORHkNWUNqfXJEg?sub_confirmation=1"
+          size="large"
+          startIcon={<YouTubeIcon />}
+          target="_blank"
+          variant="contained">
+          Subscribe
+        </Button>
       </Box>
     </Box>
   );

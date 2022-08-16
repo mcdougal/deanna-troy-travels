@@ -1,47 +1,65 @@
-import { ArrowForward, ModeComment, ThumbUp } from '@mui/icons-material';
-import { Box, Button } from '@mui/material';
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+import ModeCommentIcon from '@mui/icons-material/ModeComment';
+import ThumbUpIcon from '@mui/icons-material/ThumbUp';
+import VisibilityIcon from '@mui/icons-material/Visibility';
+import { Box, Button, Container, Grid } from '@mui/material';
 
-import { MediaCard, SectionContainer, SectionTitle } from '@components/common';
+import { MediaCard } from '@components/generic';
+import { SectionTitle } from '@components/site';
+import { cloudinaryLoader } from '@lib/cloudinary';
 
-import { RecentVideo } from '../getStaticProps';
+import { YouTubeVideo } from '../getStaticProps';
 
 import sx from './FeaturedVideosSection.styles';
 
 interface Props {
-  recentVideos: Array<RecentVideo>;
+  recentVideos: Array<YouTubeVideo>;
 }
 
 const FeaturedVideosSection = ({ recentVideos }: Props): JSX.Element => {
   return (
-    <SectionContainer>
+    <Container component="section" maxWidth="md">
       <Box sx={sx.sectionTitleContainer}>
-        <SectionTitle>Featured Videos</SectionTitle>
+        <SectionTitle>Featured Videos 🎥</SectionTitle>
       </Box>
-      {recentVideos.map((recentVideo) => {
-        return (
-          <Box key={recentVideo.videoId} sx={sx.featuredVideoContainer}>
-            <MediaCard
-              action1={{
-                icon: <ThumbUp sx={sx.thumbUpIcon} />,
-                value: `${recentVideo.likeCount}`,
-              }}
-              action2={{
-                icon: <ModeComment sx={sx.modeCommentIcon} />,
-                value: `${recentVideo.commentCount}`,
-              }}
-              thumbnail={{
-                alt: recentVideo.title,
-                url: recentVideo.thumbnailUrl,
-              }}
-              url={`https://www.youtube.com/watch?v=${recentVideo.videoId}`}
-            />
-          </Box>
-        );
-      })}
+      <Grid alignItems="stretch" container spacing={2}>
+        {recentVideos.map((recentVideo) => {
+          return (
+            <Grid key={recentVideo.videoId} item sm={4} xs={12}>
+              <MediaCard
+                details={[
+                  {
+                    key: `views`,
+                    icon: <VisibilityIcon sx={sx.viewsIcon} />,
+                    value: recentVideo.viewCount.toLocaleString(),
+                  },
+                  {
+                    key: `likes`,
+                    icon: <ThumbUpIcon sx={sx.likesIcon} />,
+                    value: recentVideo.likeCount.toLocaleString(),
+                  },
+                  {
+                    key: `comments`,
+                    icon: <ModeCommentIcon sx={sx.commentsIcon} />,
+                    value: recentVideo.commentCount.toLocaleString(),
+                  },
+                ]}
+                thumbnail={{
+                  alt: recentVideo.title,
+                  loader: cloudinaryLoader,
+                  url: `/youtube/${recentVideo.videoId}`,
+                }}
+                title={recentVideo.title}
+                url={`https://www.youtube.com/watch?v=${recentVideo.videoId}`}
+              />
+            </Grid>
+          );
+        })}
+      </Grid>
       <Box sx={sx.ctaContainer}>
         <Button
           color="primary"
-          endIcon={<ArrowForward fontSize="small" />}
+          endIcon={<ArrowForwardIcon fontSize="small" />}
           href="https://www.youtube.com/deannatroytravels"
           size="large"
           target="_blank"
@@ -49,7 +67,7 @@ const FeaturedVideosSection = ({ recentVideos }: Props): JSX.Element => {
           All Videos
         </Button>
       </Box>
-    </SectionContainer>
+    </Container>
   );
 };
 

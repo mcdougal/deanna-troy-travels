@@ -1,6 +1,6 @@
 export default {
   sectionTitleContainer: {
-    marginBottom: 2,
+    marginBottom: 3,
   },
   testimonialsContainer: {
     '& > * + *': {

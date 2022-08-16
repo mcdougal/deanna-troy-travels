@@ -30,7 +30,7 @@
     "import/extensions": ["error", "never"],
     "import/first": "error",
     "import/no-anonymous-default-export": "off",
-    "import/no-cycle": "error",
+    "import/no-cycle": ["error", { "ignoreExternal": true }],
     "import/order": [
       "error",
       {
@@ -62,6 +62,7 @@
     "react/jsx-sort-props": [
       "error",
       {
+        "ignoreCase": true,
         "reservedFirst": true
       }
     ],
@@ -77,6 +78,8 @@
         "prop": "ignore"
       }
     ],
+    "react/no-array-index-key": "error",
+    "react/no-danger": "error",
     "react/prefer-stateless-function": "error",
     "spaced-comment": ["error", "always"]
   }

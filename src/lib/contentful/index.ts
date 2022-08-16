@@ -1,5 +1,9 @@
-import fetchBlogFeatures, { BlogFeature } from './fetchBlogFeatures';
+import contentfulLoader from './contentfulLoader';
+import estimateRichTextReadingTime from './estimateRichTextReadingTime';
+import fetchContentfulGraphQl from './fetchContentfulGraphQl';
 
-export type { BlogFeature };
-
-export { fetchBlogFeatures };
+export {
+  contentfulLoader,
+  estimateRichTextReadingTime,
+  fetchContentfulGraphQl,
+};

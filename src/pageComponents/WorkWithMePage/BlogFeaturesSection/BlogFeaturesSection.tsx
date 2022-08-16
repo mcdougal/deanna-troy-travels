@@ -1,7 +1,8 @@
-import { Box } from '@mui/material';
+import { Box, Container, Grid } from '@mui/material';
 
-import { SectionContainer, SectionTitle } from '@components/common';
-import { BlogFeature as IBlogFeature } from '@lib/contentful';
+import { SectionTitle } from '@components/site';
+
+import { BlogFeature as IBlogFeature } from '../getStaticProps';
 
 import BlogFeature from './BlogFeature';
 import sx from './BlogFeaturesSection.styles';
@@ -12,20 +13,20 @@ interface Props {
 
 const BlogFeaturesSection = ({ blogFeatures }: Props): JSX.Element => {
   return (
-    <SectionContainer>
+    <Container component="section" maxWidth="md">
       <Box sx={sx.sectionTitleContainer}>
         <SectionTitle>Blog Features</SectionTitle>
       </Box>
-      <Box>
+      <Grid alignItems="stretch" container spacing={3}>
         {blogFeatures.map((blogFeature) => {
           return (
-            <Box key={blogFeature.blogPostTitle} sx={sx.blogFeatureContainer}>
+            <Grid key={blogFeature.blogPostTitle} item sm={6} xs={12}>
               <BlogFeature blogFeature={blogFeature} />
-            </Box>
+            </Grid>
           );
         })}
-      </Box>
-    </SectionContainer>
+      </Grid>
+    </Container>
   );
 };
 

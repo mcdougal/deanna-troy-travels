@@ -1,5 +1,5 @@
-import Amazon from './Amazon';
-import Poshmark from './Poshmark';
-import TikTok from './TikTok';
+import AmazonIcon from './AmazonIcon';
+import PoshmarkIcon from './PoshmarkIcon';
+import TikTokIcon from './TikTokIcon';
 
-export { Amazon, Poshmark, TikTok };
+export { AmazonIcon, PoshmarkIcon, TikTokIcon };

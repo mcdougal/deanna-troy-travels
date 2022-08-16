@@ -2,14 +2,17 @@ export default {
   logoAndTitleContainer: {
     paddingBottom: 2,
   },
-  heroImageContainer: {
-    height: `400px`,
-    position: `relative`,
-  },
   featuredVideosContainer: {
-    marginBottom: 8,
+    marginTop: { xs: 6, md: 10 },
   },
   workWithMeContainer: {
+    marginTop: { xs: 8, md: 10 },
+  },
+  instagramContainer: {
+    marginTop: { xs: 8, md: 10 },
+  },
+  featuredPostsContainer: {
     marginBottom: 20,
+    marginTop: { xs: 8, md: 10 },
   },
 };

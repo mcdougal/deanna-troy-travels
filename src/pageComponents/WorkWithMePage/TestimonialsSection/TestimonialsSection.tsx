@@ -1,13 +1,13 @@
-import { Box } from '@mui/material';
+import { Box, Container } from '@mui/material';
 
-import { SectionContainer, SectionTitle } from '@components/common';
+import { SectionTitle } from '@components/site';
 
 import Testimonial from './Testimonial';
 import sx from './TestimonialsSection.styles';
 
 const TestimonialsSection = (): JSX.Element => {
   return (
-    <SectionContainer>
+    <Container component="section" maxWidth="md">
       <Box sx={sx.sectionTitleContainer}>
         <SectionTitle>What People Say</SectionTitle>
       </Box>
@@ -38,7 +38,7 @@ const TestimonialsSection = (): JSX.Element => {
           testimonial="Deanna has been a wonderful guest on my show called “Epic Travel Show”. In her first episode Deanna provided thorough information in an engaging and understandable way about living in Da Nang, Vietnam. Due to the popularity of her episode on ETS, I invited her back for another episode, this time to discuss travel information about Tokyo. I have no doubt that Deanna will again entertain while also providing invaluable inside insight which will greatly help my viewers plan their trips to Tokyo. I would hire Deanna in a heart beat for any travel-related job position as she is a passionate and educated traveler."
         />
       </Box>
-    </SectionContainer>
+    </Container>
   );
 };
 

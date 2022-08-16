@@ -1,43 +1,51 @@
-import { ArrowForward } from '@mui/icons-material';
-import { Box, Button, Typography } from '@mui/material';
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+import { Box, Button, Container, Typography, useTheme } from '@mui/material';
 import Image from 'next/image';
 import Link from 'next/link';
 
-import { SectionContainer, SectionTitle } from '@components/common';
+import { SectionTitle } from '@components/site';
+import { cloudinaryLoader } from '@lib/cloudinary';
 
 import sx from './WorkWithMeSection.styles';
 
 const WorkWithMeSection = (): JSX.Element => {
+  const theme = useTheme();
+
   return (
-    <SectionContainer>
+    <Container component="section" maxWidth="md">
       <Box sx={sx.sectionTitleContainer}>
-        <SectionTitle>Work With Me</SectionTitle>
+        <SectionTitle>Work With Me 🤝</SectionTitle>
       </Box>
       <Box sx={sx.imageContainer}>
         <Image
-          alt="Deanna Troy Travels"
+          alt="Deanna eating a dumpling with chopsticks with Asian lanterns in the background"
           layout="fill"
+          loader={cloudinaryLoader}
           objectFit="cover"
           objectPosition="center"
-          src="/deanna-troy-travels/home/work-with-me.png"
+          sizes={[
+            `(max-width: ${theme.breakpoints.values.sm}px) 100vw`,
+            `900px`,
+          ].join(`,`)}
+          src="/upload/deanna-troy-travels/home/work-with-me.png"
         />
       </Box>
-      <Typography variant="body1">
+      <Typography sx={sx.description} variant="body1">
         I am a fun, outgoing and quirky Travel YouTuber. I produce travel videos
         ranging from travel vlogs, travel advice, story-times and more!
       </Typography>
       <Box sx={sx.ctaContainer}>
-        <Link href="/work-with-me">
+        <Link href="/work-with-me" passHref>
           <Button
             color="primary"
-            endIcon={<ArrowForward fontSize="small" />}
+            endIcon={<ArrowForwardIcon fontSize="small" />}
             size="large"
             variant="contained">
             Learn More
           </Button>
         </Link>
       </Box>
-    </SectionContainer>
+    </Container>
   );
 };
 

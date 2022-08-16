@@ -5,8 +5,11 @@ export default {
   title: {
     marginBottom: 4,
   },
-  workWith: {
+  titlePrimary: {
     color: `primary.main`,
     display: `inline`,
+  },
+  imageContainer: {
+    position: `relative`,
   },
 };
