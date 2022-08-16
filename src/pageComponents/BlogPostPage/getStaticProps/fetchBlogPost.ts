@@ -42,6 +42,9 @@ export interface BlogPost {
     description: string | null;
     url: string;
   } | null;
+  destination: {
+    name: string;
+  } | null;
   excerpt: string;
   publishedDate: string;
   slug: string;
@@ -101,6 +104,9 @@ export default async (slug: string): Promise<BlogPost> => {
             coverImage {
               description
               url
+            }
+            destination {
+              name
             }
             excerpt
             publishedDate

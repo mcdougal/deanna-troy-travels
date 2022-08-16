@@ -2,11 +2,10 @@ import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import { Box, Button, Container, Grid } from '@mui/material';
 import Link from 'next/link';
 
-import { SectionTitle } from '@components/site';
+import { BlogPostMediaCard, SectionTitle } from '@components/site';
 
 import { BlogPost } from '../getStaticProps';
 
-import BlogPostMediaCard from './BlogPostMediaCard';
 import sx from './LatestPostsSection.styles';
 
 interface Props {

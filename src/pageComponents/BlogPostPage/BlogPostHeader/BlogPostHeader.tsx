@@ -22,6 +22,12 @@ const BlogPostHeader = ({ blogPost }: Props): JSX.Element => {
         </time>
         {` • `}
         {estimateRichTextReadingTime(blogPost.content.json)} min
+        {blogPost.destination && (
+          <>
+            {` • `}
+            {blogPost.destination.name}
+          </>
+        )}
       </Typography>
     </>
   );

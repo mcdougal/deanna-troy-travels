@@ -1,3 +1,4 @@
+import BlogPostMediaCard from './BlogPostMediaCard';
 import BlogSubscribeDialog from './BlogSubscribeDialog';
 import BlogSubscribeForm from './BlogSubscribeForm';
 import ContactDialog from './ContactDialog';
@@ -10,6 +11,7 @@ import SocialsMenu, { SocialsMenuAnchor } from './SocialsMenu';
 export type { SocialsMenuAnchor };
 
 export {
+  BlogPostMediaCard,
   BlogSubscribeDialog,
   BlogSubscribeForm,
   ContactDialog,

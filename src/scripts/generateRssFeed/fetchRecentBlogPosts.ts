@@ -5,9 +5,6 @@ export interface BlogPost {
     description: string | null;
     url: string;
   } | null;
-  destination: {
-    name: string;
-  };
   excerpt: string;
   publishedDate: string;
   slug: string;
@@ -28,9 +25,6 @@ export default async (): Promise<Array<BlogPost>> => {
             coverImage {
               description
               url
-            }
-            destination {
-              name
             }
             excerpt
             publishedDate

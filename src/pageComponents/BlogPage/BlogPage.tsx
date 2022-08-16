@@ -16,13 +16,20 @@ const BlogPage = ({
   const [featuredPost, ...otherPosts] = blogPosts;
 
   const blogPostsByDestination: { [key: string]: Array<BlogPost> } = {};
+  const blogPostsWithoutDestination: Array<BlogPost> = [];
 
   otherPosts.forEach((blogPost) => {
-    if (!blogPostsByDestination[blogPost.destination.name]) {
-      blogPostsByDestination[blogPost.destination.name] = [];
-    }
+    const { destination } = blogPost;
 
-    blogPostsByDestination[blogPost.destination.name].push(blogPost);
+    if (!destination) {
+      blogPostsWithoutDestination.push(blogPost);
+    } else {
+      if (!blogPostsByDestination[destination.name]) {
+        blogPostsByDestination[destination.name] = [];
+      }
+
+      blogPostsByDestination[destination.name].push(blogPost);
+    }
   });
 
   return (

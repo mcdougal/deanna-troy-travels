@@ -7,7 +7,7 @@ export interface BlogPost {
   } | null;
   destination: {
     name: string;
-  };
+  } | null;
   excerpt: string;
   publishedDate: string;
   slug: string;
