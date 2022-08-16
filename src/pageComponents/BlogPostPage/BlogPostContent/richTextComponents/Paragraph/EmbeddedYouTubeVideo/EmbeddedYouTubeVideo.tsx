@@ -8,7 +8,7 @@ interface Props {
 
 const EmbeddedYouTubeVideo = ({ videoId }: Props): JSX.Element => {
   return (
-    <Box component="span" sx={sx.container}>
+    <Box sx={sx.container}>
       <iframe
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowFullScreen
