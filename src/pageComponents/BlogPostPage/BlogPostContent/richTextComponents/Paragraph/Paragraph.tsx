@@ -1,5 +1,5 @@
 import { Block, Inline } from '@contentful/rich-text-types';
-import { Typography } from '@mui/material';
+import { Box, Typography } from '@mui/material';
 import React from 'react';
 
 import Anchor from '../../Anchor';
@@ -19,13 +19,21 @@ const Paragraph = ({ children, node }: Props): JSX.Element => {
   const instagramEmbedPostId = getInstagramEmbedPostId(node);
 
   if (instagramEmbedPostId) {
-    return <EmbeddedInstagramPost postId={instagramEmbedPostId} />;
+    return (
+      <Box sx={sx.embedContainer}>
+        <EmbeddedInstagramPost postId={instagramEmbedPostId} />
+      </Box>
+    );
   }
 
   const youTubeEmbedPostId = getYouTubeEmbedPostId(node);
 
   if (youTubeEmbedPostId) {
-    return <EmbeddedYouTubeVideo videoId={youTubeEmbedPostId} />;
+    return (
+      <Box sx={sx.embedContainer}>
+        <EmbeddedYouTubeVideo videoId={youTubeEmbedPostId} />
+      </Box>
+    );
   }
 
   return (
