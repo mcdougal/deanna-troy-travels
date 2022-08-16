@@ -1,7 +1,7 @@
 import { Box, Container } from '@mui/material';
 import type { InferGetStaticPropsType } from 'next';
 
-import { SiteHeader } from '@components/site';
+import { SiteFooter, SiteHeader } from '@components/site';
 
 import BlogPostContent from './BlogPostContent';
 import BlogPostHeader from './BlogPostHeader';
@@ -40,6 +40,7 @@ const BlogPostPage = ({
           <RecentPostsSection recentBlogPosts={recentBlogPosts} />
         </Box>
       </Container>
+      <SiteFooter />
     </>
   );
 };

@@ -2,7 +2,7 @@ import { Box, Container, Grid, Typography } from '@mui/material';
 import type { InferGetStaticPropsType } from 'next';
 
 import { MediaCard } from '@components/generic';
-import { SiteHeader } from '@components/site';
+import { SiteFooter, SiteHeader } from '@components/site';
 import { contentfulLoader } from '@lib/contentful';
 
 import sx from './DestinationsPage.styles';
@@ -43,6 +43,7 @@ const DestinationsPage = ({
           </Grid>
         </Box>
       </Container>
+      <SiteFooter />
     </>
   );
 };

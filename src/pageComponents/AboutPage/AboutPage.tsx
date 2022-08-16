@@ -1,6 +1,6 @@
 import { Box } from '@mui/material';
 
-import { SiteHeader } from '@components/site';
+import { SiteFooter, SiteHeader } from '@components/site';
 
 import sx from './AboutPage.styles';
 import ContactSection from './ContactSection';
@@ -22,6 +22,7 @@ const AboutPage = (): React.ReactElement => {
       <Box sx={sx.contactSectionContainer}>
         <ContactSection />
       </Box>
+      <SiteFooter />
     </>
   );
 };

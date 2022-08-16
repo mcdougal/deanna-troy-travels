@@ -1,7 +1,7 @@
 import { Box, Container, Typography } from '@mui/material';
 import type { InferGetStaticPropsType } from 'next';
 
-import { SiteHeader } from '@components/site';
+import { SiteFooter, SiteHeader } from '@components/site';
 
 import sx from './BlogPage.styles';
 import BlogPostsSection from './BlogPostsSection';
@@ -43,6 +43,7 @@ const BlogPage = ({
           <SubscribeSection />
         </Box>
       </Container>
+      <SiteFooter />
     </>
   );
 };

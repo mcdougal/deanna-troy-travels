@@ -1,7 +1,7 @@
 import { Box, Container, Typography } from '@mui/material';
 import type { InferGetStaticPropsType } from 'next';
 
-import { SiteHeader } from '@components/site';
+import { SiteFooter, SiteHeader } from '@components/site';
 
 import BlogPostsSection from './BlogPostsSection';
 import sx from './DestinationPage.styles';
@@ -15,30 +15,34 @@ const DestinationPage = ({
   recentVideos,
 }: InferGetStaticPropsType<typeof getStaticProps>): React.ReactElement => {
   const blogPosts = destination.linkedFrom.blogPostCollection.items;
+  const [featuredPost, ...otherPosts] = blogPosts;
 
   return (
     <>
       <PageMetadata destination={destination} />
       <SiteHeader />
-      <Container maxWidth="md">
+      <Container maxWidth="md" sx={sx.pageContainer}>
         <Typography component="h1" sx={sx.title} variant="h2">
           {destination.name}
         </Typography>
         <Box sx={sx.featuredPostContainer}>
-          <FeaturedPost blogPost={blogPosts[0]} />
+          <FeaturedPost blogPost={featuredPost} />
         </Box>
         {recentVideos.length > 0 && (
           <Box sx={sx.recentVideosContainer}>
             <RecentVideosSection recentVideos={recentVideos} />
           </Box>
         )}
-        <Box sx={sx.blogPostsSectionContainer}>
-          <BlogPostsSection
-            blogPosts={blogPosts.slice(1)}
-            destination={destination}
-          />
-        </Box>
+        {otherPosts.length > 0 && (
+          <Box sx={sx.blogPostsSectionContainer}>
+            <BlogPostsSection
+              blogPosts={otherPosts}
+              destination={destination}
+            />
+          </Box>
+        )}
       </Container>
+      <SiteFooter />
     </>
   );
 };

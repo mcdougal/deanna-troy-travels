@@ -1,7 +1,7 @@
 import { Box } from '@mui/material';
 import type { InferGetStaticPropsType } from 'next';
 
-import { SiteHeader } from '@components/site';
+import { SiteFooter, SiteHeader } from '@components/site';
 
 import FeaturedVideosSection from './FeaturedVideosSection';
 import getStaticProps from './getStaticProps';
@@ -40,6 +40,7 @@ const HomePage = ({
       <Box sx={sx.featuredPostsContainer}>
         <LatestPostsSection recentBlogPosts={recentBlogPosts} />
       </Box>
+      <SiteFooter />
     </>
   );
 };
