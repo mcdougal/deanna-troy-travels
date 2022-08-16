@@ -47,7 +47,7 @@ const ShareButtons = (): JSX.Element => {
         return (
           <IconButton
             key={key}
-            color="inherit"
+            color="primary"
             component="a"
             href={href}
             sx={sx.shareButton}
