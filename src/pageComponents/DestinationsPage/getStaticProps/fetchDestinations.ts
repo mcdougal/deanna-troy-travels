@@ -3,6 +3,10 @@ import { fetchContentfulGraphQl } from '@lib/contentful';
 export interface Destination {
   name: string;
   slug: string;
+  thumbnail: {
+    description: string;
+    url: string;
+  };
 }
 
 export default async (): Promise<Array<Destination>> => {
@@ -17,6 +21,10 @@ export default async (): Promise<Array<Destination>> => {
           items {
             name
             slug
+            thumbnail {
+              description
+              url
+            }
           }
         }
       }

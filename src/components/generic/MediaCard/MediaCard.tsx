@@ -8,7 +8,7 @@ import MediaCardDetail from './MediaCardDetail';
 interface Props {
   alignDetails?: `left` | `right`;
   description?: string;
-  details: Array<{
+  details?: Array<{
     key: string;
     icon: React.ReactElement;
     value: string;
@@ -24,7 +24,7 @@ interface Props {
 
 const MediaCard = ({
   alignDetails = `left`,
-  details,
+  details = [],
   thumbnail,
   title,
   url,
@@ -45,17 +45,19 @@ const MediaCard = ({
       <Typography sx={sx.title} variant="body1">
         {title}
       </Typography>
-      <Box sx={[sx.details, alignDetails === `right` && sx.alignRight]}>
-        {details.map((detail) => {
-          return (
-            <MediaCardDetail
-              key={detail.key}
-              icon={detail.icon}
-              value={detail.value}
-            />
-          );
-        })}
-      </Box>
+      {details.length > 0 && (
+        <Box sx={[sx.details, alignDetails === `right` && sx.alignRight]}>
+          {details.map((detail) => {
+            return (
+              <MediaCardDetail
+                key={detail.key}
+                icon={detail.icon}
+                value={detail.value}
+              />
+            );
+          })}
+        </Box>
+      )}
     </>
   );
 
