@@ -6,7 +6,8 @@ import { SiteHeader } from '@components/site';
 import sx from './BlogPage.styles';
 import BlogPostsSection from './BlogPostsSection';
 import FeaturedPost from './FeaturedPost';
-import getStaticProps, { BlogPost } from './getStaticProps';
+import getBlogPostsByCategory from './getBlogPostsByCategory';
+import getStaticProps from './getStaticProps';
 import PageMetadata from './PageMetadata';
 import SubscribeSection from './SubscribeSection';
 
@@ -14,42 +15,7 @@ const BlogPage = ({
   blogPosts,
 }: InferGetStaticPropsType<typeof getStaticProps>): React.ReactElement => {
   const [featuredPost, ...otherPosts] = blogPosts;
-
-  const blogPostsByDestination: { [key: string]: Array<BlogPost> } = {};
-  const blogPostsWithoutDestination: Array<BlogPost> = [];
-
-  otherPosts.forEach((blogPost) => {
-    const { destination } = blogPost;
-
-    if (!destination) {
-      blogPostsWithoutDestination.push(blogPost);
-    } else {
-      if (!blogPostsByDestination[destination.name]) {
-        blogPostsByDestination[destination.name] = [];
-      }
-
-      blogPostsByDestination[destination.name].push(blogPost);
-    }
-  });
-
-  const blogPostCategories: { [key: string]: Array<BlogPost> } = {};
-  const otherBlogPosts: Array<BlogPost> = [];
-
-  Object.entries(blogPostsByDestination).forEach(
-    ([destinationName, destinationPosts]) => {
-      if (destinationPosts.length > 3) {
-        blogPostCategories[destinationName] = destinationPosts;
-      } else {
-        otherBlogPosts.push(...destinationPosts);
-      }
-    },
-  );
-
-  otherBlogPosts.push(...blogPostsWithoutDestination);
-
-  if (otherBlogPosts.length > 0) {
-    blogPostCategories[`And More!`] = otherBlogPosts;
-  }
+  const blogPostByCategory = getBlogPostsByCategory(otherPosts);
 
   return (
     <>
@@ -66,7 +32,7 @@ const BlogPage = ({
         <Box sx={sx.featuredPostContainer}>
           <FeaturedPost blogPost={featuredPost} />
         </Box>
-        {Object.entries(blogPostCategories).map(([title, posts]) => {
+        {Object.entries(blogPostByCategory).map(([title, posts]) => {
           return (
             <Box key={title} sx={sx.blogPostsSectionContainer}>
               <BlogPostsSection blogPosts={posts} title={title} />

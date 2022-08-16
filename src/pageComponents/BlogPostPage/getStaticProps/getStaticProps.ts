@@ -4,6 +4,7 @@ import type { GetStaticProps } from 'next';
 
 import fetchBlogPost, { BlogPost } from './fetchBlogPost';
 import fetchBlogPostVideo, { BlogPostVideo } from './fetchBlogPostVideo';
+import fetchRecentBlogPosts, { RecentBlogPost } from './fetchRecentBlogPosts';
 
 interface Params extends ParsedUrlQuery {
   slug: string;
@@ -12,6 +13,7 @@ interface Params extends ParsedUrlQuery {
 interface Props {
   blogPost: BlogPost;
   blogPostVideo: BlogPostVideo | null;
+  recentBlogPosts: Array<RecentBlogPost>;
 }
 
 const getStaticProps: GetStaticProps<Props, Params> = async ({ params }) => {
@@ -28,6 +30,7 @@ const getStaticProps: GetStaticProps<Props, Params> = async ({ params }) => {
     props: {
       blogPost,
       blogPostVideo,
+      recentBlogPosts: await fetchRecentBlogPosts(blogPost),
     },
     revalidate: 60,
   };
