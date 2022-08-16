@@ -1,9 +1,14 @@
 import { Block, Inline } from '@contentful/rich-text-types';
 
 export const INSTAGRAM_EMBED_REGEX =
-  /^\s*https:\/\/www\.instagram\.com\/p\/(?<postId>[A-Za-z0-9_-]+)\/?\s*$/;
+  /^\s*https:\/\/www\.instagram\.com\/p\/(?<postId>[A-Za-z0-9_-]+)\/?\s*(?<noCaption>no caption)?\s*$/i;
 
-export default (node: Block | Inline): string | null => {
+interface InstagramEmbed {
+  includeCaption: boolean;
+  postId: string;
+}
+
+export default (node: Block | Inline): InstagramEmbed | null => {
   if (!node.content || !Array.isArray(node.content)) {
     return null;
   }
@@ -23,6 +28,15 @@ export default (node: Block | Inline): string | null => {
     .join(``);
 
   const instagramEmbedMatch = contentText.match(INSTAGRAM_EMBED_REGEX);
+  const postId = instagramEmbedMatch?.groups?.postId;
+  const noCaption = instagramEmbedMatch?.groups?.noCaption;
 
-  return instagramEmbedMatch?.groups?.postId || null;
+  if (!postId) {
+    return null;
+  }
+
+  return {
+    includeCaption: !noCaption,
+    postId,
+  };
 };

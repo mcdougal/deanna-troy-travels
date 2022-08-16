@@ -6,8 +6,8 @@ import Anchor from '../../Anchor';
 
 import EmbeddedInstagramPost from './EmbeddedInstagramPost';
 import EmbeddedYouTubeVideo from './EmbeddedYouTubeVideo';
-import getInstagramEmbedPostId from './getInstagramEmbedPostId';
-import getYouTubeEmbedPostId from './getYouTubeEmbedPostId';
+import getInstagramEmbed from './getInstagramEmbed';
+import getYouTubeEmbed from './getYouTubeEmbed';
 import sx from './Paragraph.styles';
 
 interface Props {
@@ -16,22 +16,25 @@ interface Props {
 }
 
 const Paragraph = ({ children, node }: Props): JSX.Element => {
-  const instagramEmbedPostId = getInstagramEmbedPostId(node);
+  const instagramEmbed = getInstagramEmbed(node);
 
-  if (instagramEmbedPostId) {
+  if (instagramEmbed) {
     return (
       <Box sx={sx.embedContainer}>
-        <EmbeddedInstagramPost postId={instagramEmbedPostId} />
+        <EmbeddedInstagramPost
+          includeCaption={instagramEmbed.includeCaption}
+          postId={instagramEmbed.postId}
+        />
       </Box>
     );
   }
 
-  const youTubeEmbedPostId = getYouTubeEmbedPostId(node);
+  const youTubeEmbed = getYouTubeEmbed(node);
 
-  if (youTubeEmbedPostId) {
+  if (youTubeEmbed) {
     return (
       <Box sx={sx.embedContainer}>
-        <EmbeddedYouTubeVideo videoId={youTubeEmbedPostId} />
+        <EmbeddedYouTubeVideo videoId={youTubeEmbed.videoId} />
       </Box>
     );
   }

@@ -1,9 +1,13 @@
 import { Block, Inline } from '@contentful/rich-text-types';
 
 export const YOUTUBE_EMBED_REGEX =
-  /^\s*https:\/\/www\.youtube\.com\/watch\?v=(?<videoId>[A-Za-z0-9_-]+)\s*$/;
+  /^\s*https:\/\/www\.youtube\.com\/watch\?v=(?<videoId>[A-Za-z0-9_-]+)\s*$/i;
 
-export default (node: Block | Inline): string | null => {
+interface YouTubeEmbed {
+  videoId: string;
+}
+
+export default (node: Block | Inline): YouTubeEmbed | null => {
   if (!node.content || !Array.isArray(node.content)) {
     return null;
   }
@@ -23,6 +27,13 @@ export default (node: Block | Inline): string | null => {
     .join(``);
 
   const youTubeEmbedMatch = contentText.match(YOUTUBE_EMBED_REGEX);
+  const videoId = youTubeEmbedMatch?.groups?.videoId;
 
-  return youTubeEmbedMatch?.groups?.videoId || null;
+  if (!videoId) {
+    return null;
+  }
+
+  return {
+    videoId,
+  };
 };
