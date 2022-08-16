@@ -78,6 +78,7 @@
         "prop": "ignore"
       }
     ],
+    "react/no-array-index-key": "error",
     "react/no-danger": "error",
     "react/prefer-stateless-function": "error",
     "spaced-comment": ["error", "always"]

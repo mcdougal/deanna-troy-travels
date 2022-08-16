@@ -1,7 +1,7 @@
 export default {
   listItem: {
     '& > p': {
-      lineHeight: 1.5,
+      lineHeight: 2,
       marginBottom: { xs: 2, sm: 3 },
       marginLeft: 1,
     },

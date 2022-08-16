@@ -3,17 +3,17 @@ import { Box } from '@mui/material';
 import sx from './EmbeddedYouTubeVideo.styles';
 
 interface Props {
-  url: string;
+  videoId: string;
 }
 
-const EmbeddedYouTubeVideo = ({ url }: Props): JSX.Element => {
+const EmbeddedYouTubeVideo = ({ videoId }: Props): JSX.Element => {
   return (
     <Box component="span" sx={sx.container}>
       <iframe
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowFullScreen
         frameBorder="0"
-        src={url}
+        src={`https://www.youtube.com/embed/${videoId}`}
         style={{
           height: `100%`,
           left: 0,
