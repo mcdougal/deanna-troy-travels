@@ -9,6 +9,7 @@ import sx from './BlogPostPage.styles';
 import BlogPostTags from './BlogPostTags';
 import getStaticProps from './getStaticProps';
 import PageMetadata from './PageMetadata';
+import ShareButtons from './ShareButtons';
 
 const BlogPostPage = ({
   blogPost,
@@ -25,6 +26,9 @@ const BlogPostPage = ({
         </Box>
         <Box sx={sx.tagsContainer}>
           <BlogPostTags blogPost={blogPost} />
+        </Box>
+        <Box sx={sx.shareButtonsContainer}>
+          <ShareButtons />
         </Box>
       </Container>
     </>

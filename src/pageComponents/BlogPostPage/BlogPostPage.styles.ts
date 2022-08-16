@@ -12,4 +12,7 @@ export default {
   tagsContainer: {
     marginTop: { xs: 5, sm: 7 },
   },
+  shareButtonsContainer: {
+    marginTop: 4,
+  },
 };
