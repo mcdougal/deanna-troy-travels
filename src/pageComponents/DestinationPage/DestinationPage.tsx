@@ -27,9 +27,11 @@ const DestinationPage = ({
         <Box sx={sx.featuredPostContainer}>
           <FeaturedPost blogPost={blogPosts[0]} />
         </Box>
-        <Box sx={sx.recentVideosContainer}>
-          <RecentVideosSection recentVideos={recentVideos} />
-        </Box>
+        {recentVideos.length > 0 && (
+          <Box sx={sx.recentVideosContainer}>
+            <RecentVideosSection recentVideos={recentVideos} />
+          </Box>
+        )}
         <Box sx={sx.blogPostsSectionContainer}>
           <BlogPostsSection
             blogPosts={blogPosts.slice(1)}

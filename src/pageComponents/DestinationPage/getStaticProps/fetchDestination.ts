@@ -18,7 +18,7 @@ export interface Destination {
   };
   name: string;
   slug: string;
-  youTubePlaylistId: string;
+  youTubePlaylistId: string | null;
 }
 
 export type BlogPost =

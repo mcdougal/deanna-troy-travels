@@ -23,10 +23,14 @@ const getStaticProps: GetStaticProps<Props, Params> = async ({ params }) => {
 
   const destination = await fetchDestination(destinationSlug);
 
+  const recentVideos = destination.youTubePlaylistId
+    ? await fetchRecentVideos(destination.youTubePlaylistId)
+    : [];
+
   return {
     props: {
       destination,
-      recentVideos: await fetchRecentVideos(destination.youTubePlaylistId),
+      recentVideos,
     },
     revalidate: 60,
   };
