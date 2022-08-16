@@ -16,6 +16,9 @@ const MenuDrawer = ({ onClose, open }: Props): JSX.Element => {
       <Box>
         <MenuDrawerHeader onClickClose={onClose} />
       </Box>
+      <Box sx={sx.siteMenuContainer}>
+        <SiteMenu />
+      </Box>
       <Box sx={sx.subscribeButtonContainer}>
         <Button
           color="secondary"
@@ -25,12 +28,9 @@ const MenuDrawer = ({ onClose, open }: Props): JSX.Element => {
           startIcon={<YouTubeIcon />}
           sx={sx.subscribeButton}
           target="_blank"
-          variant="outlined">
+          variant="text">
           Subscribe
         </Button>
-      </Box>
-      <Box sx={sx.siteMenuContainer}>
-        <SiteMenu />
       </Box>
     </Drawer>
   );
