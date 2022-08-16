@@ -6,13 +6,25 @@ import { SiteHeader } from '@components/site';
 import sx from './BlogPage.styles';
 import BlogPostsSection from './BlogPostsSection';
 import FeaturedPost from './FeaturedPost';
-import getStaticProps from './getStaticProps';
+import getStaticProps, { BlogPost } from './getStaticProps';
 import PageMetadata from './PageMetadata';
 import SubscribeSection from './SubscribeSection';
 
 const BlogPage = ({
   blogPosts,
 }: InferGetStaticPropsType<typeof getStaticProps>): React.ReactElement => {
+  const [featuredPost, ...otherPosts] = blogPosts;
+
+  const blogPostsByDestination: { [key: string]: Array<BlogPost> } = {};
+
+  otherPosts.forEach((blogPost) => {
+    if (!blogPostsByDestination[blogPost.destination.name]) {
+      blogPostsByDestination[blogPost.destination.name] = [];
+    }
+
+    blogPostsByDestination[blogPost.destination.name].push(blogPost);
+  });
+
   return (
     <>
       <PageMetadata blogPosts={blogPosts} />
@@ -26,11 +38,20 @@ const BlogPage = ({
           Blog
         </Typography>
         <Box sx={sx.featuredPostContainer}>
-          <FeaturedPost blogPost={blogPosts[0]} />
+          <FeaturedPost blogPost={featuredPost} />
         </Box>
-        <Box sx={sx.blogPostsSectionContainer}>
-          <BlogPostsSection blogPosts={blogPosts.slice(1)} />
-        </Box>
+        {Object.entries(blogPostsByDestination).map(
+          ([destinationName, destinationPosts]) => {
+            return (
+              <Box key={destinationName} sx={sx.blogPostsSectionContainer}>
+                <BlogPostsSection
+                  blogPosts={destinationPosts}
+                  title={destinationName}
+                />
+              </Box>
+            );
+          },
+        )}
         <Box sx={sx.subscribeSectionContainer}>
           <SubscribeSection />
         </Box>

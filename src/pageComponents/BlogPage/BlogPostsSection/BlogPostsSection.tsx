@@ -12,13 +12,14 @@ import sx from './BlogPostsSection.styles';
 
 interface Props {
   blogPosts: Array<BlogPost>;
+  title: string;
 }
 
-const BlogPostsSection = ({ blogPosts }: Props): JSX.Element => {
+const BlogPostsSection = ({ blogPosts, title }: Props): JSX.Element => {
   return (
     <>
       <Box sx={sx.sectionTitleContainer}>
-        <SectionTitle>Recent Posts</SectionTitle>
+        <SectionTitle>{title}</SectionTitle>
       </Box>
       <Grid alignItems="stretch" container spacing={3}>
         {blogPosts.map((blogPost) => {
