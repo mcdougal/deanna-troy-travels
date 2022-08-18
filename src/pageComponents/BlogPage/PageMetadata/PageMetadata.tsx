@@ -1,10 +1,5 @@
-import { HtmlHead } from '@components/generic';
+import { HtmlHead, StructuredData } from '@components/generic';
 import { getBlogPostThumbnail } from '@lib/blogPosts';
-import {
-  getDeannaTroyTravelsOrganization,
-  getDeannaTroyTravelsPerson,
-  StructuredData,
-} from '@lib/structuredData';
 
 import { BlogPost } from '../getStaticProps';
 
@@ -18,53 +13,17 @@ const PageMetadata = ({ blogPosts }: Props): JSX.Element => {
   const canonicalUrl = `https://www.deannatroytravels.com/blog`;
   const imageUrl = getBlogPostThumbnail(blogPosts[0]).url;
 
-  const blogPostsStructuredData: Array<StructuredData> = blogPosts.map(
-    (blogPost) => {
-      return {
-        '@type': `BlogPosting`,
-        '@id': `https://www.deannatroytravels.com/post/${blogPost.slug}`,
-      };
-    },
-  );
-
-  const blogStructuredData: StructuredData = {
-    // Thing > CreativeWork > Blog
+  const structuredData: StructuredData = {
     '@type': `Blog`,
 
-    // Thing
+    // Common
     description,
     image: imageUrl,
+    mainEntityOfPage: { '@type': `WebPage`, '@id': canonicalUrl },
     name: title,
     url: canonicalUrl,
 
-    // CreativeWork
-    author: getDeannaTroyTravelsPerson(),
-    headline: title,
-    keywords: `travel,vlog,blog,southeast asia,budget travel`,
-    publisher: getDeannaTroyTravelsOrganization(),
-
-    // Blog
-    blogPost: blogPostsStructuredData,
-  };
-
-  const structuredData: StructuredData = {
-    // Thing > CreativeWork > WebPage
-    '@type': `WebPage`,
-    '@context': `http://schema.org`,
-
-    // Thing
-    description,
-    image: imageUrl,
-    name: title,
-    url: canonicalUrl,
-
-    // CreativeWork
-    author: getDeannaTroyTravelsPerson(),
-    keywords: `travel,vlog,blog,southeast asia,budget travel`,
-    mainEntity: blogStructuredData,
-    publisher: getDeannaTroyTravelsOrganization(),
-
-    // WebPage
+    // Breadcrumbs
     breadcrumb: {
       '@type': `BreadcrumbList`,
       name: `Breadcrumbs`,
@@ -77,6 +36,14 @@ const PageMetadata = ({ blogPosts }: Props): JSX.Element => {
         },
       ],
     },
+
+    // Specific
+    blogPost: blogPosts.map((blogPost) => {
+      return {
+        '@type': `BlogPosting`,
+        '@id': `https://www.deannatroytravels.com/post/${blogPost.slug}`,
+      };
+    }),
   };
 
   return (

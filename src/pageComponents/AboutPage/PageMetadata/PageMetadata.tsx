@@ -1,36 +1,22 @@
-import { HtmlHead } from '@components/generic';
-import {
-  getDeannaTroyTravelsOrganization,
-  getDeannaTroyTravelsPerson,
-  getDeannaTroyTravelsWebSite,
-  StructuredData,
-} from '@lib/structuredData';
+import { HtmlHead, StructuredData } from '@components/generic';
 
 const PageMetadata = (): JSX.Element => {
   const title = `About`;
   const description = `Deanna Troy Travels started in 2016 during a two year long backpacking adventure. From 2016 to 2018, my now husband and I traveled all over Southeast Asia. In that time we visited 12 countries: Thailand, Laos, Cambodia, Vietnam, Malaysia, Indonesia, Hong Kong, Singapore, Philippines, Australia, Japan and Taiwan.`;
   const canonicalUrl = `https://www.deannatroytravels.com/about`;
-  const imageUrl = `https://res.cloudinary.com/cedricmcdougal/image/upload/v1659694445/deanna-troy-travels/about/hero.jpg`;
+  const imageUrl = `https://res.cloudinary.com/cedricmcdougal/image/upload/f_auto,c_fill,w_1200,h_627/v1659694445/deanna-troy-travels/about/hero.jpg`;
 
   const structuredData: StructuredData = {
-    // Thing > CreativeWork > WebPage > ContactPage
-    '@type': `ContactPage`,
-    '@context': `http://schema.org`,
+    '@type': `Organization`,
 
-    // Thing
+    // Common
     description,
-    identifier: canonicalUrl,
     image: imageUrl,
+    mainEntityOfPage: { '@type': `WebPage`, '@id': canonicalUrl },
     name: title,
     url: canonicalUrl,
 
-    // CreativeWork
-    author: getDeannaTroyTravelsPerson(),
-    isPartOf: getDeannaTroyTravelsWebSite(),
-    keywords: `travel,vlog,blog,southeast asia,budget travel,advertise`,
-    publisher: getDeannaTroyTravelsOrganization(),
-
-    // WebPage
+    // Breadcrumbs
     breadcrumb: {
       '@type': `BreadcrumbList`,
       name: `Breadcrumbs`,
@@ -43,6 +29,20 @@ const PageMetadata = (): JSX.Element => {
         },
       ],
     },
+
+    // Specific
+    logo: {
+      type: `ImageObject`,
+      url: `https://res.cloudinary.com/cedricmcdougal/image/upload/v1659523212/deanna-troy-travels/logo.png`,
+    },
+    sameAs: [
+      `https://www.youtube.com/deannatroytravels`,
+      `https://www.instagram.com/deanna_troy_travels`,
+      `https://www.facebook.com/deannatroytravels`,
+      `https://poshmark.com/closet/deannatroyshop`,
+      `https://www.tiktok.com/@deannatroytravels`,
+      `https://www.amazon.com/shop/deannatroytravels`,
+    ],
   };
 
   return (
