@@ -9,13 +9,13 @@ import { cloudinaryLoader } from '@lib/cloudinary';
 
 import { YouTubeVideo } from '../getStaticProps';
 
-import sx from './RecentVideosSection.styles';
+import sx from './VideosSection.styles';
 
 interface Props {
   recentVideos: Array<YouTubeVideo>;
 }
 
-const RecentVideosSection = ({ recentVideos }: Props): JSX.Element => {
+const VideosSection = ({ recentVideos }: Props): JSX.Element => {
   return (
     <>
       <Box sx={sx.sectionTitleContainer}>
@@ -59,4 +59,4 @@ const RecentVideosSection = ({ recentVideos }: Props): JSX.Element => {
   );
 };
 
-export default RecentVideosSection;
+export default VideosSection;

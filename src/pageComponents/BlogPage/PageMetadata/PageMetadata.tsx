@@ -17,6 +17,7 @@ const PageMetadata = ({ blogPosts }: Props): JSX.Element => {
     '@type': `Blog`,
 
     // Common
+    '@id': canonicalUrl,
     description,
     image: imageUrl,
     mainEntityOfPage: { '@type': `WebPage`, '@id': canonicalUrl },

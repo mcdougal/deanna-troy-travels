@@ -10,6 +10,7 @@ const PageMetadata = (): JSX.Element => {
     '@type': `Organization`,
 
     // Common
+    '@id': canonicalUrl,
     description,
     image: imageUrl,
     mainEntityOfPage: { '@type': `WebPage`, '@id': canonicalUrl },

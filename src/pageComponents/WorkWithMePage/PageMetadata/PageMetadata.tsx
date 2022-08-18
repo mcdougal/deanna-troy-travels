@@ -1,10 +1,4 @@
-import { HtmlHead } from '@components/generic';
-import {
-  getDeannaTroyTravelsOrganization,
-  getDeannaTroyTravelsPerson,
-  getDeannaTroyTravelsWebSite,
-  StructuredData,
-} from '@lib/structuredData';
+import { HtmlHead, StructuredData } from '@components/generic';
 
 const PageMetadata = (): JSX.Element => {
   const title = `Work With Me`;
@@ -14,24 +8,16 @@ const PageMetadata = (): JSX.Element => {
   const imageUrl = `https://res.cloudinary.com/cedricmcdougal/image/upload/v1659612804/deanna-troy-travels/work-with-me/og-image.png`;
 
   const structuredData: StructuredData = {
-    // Thing > CreativeWork > WebPage > ContactPage
     '@type': `ContactPage`,
-    '@context': `http://schema.org`,
 
-    // Thing
+    // Common
+    '@id': canonicalUrl,
     description,
-    identifier: canonicalUrl,
     image: imageUrl,
     name: title,
     url: canonicalUrl,
 
-    // CreativeWork
-    author: getDeannaTroyTravelsPerson(),
-    isPartOf: getDeannaTroyTravelsWebSite(),
-    keywords: `travel,vlog,blog,southeast asia,budget travel,advertise`,
-    publisher: getDeannaTroyTravelsOrganization(),
-
-    // WebPage
+    // Breadcrumbs
     breadcrumb: {
       '@type': `BreadcrumbList`,
       name: `Breadcrumbs`,
