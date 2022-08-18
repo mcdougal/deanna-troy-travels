@@ -19,7 +19,7 @@ const BlogPostsSection = ({ blogPosts, destination }: Props): JSX.Element => {
   return (
     <>
       <Box sx={sx.sectionTitleContainer}>
-        <SectionTitle>Recent Posts 📰</SectionTitle>
+        <SectionTitle>Blog Posts 📰</SectionTitle>
       </Box>
       <Grid alignItems="stretch" container spacing={3}>
         {blogPosts.map((blogPost) => {

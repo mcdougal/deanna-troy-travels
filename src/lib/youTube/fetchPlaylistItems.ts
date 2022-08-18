@@ -53,7 +53,10 @@ interface PlaylistItem {
   };
 }
 
-export default async (playlistId: string): Promise<Array<PlaylistItem>> => {
+export default async (
+  playlistId: string,
+  options: { maxResults: number },
+): Promise<Array<PlaylistItem>> => {
   const { GOOGLE_CLOUD_API_KEY } = process.env;
 
   if (!GOOGLE_CLOUD_API_KEY) {
@@ -62,7 +65,7 @@ export default async (playlistId: string): Promise<Array<PlaylistItem>> => {
 
   const playlistItemsUrl = `https://www.googleapis.com/youtube/v3/playlistItems?${[
     `key=${GOOGLE_CLOUD_API_KEY}`,
-    `maxResults=3`,
+    `maxResults=${options.maxResults}`,
     `part=contentDetails,snippet,status`,
     `playlistId=${playlistId}`,
   ].join(`&`)}`;

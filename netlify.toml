@@ -1,4 +1,31 @@
 [[redirects]]
   from = "/post/breathtaking-examples-of-architecture-around-the-world"
   to = "/post/worlds-busiest-intersection-shibuya-crossing"
-  status = 301
+
+[[redirects]]
+  from = "/post/japan-for-beginners-5-things-you-must-do"
+  to = "/post/3-things-to-do-in-hanoi-vietnams-old-quarter"
+
+[[redirects]]
+  from = "/post/the-everlasting-magic-of-mediterranean-seaside-villages"
+  to = "/post/5-travel-destinations-tourists-miss"
+
+[[redirects]]
+  from = "/blog/categories/america"
+  to = "/america"
+
+[[redirects]]
+  from = "/blog/categories/japan"
+  to = "/japan"
+
+[[redirects]]
+  from = "/blog/categories/malaysia"
+  to = "/malaysia"
+
+[[redirects]]
+  from = "/blog/categories/philippines"
+  to = "/philippines"
+
+[[redirects]]
+  from = "/blog/categories/vietnam"
+  to = "/vietnam"

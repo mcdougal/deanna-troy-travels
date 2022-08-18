@@ -11,7 +11,7 @@ interface Props {
 const Anchor = ({ node }: Props): JSX.Element | null => {
   const anchorId = makeAnchorIdForNode(node);
 
-  return !anchorId ? null : <Box id={anchorId} sx={sx.anchor} />;
+  return !anchorId ? null : <Box component="a" id={anchorId} sx={sx.anchor} />;
 };
 
 export default Anchor;

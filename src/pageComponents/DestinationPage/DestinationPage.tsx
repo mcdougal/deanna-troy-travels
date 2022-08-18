@@ -25,12 +25,9 @@ const DestinationPage = ({
         <Typography component="h1" sx={sx.title} variant="h2">
           {destination.name}
         </Typography>
-        <Box sx={sx.featuredPostContainer}>
-          <FeaturedPost blogPost={featuredPost} />
-        </Box>
-        {recentVideos.length > 0 && (
-          <Box sx={sx.recentVideosContainer}>
-            <RecentVideosSection recentVideos={recentVideos} />
+        {featuredPost && (
+          <Box sx={sx.featuredPostContainer}>
+            <FeaturedPost blogPost={featuredPost} />
           </Box>
         )}
         {otherPosts.length > 0 && (
@@ -39,6 +36,11 @@ const DestinationPage = ({
               blogPosts={otherPosts}
               destination={destination}
             />
+          </Box>
+        )}
+        {recentVideos.length > 0 && (
+          <Box sx={sx.recentVideosContainer}>
+            <RecentVideosSection recentVideos={recentVideos} />
           </Box>
         )}
       </Container>

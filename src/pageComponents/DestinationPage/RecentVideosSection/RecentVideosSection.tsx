@@ -1,8 +1,7 @@
-import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import ModeCommentIcon from '@mui/icons-material/ModeComment';
 import ThumbUpIcon from '@mui/icons-material/ThumbUp';
 import VisibilityIcon from '@mui/icons-material/Visibility';
-import { Box, Button, Grid } from '@mui/material';
+import { Box, Grid } from '@mui/material';
 
 import { MediaCard } from '@components/generic';
 import { SectionTitle } from '@components/site';
@@ -20,7 +19,7 @@ const RecentVideosSection = ({ recentVideos }: Props): JSX.Element => {
   return (
     <>
       <Box sx={sx.sectionTitleContainer}>
-        <SectionTitle>Recent Videos 🎥</SectionTitle>
+        <SectionTitle>Videos 🎥</SectionTitle>
       </Box>
       <Grid alignItems="stretch" container spacing={2}>
         {recentVideos.map((recentVideo) => {
@@ -56,17 +55,6 @@ const RecentVideosSection = ({ recentVideos }: Props): JSX.Element => {
           );
         })}
       </Grid>
-      <Box sx={sx.ctaContainer}>
-        <Button
-          color="primary"
-          endIcon={<ArrowForwardIcon fontSize="small" />}
-          href="https://www.youtube.com/deannatroytravels"
-          size="large"
-          target="_blank"
-          variant="contained">
-          All Videos
-        </Button>
-      </Box>
     </>
   );
 };
