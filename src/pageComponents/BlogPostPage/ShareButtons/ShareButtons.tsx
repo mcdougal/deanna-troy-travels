@@ -13,7 +13,7 @@ const ShareButtons = (): JSX.Element => {
 
   const facebookShareUrl = [
     `https://www.facebook.com/dialog/share`,
-    `?app_id=145634995501895`,
+    `?app_id=611116800614600`,
     `&display=popup`,
     `&href=${encodedUrlToShare}`,
     `&redirect_uri=${encodedUrlToShare}`,
