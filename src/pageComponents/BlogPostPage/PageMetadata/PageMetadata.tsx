@@ -99,7 +99,6 @@ const PageMetadata = ({ blogPost, blogPostVideo }: Props): JSX.Element => {
     ...(videoStructuredData ? { sharedContent: videoStructuredData } : {}),
   };
 
-  //TODO - Improve metadata
   const structuredData: StructuredData = {
     // Thing > CreativeWork > WebPage
     '@type': `WebPage`,
