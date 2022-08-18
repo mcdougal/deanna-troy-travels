@@ -12,9 +12,4 @@ export default {
     fontSize: 14,
     marginBottom: `-1px`,
   },
-  ctaContainer: {
-    display: `flex`,
-    justifyContent: `center`,
-    marginTop: 4,
-  },
 };

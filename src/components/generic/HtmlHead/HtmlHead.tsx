@@ -1,7 +1,12 @@
 import escape from 'escape-html';
 import Head from 'next/head';
 
-import { StructuredData } from '@lib/structuredData';
+export type StructuredData =
+  | { [key: string]: StructuredData }
+  | Array<StructuredData>
+  | string
+  | number
+  | undefined;
 
 interface Props {
   canonicalUrl: string;

@@ -1,42 +1,37 @@
-import { HtmlHead } from '@components/generic';
+import { HtmlHead, StructuredData } from '@components/generic';
 import { getBlogPostThumbnail } from '@lib/blogPosts';
-import {
-  getDeannaTroyTravelsOrganization,
-  getDeannaTroyTravelsPerson,
-  StructuredData,
-} from '@lib/structuredData';
 
-import { Destination } from '../getStaticProps';
+import { Destination, YouTubeVideo } from '../getStaticProps';
 
 interface Props {
   destination: Destination;
+  videos: Array<YouTubeVideo>;
 }
 
-const PageMetadata = ({ destination }: Props): JSX.Element => {
+const PageMetadata = ({ destination, videos }: Props): JSX.Element => {
   const blogPosts = destination.linkedFrom.blogPostCollection.items;
+  const featuredBlogPost = blogPosts[0];
+  const featuredBlogPostThumbnail = getBlogPostThumbnail(featuredBlogPost);
 
   const title = destination.name;
-  const description = blogPosts[0].excerpt;
+  const description = featuredBlogPost.excerpt;
   const canonicalUrl = `https://www.deannatroytravels.com/${destination.slug}`;
-  const imageUrl = getBlogPostThumbnail(blogPosts[0]).url;
+  const imageUrl = featuredBlogPostThumbnail.loader({
+    src: featuredBlogPostThumbnail.url,
+    width: 1200,
+  });
 
   const structuredData: StructuredData = {
-    // Thing > CreativeWork > WebPage
     '@type': `WebPage`,
-    '@context': `http://schema.org`,
 
-    // Thing
+    // Common
+    '@id': canonicalUrl,
     description,
     image: imageUrl,
     name: title,
     url: canonicalUrl,
 
-    // CreativeWork
-    author: getDeannaTroyTravelsPerson(),
-    keywords: `travel,vlog,blog,southeast asia,budget travel,${destination.name}`,
-    publisher: getDeannaTroyTravelsOrganization(),
-
-    // WebPage
+    // Breadcrumbs
     breadcrumb: {
       '@type': `BreadcrumbList`,
       name: `Breadcrumbs`,
@@ -44,11 +39,36 @@ const PageMetadata = ({ destination }: Props): JSX.Element => {
         {
           '@type': `ListItem`,
           position: 1,
+          name: `Destinations`,
+          item: `https://www.deannatroytravels.com/destinations`,
+        },
+        {
+          '@type': `ListItem`,
+          position: 2,
           name: title,
           item: canonicalUrl,
         },
       ],
     },
+
+    // Specific
+
+    sharedContent: [
+      ...blogPosts.map((blogPost) => {
+        return {
+          '@type': `BlogPosting`,
+          '@id': `https://www.deannatroytravels.com/post/${blogPost.slug}`,
+          url: `https://www.deannatroytravels.com/post/${blogPost.slug}`,
+        };
+      }),
+      ...videos.map((video) => {
+        return {
+          '@type': `VideoObject`,
+          '@id': `https://www.youtube.com/watch?v=${video.videoId}`,
+          url: `https://www.youtube.com/watch?v=${video.videoId}`,
+        };
+      }),
+    ],
   };
 
   return (

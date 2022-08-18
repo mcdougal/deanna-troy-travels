@@ -24,7 +24,7 @@ export default async (): Promise<Array<BlogFeature>> => {
   }>(
     `
       query WorkWithMePageGetStaticPropsBlogFeatures {
-        blogFeatureCollection {
+        blogFeatureCollection(order: publishedDate_DESC) {
           items {
             blogPostTitle
             blogPostUrl

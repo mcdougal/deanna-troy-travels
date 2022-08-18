@@ -21,3 +21,7 @@ tsconfig.tsbuildinfo
 
 # Dynamically generated RSS feed
 public/rss/
+
+# Dynamically generated sitemap
+public/sitemap.xml
+public/sitemap/

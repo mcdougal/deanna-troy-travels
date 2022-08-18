@@ -3,7 +3,7 @@ import { ParsedUrlQuery } from 'querystring';
 import type { GetStaticProps } from 'next';
 
 import fetchDestination, { Destination } from './fetchDestination';
-import fetchRecentVideos, { YouTubeVideo } from './fetchRecentVideos';
+import fetchVideos, { YouTubeVideo } from './fetchVideos';
 
 interface Params extends ParsedUrlQuery {
   destinationSlug: string;
@@ -11,7 +11,7 @@ interface Params extends ParsedUrlQuery {
 
 interface Props {
   destination: Destination;
-  recentVideos: Array<YouTubeVideo>;
+  videos: Array<YouTubeVideo>;
 }
 
 const getStaticProps: GetStaticProps<Props, Params> = async ({ params }) => {
@@ -23,14 +23,14 @@ const getStaticProps: GetStaticProps<Props, Params> = async ({ params }) => {
 
   const destination = await fetchDestination(destinationSlug);
 
-  const recentVideos = destination.youTubePlaylistId
-    ? await fetchRecentVideos(destination.youTubePlaylistId)
+  const videos = destination.youTubePlaylistId
+    ? await fetchVideos(destination.youTubePlaylistId)
     : [];
 
   return {
     props: {
       destination,
-      recentVideos,
+      videos,
     },
     revalidate: 60,
   };

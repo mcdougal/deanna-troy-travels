@@ -1,12 +1,6 @@
-import { documentToPlainTextString } from '@contentful/rich-text-plain-text-renderer';
-
-import { HtmlHead } from '@components/generic';
+import { HtmlHead, StructuredData } from '@components/generic';
 import { getBlogPostThumbnail } from '@lib/blogPosts';
-import {
-  getDeannaTroyTravelsOrganization,
-  getDeannaTroyTravelsPerson,
-  StructuredData,
-} from '@lib/structuredData';
+import { cloudinaryLoader } from '@lib/cloudinary';
 
 import { BlogPost, BlogPostVideo } from '../getStaticProps';
 
@@ -16,107 +10,28 @@ interface Props {
 }
 
 const PageMetadata = ({ blogPost, blogPostVideo }: Props): JSX.Element => {
+  const blogPostThumbnail = getBlogPostThumbnail(blogPost);
+
   const title = blogPost.title;
   const description = blogPost.excerpt;
   const canonicalUrl = `https://www.deannatroytravels.com/post/${blogPost.slug}`;
-  const imageUrl = getBlogPostThumbnail(blogPost).url;
-
-  const youTubeWebSiteStructuredData: StructuredData = {
-    '@type': `WebSite`,
-    '@id': `https://youtube.com`,
-    name: `YouTube`,
-  };
-
-  const videoStructuredData: StructuredData | null = blogPostVideo
-    ? {
-        // Thing > CreativeWork > MediaObject > VideoObject
-        '@type': `VideoObject`,
-
-        // Thing
-        description: blogPostVideo.description,
-        image: blogPostVideo.thumbnailUrl,
-        name: blogPostVideo.title,
-        url: `https://www.youtube.com/watch?v=${blogPostVideo.videoId}`,
-
-        // CreativeWork
-        author: getDeannaTroyTravelsPerson(),
-        interactionStatistic: [
-          {
-            '@type': `InteractionCounter`,
-            interactionService: youTubeWebSiteStructuredData,
-            interactionType: `ViewAction`,
-            userInteractionCount: blogPostVideo.viewCount,
-          },
-          {
-            '@type': `InteractionCounter`,
-            interactionService: youTubeWebSiteStructuredData,
-            interactionType: `LikeAction`,
-            userInteractionCount: blogPostVideo.likeCount,
-          },
-          {
-            '@type': `InteractionCounter`,
-            interactionService: youTubeWebSiteStructuredData,
-            interactionType: `CommentAction`,
-            userInteractionCount: blogPostVideo.commentCount,
-          },
-        ],
-        keywords: blogPostVideo.tags.join(`,`),
-        thumbnailUrl: blogPostVideo.thumbnailUrl,
-
-        // MediaObject
-        duration: blogPostVideo.duration,
-        embedUrl: `https://www.youtube.com/embed/${blogPostVideo.videoId}`,
-        uploadDate: blogPostVideo.publishedAt,
-
-        // VideoObject
-        thumbnail: {
-          '@type': `ImageObject`,
-          url: blogPostVideo.thumbnailUrl,
-        },
-      }
-    : null;
-
-  const blogPostingStructuredData: StructuredData = {
-    // Thing > CreativeWork > Article > SocialMediaPosting > BlogPosting
-    '@type': `BlogPosting`,
-
-    // Thing
-    description,
-    image: imageUrl,
-    name: title,
-    url: canonicalUrl,
-
-    // CreativeWork
-    author: getDeannaTroyTravelsPerson(),
-    headline: title,
-    keywords: blogPost.tags.join(`,`),
-    publisher: getDeannaTroyTravelsOrganization(),
-
-    // Article
-    articleBody: documentToPlainTextString(blogPost.content.json),
-
-    // SocialMediaPosting
-    ...(videoStructuredData ? { sharedContent: videoStructuredData } : {}),
-  };
+  const imageUrl = blogPostThumbnail.loader({
+    src: blogPostThumbnail.url,
+    width: 1200,
+  });
 
   const structuredData: StructuredData = {
-    // Thing > CreativeWork > WebPage
-    '@type': `WebPage`,
-    '@context': `http://schema.org`,
+    '@type': `BlogPosting`,
 
-    // Thing
+    // Common
+    '@id': canonicalUrl,
     description,
     image: imageUrl,
+    mainEntityOfPage: { '@type': `WebPage`, '@id': canonicalUrl },
     name: title,
     url: canonicalUrl,
 
-    // CreativeWork
-    author: getDeannaTroyTravelsPerson(),
-    keywords: blogPost.tags.join(`,`),
-    mainEntity: blogPostingStructuredData,
-    publisher: getDeannaTroyTravelsOrganization(),
-
-    // WebPage
+    // Breadcrumbs
     breadcrumb: {
       '@type': `BreadcrumbList`,
       name: `Breadcrumbs`,
@@ -135,6 +50,35 @@ const PageMetadata = ({ blogPost, blogPostVideo }: Props): JSX.Element => {
         },
       ],
     },
+
+    // Specific
+    author: {
+      '@type': `Person`,
+      name: `Deanna Troy Henry`,
+      url: `https://www.youtube.com/deannatroytravels`,
+    },
+    datePublished: blogPost.publishedDate,
+    headline: title,
+    keywords: blogPost.tags.join(`,`),
+    publisher: {
+      '@type': `Organization`,
+      name: `Deanna Troy Travels`,
+      url: `https://www.deannatroytravels.com/about`,
+      logo: {
+        '@type': `ImageObject`,
+        url: cloudinaryLoader({
+          src: `/upload/deanna-troy-travels/logo.png`,
+          width: 512,
+        }),
+      },
+    },
+    sharedContent: blogPostVideo
+      ? {
+          '@type': `VideoObject`,
+          '@id': `https://www.youtube.com/watch?v=${blogPostVideo.videoId}`,
+          url: `https://www.youtube.com/watch?v=${blogPostVideo.videoId}`,
+        }
+      : undefined,
   };
 
   return (

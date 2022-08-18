@@ -32,10 +32,10 @@ export default async (slug: string): Promise<Destination> => {
   }>(
     `
       query DestinationPageGetStaticPropsDestinations($slug: String!) {
-        destinationCollection(where: { slug: $slug }) {
+        destinationCollection(where: { slug: $slug }, limit: 1) {
           items {
             linkedFrom {
-              blogPostCollection(limit: 20) {
+              blogPostCollection {
                 items {
                   coverImage {
                     description

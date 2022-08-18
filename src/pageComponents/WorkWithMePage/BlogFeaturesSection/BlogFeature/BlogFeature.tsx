@@ -17,8 +17,13 @@ const BlogFeature = ({ blogFeature }: Props): JSX.Element => {
   const websiteLogoAspectRatio =
     blogFeature.websiteLogo.height / blogFeature.websiteLogo.width;
 
-  const websiteLogoHeight = parseInt(theme.spacing(4).slice(0, -2));
-  const websiteLogoWidth = websiteLogoHeight / websiteLogoAspectRatio;
+  const websiteLogoHeight = websiteLogoAspectRatio > 0.2 ? 3 : 2;
+
+  const websiteLogoHeightPx = parseInt(
+    theme.spacing(websiteLogoHeight).slice(0, -2),
+  );
+
+  const websiteLogoWidthPx = websiteLogoHeightPx / websiteLogoAspectRatio;
 
   return (
     <ButtonBase
@@ -26,16 +31,18 @@ const BlogFeature = ({ blogFeature }: Props): JSX.Element => {
       href={blogFeature.blogPostUrl}
       sx={sx.blogFeatureButtonBase}
       target="_blank">
-      <Image
-        alt={
-          blogFeature.websiteLogo.description ||
-          `${blogFeature.websiteName} logo`
-        }
-        height={websiteLogoHeight}
-        loader={contentfulLoader}
-        src={blogFeature.websiteLogo.url}
-        width={websiteLogoWidth}
-      />
+      <Box sx={sx.websiteLogoContainer}>
+        <Image
+          alt={
+            blogFeature.websiteLogo.description ||
+            `${blogFeature.websiteName} logo`
+          }
+          height={websiteLogoHeightPx}
+          loader={contentfulLoader}
+          src={blogFeature.websiteLogo.url}
+          width={websiteLogoWidthPx}
+        />
+      </Box>
       <Box sx={sx.thumbnailAndTitle}>
         <Box sx={sx.thumbnailContainer}>
           <Image
