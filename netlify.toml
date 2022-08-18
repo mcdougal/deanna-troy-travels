@@ -1,5 +1,3 @@
-[build.environment]
-
 [context.deploy-preview]
   command = "mv ./public/robots.disallow.txt ./public/robots.txt && npm run build"
 

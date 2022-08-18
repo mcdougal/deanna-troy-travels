@@ -37,8 +37,11 @@ const PageMetadata = (): JSX.Element => {
 
     // Specific
     logo: {
-      type: `ImageObject`,
-      url: `https://res.cloudinary.com/cedricmcdougal/image/upload/v1659523212/deanna-troy-travels/logo.png`,
+      '@type': `ImageObject`,
+      url: cloudinaryLoader({
+        src: `/upload/deanna-troy-travels/logo.png`,
+        width: 512,
+      }),
     },
     sameAs: [
       `https://www.youtube.com/deannatroytravels`,

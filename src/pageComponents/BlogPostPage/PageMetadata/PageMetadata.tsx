@@ -1,5 +1,6 @@
 import { HtmlHead, StructuredData } from '@components/generic';
 import { getBlogPostThumbnail } from '@lib/blogPosts';
+import { cloudinaryLoader } from '@lib/cloudinary';
 
 import { BlogPost, BlogPostVideo } from '../getStaticProps';
 
@@ -64,8 +65,11 @@ const PageMetadata = ({ blogPost, blogPostVideo }: Props): JSX.Element => {
       name: `Deanna Troy Travels`,
       url: `https://www.deannatroytravels.com/about`,
       logo: {
-        type: `ImageObject`,
-        url: `https://res.cloudinary.com/cedricmcdougal/image/upload/v1659523212/deanna-troy-travels/logo.png`,
+        '@type': `ImageObject`,
+        url: cloudinaryLoader({
+          src: `/upload/deanna-troy-travels/logo.png`,
+          width: 512,
+        }),
       },
     },
     sharedContent: blogPostVideo
