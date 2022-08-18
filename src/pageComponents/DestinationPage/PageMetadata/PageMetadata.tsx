@@ -10,11 +10,16 @@ interface Props {
 
 const PageMetadata = ({ destination, videos }: Props): JSX.Element => {
   const blogPosts = destination.linkedFrom.blogPostCollection.items;
+  const featuredBlogPost = blogPosts[0];
+  const featuredBlogPostThumbnail = getBlogPostThumbnail(featuredBlogPost);
 
   const title = destination.name;
-  const description = blogPosts[0].excerpt;
+  const description = featuredBlogPost.excerpt;
   const canonicalUrl = `https://www.deannatroytravels.com/${destination.slug}`;
-  const imageUrl = getBlogPostThumbnail(blogPosts[0]).url;
+  const imageUrl = featuredBlogPostThumbnail.loader({
+    src: featuredBlogPostThumbnail.url,
+    width: 1200,
+  });
 
   const structuredData: StructuredData = {
     '@type': `WebPage`,

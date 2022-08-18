@@ -9,10 +9,15 @@ interface Props {
 }
 
 const PageMetadata = ({ blogPost, blogPostVideo }: Props): JSX.Element => {
+  const blogPostThumbnail = getBlogPostThumbnail(blogPost);
+
   const title = blogPost.title;
   const description = blogPost.excerpt;
   const canonicalUrl = `https://www.deannatroytravels.com/post/${blogPost.slug}`;
-  const imageUrl = getBlogPostThumbnail(blogPost).url;
+  const imageUrl = blogPostThumbnail.loader({
+    src: blogPostThumbnail.url,
+    width: 1200,
+  });
 
   const structuredData: StructuredData = {
     '@type': `BlogPosting`,

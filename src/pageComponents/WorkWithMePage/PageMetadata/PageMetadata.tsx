@@ -1,11 +1,15 @@
 import { HtmlHead, StructuredData } from '@components/generic';
+import { cloudinaryLoader } from '@lib/cloudinary';
 
 const PageMetadata = (): JSX.Element => {
   const title = `Work With Me`;
   const description = `I am a fun, outgoing and quirky Travel YouTuber. I produce travel videos
   ranging from travel vlogs, travel advice, story-times and more!`;
   const canonicalUrl = `https://www.deannatroytravels.com/work-with-me`;
-  const imageUrl = `https://res.cloudinary.com/cedricmcdougal/image/upload/v1659612804/deanna-troy-travels/work-with-me/og-image.png`;
+  const imageUrl = cloudinaryLoader({
+    src: `/upload/deanna-troy-travels/work-with-me/og-image.png`,
+    width: 1200,
+  });
 
   const structuredData: StructuredData = {
     '@type': `ContactPage`,
