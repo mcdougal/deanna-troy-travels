@@ -1,3 +1,5 @@
+[build.environment]
+
 [context.production.branch-deploy]
   command = "mv ./public/robots.disallow.txt ./public/robots.txt"
 
