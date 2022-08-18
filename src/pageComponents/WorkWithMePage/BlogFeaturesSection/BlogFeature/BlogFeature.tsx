@@ -54,6 +54,7 @@ const BlogFeature = ({ blogFeature }: Props): JSX.Element => {
             loader={contentfulLoader}
             objectFit="cover"
             objectPosition="center"
+            sizes="72px"
             src={blogFeature.thumbnail.url}
           />
         </Box>
