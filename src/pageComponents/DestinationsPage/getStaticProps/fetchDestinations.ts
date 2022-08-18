@@ -1,6 +1,11 @@
 import { fetchContentfulGraphQl } from '@lib/contentful';
 
 export interface Destination {
+  linkedFrom: {
+    blogPostCollection: {
+      total: number;
+    };
+  };
   name: string;
   slug: string;
   thumbnail: {
@@ -19,6 +24,11 @@ export default async (): Promise<Array<Destination>> => {
       query DestinationsPageGetStaticPropsDestinations {
         destinationCollection {
           items {
+            linkedFrom {
+              blogPostCollection {
+                total
+              }
+            }
             name
             slug
             thumbnail {
