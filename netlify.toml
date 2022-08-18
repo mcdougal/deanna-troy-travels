@@ -1,10 +1,10 @@
 [build.environment]
 
 [context.deploy-preview]
-  command = "mv ./public/robots.disallow.txt ./public/robots.txt"
+  command = "mv ./public/robots.disallow.txt ./public/robots.txt && npm run build"
 
 [context.production]
-  command = "mv ./public/robots.production.txt ./public/robots.txt"
+  command = "mv ./public/robots.production.txt ./public/robots.txt && npm run build"
 
 [[redirects]]
   from = "/japan-blog"
