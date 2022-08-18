@@ -1,3 +1,9 @@
+[context.production.branch-deploy]
+  command = "mv ./public/robots.disallow.txt ./public/robots.txt"
+
+[context.production]
+  command = "mv ./public/robots.production.txt ./public/robots.txt"
+
 [[redirects]]
   from = "/japan-blog"
   to = "/japan"
