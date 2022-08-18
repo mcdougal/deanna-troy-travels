@@ -1,4 +1,4 @@
-import { Theme } from '@mui/material';
+import { spacing } from '@lib/mui';
 
 export default {
   blogFeatureButtonBase: {
@@ -14,19 +14,21 @@ export default {
       boxShadow: `0 4px 20px rgba(0, 0, 0, 0.15)`,
     },
   },
+  websiteLogoContainer: {
+    alignItems: `center`,
+    display: `flex`,
+    height: spacing(4),
+    marginBottom: 1,
+  },
   thumbnailAndTitle: {
     display: `flex`,
   },
   thumbnailContainer: {
     borderRadius: 4,
-    height: (theme: Theme): string => {
-      return theme.spacing(9);
-    },
+    height: spacing(9),
     overflow: `hidden`,
     position: `relative`,
-    width: (theme: Theme): string => {
-      return theme.spacing(9);
-    },
+    width: spacing(9),
   },
   blogPostTitle: {
     flex: 1,
