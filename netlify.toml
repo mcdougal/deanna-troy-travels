@@ -6,11 +6,9 @@
   publish = ".next"
 
 [context.staging]
-  base = "staging"
   command = "npm run build:staging"
 
 [context.production]
-  base = "main"
   command = "npm run build:production"
 
 ################################################################################
