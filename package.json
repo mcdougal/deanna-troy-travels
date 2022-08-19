@@ -3,8 +3,10 @@
   "version": "0.0.1",
   "scripts": {
     "build:next": "next build",
+    "build:production": "mv ./public/robots.production.txt ./public/robots.txt && npm run build",
     "build:rss": "ts-node -r tsconfig-paths/register src/scripts/generateRssFeed/run.ts",
     "build:sitemap": "ts-node -r tsconfig-paths/register src/scripts/generateSitemap/run.ts",
+    "build:staging": "mv ./public/robots.disallow.txt ./public/robots.txt && npm run build",
     "build": "npm run build:rss && npm run build:sitemap && npm run build:next",
     "check": "npx npm-check --skip-unused",
     "dev": "next dev",
@@ -40,6 +42,7 @@
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
+    "@netlify/plugin-nextjs": "^4.16.0",
     "@types/escape-html": "^1.0.2",
     "@types/node": "^18.7.6",
     "@types/react": "^18.0.17",
