@@ -5,7 +5,7 @@ import { cloudinaryLoader } from '@lib/cloudinary';
 
 import sx from './HeroSection.styles';
 
-const AS_SEEN_ON_GLOBE_WIDTH = 50;
+const AS_SEEN_ON_GLOBE_WIDTH = 70;
 const AS_SEEN_ON_GLOBE_RATIO = 1.0964;
 
 const HeroSection = (): JSX.Element => {
@@ -27,16 +27,18 @@ const HeroSection = (): JSX.Element => {
         {` `}
         Me
       </Typography>
-      <Box sx={sx.imageContainer}>
-        <Image
-          alt="A globe surrounded by company logos that Deanna has worked with"
-          height={asSeenOnGlobeHeight}
-          layout="intrinsic"
-          loader={cloudinaryLoader}
-          priority
-          src="/upload/deanna-troy-travels/work-with-me/as-seen-on-globe.jpg"
-          width={asSeenOnGlobeWidth}
-        />
+      <Box sx={sx.imageSection}>
+        <Box sx={sx.imageContainer}>
+          <Image
+            alt="A globe surrounded by company logos that Deanna has worked with"
+            height={asSeenOnGlobeHeight}
+            layout="intrinsic"
+            loader={cloudinaryLoader}
+            priority
+            src="/upload/deanna-troy-travels/work-with-me/as-seen-on-globe.jpg"
+            width={asSeenOnGlobeWidth}
+          />
+        </Box>
       </Box>
     </Container>
   );

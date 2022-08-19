@@ -3,11 +3,14 @@ export default {
     textAlign: `center`,
   },
   title: {
-    marginBottom: 4,
+    marginBottom: { xs: 4, sm: 6 },
   },
   titlePrimary: {
     color: `primary.main`,
     display: `inline`,
+  },
+  imageSection: {
+    padding: 2,
   },
   imageContainer: {
     position: `relative`,
