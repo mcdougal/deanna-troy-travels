@@ -12,6 +12,9 @@ const PageMetadata = (): JSX.Element => {
   });
 
   const structuredData: StructuredData = {
+    '@context': `https://schema.org`,
+    '@graph': [],
+
     '@type': `ContactPage`,
 
     // Common

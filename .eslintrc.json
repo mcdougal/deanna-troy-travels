@@ -51,7 +51,7 @@
     "no-throw-literal": "error",
     "object-curly-spacing": ["error", "always"],
     "prefer-const": "error",
-    "quotes": ["error", "backtick"],
+    "quotes": "off",
     "react-hooks/exhaustive-deps": "error",
     "react-hooks/rules-of-hooks": "error",
     "react/jsx-closing-bracket-location": [

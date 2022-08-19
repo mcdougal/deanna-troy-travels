@@ -1,5 +1,14 @@
-import { HtmlHead, StructuredData } from '@components/generic';
+import { HtmlHead } from '@components/generic';
 import { cloudinaryLoader } from '@lib/cloudinary';
+import {
+  makeBreadcrumbStructuredData,
+  makeLogoStructuredData,
+  makeOrganizationStructuredData,
+  makePrimaryImageStructuredData,
+  makeWebPageStructuredData,
+  makeWebSiteStructuredData,
+  StructuredData,
+} from '@lib/structuredData';
 
 const PageMetadata = (): JSX.Element => {
   const title = `Budget Travel Vlogs`;
@@ -10,15 +19,45 @@ const PageMetadata = (): JSX.Element => {
     width: 1200,
   });
 
-  const structuredData: StructuredData = {
-    '@type': `WebPage`,
+  const logoStructuredData = makeLogoStructuredData();
 
-    // Common
-    '@id': canonicalUrl,
+  const organizationStructuredData = makeOrganizationStructuredData({
+    logo: logoStructuredData,
+  });
+
+  const websiteStructuredData = makeWebSiteStructuredData({
+    organization: organizationStructuredData,
+  });
+
+  const primaryImageStructuredData = makePrimaryImageStructuredData({
+    imageUrl,
+    webPageUrl: canonicalUrl,
+  });
+
+  const breadcrumbStructuredData = makeBreadcrumbStructuredData({
+    items: [{ name: `Home`, position: 1 }],
+    webPageUrl: canonicalUrl,
+  });
+
+  const webPageStructuredData = makeWebPageStructuredData({
+    about: organizationStructuredData,
+    breadcrumb: breadcrumbStructuredData,
     description,
-    image: imageUrl,
-    name: title,
-    url: canonicalUrl,
+    primaryImage: primaryImageStructuredData,
+    webPageUrl: canonicalUrl,
+    website: websiteStructuredData,
+  });
+
+  const structuredData: StructuredData = {
+    '@context': `https://schema.org`,
+    '@graph': [
+      breadcrumbStructuredData,
+      logoStructuredData,
+      organizationStructuredData,
+      primaryImageStructuredData,
+      webPageStructuredData,
+      websiteStructuredData,
+    ],
   };
 
   return (
