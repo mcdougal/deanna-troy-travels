@@ -20,5 +20,6 @@ export default (): StructuredDataObject => {
       url: personImageUrl,
     },
     name: `Deanna Troy Travels`,
+    url: `https://www.deannatroytravels.com/about`,
   };
 };
