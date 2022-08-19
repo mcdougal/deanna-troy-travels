@@ -16,7 +16,9 @@ const ContactSuccessPage = (): React.ReactElement => {
         <meta key="robots" content="noindex" name="robots"></meta>
       </Head>
       <Container sx={sx.pageContainer}>
-        <Typography variant="h3">Thanks!</Typography>
+        <Typography component="h1" variant="h3">
+          Thanks!
+        </Typography>
         <Typography sx={sx.description} variant="body1">
           I’ll reach out to you shortly. Keep an eye on your inbox!
         </Typography>
