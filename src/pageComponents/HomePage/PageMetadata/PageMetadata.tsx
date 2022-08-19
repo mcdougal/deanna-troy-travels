@@ -11,7 +11,7 @@ import {
 } from '@lib/structuredData';
 
 const PageMetadata = (): JSX.Element => {
-  const title = `Budget Travel Vlogs`;
+  const title = `Deanna Troy Travels`;
   const description = `Travel videos from a backpacker who spent two years traveling around Asia, Japan, Vietnam, Malaysia and more!`;
   const canonicalUrl = `https://www.deannatroytravels.com`;
   const imageUrl = cloudinaryLoader({
@@ -66,7 +66,7 @@ const PageMetadata = (): JSX.Element => {
       description={description}
       imageUrl={imageUrl}
       structuredData={structuredData}
-      title={`${title} | Deanna Troy Travels`}
+      title={title}
     />
   );
 };
