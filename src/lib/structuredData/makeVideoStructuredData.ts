@@ -25,7 +25,7 @@ export default ({
 }: Args): StructuredDataObject => {
   return {
     '@id': videoUrl,
-    '@type': `Article`,
+    '@type': `VideoObject`,
     contentUrl: videoUrl,
     description,
     duration,
