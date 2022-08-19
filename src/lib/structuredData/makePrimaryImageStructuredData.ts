@@ -7,7 +7,7 @@ interface Args {
 
 export default ({ imageUrl, webPageUrl }: Args): StructuredDataObject => {
   return {
-    '@id': `${webPageUrl}#logo`,
+    '@id': `${webPageUrl}#primary-image`,
     '@type': `ImageObject`,
     contentUrl: imageUrl,
     inLanguage: `en-US`,
