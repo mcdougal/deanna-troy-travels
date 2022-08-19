@@ -38,7 +38,8 @@ export default ({
     keywords,
     mainEntityOfPage: { '@id': webPage[`@id`] },
     publisher: { '@id': organization[`@id`] },
-    thumbnailUrl: image[`@url`],
+    thumbnailUrl: image.url,
+    url: webPage.url,
     wordCount,
   };
 };

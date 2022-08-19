@@ -24,6 +24,7 @@
     "arrow-body-style": ["error", "always"],
     "arrow-parens": ["error", "always"],
     "curly": ["error", "all"],
+    "dot-notation": "error",
     "filenames/match-regex": ["error", "^[A-Za-z0-9.]+$"],
     "filenames/match-exported": "error",
     "func-style": ["error", "expression", { "allowArrowFunctions": true }],

@@ -32,7 +32,7 @@ export default ({
     isPartOf: { '@id': website[`@id`] },
     name: title,
     primaryImageOfPage: { '@id': primaryImage[`@id`] },
-    thumbnailUrl: primaryImage[`@url`],
+    thumbnailUrl: primaryImage.url,
     url: webPageUrl,
   };
 };
