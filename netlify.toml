@@ -1,8 +1,26 @@
-[context.deploy-preview]
-  command = "mv ./public/robots.disallow.txt ./public/robots.txt && npm run build"
+################################################################################
+# BUILD
+################################################################################
+
+[build]
+  publish = ".next"
+
+[context.staging]
+  command = "npm run build:staging"
 
 [context.production]
-  command = "mv ./public/robots.production.txt ./public/robots.txt && npm run build"
+  command = "npm run build:production"
+
+################################################################################
+# PLUGINS
+################################################################################
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
+
+################################################################################
+# REDIRECTS
+################################################################################
 
 [[redirects]]
   from = "/japan-blog"
