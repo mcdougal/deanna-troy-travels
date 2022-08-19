@@ -10,12 +10,15 @@ import NextDocument, {
   Main,
   NextScript,
 } from 'next/document';
+import Script from 'next/script';
 
 import { createEmotionCache } from '@lib/mui';
 import { ExtendedDocumentInitialProps } from '@lib/nextjs';
 
 class Document extends NextDocument<ExtendedDocumentInitialProps> {
   render(): React.ReactElement {
+    const gaMeasurementId = process.env.GOOGLE_ANALYTICS_MEASUREMENT_ID;
+
     return (
       <Html>
         <Head>
@@ -57,6 +60,18 @@ class Document extends NextDocument<ExtendedDocumentInitialProps> {
             content="Deanna Troy Travels"
             property="site_name"
           />
+          <Script
+            src={`https://www.googletagmanager.com/gtag/js?id=${gaMeasurementId}`}
+            strategy="afterInteractive"
+          />
+          <Script id="google-analytics" strategy="afterInteractive">
+            {`
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){window.dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', '${gaMeasurementId}');
+            `}
+          </Script>
           {this.props.emotionStyleTags}
         </Head>
         <body>

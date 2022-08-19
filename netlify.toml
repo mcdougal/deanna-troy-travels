@@ -12,6 +12,16 @@
   command = "npm run build:production"
 
 ################################################################################
+# ENVIRONMENT VARIABLES
+################################################################################
+
+[context.staging.environment]
+  GOOGLE_ANALYTICS_MEASUREMENT_ID = "G-N56X2BENSS"
+
+[context.production.environment]
+  GOOGLE_ANALYTICS_MEASUREMENT_ID = "G-3EW97MEN9K"
+
+################################################################################
 # PLUGINS
 ################################################################################
 
