@@ -1,5 +1,3 @@
-import HtmlHead, { StructuredData } from './HtmlHead';
-
-export type { StructuredData };
+import HtmlHead from './HtmlHead';
 
 export default HtmlHead;

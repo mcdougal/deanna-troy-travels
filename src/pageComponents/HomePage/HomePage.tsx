@@ -20,7 +20,7 @@ const HomePage = ({
 }: InferGetStaticPropsType<typeof getStaticProps>): React.ReactElement => {
   return (
     <>
-      <PageMetadata />
+      <PageMetadata recentVideos={recentVideos} />
       <SiteHeader hideLogoUntilScroll />
       <Box sx={sx.logoAndTitleContainer}>
         <LogoAndTitle />

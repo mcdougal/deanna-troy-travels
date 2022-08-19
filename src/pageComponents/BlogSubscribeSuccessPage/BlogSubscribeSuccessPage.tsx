@@ -15,7 +15,9 @@ const BlogSubscribeSuccessPage = (): React.ReactElement => {
         <meta key="robots" content="noindex" name="robots"></meta>
       </Head>
       <Container sx={sx.pageContainer}>
-        <Typography variant="h3">Subscribed!</Typography>
+        <Typography component="h1" variant="h3">
+          Subscribed!
+        </Typography>
         <Typography sx={sx.description} variant="body1">
           Keep an eye on your inbox for new posts from the Deanna Troy Travels
           blog!

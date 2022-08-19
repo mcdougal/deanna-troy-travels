@@ -13,9 +13,7 @@ const IntroSection = (): JSX.Element => {
   return (
     <Container component="section" maxWidth="md" sx={sx.introSectionContainer}>
       <Box sx={[sx.sectionTitleContainer, sx.sectionTitleContainerMobile]}>
-        <SectionTitle color="primary" variant="h3">
-          Hey there! 👋
-        </SectionTitle>
+        <SectionTitle>Hey there! 👋</SectionTitle>
       </Box>
       <Box sx={sx.imageContainer}>
         <Image
@@ -33,9 +31,7 @@ const IntroSection = (): JSX.Element => {
       </Box>
       <Box>
         <Box sx={[sx.sectionTitleContainer, sx.sectionTitleContainerDesktop]}>
-          <SectionTitle color="primary" variant="h3">
-            Hey there! 👋
-          </SectionTitle>
+          <SectionTitle variant="h4">Hey there! 👋</SectionTitle>
         </Box>
         <Typography component="p" paragraph sx={sx.firstParagraph} variant="h5">
           I am a fun, outgoing and quirky Travel YouTuber. I produce travel
