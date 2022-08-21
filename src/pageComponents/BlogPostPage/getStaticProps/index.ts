@@ -1,8 +1,8 @@
 import { BlogPost, BlogPostImageGallery } from './fetchBlogPost';
 import { BlogPostVideo } from './fetchBlogPostVideo';
-import { RecentBlogPost } from './fetchRecentBlogPosts';
+import { RelatedBlogPost } from './fetchRelatedBlogPosts';
 import getStaticProps from './getStaticProps';
 
-export type { BlogPost, BlogPostImageGallery, BlogPostVideo, RecentBlogPost };
+export type { BlogPost, BlogPostImageGallery, BlogPostVideo, RelatedBlogPost };
 
 export default getStaticProps;

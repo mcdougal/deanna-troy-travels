@@ -54,11 +54,19 @@ const SocialsMenu = ({ anchor, onClose }: Props): JSX.Element => {
   return (
     <Menu
       anchorEl={anchor?.element || null}
+      anchorOrigin={{
+        vertical: `bottom`,
+        horizontal: `center`,
+      }}
       MenuListProps={
         anchor ? { 'aria-labelledby': anchor.elementId } : undefined
       }
       onClose={onClose}
-      open={Boolean(anchor)}>
+      open={Boolean(anchor)}
+      transformOrigin={{
+        vertical: `top`,
+        horizontal: `center`,
+      }}>
       {socials.map(({ icon, label, url }) => {
         return (
           <MenuItem key={label} component="a" href={url} target="_blank">

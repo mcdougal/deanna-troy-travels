@@ -9,14 +9,14 @@ import sx from './BlogPostPage.styles';
 import BlogPostTags from './BlogPostTags';
 import getStaticProps from './getStaticProps';
 import PageMetadata from './PageMetadata';
-import RecentPostsSection from './RecentPostsSection';
+import RelatedPostsSection from './RelatedPostsSection';
 import ShareButtons from './ShareButtons';
 import SubscribeSection from './SubscribeSection';
 
 const BlogPostPage = ({
   blogPost,
   blogPostVideo,
-  recentBlogPosts,
+  relatedBlogPosts,
 }: InferGetStaticPropsType<typeof getStaticProps>): React.ReactElement => {
   return (
     <>
@@ -36,8 +36,8 @@ const BlogPostPage = ({
         <Box sx={sx.subscribeSectionContainer}>
           <SubscribeSection />
         </Box>
-        <Box sx={sx.recentPostsSectionContainer}>
-          <RecentPostsSection recentBlogPosts={recentBlogPosts} />
+        <Box sx={sx.relatedPostsSectionContainer}>
+          <RelatedPostsSection relatedBlogPosts={relatedBlogPosts} />
         </Box>
       </Container>
       <SiteFooter />

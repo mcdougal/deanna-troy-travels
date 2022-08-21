@@ -2,7 +2,7 @@ import { fetchContentfulGraphQl } from '@lib/contentful';
 
 import { BlogPost } from './fetchBlogPost';
 
-export interface RecentBlogPost {
+export interface RelatedBlogPost {
   coverImage: {
     description: string | null;
     url: string;
@@ -17,19 +17,15 @@ export interface RecentBlogPost {
   youTubeVideoId: string | null;
 }
 
-export default async (blogPost: BlogPost): Promise<Array<RecentBlogPost>> => {
+export default async (blogPost: BlogPost): Promise<Array<RelatedBlogPost>> => {
   const response = await fetchContentfulGraphQl<{
     blogPostCollection: {
-      items: Array<RecentBlogPost>;
+      items: Array<RelatedBlogPost>;
     };
   }>(
     `
-      query BlogPostPageGetStaticPropsRecentBlogPosts($slugToExclude: String!) {
-        blogPostCollection(
-          where: { slug_not: $slugToExclude }
-          limit: 4
-          order: publishedDate_DESC
-        ) {
+      query BlogPostPageGetStaticPropsRelatedBlogPosts {
+        blogPostCollection(order: publishedDate_DESC) {
           items {
             coverImage {
               description
@@ -47,10 +43,21 @@ export default async (blogPost: BlogPost): Promise<Array<RecentBlogPost>> => {
         }
       }
     `,
-    {
-      slugToExclude: blogPost.slug,
-    },
   );
 
-  return response.blogPostCollection.items;
+  const allBlogPosts = response.blogPostCollection.items;
+
+  const blogPostIndex = allBlogPosts.findIndex((otherBlogPost) => {
+    return otherBlogPost.slug === blogPost.slug;
+  });
+
+  const relatedBlogPosts = allBlogPosts.slice(
+    blogPostIndex + 1,
+    blogPostIndex + 5,
+  );
+
+  return [
+    ...relatedBlogPosts,
+    ...allBlogPosts.slice(0, 4 - relatedBlogPosts.length),
+  ];
 };

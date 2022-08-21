@@ -20,7 +20,7 @@ export default {
     marginTop: { xs: 5, sm: 7 },
     paddingTop: { xs: 5, sm: 7 },
   },
-  recentPostsSectionContainer: {
+  relatedPostsSectionContainer: {
     marginBottom: 20,
     marginTop: { xs: 7, sm: 9 },
   },
