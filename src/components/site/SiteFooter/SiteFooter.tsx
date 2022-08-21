@@ -1,4 +1,6 @@
-import { Box, Container, Grid } from '@mui/material';
+import YouTubeIcon from '@mui/icons-material/YouTube';
+import { Box, Button, ButtonBase, Container, Grid } from '@mui/material';
+import Link from 'next/link';
 import { useState } from 'react';
 
 import SiteLogo from '../SiteLogo';
@@ -60,25 +62,38 @@ const SiteFooter = (): JSX.Element => {
 
   return (
     <Box component="footer" sx={sx.siteFooter}>
-      <Container maxWidth="md">
-        <Box sx={sx.logoContainer}>
-          <SiteLogo height={8} />
-        </Box>
-        <Grid container justifyContent="center" spacing={{ xs: 1, sm: 2 }}>
-          {navItems.map((navItem) => {
-            return (
-              <Grid
-                key={navItem.key}
-                item
-                sm="auto"
-                sx={sx.navItemContainer}
-                xs={6}>
-                <NavItemButton navItem={navItem} />
-              </Grid>
-            );
-          })}
-        </Grid>
-      </Container>
+      <Box sx={sx.logoContainer}>
+        <Link href="/" passHref>
+          <ButtonBase focusRipple>
+            <SiteLogo height={8} />
+          </ButtonBase>
+        </Link>
+      </Box>
+      <Grid container justifyContent="center" spacing={{ xs: 1, sm: 2 }}>
+        {navItems.map((navItem) => {
+          return (
+            <Grid
+              key={navItem.key}
+              item
+              sm="auto"
+              sx={sx.navItemContainer}
+              xs={6}>
+              <NavItemButton navItem={navItem} />
+            </Grid>
+          );
+        })}
+      </Grid>
+      <Box sx={sx.subscribeButtonContainer}>
+        <Button
+          color="secondary"
+          href="https://www.youtube.com/channel/UCJeRZkaH3ORHkNWUNqfXJEg?sub_confirmation=1"
+          size="small"
+          startIcon={<YouTubeIcon />}
+          target="_blank"
+          variant="outlined">
+          Subscribe
+        </Button>
+      </Box>
       <SocialsMenu
         anchor={socialsMenuAnchor}
         onClose={(): void => {
