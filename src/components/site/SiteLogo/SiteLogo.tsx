@@ -1,4 +1,4 @@
-import { Box, Typography, useTheme } from '@mui/material';
+import { Box, Typography, TypographyProps, useTheme } from '@mui/material';
 import Image from 'next/image';
 
 import { cloudinaryLoader } from '@lib/cloudinary';
@@ -18,6 +18,24 @@ const SiteLogo = ({ height, variant = `logoOnly` }: Props): JSX.Element => {
   const heightPx = parseInt(theme.spacing(height).replace(/px$/, ``), 10);
   const widthPx = heightPx * YOUTUBE_LOGO_RATIO;
 
+  let titleVariant: TypographyProps['variant'];
+
+  if (height < 4) {
+    titleVariant = `caption`;
+  } else if (height < 5) {
+    titleVariant = `subtitle1`;
+  } else if (height < 6) {
+    titleVariant = `h6`;
+  } else if (height < 8) {
+    titleVariant = `h5`;
+  } else if (height < 12) {
+    titleVariant = `h4`;
+  } else if (height < 17) {
+    titleVariant = `h3`;
+  } else {
+    titleVariant = `h2`;
+  }
+
   return (
     <Box sx={sx.logoContainer}>
       <Image
@@ -29,7 +47,7 @@ const SiteLogo = ({ height, variant = `logoOnly` }: Props): JSX.Element => {
         width={widthPx}
       />
       {variant === `logoAndTitle` && (
-        <Typography component="span" sx={sx.logoText} variant="h6">
+        <Typography component="span" sx={sx.logoText} variant={titleVariant}>
           <b>
             <Box sx={sx.deannaTroy}>Deanna Troy</Box> Travels
           </b>

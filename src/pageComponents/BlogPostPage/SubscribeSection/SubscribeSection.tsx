@@ -8,7 +8,7 @@ const SubscribeSection = (): JSX.Element => {
   return (
     <>
       <Box sx={sx.sectionTitleContainer}>
-        <SectionTitle>Subscribe</SectionTitle>
+        <SectionTitle>Subscribe to Blog</SectionTitle>
       </Box>
       <Typography sx={sx.subtitle} variant="subtitle1">
         Get new posts delivered straight to your inbox!

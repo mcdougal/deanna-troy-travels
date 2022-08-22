@@ -4,22 +4,22 @@ import Link from 'next/link';
 
 import { BlogPostMediaCard, SectionTitle } from '@components/site';
 
-import { RecentBlogPost } from '../getStaticProps';
+import { RelatedBlogPost } from '../getStaticProps';
 
-import sx from './RecentPostsSection.styles';
+import sx from './RelatedPostsSection.styles';
 
 interface Props {
-  recentBlogPosts: Array<RecentBlogPost>;
+  relatedBlogPosts: Array<RelatedBlogPost>;
 }
 
-const RecentPostsSection = ({ recentBlogPosts }: Props): JSX.Element => {
+const RelatedPostsSection = ({ relatedBlogPosts }: Props): JSX.Element => {
   return (
     <Box component="section">
       <Box sx={sx.sectionTitleContainer}>
-        <SectionTitle>Recent Posts</SectionTitle>
+        <SectionTitle>Related Posts</SectionTitle>
       </Box>
       <Grid alignItems="stretch" container spacing={2}>
-        {recentBlogPosts.map((blogPost) => {
+        {relatedBlogPosts.map((blogPost) => {
           return (
             <Grid key={blogPost.slug} item sm={6} xs={12}>
               <BlogPostMediaCard blogPost={blogPost} />
@@ -42,4 +42,4 @@ const RecentPostsSection = ({ recentBlogPosts }: Props): JSX.Element => {
   );
 };
 
-export default RecentPostsSection;
+export default RelatedPostsSection;
