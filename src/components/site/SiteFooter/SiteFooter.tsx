@@ -1,8 +1,9 @@
 import YouTubeIcon from '@mui/icons-material/YouTube';
-import { Box, Button, ButtonBase, Container, Grid } from '@mui/material';
+import { Box, ButtonBase, Container } from '@mui/material';
 import Link from 'next/link';
 import { useState } from 'react';
 
+import ContactDialog from '../ContactDialog';
 import SiteLogo from '../SiteLogo';
 import SocialsMenu, { SocialsMenuAnchor } from '../SocialsMenu';
 
@@ -10,12 +11,29 @@ import NavItemButton, { NavItem } from './NavItemButton';
 import sx from './SiteFooter.styles';
 
 const SOCIALS_BUTTON_HTML_ID = `site-footer-socials-button`;
+const CONTACT_BUTTON_HTML_ID = `site-footer-contact-button`;
 
 const SiteFooter = (): JSX.Element => {
   const [socialsMenuAnchor, setSocialsMenuAnchor] =
     useState<SocialsMenuAnchor | null>(null);
 
+  const [isContactDialogOpen, setIsContactDialogOpen] = useState(false);
+
+  const openContactDialog = (): void => {
+    setIsContactDialogOpen(true);
+  };
+
+  const closeContactDialog = (): void => {
+    setIsContactDialogOpen(false);
+  };
+
   const navItems: Array<NavItem> = [
+    {
+      type: `internalLink`,
+      key: `destinations`,
+      label: `Destinations`,
+      internalPath: `/destinations`,
+    },
     {
       type: `externalLink`,
       key: `videos`,
@@ -30,9 +48,9 @@ const SiteFooter = (): JSX.Element => {
     },
     {
       type: `internalLink`,
-      key: `destinations`,
-      label: `Destinations`,
-      internalPath: `/destinations`,
+      key: `about`,
+      label: `About`,
+      internalPath: `/about`,
     },
     {
       type: `internalLink`,
@@ -41,10 +59,11 @@ const SiteFooter = (): JSX.Element => {
       internalPath: `/work-with-me`,
     },
     {
-      type: `internalLink`,
-      key: `about`,
-      label: `About`,
-      internalPath: `/about`,
+      type: `button`,
+      key: `contact`,
+      label: `Contact Me`,
+      id: CONTACT_BUTTON_HTML_ID,
+      onClick: openContactDialog,
     },
     {
       type: `button`,
@@ -58,48 +77,45 @@ const SiteFooter = (): JSX.Element => {
         });
       },
     },
+    {
+      type: `externalLink`,
+      key: `subscribe`,
+      buttonProps: {
+        color: `secondary`,
+        startIcon: <YouTubeIcon />,
+      },
+      label: `Subscribe`,
+      externalUrl: `https://www.youtube.com/channel/UCJeRZkaH3ORHkNWUNqfXJEg?sub_confirmation=1`,
+    },
   ];
 
   return (
     <Box component="footer" sx={sx.siteFooter}>
-      <Box sx={sx.logoContainer}>
-        <Link href="/" passHref>
-          <ButtonBase focusRipple>
-            <SiteLogo height={8} />
-          </ButtonBase>
-        </Link>
-      </Box>
-      <Grid container justifyContent="center" spacing={{ xs: 1, sm: 2 }}>
-        {navItems.map((navItem) => {
-          return (
-            <Grid
-              key={navItem.key}
-              item
-              sm="auto"
-              sx={sx.navItemContainer}
-              xs={6}>
-              <NavItemButton navItem={navItem} />
-            </Grid>
-          );
-        })}
-      </Grid>
-      <Box sx={sx.subscribeButtonContainer}>
-        <Button
-          color="secondary"
-          href="https://www.youtube.com/channel/UCJeRZkaH3ORHkNWUNqfXJEg?sub_confirmation=1"
-          size="small"
-          startIcon={<YouTubeIcon />}
-          target="_blank"
-          variant="outlined">
-          Subscribe
-        </Button>
-      </Box>
+      <Container maxWidth="md" sx={sx.siteFooterContent}>
+        <Box sx={sx.logoContainer}>
+          <Link href="/" passHref>
+            <ButtonBase focusRipple>
+              <SiteLogo height={9} />
+            </ButtonBase>
+          </Link>
+        </Box>
+        <Box sx={sx.navItems}>
+          {navItems.map((navItem) => {
+            return (
+              <Box key={navItem.key} sx={sx.navItemContainer}>
+                <NavItemButton navItem={navItem} />
+              </Box>
+            );
+          })}
+        </Box>
+      </Container>
       <SocialsMenu
         anchor={socialsMenuAnchor}
         onClose={(): void => {
           setSocialsMenuAnchor(null);
         }}
       />
+      <ContactDialog onClose={closeContactDialog} open={isContactDialogOpen} />
     </Box>
   );
 };

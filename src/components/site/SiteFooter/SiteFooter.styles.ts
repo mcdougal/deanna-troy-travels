@@ -1,22 +1,32 @@
+import { spacing } from '@lib/mui';
+
 export default {
   siteFooter: {
     backgroundColor: `grey.50`,
     paddingBottom: { xs: 10, md: 15 },
     paddingTop: { xs: 8, md: 12 },
   },
+  siteFooterContent: {
+    display: `flex`,
+    flexDirection: { xs: `column-reverse`, sm: `column` },
+  },
   logoContainer: {
     display: `flex`,
     justifyContent: `center`,
-    marginBottom: 4,
+    marginBottom: { xs: 0, sm: 3 },
+    marginTop: { xs: 3, sm: 0 },
+    minWidth: spacing(36),
+  },
+  navItems: {
+    display: `flex`,
+    flexDirection: { xs: `column`, sm: `row` },
+    flexWrap: `wrap`,
+    justifyContent: `center`,
+    marginX: `auto`,
+    maxWidth: 650,
   },
   navItemContainer: {
-    '&:nth-child(odd)': {
-      textAlign: { xs: `right`, sm: `left` },
-    },
-  },
-  subscribeButtonContainer: {
-    display: `flex`,
-    justifyContent: `center`,
-    marginTop: { xs: 4, sm: 5 },
+    marginBottom: 2,
+    textAlign: `center`,
   },
 };
