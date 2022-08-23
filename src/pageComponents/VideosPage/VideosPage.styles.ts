@@ -9,6 +9,6 @@ export default {
     display: `inline`,
   },
   pageContainer: {
-    marginBottom: 20,
+    marginBottom: { xs: 12, sm: 20 },
   },
 };

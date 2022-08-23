@@ -1,6 +1,6 @@
 export default {
   pageContainer: {
-    marginBottom: 20,
+    marginBottom: { xs: 12, sm: 20 },
   },
   title: {
     color: `primary.main`,

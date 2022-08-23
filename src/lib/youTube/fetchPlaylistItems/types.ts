@@ -1,6 +1,9 @@
-import axios from 'axios';
+export interface PlaylistItemsApiResponse {
+  items: Array<PlaylistItem>;
+  nextPageToken: string | undefined;
+}
 
-interface PlaylistItem {
+export interface PlaylistItem {
   id: string;
   contentDetails: {
     videoId: string;
@@ -52,27 +55,3 @@ interface PlaylistItem {
     privacyStatus: string;
   };
 }
-
-export default async (
-  playlistId: string,
-  options: { maxResults: number },
-): Promise<Array<PlaylistItem>> => {
-  const { GOOGLE_CLOUD_API_KEY } = process.env;
-
-  if (!GOOGLE_CLOUD_API_KEY) {
-    throw new Error(`Missing environment variable: GOOGLE_CLOUD_API_KEY`);
-  }
-
-  const playlistItemsUrl = `https://www.googleapis.com/youtube/v3/playlistItems?${[
-    `key=${GOOGLE_CLOUD_API_KEY}`,
-    `maxResults=${options.maxResults}`,
-    `part=contentDetails,snippet,status`,
-    `playlistId=${playlistId}`,
-  ].join(`&`)}`;
-
-  const playlistItemsResponse = await axios.get<{ items: Array<PlaylistItem> }>(
-    playlistItemsUrl,
-  );
-
-  return playlistItemsResponse.data.items;
-};

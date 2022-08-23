@@ -15,7 +15,7 @@ export default {
     marginTop: { xs: 6, md: 8 },
   },
   contactSectionContainer: {
-    marginBottom: 20,
+    marginBottom: { xs: 12, sm: 20 },
     marginTop: { xs: 7, md: 10 },
   },
 };

@@ -14,7 +14,7 @@ const PageMetadata = ({ videos }: Props): JSX.Element => {
 
   const title = `Travel Videos`;
 
-  const description = featuredVideo.description;
+  const description = `Budget friendly Southeast Asia & Asia destinations to cure your wanderlust! Deanna has been to 17 countries total and is sharing her experiences with future travelers! Her video playlists "Vibrant Vietnam", "Totally Tokyo", "Mighty Malaysia", "Fabulous Philippines" and "Amazing America" give great itinerary suggestions while also giving insight into local life. Follow her journey here on YouTube to plan your next trip!`;
 
   const canonicalUrl = `https://www.deannatroytravels.com/videos`;
 
@@ -28,7 +28,6 @@ const PageMetadata = ({ videos }: Props): JSX.Element => {
     description,
     imageUrl,
     title,
-    videos,
   });
 
   return (

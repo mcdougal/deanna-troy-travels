@@ -14,7 +14,7 @@ export interface YouTubeVideo {
 
 export default async (playlistId: string): Promise<Array<YouTubeVideo>> => {
   const playlistItems = await fetchPlaylistItems(playlistId, {
-    maxResults: 50,
+    maxResults: `all`,
   });
 
   const videoIds = playlistItems.map((playlistItem) => {

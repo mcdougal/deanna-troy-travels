@@ -18,7 +18,7 @@ export default {
     marginTop: { xs: 7, md: 9 },
   },
   subscribeSectionContainer: {
-    marginBottom: 20,
+    marginBottom: { xs: 12, sm: 20 },
     marginTop: { xs: 8, md: 10 },
     maxWidth: spacing(70),
   },

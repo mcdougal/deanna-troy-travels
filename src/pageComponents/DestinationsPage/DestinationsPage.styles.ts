@@ -10,6 +10,6 @@ export default {
     textAlign: `center`,
   },
   destinationsContainer: {
-    marginBottom: 20,
+    marginBottom: { xs: 12, sm: 20 },
   },
 };

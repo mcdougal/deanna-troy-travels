@@ -6,7 +6,7 @@ export default {
     marginTop: 6,
   },
   contactSectionContainer: {
-    marginBottom: 20,
+    marginBottom: { xs: 12, sm: 20 },
     marginTop: 6,
   },
 };

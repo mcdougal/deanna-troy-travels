@@ -1,6 +1,8 @@
-import { fetchPlaylistItems, fetchYouTubeVideos } from '@lib/youTube';
-
-const ALL_VIDEOS_PLAYLIST_ID = `PLupawb160v0xF0_SUX5yHJE2GQogd7lx-`;
+import {
+  ALL_VIDEOS_PLAYLIST_ID,
+  fetchPlaylistItems,
+  fetchYouTubeVideos,
+} from '@lib/youTube';
 
 export interface YouTubeVideo {
   commentCount: number;
@@ -16,7 +18,7 @@ export interface YouTubeVideo {
 
 export default async (): Promise<Array<YouTubeVideo>> => {
   const playlistItems = await fetchPlaylistItems(ALL_VIDEOS_PLAYLIST_ID, {
-    maxResults: 50,
+    maxResults: `all`,
   });
 
   const videoIds = playlistItems.map((playlistItem) => {

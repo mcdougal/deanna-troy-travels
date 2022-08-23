@@ -2,7 +2,7 @@ import { spacing } from '@lib/mui';
 
 export default {
   blogPostPageContainer: {
-    marginBottom: 20,
+    marginBottom: { xs: 12, sm: 20 },
     marginTop: { xs: 3, sm: 8 },
     maxWidth: spacing(90),
   },

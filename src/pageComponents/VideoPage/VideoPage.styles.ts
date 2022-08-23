@@ -1,6 +1,6 @@
 export default {
   pageContainer: {
-    marginBottom: 20,
+    marginBottom: { xs: 12, sm: 20 },
   },
   videoContainer: {
     marginBottom: 3,

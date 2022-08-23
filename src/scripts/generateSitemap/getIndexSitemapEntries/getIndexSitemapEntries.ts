@@ -11,5 +11,8 @@ export default (): Array<SitemapItemLoose> => {
     {
       url: `https://www.deannatroytravels.com/sitemap/posts.xml`,
     },
+    {
+      url: `https://www.deannatroytravels.com/sitemap/videos.xml`,
+    },
   ];
 };

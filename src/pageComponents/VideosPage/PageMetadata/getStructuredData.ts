@@ -3,21 +3,16 @@ import {
   makeLogoStructuredData,
   makeOrganizationStructuredData,
   makePrimaryImageStructuredData,
-  makeVideoListStructuredData,
-  makeVideoStructuredData,
   makeWebPageStructuredData,
   makeWebSiteStructuredData,
   StructuredData,
 } from '@lib/structuredData';
-
-import { YouTubeVideo } from '../getStaticProps';
 
 interface Args {
   canonicalUrl: string;
   description: string;
   imageUrl: string;
   title: string;
-  videos: Array<YouTubeVideo>;
 }
 
 export default ({
@@ -25,7 +20,6 @@ export default ({
   description,
   imageUrl,
   title,
-  videos,
 }: Args): StructuredData => {
   const logo = makeLogoStructuredData();
   const organization = makeOrganizationStructuredData({ logo });
@@ -54,32 +48,8 @@ export default ({
     website,
   });
 
-  const videoList = makeVideoListStructuredData({
-    videos: videos.map((video) => {
-      return makeVideoStructuredData({
-        commentCount: video.commentCount,
-        description: video.description,
-        duration: video.duration,
-        likeCount: video.likeCount,
-        thumbnailUrl: video.thumbnailUrl,
-        title: video.title,
-        uploadDate: video.publishedAt,
-        videoUrl: `https://www.youtube.com/watch?v=${video.videoId}`,
-        viewCount: video.viewCount,
-      });
-    }),
-  });
-
   return {
     '@context': `https://schema.org`,
-    '@graph': [
-      breadcrumb,
-      logo,
-      organization,
-      primaryImage,
-      videoList,
-      webPage,
-      website,
-    ],
+    '@graph': [breadcrumb, logo, organization, primaryImage, webPage, website],
   };
 };
