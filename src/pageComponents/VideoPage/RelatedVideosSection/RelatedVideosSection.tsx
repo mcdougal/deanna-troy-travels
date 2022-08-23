@@ -2,56 +2,56 @@ import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import ModeCommentIcon from '@mui/icons-material/ModeComment';
 import ThumbUpIcon from '@mui/icons-material/ThumbUp';
 import VisibilityIcon from '@mui/icons-material/Visibility';
-import { Box, Button, Container, Grid } from '@mui/material';
+import { Box, Button, Grid } from '@mui/material';
 import Link from 'next/link';
 
 import { MediaCard } from '@components/generic';
 import { SectionTitle } from '@components/site';
 import { cloudinaryLoader } from '@lib/cloudinary';
 
-import { YouTubeVideo } from '../getStaticProps';
+import { RelatedYouTubeVideo } from '../getStaticProps';
 
-import sx from './FeaturedVideosSection.styles';
+import sx from './RelatedVideosSection.styles';
 
 interface Props {
-  recentVideos: Array<YouTubeVideo>;
+  relatedVideos: Array<RelatedYouTubeVideo>;
 }
 
-const FeaturedVideosSection = ({ recentVideos }: Props): JSX.Element => {
+const RelatedVideosSection = ({ relatedVideos }: Props): JSX.Element => {
   return (
-    <Container component="section" maxWidth="md">
+    <>
       <Box sx={sx.sectionTitleContainer}>
-        <SectionTitle>Featured Videos 🎥</SectionTitle>
+        <SectionTitle>Related Videos</SectionTitle>
       </Box>
       <Grid alignItems="stretch" container spacing={2}>
-        {recentVideos.map((recentVideo) => {
+        {relatedVideos.map((relatedVideo) => {
           return (
-            <Grid key={recentVideo.videoId} item sm={4} xs={12}>
+            <Grid key={relatedVideo.videoId} item sm={4} xs={12}>
               <MediaCard
                 details={[
                   {
                     key: `views`,
                     icon: <VisibilityIcon sx={sx.viewsIcon} />,
-                    value: recentVideo.viewCount.toLocaleString(),
+                    value: relatedVideo.viewCount.toLocaleString(),
                   },
                   {
                     key: `likes`,
                     icon: <ThumbUpIcon sx={sx.likesIcon} />,
-                    value: recentVideo.likeCount.toLocaleString(),
+                    value: relatedVideo.likeCount.toLocaleString(),
                   },
                   {
                     key: `comments`,
                     icon: <ModeCommentIcon sx={sx.commentsIcon} />,
-                    value: recentVideo.commentCount.toLocaleString(),
+                    value: relatedVideo.commentCount.toLocaleString(),
                   },
                 ]}
                 thumbnail={{
-                  alt: recentVideo.title,
+                  alt: relatedVideo.title,
                   loader: cloudinaryLoader,
-                  url: `/youtube/${recentVideo.videoId}`,
+                  url: `/youtube/${relatedVideo.videoId}`,
                 }}
-                title={recentVideo.title}
-                url={`/videos/${recentVideo.videoId}`}
+                title={relatedVideo.title}
+                url={`/videos/${relatedVideo.videoId}`}
               />
             </Grid>
           );
@@ -69,8 +69,8 @@ const FeaturedVideosSection = ({ recentVideos }: Props): JSX.Element => {
           </Button>
         </Link>
       </Box>
-    </Container>
+    </>
   );
 };
 
-export default FeaturedVideosSection;
+export default RelatedVideosSection;

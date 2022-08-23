@@ -20,10 +20,10 @@ const DesktopNav = (): JSX.Element => {
       internalPath: `/work-with-me`,
     },
     {
-      type: `externalLink`,
+      type: `internalLink`,
       key: `videos`,
       label: `Videos`,
-      externalUrl: `https://www.youtube.com/deannatroytravels/videos`,
+      internalPath: `/videos`,
     },
     {
       type: `internalLink`,

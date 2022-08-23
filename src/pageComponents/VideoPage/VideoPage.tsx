@@ -9,11 +9,13 @@ import { SiteFooter, SiteHeader } from '@components/site';
 import EmbeddedYouTubeVideo from './EmbeddedYouTubeVideo';
 import getStaticProps from './getStaticProps';
 import PageMetadata from './PageMetadata';
+import RelatedVideosSection from './RelatedVideosSection';
 import VideoDescription from './VideoDescription';
 import VideoMetric from './VideoMetric';
 import sx from './VideoPage.styles';
 
 const VideoPage = ({
+  relatedVideos,
   video,
 }: InferGetStaticPropsType<typeof getStaticProps>): React.ReactElement => {
   return (
@@ -44,6 +46,9 @@ const VideoPage = ({
         <Typography sx={sx.videoDescription} variant="body1">
           <VideoDescription description={video.description} />
         </Typography>
+        <Box sx={sx.relatedVideosContainer}>
+          <RelatedVideosSection relatedVideos={relatedVideos} />
+        </Box>
       </Container>
       <SiteFooter />
     </>

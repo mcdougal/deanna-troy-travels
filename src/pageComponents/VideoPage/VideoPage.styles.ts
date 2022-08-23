@@ -32,4 +32,7 @@ export default {
     whiteSpace: `pre-wrap`,
     wordBreak: `break-word`,
   },
+  relatedVideosContainer: {
+    marginTop: { xs: 8, md: 10 },
+  },
 };

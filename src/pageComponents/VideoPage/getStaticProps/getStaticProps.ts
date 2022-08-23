@@ -2,6 +2,7 @@ import { ParsedUrlQuery } from 'querystring';
 
 import type { GetStaticProps } from 'next';
 
+import fetchRelatedVideos, { RelatedYouTubeVideo } from './fetchRelatedVideos';
 import fetchVideo, { YouTubeVideo } from './fetchVideo';
 
 interface Params extends ParsedUrlQuery {
@@ -9,6 +10,7 @@ interface Params extends ParsedUrlQuery {
 }
 
 interface Props {
+  relatedVideos: Array<RelatedYouTubeVideo>;
   video: YouTubeVideo;
 }
 
@@ -27,6 +29,7 @@ const getStaticProps: GetStaticProps<Props, Params> = async ({ params }) => {
 
   return {
     props: {
+      relatedVideos: await fetchRelatedVideos(video),
       video,
     },
     revalidate: 60,

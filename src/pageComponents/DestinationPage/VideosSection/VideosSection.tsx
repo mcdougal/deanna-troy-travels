@@ -49,7 +49,7 @@ const VideosSection = ({ recentVideos }: Props): JSX.Element => {
                   url: `/youtube/${recentVideo.videoId}`,
                 }}
                 title={recentVideo.title}
-                url={`https://www.youtube.com/watch?v=${recentVideo.videoId}`}
+                url={`/videos/${recentVideo.videoId}`}
               />
             </Grid>
           );
