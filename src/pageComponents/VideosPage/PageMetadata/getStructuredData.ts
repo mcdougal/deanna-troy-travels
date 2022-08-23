@@ -38,22 +38,14 @@ export default ({
 
   const breadcrumb = makeBreadcrumbStructuredData({
     items: [
-      {
-        name: `Home`,
-        url: `https://www.deannatroytravels.com`,
-      },
-      {
-        name: `Destinations`,
-        url: `https://www.deannatroytravels.com/destinations`,
-      },
-      {
-        name: title,
-      },
+      { name: `Home`, url: `https://www.deannatroytravels.com` },
+      { name: title },
     ],
     webPageUrl: canonicalUrl,
   });
 
   const webPage = makeWebPageStructuredData({
+    additionalTypes: [`CollectionPage`],
     breadcrumb,
     description,
     primaryImage,

@@ -2,8 +2,8 @@ import {
   makeBreadcrumbStructuredData,
   makeLogoStructuredData,
   makeOrganizationStructuredData,
+  makePersonStructuredData,
   makePrimaryImageStructuredData,
-  makeVideoListStructuredData,
   makeVideoStructuredData,
   makeWebPageStructuredData,
   makeWebSiteStructuredData,
@@ -17,7 +17,7 @@ interface Args {
   description: string;
   imageUrl: string;
   title: string;
-  videos: Array<YouTubeVideo>;
+  video: YouTubeVideo;
 }
 
 export default ({
@@ -25,9 +25,10 @@ export default ({
   description,
   imageUrl,
   title,
-  videos,
+  video,
 }: Args): StructuredData => {
   const logo = makeLogoStructuredData();
+  const person = makePersonStructuredData();
   const organization = makeOrganizationStructuredData({ logo });
   const website = makeWebSiteStructuredData({ organization });
 
@@ -43,8 +44,8 @@ export default ({
         url: `https://www.deannatroytravels.com`,
       },
       {
-        name: `Destinations`,
-        url: `https://www.deannatroytravels.com/destinations`,
+        name: `Travel Videos`,
+        url: `https://www.deannatroytravels.com/videos`,
       },
       {
         name: title,
@@ -62,20 +63,16 @@ export default ({
     website,
   });
 
-  const videoList = makeVideoListStructuredData({
-    videos: videos.map((video) => {
-      return makeVideoStructuredData({
-        commentCount: video.commentCount,
-        description: video.description,
-        duration: video.duration,
-        likeCount: video.likeCount,
-        thumbnailUrl: video.thumbnailUrl,
-        title: video.title,
-        uploadDate: video.publishedAt,
-        videoUrl: `https://www.youtube.com/watch?v=${video.videoId}`,
-        viewCount: video.viewCount,
-      });
-    }),
+  const videoStructuredData = makeVideoStructuredData({
+    commentCount: video.commentCount,
+    description: video.description,
+    duration: video.duration,
+    likeCount: video.likeCount,
+    thumbnailUrl: video.thumbnailUrl,
+    title: video.title,
+    uploadDate: video.publishedAt,
+    videoUrl: `https://www.youtube.com/watch?v=${video.videoId}`,
+    viewCount: video.viewCount,
   });
 
   return {
@@ -84,8 +81,9 @@ export default ({
       breadcrumb,
       logo,
       organization,
+      person,
       primaryImage,
-      videoList,
+      videoStructuredData,
       webPage,
       website,
     ],

@@ -98,9 +98,9 @@ export default ({
       organization,
       person,
       primaryImage,
+      video,
       webPage,
       website,
-      video,
     ],
   };
 };
