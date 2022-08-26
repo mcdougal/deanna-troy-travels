@@ -24,7 +24,7 @@ export interface Destination {
 export type BlogPost =
   Destination[`linkedFrom`][`blogPostCollection`][`items`][number];
 
-export default async (slug: string): Promise<Destination> => {
+export default async (slug: string): Promise<Destination | null> => {
   const response = await fetchContentfulGraphQl<{
     destinationCollection: {
       items: Array<Destination>;
@@ -65,10 +65,6 @@ export default async (slug: string): Promise<Destination> => {
     response.destinationCollection.items.length > 0
       ? response.destinationCollection.items[0]
       : null;
-
-  if (!destination) {
-    throw new Error(`No destination found for slug: ${slug}`);
-  }
 
   return destination;
 };
