@@ -2,14 +2,14 @@ import { spacing } from '@lib/mui';
 
 export default {
   imageGalleryContainer: {
-    '-ms-overflow-style': `none`,
-    '-webkit-overflow-scrolling': `touch`,
     marginBottom: { xs: 3, sm: 4 },
     marginX: { xs: -3, sm: 0 },
+    MsOverflowStyle: `none`,
     overflowX: `auto`,
     scrollbarWidth: `none`,
     scrollBehavior: `smooth`,
     scrollSnapType: `x mandatory`,
+    WebkitOverflowScrolling: `touch`,
     '&::-webkit-scrollbar': {
       height: 0,
       width: 0,
