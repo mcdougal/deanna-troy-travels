@@ -1,9 +1,10 @@
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
-import { Block, BLOCKS, Inline, INLINES } from '@contentful/rich-text-types';
+import { BLOCKS, INLINES } from '@contentful/rich-text-types';
 import React from 'react';
 
 import { BlogPost } from '../getStaticProps';
 
+import getRichTextElementRenderer from './getRichTextElementRenderer';
 import {
   EmbeddedAsset,
   EmbeddedEntry,
@@ -25,31 +26,6 @@ import {
   Text,
   UlList,
 } from './richTextComponents';
-
-type RichTextRenderFunction = (
-  node: Block | Inline,
-  children: React.ReactNode,
-) => React.ReactNode;
-
-type RichTextElementComponent = (props: {
-  children: React.ReactNode;
-  links?: BlogPost[`content`][`links`];
-  node: Block | Inline;
-}) => JSX.Element | null;
-
-const getRichTextElementRenderer = (
-  Component: RichTextElementComponent,
-  links?: BlogPost[`content`][`links`],
-): RichTextRenderFunction => {
-  // eslint-disable-next-line react/display-name
-  return (node, children) => {
-    return (
-      <Component links={links} node={node}>
-        {children}
-      </Component>
-    );
-  };
-};
 
 interface Props {
   blogPost: BlogPost;

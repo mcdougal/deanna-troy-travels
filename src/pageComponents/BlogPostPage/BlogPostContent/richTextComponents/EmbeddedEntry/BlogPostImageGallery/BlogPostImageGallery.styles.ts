@@ -35,11 +35,4 @@ export default {
     scrollSnapAlign: `center`,
     scrollSnapStop: `always`,
   },
-  imageContainer: {
-    height: 0,
-    overflow: `hidden`,
-    paddingTop: `100%`,
-    position: `relative`,
-    width: `100%`,
-  },
 };
