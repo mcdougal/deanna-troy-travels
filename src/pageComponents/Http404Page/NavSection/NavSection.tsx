@@ -1,4 +1,4 @@
-import { Grid } from '@mui/material';
+import { Box } from '@mui/material';
 import { useState } from 'react';
 
 import { SocialsMenu, SocialsMenuAnchor } from '@components/site';
@@ -59,15 +59,15 @@ const NavSection = (): JSX.Element => {
 
   return (
     <>
-      <Grid container justifyContent="center" spacing={{ xs: 1, sm: 2 }}>
+      <Box sx={sx.navItemsContainer}>
         {navItems.map((navItem) => {
           return (
-            <Grid key={navItem.key} item sx={sx.navItemContainer} xs={6}>
+            <Box key={navItem.key} sx={sx.navItemContainer}>
               <NavItemButton navItem={navItem} />
-            </Grid>
+            </Box>
           );
         })}
-      </Grid>
+      </Box>
       <SocialsMenu
         anchor={socialsMenuAnchor}
         onClose={(): void => {
