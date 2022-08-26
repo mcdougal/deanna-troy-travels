@@ -3,10 +3,10 @@
   "version": "0.0.1",
   "scripts": {
     "build:next": "next build",
+    "build:preview": "mv ./public/robots.disallow.txt ./public/robots.txt && npm run build",
     "build:production": "mv ./public/robots.production.txt ./public/robots.txt && npm run build",
     "build:rss": "ts-node -r tsconfig-paths/register src/scripts/generateRssFeed/run.ts",
     "build:sitemap": "ts-node -r tsconfig-paths/register src/scripts/generateSitemap/run.ts",
-    "build:staging": "mv ./public/robots.disallow.txt ./public/robots.txt && npm run build",
     "build": "npm run build:rss && npm run build:sitemap && npm run build:next",
     "check": "npx npm-check --skip-unused",
     "dev": "next dev",
