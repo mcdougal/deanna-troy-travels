@@ -1,10 +1,8 @@
-import { Box, Grid, useTheme } from '@mui/material';
-import Image from 'next/image';
-
-import { contentfulLoader } from '@lib/contentful';
+import { Box, Grid } from '@mui/material';
 
 import { BlogPostImageGallery as IBlogPostImageGallery } from '../../../../getStaticProps';
 
+import BlogPostImage from './BlogPostImage';
 import sx from './BlogPostImageGallery.styles';
 
 interface Props {
@@ -12,8 +10,6 @@ interface Props {
 }
 
 const BlogPostImageGallery = ({ blogPostImageGallery }: Props): JSX.Element => {
-  const theme = useTheme();
-
   return (
     <Box sx={sx.imageGalleryContainer}>
       <Grid
@@ -22,22 +18,19 @@ const BlogPostImageGallery = ({ blogPostImageGallery }: Props): JSX.Element => {
         spacing={1}
         sx={sx.imageGalleryInnerGrid}>
         {blogPostImageGallery.imagesCollection.items.map((image) => {
+          let sm: number;
+
+          if (blogPostImageGallery.imagesCollection.items.length === 1) {
+            sm = 12;
+          } else if (blogPostImageGallery.imagesCollection.items.length === 2) {
+            sm = 6;
+          } else {
+            sm = 4;
+          }
+
           return (
-            <Grid key={image.sys.id} item sm={4} sx={sx.gridItem} xs={12}>
-              <Box sx={sx.imageContainer}>
-                <Image
-                  alt={image.description || undefined}
-                  layout="fill"
-                  loader={contentfulLoader}
-                  objectFit="cover"
-                  objectPosition="center"
-                  sizes={[
-                    `(max-width: ${theme.breakpoints.values.sm}px) 100vw`,
-                    `300px`,
-                  ].join(`,`)}
-                  src={image.url}
-                />
-              </Box>
+            <Grid key={image.sys.id} item sm={sm} sx={sx.gridItem} xs={12}>
+              <BlogPostImage image={image} />
             </Grid>
           );
         })}

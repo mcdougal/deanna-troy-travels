@@ -13,6 +13,7 @@ export default {
   },
   coverImageContainer: {
     borderRadius: 4,
+    display: `block`,
     height: 0,
     overflow: `hidden`,
     paddingTop: `56.25%`,

@@ -1,4 +1,4 @@
-import { Box, Button, Typography, useTheme } from '@mui/material';
+import { Box, Button, ButtonBase, Typography, useTheme } from '@mui/material';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -21,21 +21,23 @@ const FeaturedPost = ({ blogPost }: Props): JSX.Element => {
       <Typography sx={sx.featuredPostLabel} variant="body1">
         ✨ Featured Post
       </Typography>
-      <Box sx={sx.coverImageContainer}>
-        <Image
-          alt={thumbnail.alt}
-          layout="fill"
-          loader={thumbnail.loader}
-          objectFit="cover"
-          objectPosition="center"
-          priority
-          sizes={[
-            `(max-width: ${theme.breakpoints.values.md}px) 100vw`,
-            `900px`,
-          ].join(`,`)}
-          src={thumbnail.url}
-        />
-      </Box>
+      <Link href={`/post/${blogPost.slug}`} passHref>
+        <ButtonBase component="a" focusRipple sx={sx.coverImageContainer}>
+          <Image
+            alt={thumbnail.alt}
+            layout="fill"
+            loader={thumbnail.loader}
+            objectFit="cover"
+            objectPosition="center"
+            priority
+            sizes={[
+              `(max-width: ${theme.breakpoints.values.md}px) 100vw`,
+              `900px`,
+            ].join(`,`)}
+            src={thumbnail.url}
+          />
+        </ButtonBase>
+      </Link>
       <Box sx={sx.featuredPostContent}>
         <Typography sx={sx.title} variant="h4">
           {blogPost.title}

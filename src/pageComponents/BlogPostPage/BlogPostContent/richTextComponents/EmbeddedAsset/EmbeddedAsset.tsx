@@ -1,7 +1,9 @@
 import { Block, Inline } from '@contentful/rich-text-types';
-import { Box, Typography } from '@mui/material';
+import { Box, ButtonBase, Typography } from '@mui/material';
 import Image from 'next/image';
+import { useState } from 'react';
 
+import { ImageDialog } from '@components/generic';
 import { contentfulLoader } from '@lib/contentful';
 
 import { BlogPost } from '../../../getStaticProps';
@@ -16,6 +18,16 @@ interface Props {
 }
 
 const EmbeddedAsset = ({ links, node }: Props): JSX.Element | null => {
+  const [isImageDialogOpen, setIsImageDialogOpen] = useState(false);
+
+  const openImageDialog = (): void => {
+    setIsImageDialogOpen(true);
+  };
+
+  const closeImageDialog = (): void => {
+    setIsImageDialogOpen(false);
+  };
+
   const asset = links?.assets.block.find((contentAsset) => {
     return contentAsset.sys.id === node.data.target.sys.id;
   });
@@ -39,20 +51,33 @@ const EmbeddedAsset = ({ links, node }: Props): JSX.Element | null => {
   }
 
   return (
-    <Box sx={sx.imageContainer}>
-      <Image
-        alt={asset.description || undefined}
-        height={renderedHeight}
-        loader={contentfulLoader}
-        src={asset.url}
-        width={renderedWidth}
+    <>
+      <Box sx={sx.imageContainer}>
+        <ButtonBase focusRipple onClick={openImageDialog} sx={sx.imageButton}>
+          <Image
+            alt={asset.description || undefined}
+            height={renderedHeight}
+            loader={contentfulLoader}
+            src={asset.url}
+            width={renderedWidth}
+          />
+        </ButtonBase>
+        {asset.description && (
+          <Typography color="textSecondary" sx={sx.caption} variant="caption">
+            {asset.description}
+          </Typography>
+        )}
+      </Box>
+      <ImageDialog
+        image={{
+          alt: asset.description,
+          loader: contentfulLoader,
+          url: asset.url,
+        }}
+        onClose={closeImageDialog}
+        open={isImageDialogOpen}
       />
-      {asset.description && (
-        <Typography color="textSecondary" sx={sx.caption} variant="caption">
-          {asset.description}
-        </Typography>
-      )}
-    </Box>
+    </>
   );
 };
 
