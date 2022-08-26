@@ -23,6 +23,12 @@ const getStaticProps: GetStaticProps<Props, Params> = async ({ params }) => {
 
   const destination = await fetchDestination(destinationSlug);
 
+  if (!destination) {
+    return {
+      notFound: true,
+    };
+  }
+
   const videos = destination.youTubePlaylistId
     ? await fetchVideos(destination.youTubePlaylistId)
     : [];

@@ -26,6 +26,13 @@ const getStaticProps: GetStaticProps<Props, Params> = async ({ params }) => {
   }
 
   const blogPost = await fetchBlogPost(slug);
+
+  if (!blogPost) {
+    return {
+      notFound: true,
+    };
+  }
+
   const blogPostVideo = await fetchBlogPostVideo(blogPost);
 
   return {

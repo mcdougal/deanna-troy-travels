@@ -56,7 +56,7 @@ export interface BlogPost {
   youTubeVideoId: string | null;
 }
 
-export default async (slug: string): Promise<BlogPost> => {
+export default async (slug: string): Promise<BlogPost | null> => {
   const response = await fetchContentfulGraphQl<{
     blogPostCollection: {
       items: Array<BlogPost>;
@@ -130,10 +130,6 @@ export default async (slug: string): Promise<BlogPost> => {
     response.blogPostCollection.items.length > 0
       ? response.blogPostCollection.items[0]
       : null;
-
-  if (!blogPost) {
-    throw new Error(`No blog post found for slug: ${slug}`);
-  }
 
   return blogPost;
 };
