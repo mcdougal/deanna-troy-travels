@@ -43,7 +43,7 @@
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "@netlify/plugin-nextjs": "^4.21.2",
+    "@netlify/plugin-nextjs": "^4.29.3",
     "@types/escape-html": "^1.0.2",
     "@types/node": "^18.7.15",
     "@types/react": "^18.0.18",
