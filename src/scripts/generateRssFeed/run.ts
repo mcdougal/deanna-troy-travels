@@ -9,6 +9,15 @@ import { getBlogPostThumbnail } from '@lib/blogPosts';
 
 import fetchRecentBlogPosts from './fetchRecentBlogPosts';
 
+const escapeXmlChars = (text: string): string => {
+  return text
+    .replace(/&/g, `&amp;`)
+    .replace(/</g, `&lt;`)
+    .replace(/>/g, `&gt;`)
+    .replace(/"/g, `&quot;`)
+    .replace(/'/g, `&apos;`);
+};
+
 const run = async (): Promise<void> => {
   console.log(`info  - Generating RSS feed...`);
 
@@ -40,11 +49,11 @@ const run = async (): Promise<void> => {
     const thumbnail = getBlogPostThumbnail(blogPost);
 
     feed.addItem({
-      title: blogPost.title,
+      title: escapeXmlChars(blogPost.title),
       id: `https://www.deannatroytravels.com/post/${blogPost.slug}`,
       link: `https://www.deannatroytravels.com/post/${blogPost.slug}`,
-      description: blogPost.excerpt,
-      content: blogPost.excerpt,
+      description: escapeXmlChars(blogPost.excerpt),
+      content: escapeXmlChars(blogPost.excerpt),
       author: [
         {
           name: `Deanna Troy Travels`,
@@ -53,7 +62,9 @@ const run = async (): Promise<void> => {
         },
       ],
       date: new Date(blogPost.publishedDate),
-      image: thumbnail.loader({ src: thumbnail.url, width: 1200 }),
+      image: escapeXmlChars(
+        thumbnail.loader({ src: thumbnail.url, width: 1200 }),
+      ),
     });
   });
 
