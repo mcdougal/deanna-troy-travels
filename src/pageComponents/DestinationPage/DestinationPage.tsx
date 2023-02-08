@@ -15,7 +15,14 @@ const DestinationPage = ({
   videos,
 }: InferGetStaticPropsType<typeof getStaticProps>): React.ReactElement => {
   const blogPosts = destination.linkedFrom.blogPostCollection.items;
-  const [featuredPost, ...otherPosts] = blogPosts;
+
+  const sortedBlogPosts = [...blogPosts].sort((a, b) => {
+    return (
+      new Date(b.publishedDate).getTime() - new Date(a.publishedDate).getTime()
+    );
+  });
+
+  const [featuredPost, ...otherPosts] = sortedBlogPosts;
 
   return (
     <>
