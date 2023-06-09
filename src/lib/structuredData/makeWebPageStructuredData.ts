@@ -3,7 +3,7 @@ import { StructuredDataObject } from './types';
 interface Args {
   about?: StructuredDataObject;
   additionalTypes?: Array<string>;
-  breadcrumb: StructuredDataObject;
+  breadcrumb?: StructuredDataObject;
   description: string;
   primaryImage: StructuredDataObject;
   title: string;
@@ -25,7 +25,7 @@ export default ({
     '@id': webPageUrl,
     '@type': additionalTypes ? [`WebPage`, ...additionalTypes] : `WebPage`,
     about: about ? { '@id': about[`@id`] } : undefined,
-    breadcrumb: { '@id': breadcrumb[`@id`] },
+    breadcrumb: breadcrumb ? { '@id': breadcrumb[`@id`] } : undefined,
     description,
     image: { '@id': primaryImage[`@id`] },
     inLanguage: `en-US`,
