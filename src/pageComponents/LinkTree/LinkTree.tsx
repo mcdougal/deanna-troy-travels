@@ -1,4 +1,3 @@
-import OpenInNewIcon from '@mui/icons-material/OpenInNew';
 import { Box, ButtonBase, Typography } from '@mui/material';
 import { InferGetStaticPropsType } from 'next';
 
