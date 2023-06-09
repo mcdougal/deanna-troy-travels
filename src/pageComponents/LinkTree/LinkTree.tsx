@@ -61,6 +61,7 @@ const LinkTree = ({
             <ButtonBase
               key={label}
               component="a"
+              focusRipple
               href={url}
               sx={sx.link}
               target="_blank">
