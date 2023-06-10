@@ -29,7 +29,7 @@ class Document extends NextDocument<ExtendedDocumentInitialProps> {
             rel="preconnect"
           />
           <link
-            href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;600;700&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;600;700&family=Inter&display=swap"
             rel="stylesheet"
           />
           <link

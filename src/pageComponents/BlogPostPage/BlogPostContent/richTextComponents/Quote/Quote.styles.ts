@@ -5,7 +5,7 @@ export default {
     borderRadius: 5,
     marginBottom: { xs: 3, sm: 4 },
     padding: { xs: 2, sm: 3 },
-    '& *': {
+    '& p': {
       margin: 0,
     },
   },

@@ -51,14 +51,6 @@ const LinkTree = ({
     },
   ];
 
-  // if (mostRecentVideo) {
-  //   links.push({
-  //     label: mostRecentVideo.title,
-  //     icon: `📺`,
-  //     url: `https://www.youtube.com/watch?v=${mostRecentVideo.videoId}`,
-  //   });
-  // }
-
   return (
     <>
       <PageMetadata />

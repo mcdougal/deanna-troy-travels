@@ -52,7 +52,7 @@ const Paragraph = ({ children, node }: Props): JSX.Element => {
   }
 
   return (
-    <Typography component="p" sx={sx.paragraph} variant="h6">
+    <Typography component="p" sx={sx.paragraph} variant="body1">
       <Anchor node={node} />
       {children}
     </Typography>
