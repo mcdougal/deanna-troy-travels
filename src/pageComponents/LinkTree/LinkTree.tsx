@@ -1,7 +1,12 @@
+import ModeCommentIcon from '@mui/icons-material/ModeComment';
+import ThumbUpIcon from '@mui/icons-material/ThumbUp';
+import VisibilityIcon from '@mui/icons-material/Visibility';
 import { Box, ButtonBase, Typography } from '@mui/material';
 import { InferGetStaticPropsType } from 'next';
 
+import { MediaCard } from '@components/generic';
 import { SiteFooter } from '@components/site';
+import { cloudinaryLoader } from '@lib/cloudinary';
 
 import getStaticProps from './getStaticProps';
 import sx from './LinkTree.styles';
@@ -39,15 +44,20 @@ const LinkTree = ({
       icon: `👜`,
       url: `https://www.facebook.com/thethriftden`,
     },
+    {
+      label: `Travel Consulting`,
+      icon: `✈️`,
+      url: `https://egyd.one/deannatroytravels/`,
+    },
   ];
 
-  if (mostRecentVideo) {
-    links.push({
-      label: mostRecentVideo.title,
-      icon: `📺`,
-      url: `https://www.youtube.com/watch?v=${mostRecentVideo.videoId}`,
-    });
-  }
+  // if (mostRecentVideo) {
+  //   links.push({
+  //     label: mostRecentVideo.title,
+  //     icon: `📺`,
+  //     url: `https://www.youtube.com/watch?v=${mostRecentVideo.videoId}`,
+  //   });
+  // }
 
   return (
     <>
@@ -77,6 +87,43 @@ const LinkTree = ({
           );
         })}
       </Box>
+      {mostRecentVideo && (
+        <Box pt={5} sx={sx.mostRecentVideoSection}>
+          <Box mb={2}>
+            <Typography align="center" variant="subtitle1">
+              Latest Video
+            </Typography>
+          </Box>
+          <Box px={1} sx={sx.mostRecentVideoContainer}>
+            <MediaCard
+              details={[
+                {
+                  key: `views`,
+                  icon: <VisibilityIcon sx={sx.viewsIcon} />,
+                  value: mostRecentVideo.viewCount.toLocaleString(),
+                },
+                {
+                  key: `likes`,
+                  icon: <ThumbUpIcon sx={sx.likesIcon} />,
+                  value: mostRecentVideo.likeCount.toLocaleString(),
+                },
+                {
+                  key: `comments`,
+                  icon: <ModeCommentIcon sx={sx.commentsIcon} />,
+                  value: mostRecentVideo.commentCount.toLocaleString(),
+                },
+              ]}
+              thumbnail={{
+                alt: mostRecentVideo.title,
+                loader: cloudinaryLoader,
+                url: `/youtube/${mostRecentVideo.videoId}`,
+              }}
+              title={mostRecentVideo.title}
+              url={`https://www.youtube.com/watch?v=${mostRecentVideo.videoId}`}
+            />
+          </Box>
+        </Box>
+      )}
       <SiteFooter />
     </>
   );

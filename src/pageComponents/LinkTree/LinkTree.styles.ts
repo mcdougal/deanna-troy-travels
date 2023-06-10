@@ -6,8 +6,11 @@ export default {
     alignItems: `center`,
     display: `flex`,
     flexDirection: `column`,
-    marginBottom: 8,
     marginTop: 4,
+    paddingBottom: {
+      xs: 0,
+      sm: 5,
+    },
   },
   link: {
     borderTop: `1px solid #ccc`,
@@ -42,5 +45,22 @@ export default {
       lg: `1.4rem`,
       xl: `1.4rem`,
     },
+  },
+  mostRecentVideoSection: {
+    backgroundColor: `#fafafa`,
+  },
+  mostRecentVideoContainer: {
+    maxWidth: `400px`,
+    margin: `0 auto`,
+  },
+  viewsIcon: {
+    fontSize: 15,
+  },
+  likesIcon: {
+    fontSize: 15,
+  },
+  commentsIcon: {
+    fontSize: 15,
+    marginBottom: `-1px`,
   },
 };
