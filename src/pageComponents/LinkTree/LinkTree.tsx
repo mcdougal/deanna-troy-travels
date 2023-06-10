@@ -30,6 +30,11 @@ const LinkTree = ({
       url: `https://www.youtube.com/@DeannaTroyTravels`,
     },
     {
+      label: `Instagram`,
+      icon: `📷`,
+      url: `https://www.instagram.com/deanna_troy_travels`,
+    },
+    {
       label: `Poshmark Closet`,
       icon: `👗`,
       url: `https://poshmark.com/closet/deannatroyshop`,

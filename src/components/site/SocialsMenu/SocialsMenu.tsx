@@ -1,3 +1,4 @@
+import CheckroomIcon from '@mui/icons-material/Checkroom';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import YouTubeIcon from '@mui/icons-material/YouTube';
@@ -33,6 +34,11 @@ const SocialsMenu = ({ anchor, onClose }: Props): JSX.Element => {
       icon: <FacebookIcon />,
       label: `Facebook`,
       url: `https://www.facebook.com/deannatroytravels`,
+    },
+    {
+      icon: <CheckroomIcon />,
+      label: `The Thrift Den`,
+      url: `https://www.facebook.com/thethriftden`,
     },
     {
       icon: <PoshmarkIcon />,
