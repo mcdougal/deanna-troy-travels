@@ -25,11 +25,7 @@ export default (blogPosts: Array<BlogPost>): BlogPostsByCategory => {
 
   Object.entries(blogPostsByDestination).forEach(
     ([destinationName, destinationPosts]) => {
-      if (destinationPosts.length > 3) {
-        blogPostByCategory[destinationName] = destinationPosts;
-      } else {
-        otherBlogPosts.push(...destinationPosts);
-      }
+      blogPostByCategory[destinationName] = destinationPosts;
     },
   );
 
