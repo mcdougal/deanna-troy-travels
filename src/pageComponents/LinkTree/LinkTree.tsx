@@ -54,6 +54,11 @@ const LinkTree = ({
       icon: `✈️`,
       url: `https://egyd.one/deannatroytravels/`,
     },
+    {
+      label: `Resume`,
+      icon: `🤓`,
+      url: `https://www.canva.com/design/DAFnCaUmDAE/4EQRPKo_66DACubMKgGb8g/view`,
+    },
   ];
 
   return (
