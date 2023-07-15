@@ -78,10 +78,14 @@ const LinkTree = ({
               sx={sx.link}
               target="_blank">
               <Box sx={sx.linkInner}>
-                <Typography color="primary" variant="h4">
+                <Typography color="primary" component="span" variant="h5">
                   {icon}
                 </Typography>
-                <Typography color="primary" sx={sx.linkLabel} variant="h4">
+                <Typography
+                  color="primary"
+                  component="span"
+                  sx={sx.linkLabel}
+                  variant="h5">
                   {label}
                 </Typography>
               </Box>
@@ -90,7 +94,7 @@ const LinkTree = ({
         })}
       </Box>
       {mostRecentVideo && (
-        <Box pt={5} sx={sx.mostRecentVideoSection}>
+        <Box pt={4} sx={sx.mostRecentVideoSection}>
           <Box mb={2}>
             <Typography align="center" variant="subtitle1">
               Latest Video

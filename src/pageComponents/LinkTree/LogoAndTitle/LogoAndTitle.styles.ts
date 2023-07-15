@@ -2,7 +2,10 @@ export default {
   logoAndTitleContainer: {
     alignItems: `center`,
     display: `flex`,
-    flexDirection: `column`,
+    justifyContent: `center`,
+  },
+  titleContainer: {
+    marginLeft: 2,
   },
   deannaTroy: {
     color: `primary.main`,
@@ -15,8 +18,5 @@ export default {
     letterSpacing: `0.1em`,
     marginTop: 2,
     textTransform: `uppercase`,
-  },
-  subscribeButtonContainer: {
-    marginTop: 2,
   },
 };
