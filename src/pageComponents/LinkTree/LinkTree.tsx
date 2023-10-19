@@ -1,10 +1,27 @@
+import FacebookIcon from '@mui/icons-material/Facebook';
+import InstagramIcon from '@mui/icons-material/Instagram';
 import ModeCommentIcon from '@mui/icons-material/ModeComment';
 import ThumbUpIcon from '@mui/icons-material/ThumbUp';
 import VisibilityIcon from '@mui/icons-material/Visibility';
-import { Box, ButtonBase, Typography } from '@mui/material';
+import YouTubeIcon from '@mui/icons-material/YouTube';
+import {
+  Box,
+  Button,
+  GlobalStyles,
+  IconButton,
+  Typography,
+} from '@mui/material';
 import { InferGetStaticPropsType } from 'next';
+import Image from 'next/image';
 
 import { MediaCard } from '@components/generic';
+import {
+  AmazonIcon,
+  DepopIcon,
+  MercariIcon,
+  PoshmarkIcon,
+  TikTokIcon,
+} from '@components/icons';
 import { SiteFooter } from '@components/site';
 import { cloudinaryLoader } from '@lib/cloudinary';
 
@@ -14,120 +31,185 @@ import LogoAndTitle from './LogoAndTitle';
 import PageMetadata from './PageMetadata';
 
 const LinkTree = ({
-  recentVideos,
+  videos,
 }: InferGetStaticPropsType<typeof getStaticProps>): React.ReactElement => {
-  const mostRecentVideo = recentVideos.length > 0 ? recentVideos[0] : null;
+  const socials = [
+    {
+      icon: <YouTubeIcon />,
+      label: `YouTube`,
+      url: `https://www.youtube.com/deannatroytravels`,
+    },
+    {
+      icon: <TikTokIcon />,
+      label: `TikTok`,
+      url: `https://www.tiktok.com/@deannatroytravels`,
+    },
+    {
+      icon: <InstagramIcon />,
+      label: `Instagram`,
+      url: `https://www.instagram.com/deanna_troy_travels`,
+    },
+    {
+      icon: <FacebookIcon />,
+      label: `Facebook`,
+      url: `https://www.facebook.com/deannatroytravels`,
+    },
+  ];
 
   const links = [
     {
       label: `My Website`,
-      icon: `🙋‍♀️`,
+      iconSrc: `/upload/deanna-troy-travels/link-tree/beach-yoga.png`,
       url: `https://www.deannatroytravels.com/`,
     },
     {
-      label: `YouTube`,
-      icon: `🎥`,
-      url: `https://www.youtube.com/@DeannaTroyTravels`,
-    },
-    {
-      label: `Instagram`,
-      icon: `📷`,
-      url: `https://www.instagram.com/deanna_troy_travels`,
-    },
-    {
-      label: `Poshmark Closet`,
-      icon: `👗`,
-      url: `https://poshmark.com/closet/deannatroyshop`,
-    },
-    {
-      label: `Amazon Storefront`,
-      icon: `🛍️`,
-      url: `https://www.amazon.com/shop/deannatroytravels`,
+      label: `Blog`,
+      iconSrc: `/upload/deanna-troy-travels/link-tree/las-vegas.png`,
+      url: `https://www.deannatroytravels.com/blog`,
     },
     {
       label: `The Thrift Den`,
-      icon: `👜`,
-      url: `https://www.facebook.com/thethriftden`,
+      iconSrc: `/upload/deanna-troy-travels/link-tree/thrift-den.png`,
+      url: `https://www.instagram.com/thethriftdenct`,
     },
     {
-      label: `Travel Consulting`,
-      icon: `✈️`,
+      label: `Book 1:1 Call`,
+      iconSrc: `/upload/deanna-troy-travels/link-tree/travel-consulting.png`,
       url: `https://egyd.one/deannatroytravels/`,
     },
+  ];
+
+  const shops = [
     {
-      label: `Resume`,
-      icon: `🤓`,
-      url: `https://www.canva.com/design/DAFnCaUmDAE/4EQRPKo_66DACubMKgGb8g/view`,
+      icon: <AmazonIcon />,
+      label: `Amazon`,
+      url: `https://www.amazon.com/shop/deannatroytravels`,
+    },
+    {
+      icon: <PoshmarkIcon />,
+      label: `Poshmark`,
+      url: `https://poshmark.com/closet/deannatroyshop`,
+    },
+    {
+      icon: <DepopIcon />,
+      label: `Depop`,
+      url: `https://www.depop.com/deannatroyshop/`,
+    },
+    {
+      icon: <MercariIcon />,
+      label: `Mercari`,
+      url: `https://www.mercari.com/u/141412516/`,
     },
   ];
 
   return (
     <>
       <PageMetadata />
-      <Box sx={sx.logoAndTitleContainer}>
-        <LogoAndTitle />
+      <GlobalStyles styles={{ body: { background: `#f7f7f7` } }} />
+      <Box sx={sx.header}>
+        <Box>
+          <LogoAndTitle />
+        </Box>
+        <Box sx={sx.socials}>
+          {socials.map(({ icon, label, url }) => {
+            return (
+              <IconButton
+                key={label}
+                component="a"
+                href={url}
+                target="_blank"
+                title={label}>
+                {icon}
+              </IconButton>
+            );
+          })}
+        </Box>
       </Box>
       <Box sx={sx.links}>
-        {links.map(({ label, icon, url }) => {
+        {links.map(({ label, iconSrc, url }) => {
           return (
-            <ButtonBase
+            <Button
               key={label}
+              color="inherit"
               component="a"
               focusRipple
               href={url}
+              size="large"
+              startIcon={
+                <Box sx={sx.linkIconImageContainer}>
+                  <Image
+                    alt=""
+                    height={48}
+                    layout="fixed"
+                    loader={cloudinaryLoader}
+                    src={iconSrc}
+                    width={48}
+                  />
+                </Box>
+              }
               sx={sx.link}
-              target="_blank">
-              <Box sx={sx.linkInner}>
-                <Typography color="primary" component="span" variant="h5">
-                  {icon}
-                </Typography>
-                <Typography
-                  color="primary"
-                  component="span"
-                  sx={sx.linkLabel}
-                  variant="h5">
-                  {label}
-                </Typography>
-              </Box>
-            </ButtonBase>
+              target="_blank"
+              variant="contained">
+              <Typography component="span" sx={sx.linkLabel} variant="h5">
+                {label}
+              </Typography>
+            </Button>
           );
         })}
       </Box>
-      {mostRecentVideo && (
+      <Box sx={sx.shops}>
+        {shops.map(({ icon, label, url }) => {
+          return (
+            <IconButton
+              key={label}
+              component="a"
+              href={url}
+              target="_blank"
+              title={label}>
+              {icon}
+            </IconButton>
+          );
+        })}
+      </Box>
+      {videos.length > 0 && (
         <Box pt={4} sx={sx.mostRecentVideoSection}>
           <Box mb={2}>
-            <Typography align="center" variant="subtitle1">
-              Latest Video
+            <Typography align="center" variant="h5">
+              Lively Las Vegas
             </Typography>
           </Box>
-          <Box px={1} sx={sx.mostRecentVideoContainer}>
-            <MediaCard
-              details={[
-                {
-                  key: `views`,
-                  icon: <VisibilityIcon sx={sx.viewsIcon} />,
-                  value: mostRecentVideo.viewCount.toLocaleString(),
-                },
-                {
-                  key: `likes`,
-                  icon: <ThumbUpIcon sx={sx.likesIcon} />,
-                  value: mostRecentVideo.likeCount.toLocaleString(),
-                },
-                {
-                  key: `comments`,
-                  icon: <ModeCommentIcon sx={sx.commentsIcon} />,
-                  value: mostRecentVideo.commentCount.toLocaleString(),
-                },
-              ]}
-              thumbnail={{
-                alt: mostRecentVideo.title,
-                loader: cloudinaryLoader,
-                url: `/youtube/${mostRecentVideo.videoId}`,
-              }}
-              title={mostRecentVideo.title}
-              url={`https://www.youtube.com/watch?v=${mostRecentVideo.videoId}`}
-            />
-          </Box>
+          {videos.map((video) => {
+            return (
+              <Box key={video.videoId} px={1} sx={sx.mostRecentVideoContainer}>
+                <MediaCard
+                  details={[
+                    {
+                      key: `views`,
+                      icon: <VisibilityIcon sx={sx.viewsIcon} />,
+                      value: video.viewCount.toLocaleString(),
+                    },
+                    {
+                      key: `likes`,
+                      icon: <ThumbUpIcon sx={sx.likesIcon} />,
+                      value: video.likeCount.toLocaleString(),
+                    },
+                    {
+                      key: `comments`,
+                      icon: <ModeCommentIcon sx={sx.commentsIcon} />,
+                      value: video.commentCount.toLocaleString(),
+                    },
+                  ]}
+                  thumbnail={{
+                    alt: video.title,
+                    loader: cloudinaryLoader,
+                    url: `/youtube/${video.videoId}`,
+                  }}
+                  title={video.title}
+                  url={`https://www.youtube.com/watch?v=${video.videoId}`}
+                />
+              </Box>
+            );
+          })}
         </Box>
       )}
       <SiteFooter />

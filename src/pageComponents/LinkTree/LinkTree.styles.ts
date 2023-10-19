@@ -1,63 +1,67 @@
 export default {
-  logoAndTitleContainer: {
-    marginTop: {
-      xs: 1,
-      sm: 2,
-    },
+  header: {
+    background: `#fff`,
+    paddingBottom: 2,
+    paddingTop: 1,
+  },
+  socials: {
+    display: `flex`,
+    justifyContent: `center`,
+    gap: 2,
+    marginTop: 2,
   },
   links: {
     alignItems: `center`,
     display: `flex`,
     flexDirection: `column`,
+    gap: 1,
     marginTop: {
       xs: 2,
-      sm: 6,
+      sm: 3,
     },
-    paddingBottom: {
-      xs: 0,
-      sm: 10,
-    },
+    paddingX: 2,
   },
   link: {
-    borderTop: `1px solid #f4f4f4`,
-    borderLeft: {
-      xs: `none`,
-      sm: `1px solid #f4f4f4`,
-    },
-    borderRight: {
-      xs: `none`,
-      sm: `1px solid #f4f4f4`,
-    },
-    maxWidth: `600px`,
-    padding: `16px 0`,
+    background: `#fff`,
+    borderRadius: 12,
+    boxShadow: `rgba(10, 11, 13, 0.08) 0px 2px 4px 0px`,
+    justifyContent: `flex-start`,
+    maxWidth: `400px`,
+    padding: `8px 40px 8px 16px`,
     width: `100%`,
-    '&:last-child': {
-      borderBottom: `1px solid #f4f4f4`,
-    },
   },
-  linkInner: {
+  linkIconImageContainer: {
     alignItems: `center`,
+    borderRadius: `50%`,
     display: `flex`,
-    textAlign: `left`,
-    width: `14.5rem`,
+    justifyContent: `center`,
+    overflow: `hidden`,
   },
   linkLabel: {
-    fontWeight: `normal`,
-    marginLeft: 2,
+    fontWeight: `600`,
     fontSize: {
-      xs: `1.2rem`,
-      sm: `1.2rem`,
-      md: `1.2rem`,
-      lg: `1.2rem`,
-      xl: `1.2rem`,
+      xs: `1.1rem`,
+      sm: `1.1rem`,
+      md: `1.1rem`,
+      lg: `1.1rem`,
+      xl: `1.1rem`,
     },
+    letterSpacing: `0.8px`,
+    marginLeft: 2,
+  },
+  shops: {
+    display: `flex`,
+    justifyContent: `center`,
+    gap: 2,
+    marginBottom: 1,
+    marginTop: 3,
   },
   mostRecentVideoSection: {
-    backgroundColor: `#fafafa`,
+    marginTop: 1,
   },
   mostRecentVideoContainer: {
     maxWidth: `400px`,
-    margin: `0 auto`,
+    margin: `16px auto`,
   },
   viewsIcon: {
     fontSize: 15,
