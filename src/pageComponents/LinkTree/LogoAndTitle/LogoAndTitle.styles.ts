@@ -8,7 +8,6 @@ export default {
     marginLeft: 2,
   },
   deannaTroy: {
-    color: `primary.main`,
     display: `inline`,
   },
   title: {

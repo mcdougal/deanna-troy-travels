@@ -30,27 +30,33 @@ import sx from './LinkTree.styles';
 import LogoAndTitle from './LogoAndTitle';
 import PageMetadata from './PageMetadata';
 
+const SVG_ICON_STYLES = {
+  color: `#ff1694`,
+  height: 28,
+  width: 28,
+} as const;
+
 const LinkTree = ({
   videos,
 }: InferGetStaticPropsType<typeof getStaticProps>): React.ReactElement => {
   const socials = [
     {
-      icon: <YouTubeIcon />,
+      icon: <YouTubeIcon style={SVG_ICON_STYLES} />,
       label: `YouTube`,
       url: `https://www.youtube.com/deannatroytravels`,
     },
     {
-      icon: <TikTokIcon />,
+      icon: <TikTokIcon style={SVG_ICON_STYLES} />,
       label: `TikTok`,
       url: `https://www.tiktok.com/@deannatroytravels`,
     },
     {
-      icon: <InstagramIcon />,
+      icon: <InstagramIcon style={SVG_ICON_STYLES} />,
       label: `Instagram`,
       url: `https://www.instagram.com/deanna_troy_travels`,
     },
     {
-      icon: <FacebookIcon />,
+      icon: <FacebookIcon style={SVG_ICON_STYLES} />,
       label: `Facebook`,
       url: `https://www.facebook.com/deannatroytravels`,
     },
@@ -64,39 +70,39 @@ const LinkTree = ({
     },
     {
       label: `Blog`,
-      iconSrc: `/upload/deanna-troy-travels/link-tree/las-vegas.png`,
+      iconSrc: `/upload/deanna-troy-travels/link-tree/train.png`,
       url: `https://www.deannatroytravels.com/blog`,
-    },
-    {
-      label: `The Thrift Den`,
-      iconSrc: `/upload/deanna-troy-travels/link-tree/thrift-den.png`,
-      url: `https://www.instagram.com/thethriftdenct`,
     },
     {
       label: `Book 1:1 Call`,
       iconSrc: `/upload/deanna-troy-travels/link-tree/travel-consulting.png`,
       url: `https://egyd.one/deannatroytravels/`,
     },
+    {
+      label: `The Thrift Den`,
+      iconSrc: `/upload/deanna-troy-travels/link-tree/thrift-den.png`,
+      url: `https://www.instagram.com/thethriftdenct`,
+    },
   ];
 
   const shops = [
     {
-      icon: <AmazonIcon />,
+      icon: <AmazonIcon style={SVG_ICON_STYLES} />,
       label: `Amazon`,
       url: `https://www.amazon.com/shop/deannatroytravels`,
     },
     {
-      icon: <PoshmarkIcon />,
+      icon: <PoshmarkIcon style={SVG_ICON_STYLES} />,
       label: `Poshmark`,
       url: `https://poshmark.com/closet/deannatroyshop`,
     },
     {
-      icon: <DepopIcon />,
+      icon: <DepopIcon style={SVG_ICON_STYLES} />,
       label: `Depop`,
       url: `https://www.depop.com/deannatroyshop/`,
     },
     {
-      icon: <MercariIcon />,
+      icon: <MercariIcon style={SVG_ICON_STYLES} />,
       label: `Mercari`,
       url: `https://www.mercari.com/u/141412516/`,
     },
