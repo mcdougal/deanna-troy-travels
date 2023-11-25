@@ -24,6 +24,7 @@ import {
 } from '@components/icons';
 import { SiteFooter } from '@components/site';
 import { cloudinaryLoader } from '@lib/cloudinary';
+import { contentfulLoader } from '@lib/contentful';
 
 import getStaticProps from './getStaticProps';
 import sx from './LinkTree.styles';
@@ -37,6 +38,7 @@ const SVG_ICON_STYLES = {
 } as const;
 
 const LinkTree = ({
+  linkTreeItems,
   videos,
 }: InferGetStaticPropsType<typeof getStaticProps>): React.ReactElement => {
   const socials = [
@@ -59,29 +61,6 @@ const LinkTree = ({
       icon: <FacebookIcon style={SVG_ICON_STYLES} />,
       label: `Facebook`,
       url: `https://www.facebook.com/deannatroytravels`,
-    },
-  ];
-
-  const links = [
-    {
-      label: `My Website`,
-      iconSrc: `/upload/deanna-troy-travels/link-tree/beach-yoga.png`,
-      url: `https://www.deannatroytravels.com/`,
-    },
-    {
-      label: `Blog`,
-      iconSrc: `/upload/deanna-troy-travels/link-tree/train.png`,
-      url: `https://www.deannatroytravels.com/blog`,
-    },
-    {
-      label: `Book 1:1 Call`,
-      iconSrc: `/upload/deanna-troy-travels/link-tree/travel-consulting.png`,
-      url: `https://egyd.one/deannatroytravels/`,
-    },
-    {
-      label: `The Thrift Den`,
-      iconSrc: `/upload/deanna-troy-travels/link-tree/thrift-den.png`,
-      url: `https://www.instagram.com/thethriftdenct`,
     },
   ];
 
@@ -132,7 +111,7 @@ const LinkTree = ({
         </Box>
       </Box>
       <Box sx={sx.links}>
-        {links.map(({ label, iconSrc, url }) => {
+        {linkTreeItems.map(({ label, image, url }) => {
           return (
             <Button
               key={label}
@@ -147,8 +126,8 @@ const LinkTree = ({
                     alt=""
                     height={48}
                     layout="fixed"
-                    loader={cloudinaryLoader}
-                    src={iconSrc}
+                    loader={contentfulLoader}
+                    src={image.url}
                     width={48}
                   />
                 </Box>

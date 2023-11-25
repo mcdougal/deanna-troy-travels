@@ -1,4 +1,4 @@
-import { YouTubeVideo } from './fetchRecentVideos';
+import { YouTubeVideo } from './fetchVideos';
 import getStaticProps from './getStaticProps';
 
 export type { YouTubeVideo };
