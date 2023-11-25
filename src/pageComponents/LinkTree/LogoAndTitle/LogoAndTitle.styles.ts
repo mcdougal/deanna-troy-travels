@@ -1,4 +1,9 @@
 export default {
+  container: {
+    alignItems: `center`,
+    display: `flex`,
+    justifyContent: `center`,
+  },
   logoAndTitleContainer: {
     alignItems: `center`,
     display: `flex`,
