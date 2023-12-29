@@ -39,7 +39,8 @@ const SVG_ICON_STYLES = {
 
 const LinkTree = ({
   linkTreeItems,
-  videos,
+  playlistTitle,
+  playlistVideos,
 }: InferGetStaticPropsType<typeof getStaticProps>): React.ReactElement => {
   const socials = [
     {
@@ -156,14 +157,14 @@ const LinkTree = ({
           );
         })}
       </Box>
-      {videos.length > 0 && (
+      {playlistVideos.length > 0 && (
         <Box pt={4} sx={sx.mostRecentVideoSection}>
           <Box mb={2}>
             <Typography align="center" variant="h5">
-              Lively Las Vegas
+              {playlistTitle}
             </Typography>
           </Box>
-          {videos.map((video) => {
+          {playlistVideos.map((video) => {
             return (
               <Box key={video.videoId} px={1} sx={sx.mostRecentVideoContainer}>
                 <MediaCard
