@@ -18,6 +18,14 @@ export interface BlogPostImageGallery {
   };
 }
 
+export interface EmbeddedSnippet {
+  __typename: `EmbeddedSnippet`;
+  snippet: string;
+  sys: {
+    id: string;
+  };
+}
+
 export interface BlogPost {
   content: {
     json: Parameters<typeof documentToReactComponents>[0];
@@ -34,7 +42,7 @@ export interface BlogPost {
         }>;
       };
       entries: {
-        block: Array<BlogPostImageGallery>;
+        block: Array<BlogPostImageGallery | EmbeddedSnippet>;
       };
     };
   };
@@ -93,6 +101,13 @@ export default async (slug: string): Promise<BlogPost | null> => {
                           url
                         }
                       }
+                      sys {
+                        id
+                      }
+                    }
+                    ... on EmbeddedSnippet {
+                      __typename
+                      snippet
                       sys {
                         id
                       }

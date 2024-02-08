@@ -3,6 +3,7 @@ import { Block, Inline } from '@contentful/rich-text-types';
 import { BlogPost } from '../../../getStaticProps';
 
 import BlogPostImageGallery from './BlogPostImageGallery';
+import EmbeddedSnippet from './EmbeddedSnippet';
 
 interface Props {
   links?: BlogPost[`content`][`links`];
@@ -22,7 +23,11 @@ const EmbeddedEntry = ({ links, node }: Props): JSX.Element | null => {
     return <BlogPostImageGallery blogPostImageGallery={entry} />;
   }
 
-  const exhaustiveCheck: never = entry.__typename;
+  if (entry.__typename === `EmbeddedSnippet`) {
+    return <EmbeddedSnippet snippet={entry.snippet} />;
+  }
+
+  const exhaustiveCheck: never = entry;
   return exhaustiveCheck;
 };
 
