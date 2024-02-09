@@ -1,5 +1,6 @@
-/* eslint-disable react/no-danger */
 import { Box } from '@mui/material';
+import InnerHTML from 'dangerously-set-html-content';
+import { useInView } from 'react-intersection-observer';
 
 import sx from './EmbeddedSnippet.styles';
 
@@ -8,9 +9,13 @@ interface Props {
 }
 
 const EmbeddedSnippet = ({ snippet }: Props): JSX.Element => {
+  const { ref, inView } = useInView({
+    threshold: 0,
+  });
+
   return (
     <Box sx={sx.embeddedSnippetContainer}>
-      <div dangerouslySetInnerHTML={{ __html: snippet }} />
+      <div ref={ref}>{inView && <InnerHTML html={snippet} />}</div>
     </Box>
   );
 };
