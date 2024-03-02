@@ -47,12 +47,12 @@ const IntroSection = (): JSX.Element => {
           <Button
             color="primary"
             endIcon={<OpenInNewIcon />}
-            href="https://www.canva.com/design/DAFC8WJcrUQ/Z7MdgBzSOjugPpcQtf6IOQ/view"
+            href="https://www.canva.com/design/DAF7iYLoQQ8/NzsH1KR4NGMalI3KvLCBhw/view"
             size="large"
             sx={sx.ctaButton}
             target="_blank"
             variant="contained">
-            Media Kit
+            Resume
           </Button>
         </Box>
       </Box>
