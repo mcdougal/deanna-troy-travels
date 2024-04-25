@@ -1,5 +1,5 @@
 import { ButtonBase, useTheme } from '@mui/material';
-import Image from 'next/image';
+import Image from 'next/legacy/image';
 import { useState } from 'react';
 
 import { ImageDialog } from '@components/generic';

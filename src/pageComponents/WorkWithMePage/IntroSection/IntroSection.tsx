@@ -1,7 +1,6 @@
 import OpenInNewIcon from '@mui/icons-material/OpenInNew';
 import { Box, Button, Container, Typography, useTheme } from '@mui/material';
-import Image from 'next/image';
-
+import Image from 'next/legacy/image';
 import { SectionTitle } from '@components/site';
 import { cloudinaryLoader } from '@lib/cloudinary';
 

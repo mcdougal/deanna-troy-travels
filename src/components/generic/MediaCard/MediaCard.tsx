@@ -1,5 +1,5 @@
 import { Box, ButtonBase, Typography } from '@mui/material';
-import Image, { ImageLoader } from 'next/image';
+import Image, { ImageLoader } from 'next/legacy/image';
 import Link from 'next/link';
 
 import sx from './MediaCard.styles';

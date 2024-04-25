@@ -1,4 +1,4 @@
-import { ImageLoader } from 'next/image';
+import { ImageLoader } from 'next/legacy/image';
 
 const cloudinaryLoader: ImageLoader = ({ quality, src, width }) => {
   const params = [

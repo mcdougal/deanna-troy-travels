@@ -1,6 +1,6 @@
 import { Block, Inline } from '@contentful/rich-text-types';
 import { Box, ButtonBase, Typography } from '@mui/material';
-import Image from 'next/image';
+import Image from 'next/legacy/image';
 import { useState } from 'react';
 
 import { ImageDialog } from '@components/generic';

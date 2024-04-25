@@ -1,6 +1,5 @@
 import { Box, Typography, TypographyProps, useTheme } from '@mui/material';
-import Image from 'next/image';
-
+import Image from 'next/legacy/image';
 import { cloudinaryLoader } from '@lib/cloudinary';
 
 import sx from './SiteLogo.styles';

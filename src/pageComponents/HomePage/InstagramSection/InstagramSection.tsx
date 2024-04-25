@@ -1,7 +1,6 @@
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import { Box, Button, ButtonBase, Container, Grid } from '@mui/material';
-import Image from 'next/image';
-
+import Image from 'next/legacy/image';
 import { SectionTitle } from '@components/site';
 import { cloudinaryLoader } from '@lib/cloudinary';
 

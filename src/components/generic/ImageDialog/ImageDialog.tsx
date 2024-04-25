@@ -6,8 +6,7 @@ import {
   useMediaQuery,
   useTheme,
 } from '@mui/material';
-import Image, { ImageLoader } from 'next/image';
-
+import Image, { ImageLoader } from 'next/legacy/image';
 import sx from './ImageDialog.styles';
 
 interface Props {
