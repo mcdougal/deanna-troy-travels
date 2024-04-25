@@ -93,7 +93,7 @@ const SiteFooter = (): JSX.Element => {
     <Box component="footer" sx={sx.siteFooter}>
       <Container maxWidth="md" sx={sx.siteFooterContent}>
         <Box sx={sx.logoContainer}>
-          <Link href="/" passHref legacyBehavior>
+          <Link href="/" legacyBehavior passHref>
             <ButtonBase focusRipple>
               <SiteLogo height={9} />
             </ButtonBase>

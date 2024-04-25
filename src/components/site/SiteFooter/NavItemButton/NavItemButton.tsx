@@ -71,7 +71,7 @@ const NavItemButton = ({ navItem }: Props): JSX.Element => {
 
   if (navItem.type === `internalLink`) {
     return (
-      <Link href={navItem.internalPath} passHref legacyBehavior>
+      <Link href={navItem.internalPath} legacyBehavior passHref>
         <Button {...baseButtonProps} {...navItem.buttonProps} component="a">
           {navItem.label}
         </Button>

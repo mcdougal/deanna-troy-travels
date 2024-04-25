@@ -7,6 +7,7 @@ import {
   useTheme,
 } from '@mui/material';
 import Image, { ImageLoader } from 'next/legacy/image';
+
 import sx from './ImageDialog.styles';
 
 interface Props {

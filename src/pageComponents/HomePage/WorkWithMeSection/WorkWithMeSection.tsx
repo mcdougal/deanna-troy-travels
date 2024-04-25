@@ -35,7 +35,7 @@ const WorkWithMeSection = (): JSX.Element => {
         ranging from travel vlogs, travel advice, story-times and more!
       </Typography>
       <Box sx={sx.ctaContainer}>
-        <Link href="/work-with-me" passHref legacyBehavior>
+        <Link href="/work-with-me" legacyBehavior passHref>
           <Button
             color="primary"
             endIcon={<ArrowForwardIcon fontSize="small" />}

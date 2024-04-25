@@ -1,5 +1,6 @@
 import { Box, ButtonBase, Typography, useTheme } from '@mui/material';
 import Image from 'next/legacy/image';
+
 import { contentfulLoader } from '@lib/contentful';
 
 import { BlogFeature as IBlogFeature } from '../../getStaticProps';

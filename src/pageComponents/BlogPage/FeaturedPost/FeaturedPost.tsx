@@ -21,7 +21,7 @@ const FeaturedPost = ({ blogPost }: Props): JSX.Element => {
       <Typography sx={sx.featuredPostLabel} variant="body1">
         ✨ Featured Post
       </Typography>
-      <Link href={`/post/${blogPost.slug}`} passHref legacyBehavior>
+      <Link href={`/post/${blogPost.slug}`} legacyBehavior passHref>
         <ButtonBase component="a" focusRipple sx={sx.coverImageContainer}>
           <Image
             alt={thumbnail.alt}
@@ -45,7 +45,7 @@ const FeaturedPost = ({ blogPost }: Props): JSX.Element => {
         <Typography color="textSecondary" sx={sx.excerpt} variant="body1">
           {blogPost.excerpt}
         </Typography>
-        <Link href={`/post/${blogPost.slug}`} passHref legacyBehavior>
+        <Link href={`/post/${blogPost.slug}`} legacyBehavior passHref>
           <Button
             color="primary"
             component="a"

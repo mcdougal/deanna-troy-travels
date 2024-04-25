@@ -13,6 +13,7 @@ import {
 } from '@mui/material';
 import { InferGetStaticPropsType } from 'next';
 import Image from 'next/legacy/image';
+
 import { MediaCard } from '@components/generic';
 import {
   AmazonIcon,
