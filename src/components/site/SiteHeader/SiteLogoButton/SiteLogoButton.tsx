@@ -27,7 +27,7 @@ const SiteLogoButton = ({ hideLogoUntilScroll }: Props): JSX.Element => {
     <>
       <Grow appear={false} in={!hideLogoUntilScroll || trigger} mountOnEnter>
         <Box sx={sx.logoLinkContainer}>
-          <Link href="/" passHref>
+          <Link href="/" passHref legacyBehavior>
             <ButtonBase focusRipple sx={sx.logoContainer}>
               <SiteLogo height={5} variant="logoAndTitle" />
             </ButtonBase>

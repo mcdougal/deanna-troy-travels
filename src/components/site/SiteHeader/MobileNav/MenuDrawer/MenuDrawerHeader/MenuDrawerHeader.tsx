@@ -14,7 +14,7 @@ const MenuDrawerHeader = ({ onClickClose }: Props): JSX.Element => {
   return (
     <Box sx={sx.menuHeader}>
       <Box sx={sx.left}>
-        <Link href="/" passHref>
+        <Link href="/" passHref legacyBehavior>
           <ButtonBase focusRipple sx={sx.siteLogoContainer}>
             <SiteLogo height={5} variant="logoAndTitle" />
           </ButtonBase>

@@ -66,7 +66,7 @@ const SiteMenuListItem = ({ menuItem }: Props): JSX.Element => {
   if (menuItem.type === `internalLink`) {
     return (
       <ListItem {...listItemProps}>
-        <Link href={menuItem.internalPath} passHref>
+        <Link href={menuItem.internalPath} passHref legacyBehavior>
           <ListItemButton>
             <ListItemText {...listItemTextProps} />
           </ListItemButton>

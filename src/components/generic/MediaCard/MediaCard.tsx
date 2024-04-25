@@ -68,7 +68,7 @@ const MediaCard = ({
 
   if (url.startsWith(`/`)) {
     return (
-      <Link href={url} passHref>
+      <Link href={url} passHref legacyBehavior>
         <ButtonBase {...buttonBaseProps} component="a">
           {cardContent}
         </ButtonBase>

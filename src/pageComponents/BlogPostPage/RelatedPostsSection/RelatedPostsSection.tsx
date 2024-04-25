@@ -28,7 +28,7 @@ const RelatedPostsSection = ({ relatedBlogPosts }: Props): JSX.Element => {
         })}
       </Grid>
       <Box sx={sx.ctaContainer}>
-        <Link href="/blog" passHref>
+        <Link href="/blog" passHref legacyBehavior>
           <Button
             color="primary"
             endIcon={<ArrowForwardIcon fontSize="small" />}

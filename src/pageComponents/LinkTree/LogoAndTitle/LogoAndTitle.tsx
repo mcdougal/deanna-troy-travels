@@ -8,7 +8,7 @@ import sx from './LogoAndTitle.styles';
 const LogoAndTitle = (): JSX.Element => {
   return (
     <Box sx={sx.container}>
-      <Link href="/" passHref>
+      <Link href="/" passHref legacyBehavior>
         <ButtonBase focusRipple sx={sx.logoAndTitleContainer}>
           <SiteLogo height={8} />
           <Box sx={sx.titleContainer}>
