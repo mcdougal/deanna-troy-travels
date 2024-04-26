@@ -12,6 +12,9 @@ export default {
     marginTop: { xs: 8, md: 10 },
   },
   featuredPostsContainer: {
+    marginTop: { xs: 8, md: 10 },
+  },
+  subscribeToBlogContainer: {
     marginBottom: 20,
     marginTop: { xs: 8, md: 10 },
   },

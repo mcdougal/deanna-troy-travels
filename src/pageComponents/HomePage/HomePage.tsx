@@ -11,6 +11,7 @@ import InstagramSection from './InstagramSection';
 import LatestPostsSection from './LatestPostsSection';
 import LogoAndTitle from './LogoAndTitle';
 import PageMetadata from './PageMetadata';
+import SubscribeSection from './SubscribeSection';
 import WorkWithMeSection from './WorkWithMeSection';
 
 const HomePage = ({
@@ -39,6 +40,9 @@ const HomePage = ({
       </Box>
       <Box sx={sx.featuredPostsContainer}>
         <LatestPostsSection recentBlogPosts={recentBlogPosts} />
+      </Box>
+      <Box sx={sx.subscribeToBlogContainer}>
+        <SubscribeSection />
       </Box>
       <SiteFooter />
     </>
