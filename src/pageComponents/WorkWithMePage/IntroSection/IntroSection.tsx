@@ -12,7 +12,7 @@ const IntroSection = (): JSX.Element => {
   return (
     <Container component="section" maxWidth="md" sx={sx.introSectionContainer}>
       <Box sx={[sx.sectionTitleContainer, sx.sectionTitleContainerMobile]}>
-        <SectionTitle>Hey there! 👋</SectionTitle>
+        <SectionTitle>Let’s Chat! 😃</SectionTitle>
       </Box>
       <Box sx={sx.imageContainer}>
         <Image
@@ -30,7 +30,7 @@ const IntroSection = (): JSX.Element => {
       </Box>
       <Box>
         <Box sx={[sx.sectionTitleContainer, sx.sectionTitleContainerDesktop]}>
-          <SectionTitle variant="h4">Hey there! 👋</SectionTitle>
+          <SectionTitle variant="h4">Let’s Chat! 😃</SectionTitle>
         </Box>
         <Typography component="p" paragraph sx={sx.firstParagraph} variant="h5">
           Deanna is a travel influencer who creates YouTube content featuring
