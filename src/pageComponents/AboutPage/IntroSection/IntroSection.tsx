@@ -43,7 +43,7 @@ const IntroSection = (): JSX.Element => {
         and budget travel in Southeast Asia and Europe. In my videos series I
         give insight into local life and showcase different cultures around the
         world while inspiring others to explore! I’d love to have you join me
-        and my husband, Cedric, on our journeys worldwide! Find our socials
+        and my husband, Cedric, on our journeys worldwide! Find my socials
         below!
       </Typography>
     </Container>
