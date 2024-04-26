@@ -31,8 +31,9 @@ const WorkWithMeSection = (): JSX.Element => {
         />
       </Box>
       <Typography sx={sx.description} variant="body1">
-        I am a fun, outgoing and quirky Travel YouTuber. I produce travel videos
-        ranging from travel vlogs, travel advice, story-times and more!
+        Deanna is a travel influencer who creates YouTube content featuring
+        budget-friendly and vegan travel experiences in Southeast Asia, the
+        U.S.A. and Europe.
       </Typography>
       <Box sx={sx.ctaContainer}>
         <Link href="/work-with-me" legacyBehavior passHref>
