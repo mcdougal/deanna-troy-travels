@@ -55,7 +55,7 @@ const IntroSection = (): JSX.Element => {
           </Button>
           <Button
             color="primary"
-            href="mailto:deanna.troy.travels@gmail.com"
+            href="mailto:deanna.troy.henry@gmail.com"
             size="large"
             sx={sx.ctaButton}
             target="_blank"
