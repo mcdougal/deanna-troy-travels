@@ -11,10 +11,10 @@ export default {
   featuredPostContainer: {
     marginTop: 1,
   },
-  recentVideosContainer: {
-    marginTop: { xs: 8, md: 10 },
-  },
   blogPostsSectionContainer: {
+    marginTop: { xs: 6, md: 6 },
+  },
+  recentVideosContainer: {
     marginTop: { xs: 8, md: 10 },
   },
 };

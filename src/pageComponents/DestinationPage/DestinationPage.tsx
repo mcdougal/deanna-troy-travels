@@ -5,7 +5,6 @@ import { SiteFooter, SiteHeader } from '@components/site';
 
 import BlogPostsSection from './BlogPostsSection';
 import sx from './DestinationPage.styles';
-import FeaturedPost from './FeaturedPost';
 import getStaticProps from './getStaticProps';
 import PageMetadata from './PageMetadata';
 import VideosSection from './VideosSection';
@@ -22,8 +21,6 @@ const DestinationPage = ({
     );
   });
 
-  const [featuredPost, ...otherPosts] = sortedBlogPosts;
-
   return (
     <>
       <PageMetadata destination={destination} videos={videos} />
@@ -32,15 +29,10 @@ const DestinationPage = ({
         <Typography component="h1" sx={sx.title} variant="h2">
           {destination.name}
         </Typography>
-        {featuredPost && (
-          <Box sx={sx.featuredPostContainer}>
-            <FeaturedPost blogPost={featuredPost} />
-          </Box>
-        )}
-        {otherPosts.length > 0 && (
+        {sortedBlogPosts.length > 0 && (
           <Box sx={sx.blogPostsSectionContainer}>
             <BlogPostsSection
-              blogPosts={otherPosts}
+              blogPosts={sortedBlogPosts}
               destination={destination}
             />
           </Box>
