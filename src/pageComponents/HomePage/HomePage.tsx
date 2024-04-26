@@ -1,7 +1,9 @@
 import { Box } from '@mui/material';
 import type { InferGetStaticPropsType } from 'next';
+import Image from 'next/image';
 
 import { SiteFooter, SiteHeader } from '@components/site';
+import { cloudinaryLoader } from '@lib/cloudinary';
 
 import FeaturedVideosSection from './FeaturedVideosSection';
 import getStaticProps from './getStaticProps';
@@ -23,7 +25,18 @@ const HomePage = ({
       <PageMetadata recentVideos={recentVideos} />
       <SiteHeader hideLogoUntilScroll />
       <Box sx={sx.logoAndTitleContainer}>
-        <LogoAndTitle />
+        <Box sx={sx.logoBackground}>
+          <Image
+            alt="Hero image"
+            fill
+            loader={cloudinaryLoader}
+            src="/upload/deanna-troy-travels/home/hero2.jpg"
+            style={{ objectFit: `cover` }}
+          />
+        </Box>
+        <Box sx={sx.logoAndTitle}>
+          <LogoAndTitle />
+        </Box>
       </Box>
       <Box sx={sx.featuredVideosContainer}>
         <FeaturedVideosSection recentVideos={recentVideos} />

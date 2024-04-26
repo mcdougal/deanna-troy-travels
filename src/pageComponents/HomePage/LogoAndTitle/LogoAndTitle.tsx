@@ -12,7 +12,7 @@ const LogoAndTitle = (): JSX.Element => {
       <Typography component="h1" sx={sx.title} variant="h3">
         <Box sx={sx.deannaTroy}>Deanna Troy</Box> Travels
       </Typography>
-      <Typography sx={sx.subtitle} variant="caption">
+      <Typography sx={sx.subtitle} variant="body2">
         Budget Travel Vlogs
       </Typography>
       <Box sx={sx.subscribeButtonContainer}>

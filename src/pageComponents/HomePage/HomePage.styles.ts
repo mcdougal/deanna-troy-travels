@@ -1,10 +1,20 @@
 export default {
   logoAndTitleContainer: {
-    paddingBottom: 2,
-    marginTop: { md: 6 },
+    paddingBottom: { xs: 8, md: 8 },
+    paddingTop: { xs: 6, md: 6 },
+    position: `relative`,
+  },
+  logoBackground: {
+    filter: `brightness(1.1)`,
+    position: `absolute`,
+    inset: 0,
+    overflow: `hidden`,
+  },
+  logoAndTitle: {
+    position: `relative`,
   },
   featuredVideosContainer: {
-    marginTop: { xs: 6, md: 10 },
+    marginTop: { xs: 6, md: 8 },
   },
   subscribeToBlogContainer: {
     marginTop: { xs: 8, md: 10 },

@@ -5,18 +5,23 @@ export default {
     flexDirection: `column`,
   },
   deannaTroy: {
-    color: `primary.main`,
+    color: `white`,
     display: `inline`,
   },
   title: {
+    color: `white`,
     marginTop: 1,
+    textShadow: `0 0 200px rgba(0, 0, 0, 1), 0 0 100px rgba(0, 0, 0, 1), 0 0 10px rgba(0, 0, 0, 0.5)`,
   },
   subtitle: {
+    color: `white`,
+    fontWeight: 600,
     letterSpacing: `0.1em`,
     marginTop: 2,
     textTransform: `uppercase`,
+    textShadow: `0 0 200px rgba(0, 0, 0, 1), 0 0 100px rgba(0, 0, 0, 1), 0 0 10px rgba(0, 0, 0, 0.5)`,
   },
   subscribeButtonContainer: {
-    marginTop: 2,
+    marginTop: 3,
   },
 };
