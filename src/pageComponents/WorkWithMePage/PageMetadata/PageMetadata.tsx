@@ -6,8 +6,7 @@ import getStructuredData from './getStructuredData';
 const PageMetadata = (): JSX.Element => {
   const title = `Work With Me`;
 
-  const description = `I am a fun, outgoing and quirky Travel YouTuber. I produce travel videos
-  ranging from travel vlogs, travel advice, story-times and more!`;
+  const description = `Deanna is a travel influencer who creates YouTube content featuring budget-friendly and vegan travel experiences in Southeast Asia, the U.S.A. and Europe.`;
 
   const canonicalUrl = `https://www.deannatroytravels.com/work-with-me`;
 

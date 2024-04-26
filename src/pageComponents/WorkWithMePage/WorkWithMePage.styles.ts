@@ -5,8 +5,11 @@ export default {
   introSectionContainer: {
     marginTop: { xs: 6, md: 10 },
   },
-  servicesSectionContainer: {
+  workedWithSectionContainer: {
     marginTop: { xs: 8, md: 10 },
+  },
+  servicesSectionContainer: {
+    marginTop: { xs: 6, md: 6 },
   },
   testimonialsSectionContainer: {
     marginTop: { xs: 7, md: 10 },

@@ -27,10 +27,14 @@ export default {
   },
   firstParagraph: {
     fontWeight: `fontWeightRegular`,
-    lineHeight: 1.7,
+    lineHeight: 1.5,
+  },
+  secondParagraph: {
+    lineHeight: 1.6,
   },
   ctaContainer: {
     display: `flex`,
+    gap: 2,
     justifyContent: { xs: `center`, sm: `flex-start` },
     marginTop: 4,
   },

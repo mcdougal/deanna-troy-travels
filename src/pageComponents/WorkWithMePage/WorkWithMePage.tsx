@@ -11,6 +11,7 @@ import IntroSection from './IntroSection';
 import PageMetadata from './PageMetadata';
 import ServicesSection from './ServicesSection';
 import TestimonialsSection from './TestimonialsSection';
+import WorkedWithSection from './WorkedWithSection';
 import sx from './WorkWithMePage.styles';
 
 const WorkWithMePage = ({
@@ -25,6 +26,9 @@ const WorkWithMePage = ({
       </Box>
       <Box sx={sx.introSectionContainer}>
         <IntroSection />
+      </Box>
+      <Box sx={sx.workedWithSectionContainer}>
+        <WorkedWithSection />
       </Box>
       <Box sx={sx.servicesSectionContainer}>
         <ServicesSection />

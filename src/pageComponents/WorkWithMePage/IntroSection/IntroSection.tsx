@@ -1,4 +1,3 @@
-import OpenInNewIcon from '@mui/icons-material/OpenInNew';
 import { Box, Button, Container, Typography, useTheme } from '@mui/material';
 import Image from 'next/legacy/image';
 
@@ -34,25 +33,34 @@ const IntroSection = (): JSX.Element => {
           <SectionTitle variant="h4">Hey there! 👋</SectionTitle>
         </Box>
         <Typography component="p" paragraph sx={sx.firstParagraph} variant="h5">
-          I am a fun, outgoing and quirky Travel YouTuber. I produce travel
-          videos ranging from travel vlogs, travel advice, story-times and more!
+          Deanna is a travel influencer who creates YouTube content featuring
+          budget-friendly and vegan travel experiences in Southeast Asia, the
+          U.S.A. and Europe.
         </Typography>
-        <Typography variant="body1">
-          I focus on long-term backpacking, living abroad in Vietnam and
-          Southeast Asian travel. Using funny, serious and enlightening content,
-          I showcase different cultures while inspiring others to explore the
-          world!
+        <Typography paragraph sx={sx.secondParagraph} variant="body1">
+          Deanna is featured on RokuTV, HideoutTV and NaviSavi. She has created
+          sponsored content for the electronic companies Vasco and Hohem. She is
+          an ideal influencer to promote travel, budget, vegan, or eco-friendly
+          products, lodging, or experiences.
         </Typography>
         <Box sx={sx.ctaContainer}>
           <Button
             color="primary"
-            endIcon={<OpenInNewIcon />}
             href="https://www.canva.com/design/DAF7iYLoQQ8/NzsH1KR4NGMalI3KvLCBhw/view"
             size="large"
             sx={sx.ctaButton}
             target="_blank"
+            variant="outlined">
+            Résumé
+          </Button>
+          <Button
+            color="primary"
+            href="mailto:deanna.troy.travels@gmail.com"
+            size="large"
+            sx={sx.ctaButton}
+            target="_blank"
             variant="contained">
-            Resume
+            Email Deanna
           </Button>
         </Box>
       </Box>

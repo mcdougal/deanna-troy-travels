@@ -9,10 +9,4 @@ export default {
     color: `primary.main`,
     display: `inline`,
   },
-  imageSection: {
-    padding: 2,
-  },
-  imageContainer: {
-    position: `relative`,
-  },
 };
