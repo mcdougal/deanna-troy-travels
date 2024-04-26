@@ -11,7 +11,7 @@ export default {
   title: {
     color: `white`,
     marginTop: 1,
-    textShadow: `0 0 200px rgba(0, 0, 0, 1), 0 0 100px rgba(0, 0, 0, 1), 0 0 10px rgba(0, 0, 0, 0.5)`,
+    textShadow: `0 0 300px rgba(0, 0, 0, 1),0 0 250px rgba(0, 0, 0, 1),0 0 50px rgba(0, 0, 0, 1),0 0 10px rgba(0, 0, 0, 0.5)`,
   },
   subtitle: {
     color: `white`,
@@ -19,7 +19,7 @@ export default {
     letterSpacing: `0.1em`,
     marginTop: 2,
     textTransform: `uppercase`,
-    textShadow: `0 0 200px rgba(0, 0, 0, 1), 0 0 100px rgba(0, 0, 0, 1), 0 0 10px rgba(0, 0, 0, 0.5)`,
+    textShadow: `0 0 300px rgba(0, 0, 0, 1),0 0 250px rgba(0, 0, 0, 1),0 0 50px rgba(0, 0, 0, 1),0 0 10px rgba(0, 0, 0, 0.5)`,
   },
   subscribeButtonContainer: {
     marginTop: 3,

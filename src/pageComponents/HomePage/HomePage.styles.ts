@@ -1,7 +1,7 @@
 export default {
   logoAndTitleContainer: {
-    paddingBottom: { xs: 8, md: 8 },
-    paddingTop: { xs: 6, md: 6 },
+    paddingBottom: { xs: 8, md: 16 },
+    paddingTop: { xs: 6, md: 14 },
     position: `relative`,
   },
   logoBackground: {
