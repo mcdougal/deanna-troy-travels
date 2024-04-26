@@ -28,8 +28,8 @@ const HomePage = ({
       <Box sx={sx.featuredVideosContainer}>
         <FeaturedVideosSection recentVideos={recentVideos} />
       </Box>
-      <Box sx={sx.workWithMeContainer}>
-        <WorkWithMeSection />
+      <Box sx={sx.subscribeToBlogContainer}>
+        <SubscribeSection />
       </Box>
       <Box sx={sx.instagramContainer}>
         <InstagramSection recentInstagramPosts={recentInstagramPosts} />
@@ -37,8 +37,8 @@ const HomePage = ({
       <Box sx={sx.featuredPostsContainer}>
         <LatestPostsSection recentBlogPosts={recentBlogPosts} />
       </Box>
-      <Box sx={sx.subscribeToBlogContainer}>
-        <SubscribeSection />
+      <Box sx={sx.workWithMeContainer}>
+        <WorkWithMeSection />
       </Box>
       <SiteFooter />
     </>

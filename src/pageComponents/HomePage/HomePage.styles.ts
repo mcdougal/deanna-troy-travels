@@ -6,7 +6,7 @@ export default {
   featuredVideosContainer: {
     marginTop: { xs: 6, md: 10 },
   },
-  workWithMeContainer: {
+  subscribeToBlogContainer: {
     marginTop: { xs: 8, md: 10 },
   },
   instagramContainer: {
@@ -15,7 +15,7 @@ export default {
   featuredPostsContainer: {
     marginTop: { xs: 8, md: 10 },
   },
-  subscribeToBlogContainer: {
+  workWithMeContainer: {
     marginBottom: 20,
     marginTop: { xs: 8, md: 10 },
   },
