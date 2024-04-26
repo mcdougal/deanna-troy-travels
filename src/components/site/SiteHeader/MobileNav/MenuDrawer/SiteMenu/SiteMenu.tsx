@@ -14,9 +14,9 @@ const SiteMenu = (): JSX.Element => {
   const menuItems: Array<SiteMenuItem> = [
     {
       type: `internalLink`,
-      key: `workWithMe`,
-      label: `Work With Me`,
-      internalPath: `/work-with-me`,
+      key: `destinations`,
+      label: `Destinations`,
+      internalPath: `/destinations`,
     },
     {
       type: `externalLink`,
@@ -26,15 +26,15 @@ const SiteMenu = (): JSX.Element => {
     },
     {
       type: `internalLink`,
-      key: `destinations`,
-      label: `Destinations`,
-      internalPath: `/destinations`,
-    },
-    {
-      type: `internalLink`,
       key: `blog`,
       label: `Blog`,
       internalPath: `/blog`,
+    },
+    {
+      type: `internalLink`,
+      key: `workWithMe`,
+      label: `Work With Me`,
+      internalPath: `/work-with-me`,
     },
     {
       type: `internalLink`,
