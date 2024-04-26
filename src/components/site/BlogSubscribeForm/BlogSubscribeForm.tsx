@@ -30,11 +30,12 @@ const BlogSubscribeForm = (): JSX.Element => {
         variant="outlined"
       />
       <Button
-        color="primary"
+        color="secondary"
+        fullWidth
         size="large"
         sx={sx.submitButton}
         type="submit"
-        variant="contained">
+        variant="outlined">
         Subscribe
       </Button>
     </form>

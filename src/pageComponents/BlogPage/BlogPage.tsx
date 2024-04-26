@@ -1,7 +1,11 @@
 import { Box, Container, Typography } from '@mui/material';
 import type { InferGetStaticPropsType } from 'next';
 
-import { SiteFooter, SiteHeader } from '@components/site';
+import {
+  BlogSubscribeContainer,
+  SiteFooter,
+  SiteHeader,
+} from '@components/site';
 
 import sx from './BlogPage.styles';
 import BlogPostsSection from './BlogPostsSection';
@@ -32,6 +36,11 @@ const BlogPage = ({
         <Box sx={sx.featuredPostContainer}>
           <FeaturedPost blogPost={featuredPost} />
         </Box>
+        <Box sx={sx.subscribeSectionContainerTop}>
+          <BlogSubscribeContainer>
+            <SubscribeSection />
+          </BlogSubscribeContainer>
+        </Box>
         {Object.entries(blogPostByCategory).map(([title, posts]) => {
           return (
             <Box key={title} sx={sx.blogPostsSectionContainer}>
@@ -39,7 +48,7 @@ const BlogPage = ({
             </Box>
           );
         })}
-        <Box sx={sx.subscribeSectionContainer}>
+        <Box sx={sx.subscribeSectionContainerBottom}>
           <SubscribeSection />
         </Box>
       </Container>

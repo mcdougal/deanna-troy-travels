@@ -1,5 +1,3 @@
-import { spacing } from '@lib/mui';
-
 export default {
   title: {
     marginBottom: { xs: 4, sm: 6 },
@@ -14,12 +12,14 @@ export default {
     marginBottom: 1,
     marginTop: 1,
   },
+  subscribeSectionContainerTop: {
+    marginTop: { xs: 7, md: 7 },
+  },
   blogPostsSectionContainer: {
     marginTop: { xs: 7, md: 9 },
   },
-  subscribeSectionContainer: {
+  subscribeSectionContainerBottom: {
     marginBottom: 20,
     marginTop: { xs: 8, md: 10 },
-    maxWidth: spacing(70),
   },
 };
