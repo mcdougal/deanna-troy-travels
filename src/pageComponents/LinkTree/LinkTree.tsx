@@ -143,19 +143,26 @@ const LinkTree = ({
           );
         })}
       </Box>
-      <Box sx={sx.shops}>
-        {shops.map(({ icon, label, url }) => {
-          return (
-            <IconButton
-              key={label}
-              component="a"
-              href={url}
-              target="_blank"
-              title={label}>
-              {icon}
-            </IconButton>
-          );
-        })}
+      <Box mt={5}>
+        <Box mb={2}>
+          <Typography align="center" variant="h5">
+            Shops
+          </Typography>
+        </Box>
+        <Box sx={sx.shops}>
+          {shops.map(({ icon, label, url }) => {
+            return (
+              <IconButton
+                key={label}
+                component="a"
+                href={url}
+                target="_blank"
+                title={label}>
+                {icon}
+              </IconButton>
+            );
+          })}
+        </Box>
       </Box>
       {playlistVideos.length > 0 && (
         <Box pt={4} sx={sx.mostRecentVideoSection}>

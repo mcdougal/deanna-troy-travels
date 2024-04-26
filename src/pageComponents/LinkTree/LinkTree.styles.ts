@@ -14,7 +14,7 @@ export default {
     alignItems: `center`,
     display: `flex`,
     flexDirection: `column`,
-    gap: 1,
+    gap: 2,
     marginTop: {
       xs: 2,
       sm: 3,
@@ -38,13 +38,13 @@ export default {
     overflow: `hidden`,
   },
   linkLabel: {
-    fontWeight: `600`,
+    fontWeight: `400`,
     fontSize: {
-      xs: `1.1rem`,
-      sm: `1.1rem`,
-      md: `1.1rem`,
-      lg: `1.1rem`,
-      xl: `1.1rem`,
+      xs: `0.9rem`,
+      sm: `0.9rem`,
+      md: `0.9rem`,
+      lg: `0.9rem`,
+      xl: `0.9rem`,
     },
     letterSpacing: `0.8px`,
     marginLeft: 2,
@@ -54,7 +54,6 @@ export default {
     justifyContent: `center`,
     gap: 2,
     marginBottom: 1,
-    marginTop: 3,
   },
   mostRecentVideoSection: {
     marginTop: 1,
