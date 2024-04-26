@@ -26,11 +26,11 @@ const IntroSection = (): JSX.Element => {
         />
       </Box>
       <Typography component="h1" sx={sx.title} variant="h2">
-        Hello!
+        Hey there! 👋
       </Typography>
       <Typography component="p" paragraph sx={sx.firstParagraph} variant="h5">
         Deanna Troy Travels started in 2016 during a two year long backpacking
-        adventure. From 2016 to 2018, my now husband and I traveled all over
+        adventure. From 2016 to 2018, my husband and I traveled all over
         Southeast Asia.
       </Typography>
       <Typography paragraph variant="body1">
@@ -39,16 +39,12 @@ const IntroSection = (): JSX.Element => {
         Australia, Japan and Taiwan.
       </Typography>
       <Typography paragraph variant="body1">
-        As a travel video creator, I’ve worked on videos with various travel
-        companies such as SafetyWing, GoAsiaDayTrip, Amerii and Travello, and
-        I’ve starred in three company-made commercials in Asia and Boston. I’m
-        also a featured travel video creator on the streaming services RokuTV
-        and HideoutTV. This year I was included in FeedSpots Top 100 Solo Female
-        Travel Youtube Channels list.
-      </Typography>
-      <Typography paragraph variant="body1">
-        The majority of my videos are currently about Vietnam and Japan. Stay
-        tuned for my Malaysia video series coming soon!
+        I am a fun, outgoing and quirky travel content creator. I focus on vegan
+        and budget travel in Southeast Asia and Europe. In my videos series I
+        give insight into local life and showcase different cultures around the
+        world while inspiring others to explore! I’d love to have you join me
+        and my husband, Cedric, on our journeys worldwide! Find our socials
+        below!
       </Typography>
     </Container>
   );
