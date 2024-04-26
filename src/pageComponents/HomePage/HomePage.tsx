@@ -5,7 +5,6 @@ import { SiteFooter, SiteHeader } from '@components/site';
 
 import FeaturedVideosSection from './FeaturedVideosSection';
 import getStaticProps from './getStaticProps';
-import HeroImage from './HeroImage';
 import sx from './HomePage.styles';
 import InstagramSection from './InstagramSection';
 import LatestPostsSection from './LatestPostsSection';
@@ -25,9 +24,6 @@ const HomePage = ({
       <SiteHeader hideLogoUntilScroll />
       <Box sx={sx.logoAndTitleContainer}>
         <LogoAndTitle />
-      </Box>
-      <Box>
-        <HeroImage />
       </Box>
       <Box sx={sx.featuredVideosContainer}>
         <FeaturedVideosSection recentVideos={recentVideos} />

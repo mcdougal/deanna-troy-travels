@@ -20,7 +20,7 @@ const FeaturedVideosSection = ({ recentVideos }: Props): JSX.Element => {
   return (
     <Container component="section" maxWidth="md">
       <Box sx={sx.sectionTitleContainer}>
-        <SectionTitle>Featured Videos 🎥</SectionTitle>
+        <SectionTitle>Latest Videos 🎥</SectionTitle>
       </Box>
       <Grid alignItems="stretch" container spacing={2}>
         {recentVideos.map((recentVideo) => {

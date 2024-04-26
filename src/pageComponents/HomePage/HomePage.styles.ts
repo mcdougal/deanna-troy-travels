@@ -1,6 +1,7 @@
 export default {
   logoAndTitleContainer: {
     paddingBottom: 2,
+    marginTop: { md: 6 },
   },
   featuredVideosContainer: {
     marginTop: { xs: 6, md: 10 },
