@@ -7,6 +7,7 @@ export interface Destination {
     };
   };
   name: string;
+  order: number;
   slug: string;
   thumbnail: {
     description: string;
@@ -30,6 +31,7 @@ export default async (): Promise<Array<Destination>> => {
               }
             }
             name
+            order
             slug
             thumbnail {
               description
