@@ -16,7 +16,7 @@ export interface YouTubeVideo {
 
 export default async (): Promise<Array<YouTubeVideo>> => {
   const playlistItems = await fetchPlaylistItems(ALL_VIDEOS_PLAYLIST_ID, {
-    maxResults: 3,
+    maxResults: 10,
   });
 
   const videoIds = playlistItems.map((playlistItem) => {
@@ -25,10 +25,16 @@ export default async (): Promise<Array<YouTubeVideo>> => {
 
   const videos = await fetchYouTubeVideos(videoIds);
 
-  return playlistItems.map((playlistItem, i) => {
-    const video = videos[i];
+  const playlistVideos: Array<YouTubeVideo> = [];
 
-    return {
+  playlistItems.forEach((playlistItem) => {
+    const video = videos.get(playlistItem.contentDetails.videoId);
+
+    if (!video || playlistVideos.length >= 3) {
+      return;
+    }
+
+    playlistVideos.push({
       commentCount: parseInt(video.statistics.commentCount, 10),
       description: video.snippet.description,
       duration: video.contentDetails.duration,
@@ -40,6 +46,8 @@ export default async (): Promise<Array<YouTubeVideo>> => {
       title: playlistItem.snippet.title,
       videoId: playlistItem.contentDetails.videoId,
       viewCount: parseInt(video.statistics.viewCount, 10),
-    };
+    });
   });
+
+  return playlistVideos;
 };

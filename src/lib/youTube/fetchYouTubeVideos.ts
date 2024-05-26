@@ -61,7 +61,7 @@ export interface YouTubeVideo {
 
 export default async (
   videoIds: Array<string>,
-): Promise<Array<YouTubeVideo>> => {
+): Promise<Map<string, YouTubeVideo | null>> => {
   const { GOOGLE_CLOUD_API_KEY } = process.env;
 
   if (!GOOGLE_CLOUD_API_KEY) {
@@ -78,15 +78,11 @@ export default async (
     videoUrl,
   );
 
-  const numVideos = videoResponse.data.items.length;
+  const videos = new Map<string, YouTubeVideo | null>();
 
-  if (numVideos !== videoIds.length) {
-    const videoIdsFormatted = videoIds.join(`, `);
+  videoResponse.data.items.forEach((video) => {
+    videos.set(video.id, video);
+  });
 
-    throw new Error(
-      `${numVideos} YouTube videos found for ${videoIds.length} IDs: ${videoIdsFormatted}`,
-    );
-  }
-
-  return videoResponse.data.items;
+  return videos;
 };

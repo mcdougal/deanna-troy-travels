@@ -23,8 +23,14 @@ export default async (playlistId: string): Promise<Array<YouTubeVideo>> => {
 
   const videos = await fetchYouTubeVideos(videoIds);
 
-  return playlistItems.map((playlistItem, i) => {
-    const video = videos[i];
+  const playlistVideos: Array<YouTubeVideo> = [];
+
+  playlistItems.forEach((playlistItem) => {
+    const video = videos.get(playlistItem.contentDetails.videoId);
+
+    if (!video) {
+      return;
+    }
 
     return {
       commentCount: parseInt(video.statistics.commentCount, 10),
@@ -40,4 +46,6 @@ export default async (playlistId: string): Promise<Array<YouTubeVideo>> => {
       viewCount: parseInt(video.statistics.viewCount, 10),
     };
   });
+
+  return playlistVideos;
 };
