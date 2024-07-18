@@ -146,7 +146,7 @@ const LinkTree = ({
       <Box mt={5}>
         <Box mb={2}>
           <Typography align="center" variant="h5">
-            Shops
+            Online Shops
           </Typography>
         </Box>
         <Box sx={sx.shops}>
