@@ -46,6 +46,10 @@ const run = async (): Promise<void> => {
   });
 
   recentBlogPosts.forEach((blogPost) => {
+    if (blogPost.slug === `vegan-food-in-stockholm-sweden`) {
+      return;
+    }
+
     const thumbnail = getBlogPostThumbnail(blogPost);
 
     feed.addItem({
