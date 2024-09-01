@@ -33,7 +33,7 @@ const WorkedWithSection = (): JSX.Element => {
               layout="intrinsic"
               loader={cloudinaryLoader}
               priority
-              src="/upload/deanna-troy-travels/work-with-me/as-seen-on-globe.jpg"
+              src="/upload/deanna-troy-travels/work-with-me/as-seen-on-globe-2024-09-01.png"
               width={asSeenOnGlobeWidth}
             />
           </Box>

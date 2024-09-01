@@ -46,7 +46,7 @@ const IntroSection = (): JSX.Element => {
         <Box sx={sx.ctaContainer}>
           <Button
             color="primary"
-            href="https://www.canva.com/design/DAF7iYLoQQ8/NzsH1KR4NGMalI3KvLCBhw/view"
+            href="https://www.canva.com/design/DAGPEesf8x0/_7auoRKDGPCke1vBn0c0TA/view"
             size="large"
             sx={sx.ctaButton}
             target="_blank"

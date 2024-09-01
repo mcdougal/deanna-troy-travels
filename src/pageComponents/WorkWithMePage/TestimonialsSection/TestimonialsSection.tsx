@@ -13,6 +13,11 @@ const TestimonialsSection = (): JSX.Element => {
       </Box>
       <Box sx={sx.testimonialsContainer}>
         <Testimonial
+          company="SafetyWing"
+          person="Julia Masselos"
+          testimonial="Working with Deanna was easy and hassle-free. She's super communicative, enthusiastic, and a pleasure to collaborate with!"
+        />
+        <Testimonial
           company="Our Awesome Planet"
           person="Anton Diaz"
           testimonial="It's awesome to watch and learn from Deanna's travel vlog feature of her travel experiences in South East Asia, Japan and the US in her vlog Deanna Troy Travels. I met her personally during the Travel Blogging Conference (TBEX) 2018 at NY Finger Lakes and I learned a thing or two on how to shoot a vlog feature. She's one of the travel channels I follow in YT to get fresh perspectives on the destinations and vlogging."
