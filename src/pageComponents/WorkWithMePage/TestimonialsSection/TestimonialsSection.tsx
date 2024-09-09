@@ -13,6 +13,11 @@ const TestimonialsSection = (): JSX.Element => {
       </Box>
       <Box sx={sx.testimonialsContainer}>
         <Testimonial
+          company="Prazoli Products"
+          person="Cathy"
+          testimonial="Working with Deanna as a content creator for Prazoli Products was an absolute pleasure. She brought our Couple’s Travel Journal to life across multiple platforms, creating an engaging Instagram reel, a detailed travel video on YouTube, and a heartfelt blog post. Her thoughtful insights and genuine enthusiasm truly captured the essence of our product, resonating with her audience in a way that felt authentic and impactful."
+        />
+        <Testimonial
           company="SafetyWing"
           person="Julia Masselos"
           testimonial="Working with Deanna was easy and hassle-free. She's super communicative, enthusiastic, and a pleasure to collaborate with!"
