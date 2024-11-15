@@ -48,7 +48,7 @@ const SiteLogo = ({ height, variant = `logoOnly` }: Props): JSX.Element => {
       />
       {variant === `logoAndTitle` && (
         <Typography component="span" sx={sx.logoText} variant={titleVariant}>
-          <Box sx={sx.deannaTroy}>Deanna Troy</Box> Travels
+          <Box>Deanna Troy</Box> Travels
         </Typography>
       )}
     </Box>

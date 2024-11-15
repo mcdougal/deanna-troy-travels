@@ -18,13 +18,7 @@ const SquigglyDividerSvg = forwardRef<Ref, Props>(
         component="svg"
         fill="none"
         role="img"
-        sx={[
-          {
-            // opacity: 0.8,
-            color: `primary.main`,
-          },
-          ...(Array.isArray(sx) ? sx : [sx]),
-        ]}
+        sx={[{ color: `primary.main` }, ...(Array.isArray(sx) ? sx : [sx])]}
         viewBox="0 0 768 55"
         xmlns="http://www.w3.org/2000/svg">
         <path

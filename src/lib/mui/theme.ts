@@ -1,7 +1,6 @@
 import { red } from '@mui/material/colors';
 import { createTheme, responsiveFontSizes } from '@mui/material/styles';
 
-// Create a theme instance.
 const theme = createTheme({
   components: {
     MuiButton: {
@@ -72,9 +71,6 @@ const theme = createTheme({
     error: {
       main: red.A400,
     },
-    // text: {
-    //   primary: `#000`,
-    // },
   },
   typography: {
     fontFamily: `Fredoka, Arial`,

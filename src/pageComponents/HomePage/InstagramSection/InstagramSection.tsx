@@ -1,5 +1,4 @@
-import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
-import { Box, Button, ButtonBase, Container, Grid } from '@mui/material';
+import { Box, ButtonBase, Container, Grid } from '@mui/material';
 import Image from 'next/legacy/image';
 
 import { SectionCta, SectionTitle } from '@components/site';
