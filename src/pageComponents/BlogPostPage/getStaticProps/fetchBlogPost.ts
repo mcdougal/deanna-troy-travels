@@ -58,6 +58,7 @@ export interface BlogPost {
   publishedDate: string;
   slug: string;
   sys: {
+    id: string;
     publishedAt: string;
   };
   tags: Array<string>;
@@ -129,6 +130,7 @@ export default async (slug: string): Promise<BlogPost | null> => {
             publishedDate
             slug
             sys {
+              id
               publishedAt
             }
             tags

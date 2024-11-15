@@ -1,5 +1,3 @@
-import { useEffect } from 'react';
-
 interface Props {
   includeCaption: boolean;
   postId: string;
@@ -9,20 +7,6 @@ const EmbeddedInstagramPost = ({
   includeCaption,
   postId,
 }: Props): JSX.Element => {
-  useEffect(() => {
-    const scriptElem = document.createElement(`script`);
-
-    scriptElem.async = true;
-    scriptElem.defer = true;
-    scriptElem.src = `https://www.instagram.com/embed.js`;
-
-    const body: HTMLElement | null = document.body;
-
-    if (body) {
-      body.appendChild(scriptElem);
-    }
-  }, []);
-
   const captionedAttribute = includeCaption ? `data-instgrm-captioned` : ``;
 
   return (
