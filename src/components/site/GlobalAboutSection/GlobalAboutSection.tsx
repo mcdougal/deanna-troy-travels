@@ -1,4 +1,3 @@
-import CheckroomIcon from '@mui/icons-material/Checkroom';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import YouTubeIcon from '@mui/icons-material/YouTube';
@@ -47,16 +46,6 @@ const GlobalAboutSection = ({
       url: `https://www.facebook.com/deannatroytravels`,
     },
     {
-      icon: <CheckroomIcon />,
-      label: `The Thrift Den`,
-      url: `https://www.facebook.com/thethriftden`,
-    },
-    {
-      icon: <PoshmarkIcon />,
-      label: `Poshmark`,
-      url: `https://poshmark.com/closet/deannatroyshop`,
-    },
-    {
       icon: <TikTokIcon />,
       label: `TikTok`,
       url: `https://www.tiktok.com/@deannatroytravels`,
@@ -65,6 +54,11 @@ const GlobalAboutSection = ({
       icon: <AmazonIcon />,
       label: `Amazon`,
       url: `https://www.amazon.com/shop/deannatroytravels`,
+    },
+    {
+      icon: <PoshmarkIcon />,
+      label: `Poshmark`,
+      url: `https://poshmark.com/closet/deannatroyshop`,
     },
   ];
 

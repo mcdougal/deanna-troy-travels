@@ -8,6 +8,7 @@ import {
   PageTitle,
   SiteFooter,
   SiteHeader,
+  VideoMediaCard,
 } from '@components/site';
 
 import sx from './DestinationPage.styles';
@@ -24,6 +25,16 @@ const DestinationPage = ({
     return (
       new Date(b.publishedDate).getTime() - new Date(a.publishedDate).getTime()
     );
+  });
+
+  const blogPostVideoIdsSet = new Set(
+    blogPosts.map((blogPost) => {
+      return blogPost.youTubeVideoId;
+    }),
+  );
+
+  const videosWithoutBlogPosts = videos.filter((video) => {
+    return !blogPostVideoIdsSet.has(video.videoId);
   });
 
   return (
@@ -72,6 +83,17 @@ const DestinationPage = ({
                       sm={destination ? 12 : 6}
                       xs={12}>
                       <BlogPostMediaCard blogPost={blogPost} size="lg" />
+                    </Grid>
+                  );
+                })}
+                {videosWithoutBlogPosts.map((video) => {
+                  return (
+                    <Grid
+                      key={video.videoId}
+                      item
+                      sm={destination ? 12 : 6}
+                      xs={12}>
+                      <VideoMediaCard size="lg" video={video} />
                     </Grid>
                   );
                 })}

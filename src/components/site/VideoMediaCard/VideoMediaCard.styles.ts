@@ -1,7 +1,4 @@
 export default {
-  sectionTitleContainer: {
-    marginBottom: 3,
-  },
   viewsIcon: {
     fontSize: 14,
   },

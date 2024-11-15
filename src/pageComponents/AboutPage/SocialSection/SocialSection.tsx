@@ -26,11 +26,6 @@ const SocialSection = (): JSX.Element => {
       url: `https://www.facebook.com/deannatroytravels`,
     },
     {
-      icon: <PoshmarkIcon sx={sx.poshmarkIcon} />,
-      label: `Poshmark`,
-      url: `https://poshmark.com/closet/deannatroyshop`,
-    },
-    {
       icon: <TikTokIcon sx={sx.tikTokIcon} />,
       label: `TikTok`,
       url: `https://www.tiktok.com/@deannatroytravels`,
@@ -39,6 +34,11 @@ const SocialSection = (): JSX.Element => {
       icon: <AmazonIcon sx={sx.amazonIcon} />,
       label: `Amazon`,
       url: `https://www.amazon.com/shop/deannatroytravels`,
+    },
+    {
+      icon: <PoshmarkIcon sx={sx.poshmarkIcon} />,
+      label: `Poshmark`,
+      url: `https://poshmark.com/closet/deannatroyshop`,
     },
   ];
 

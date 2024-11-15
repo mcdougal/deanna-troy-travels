@@ -12,6 +12,7 @@ import SiteFooter from './SiteFooter';
 import SiteHeader from './SiteHeader';
 import SiteLogo from './SiteLogo';
 import SocialsMenu, { SocialsMenuAnchor } from './SocialsMenu';
+import VideoMediaCard from './VideoMediaCard';
 
 export type { SocialsMenuAnchor };
 
@@ -30,4 +31,5 @@ export {
   SiteHeader,
   SiteLogo,
   SocialsMenu,
+  VideoMediaCard,
 };
