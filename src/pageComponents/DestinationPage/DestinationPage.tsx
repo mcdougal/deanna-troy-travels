@@ -1,47 +1,109 @@
-import { Box, Container, Typography } from '@mui/material';
+import { Box, Button, Container, Grid, Stack } from '@mui/material';
 import type { InferGetStaticPropsType } from 'next';
+import Link from 'next/link';
 
-import { SiteFooter, SiteHeader } from '@components/site';
+import {
+  BlogPostMediaCard,
+  GlobalAboutSection,
+  PageTitle,
+  SiteFooter,
+  SiteHeader,
+  VideoMediaCard,
+} from '@components/site';
 
-import BlogPostsSection from './BlogPostsSection';
 import sx from './DestinationPage.styles';
 import getStaticProps from './getStaticProps';
 import PageMetadata from './PageMetadata';
-import VideosSection from './VideosSection';
 
 const DestinationPage = ({
+  blogPosts,
   destination,
+  destinations,
   videos,
 }: InferGetStaticPropsType<typeof getStaticProps>): React.ReactElement => {
-  const blogPosts = destination.linkedFrom.blogPostCollection.items;
-
   const sortedBlogPosts = [...blogPosts].sort((a, b) => {
     return (
       new Date(b.publishedDate).getTime() - new Date(a.publishedDate).getTime()
     );
   });
 
+  const blogPostVideoIdsSet = new Set(
+    blogPosts.map((blogPost) => {
+      return blogPost.youTubeVideoId;
+    }),
+  );
+
+  const videosWithoutBlogPosts = videos.filter((video) => {
+    return !blogPostVideoIdsSet.has(video.videoId);
+  });
+
   return (
     <>
-      <PageMetadata destination={destination} videos={videos} />
+      <PageMetadata
+        blogPosts={blogPosts}
+        destination={destination}
+        videos={videos}
+      />
       <SiteHeader />
-      <Container maxWidth="md" sx={sx.pageContainer}>
-        <Typography component="h1" sx={sx.title} variant="h2">
-          {destination.name}
-        </Typography>
-        {sortedBlogPosts.length > 0 && (
-          <Box sx={sx.blogPostsSectionContainer}>
-            <BlogPostsSection
-              blogPosts={sortedBlogPosts}
-              destination={destination}
-            />
+      <Container maxWidth="lg" sx={sx.pageContainer}>
+        <PageTitle>{destination?.name ?? `Travel Blog`}</PageTitle>
+        <Stack
+          direction="row"
+          flexWrap="wrap"
+          justifyContent="center"
+          sx={sx.filters}>
+          <Link href="/blog" passHref>
+            <Button color="inherit" size="small" variant="text">
+              All
+            </Button>
+          </Link>
+          {destinations.map((d) => {
+            return (
+              <Link key={d.slug} href={`/${d.slug}`} passHref>
+                <Button color="inherit" size="small" variant="text">
+                  {d.name}
+                </Button>
+              </Link>
+            );
+          })}
+        </Stack>
+        <Box sx={sx.content}>
+          {sortedBlogPosts.length > 0 && (
+            <Box>
+              <Grid
+                alignItems="start"
+                columnSpacing={4}
+                container
+                rowSpacing={7}>
+                {blogPosts.map((blogPost) => {
+                  return (
+                    <Grid
+                      key={blogPost.slug}
+                      item
+                      sm={destination ? 12 : 6}
+                      xs={12}>
+                      <BlogPostMediaCard blogPost={blogPost} size="lg" />
+                    </Grid>
+                  );
+                })}
+                {videosWithoutBlogPosts.map((video) => {
+                  return (
+                    <Grid
+                      key={video.videoId}
+                      item
+                      sm={destination ? 12 : 6}
+                      xs={12}>
+                      <VideoMediaCard size="lg" video={video} />
+                    </Grid>
+                  );
+                })}
+              </Grid>
+            </Box>
+          )}
+          <Box sx={sx.globalAboutSectionContainer}>
+            <GlobalAboutSection includeImage={false} variant="short" />
           </Box>
-        )}
-        {videos.length > 0 && (
-          <Box sx={sx.recentVideosContainer}>
-            <VideosSection recentVideos={videos} />
-          </Box>
-        )}
+        </Box>
       </Container>
       <SiteFooter />
     </>

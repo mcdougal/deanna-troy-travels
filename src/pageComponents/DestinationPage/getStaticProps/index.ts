@@ -1,4 +1,5 @@
-import { BlogPost, Destination } from './fetchDestination';
+import { BlogPost } from './fetchBlogPosts';
+import { Destination } from './fetchDestination';
 import { YouTubeVideo } from './fetchVideos';
 import getStaticProps from './getStaticProps';
 

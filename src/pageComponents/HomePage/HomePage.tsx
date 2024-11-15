@@ -5,7 +5,7 @@ import Image from 'next/image';
 import { SiteFooter, SiteHeader } from '@components/site';
 import { cloudinaryLoader } from '@lib/cloudinary';
 
-import FeaturedVideosSection from './FeaturedVideosSection';
+import AboutSection from './AboutSection';
 import getStaticProps from './getStaticProps';
 import sx from './HomePage.styles';
 import InstagramSection from './InstagramSection';
@@ -23,7 +23,7 @@ const HomePage = ({
   return (
     <>
       <PageMetadata recentVideos={recentVideos} />
-      <SiteHeader hideLogoUntilScroll />
+      <SiteHeader />
       <Box sx={sx.logoAndTitleContainer}>
         <Box sx={sx.logoBackground}>
           <Image
@@ -38,19 +38,19 @@ const HomePage = ({
           <LogoAndTitle />
         </Box>
       </Box>
-      <Box sx={sx.featuredVideosContainer}>
-        <FeaturedVideosSection recentVideos={recentVideos} />
-      </Box>
-      <Box sx={sx.subscribeToBlogContainer}>
-        <SubscribeSection />
-      </Box>
-      <Box sx={sx.instagramContainer}>
-        <InstagramSection recentInstagramPosts={recentInstagramPosts} />
-      </Box>
-      <Box sx={sx.featuredPostsContainer}>
+      <Box sx={sx.topSection}>
         <LatestPostsSection recentBlogPosts={recentBlogPosts} />
       </Box>
-      <Box sx={sx.workWithMeContainer}>
+      <Box sx={sx.section}>
+        <SubscribeSection />
+      </Box>
+      <Box sx={sx.section}>
+        <AboutSection />
+      </Box>
+      <Box sx={sx.section}>
+        <InstagramSection recentInstagramPosts={recentInstagramPosts} />
+      </Box>
+      <Box sx={sx.bottomSection}>
         <WorkWithMeSection />
       </Box>
       <SiteFooter />

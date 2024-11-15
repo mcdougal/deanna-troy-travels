@@ -3,7 +3,6 @@ import { spacing } from '@lib/mui';
 export default {
   blogFeatureButtonBase: {
     backgroundColor: `common.white`,
-    borderRadius: 5,
     boxShadow: `0 4px 20px rgba(0, 0, 0, 0.06)`,
     display: `block`,
     height: `100%`,

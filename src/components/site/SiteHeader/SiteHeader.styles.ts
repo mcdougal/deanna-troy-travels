@@ -1,5 +1,7 @@
 export default {
   toolbar: {
+    borderBottom: `3px solid`,
+    borderBottomColor: `grey.300`,
     justifyContent: `space-between`,
     paddingBottom: 1,
     paddingTop: 1,

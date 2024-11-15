@@ -32,7 +32,7 @@ export default async (playlistId: string): Promise<Array<YouTubeVideo>> => {
       return;
     }
 
-    return {
+    playlistVideos.push({
       commentCount: parseInt(video.statistics.commentCount, 10),
       description: video.snippet.description,
       duration: video.contentDetails.duration,
@@ -44,7 +44,7 @@ export default async (playlistId: string): Promise<Array<YouTubeVideo>> => {
       title: playlistItem.snippet.title,
       videoId: playlistItem.contentDetails.videoId,
       viewCount: parseInt(video.statistics.viewCount, 10),
-    };
+    });
   });
 
   return playlistVideos;

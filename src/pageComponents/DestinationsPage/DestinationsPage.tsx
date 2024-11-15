@@ -2,7 +2,12 @@ import { Box, Container, Grid, Typography } from '@mui/material';
 import type { InferGetStaticPropsType } from 'next';
 
 import { MediaCard } from '@components/generic';
-import { SiteFooter, SiteHeader } from '@components/site';
+import {
+  GlobalAboutSection,
+  PageTitle,
+  SiteFooter,
+  SiteHeader,
+} from '@components/site';
 import { contentfulLoader } from '@lib/contentful';
 
 import sx from './DestinationsPage.styles';
@@ -16,10 +21,8 @@ const DestinationsPage = ({
     <>
       <PageMetadata />
       <SiteHeader />
-      <Container maxWidth="md">
-        <Typography component="h1" sx={sx.title} variant="h2">
-          Destinations
-        </Typography>
+      <Container maxWidth="lg">
+        <PageTitle>Destinations</PageTitle>
         <Typography component="p" sx={sx.subtitle} variant="h4">
           Where do you want to go?
         </Typography>
@@ -27,7 +30,7 @@ const DestinationsPage = ({
           <Grid alignItems="stretch" container spacing={3}>
             {destinations.map((destination) => {
               return (
-                <Grid key={destination.name} item sm={6} xs={12}>
+                <Grid key={destination.name} item md={4} sm={6} xs={12}>
                   <MediaCard
                     thumbnail={{
                       alt: destination.thumbnail.description,
@@ -42,6 +45,9 @@ const DestinationsPage = ({
             })}
           </Grid>
         </Box>
+      </Container>
+      <Container maxWidth="md" sx={sx.aboutFooter}>
+        <GlobalAboutSection />
       </Container>
       <SiteFooter />
     </>

@@ -23,5 +23,5 @@ export default async (): Promise<Array<InstagramPost>> => {
     });
   });
 
-  return instagramPosts.slice(0, 24);
+  return instagramPosts.slice(0, 12);
 };

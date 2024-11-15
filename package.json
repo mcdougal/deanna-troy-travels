@@ -14,6 +14,7 @@
     "prepare": "husky install",
     "refresh-instagram-token": "ts-node -r tsconfig-paths/register src/scripts/refreshInstagramToken/run.ts",
     "start": "next start",
+    "tunnel": ". .env && cloudflared tunnel run dev",
     "types": "tsc"
   },
   "sideEffects": false,

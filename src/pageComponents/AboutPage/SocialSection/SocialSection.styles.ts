@@ -4,10 +4,14 @@ export default {
   sectionTitleContainer: {
     marginBottom: 3,
   },
+  buttonsContainer: {
+    alignItems: `center`,
+    display: `flex`,
+    flexWrap: `wrap`,
+    gap: 2,
+  },
   button: {
-    '& + &': {
-      marginTop: 2,
-    },
+    flex: `1 0 auto`,
   },
   youTubeIcon: {
     '&&': {

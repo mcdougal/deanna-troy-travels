@@ -1,7 +1,6 @@
 import { Box, Button, Container, Typography, useTheme } from '@mui/material';
 import Image from 'next/legacy/image';
 
-import { SectionTitle } from '@components/site';
 import { cloudinaryLoader } from '@lib/cloudinary';
 
 import sx from './IntroSection.styles';
@@ -11,9 +10,6 @@ const IntroSection = (): JSX.Element => {
 
   return (
     <Container component="section" maxWidth="md" sx={sx.introSectionContainer}>
-      <Box sx={[sx.sectionTitleContainer, sx.sectionTitleContainerMobile]}>
-        <SectionTitle>Let’s Chat! 😃</SectionTitle>
-      </Box>
       <Box sx={sx.imageContainer}>
         <Image
           alt="Deanna posing with a quokka"
@@ -29,19 +25,20 @@ const IntroSection = (): JSX.Element => {
         />
       </Box>
       <Box>
-        <Box sx={[sx.sectionTitleContainer, sx.sectionTitleContainerDesktop]}>
-          <SectionTitle variant="h4">Let’s Chat! 😃</SectionTitle>
-        </Box>
-        <Typography component="p" paragraph sx={sx.firstParagraph} variant="h5">
-          Deanna is a travel influencer who creates YouTube content featuring
-          budget-friendly and vegan travel experiences in Southeast Asia, the
-          U.S.A. and Europe.
+        <Typography paragraph sx={sx.letsChatParagraph} variant="body1">
+          I’m a travel enthusiast who’s all about exploring the world on a
+          budget while keeping it vegan! My YouTube channel is where you’ll find
+          me sharing unforgettable adventures across Southeast Asia, the U.S.
+          and Europe, packed with tips for traveling smart and eating
+          plant-based. You might have seen me featured on RokuTV, HideoutTV or
+          NaviSavi, where I love showcasing unique destinations and experiences.
         </Typography>
-        <Typography paragraph sx={sx.secondParagraph} variant="body1">
-          Deanna is featured on RokuTV, HideoutTV and NaviSavi. She has created
-          sponsored content for the electronic companies Vasco and Hohem. She is
-          an ideal influencer to promote travel, budget, vegan, or eco-friendly
-          products, lodging, or experiences.
+        <Typography paragraph sx={sx.letsChatParagraph} variant="body1">
+          I’ve partnered with amazing brands like Vasco and Hohem to create
+          sponsored content that brings travel and tech together. If you’re
+          looking for someone to promote travel, budget-friendly finds, vegan
+          eats or eco-friendly products and experiences, I’m your go-to travel
+          buddy! Let’s make magic together. 🌍✨
         </Typography>
         <Box sx={sx.ctaContainer}>
           <Button

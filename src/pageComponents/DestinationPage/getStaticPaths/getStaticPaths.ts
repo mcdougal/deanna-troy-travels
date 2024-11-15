@@ -9,6 +9,12 @@ const getStaticPaths: GetStaticPaths = async () => {
     return destination.linkedFrom.blogPostCollection.items.length > 0;
   });
 
+  const allPath = {
+    params: {
+      destinationSlug: `blog`,
+    },
+  };
+
   const paths = destinationsWithPosts.map((destination) => {
     return {
       params: {
@@ -18,7 +24,7 @@ const getStaticPaths: GetStaticPaths = async () => {
   });
 
   return {
-    paths,
+    paths: [allPath, ...paths],
     fallback: false,
   };
 };

@@ -2,10 +2,9 @@ import { spacing } from '@lib/mui';
 
 export default {
   sectionTitleContainer: {
-    marginBottom: 3,
+    marginBottom: 5,
   },
   thumbnailContainer: {
-    borderRadius: 4,
     filter: `brightness(95%)`,
     height: spacing({ xs: 15, md: 23 }),
     overflow: `hidden`,

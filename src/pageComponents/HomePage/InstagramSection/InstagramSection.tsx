@@ -1,8 +1,7 @@
-import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
-import { Box, Button, ButtonBase, Container, Grid } from '@mui/material';
+import { Box, ButtonBase, Container, Grid } from '@mui/material';
 import Image from 'next/legacy/image';
 
-import { SectionTitle } from '@components/site';
+import { SectionCta, SectionTitle } from '@components/site';
 import { cloudinaryLoader } from '@lib/cloudinary';
 
 import { InstagramPost } from '../getStaticProps';
@@ -17,7 +16,7 @@ const InstagramSection = ({ recentInstagramPosts }: Props): JSX.Element => {
   return (
     <Container component="section" maxWidth="md">
       <Box sx={sx.sectionTitleContainer}>
-        <SectionTitle>Instagram 📷</SectionTitle>
+        <SectionTitle>Instagram</SectionTitle>
       </Box>
       <Grid container spacing={1}>
         {recentInstagramPosts.map(({ id, caption, permalink }) => {
@@ -43,15 +42,11 @@ const InstagramSection = ({ recentInstagramPosts }: Props): JSX.Element => {
         })}
       </Grid>
       <Box sx={sx.ctaContainer}>
-        <Button
-          color="primary"
-          endIcon={<ArrowForwardIcon fontSize="small" />}
+        <SectionCta
           href="https://www.instagram.com/deanna_troy_travels"
-          size="large"
-          target="_blank"
-          variant="contained">
-          All Photos
-        </Button>
+          target="_blank">
+          See My Instagram
+        </SectionCta>
       </Box>
     </Container>
   );

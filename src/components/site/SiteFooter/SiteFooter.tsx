@@ -1,5 +1,5 @@
 import YouTubeIcon from '@mui/icons-material/YouTube';
-import { Box, ButtonBase, Container } from '@mui/material';
+import { Box, ButtonBase, Container, Typography } from '@mui/material';
 import Link from 'next/link';
 import { useState } from 'react';
 
@@ -99,6 +99,13 @@ const SiteFooter = (): JSX.Element => {
             </ButtonBase>
           </Link>
         </Box>
+        <Typography
+          align="center"
+          component="p"
+          sx={sx.travelWithMe}
+          variant="h2">
+          Let’s Travel the World!
+        </Typography>
         <Box sx={sx.navItems}>
           {navItems.map((navItem) => {
             return (

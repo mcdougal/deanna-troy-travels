@@ -1,4 +1,4 @@
-import { Box, ButtonBase, Typography } from '@mui/material';
+import { Box, ButtonBase, SxProps, Theme, Typography } from '@mui/material';
 import Image, { ImageLoader } from 'next/legacy/image';
 import Link from 'next/link';
 
@@ -13,6 +13,7 @@ interface Props {
     icon: React.ReactElement;
     value: string;
   }>;
+  size?: `sm` | `md` | `lg`;
   thumbnail: {
     alt: string;
     loader: ImageLoader;
@@ -24,11 +25,22 @@ interface Props {
 
 const MediaCard = ({
   alignDetails = `left`,
+  description,
   details = [],
+  size = `sm`,
   thumbnail,
   title,
   url,
 }: Props): JSX.Element => {
+  const titleSxOptions: {
+    [key in typeof size]: SxProps<Theme>;
+  } = {
+    sm: sx.titleSm,
+    md: sx.titleMd,
+    lg: sx.titleLg,
+  };
+  const titleSx = titleSxOptions[size];
+
   const cardContent = (
     <>
       <Box sx={sx.thumbnailContainer}>
@@ -38,11 +50,14 @@ const MediaCard = ({
           loader={thumbnail.loader}
           objectFit="cover"
           objectPosition="center"
-          sizes="300px"
+          sizes={size === `sm` ? `300px` : `1500px`}
           src={thumbnail.url}
         />
       </Box>
-      <Typography sx={sx.title} variant="body1">
+      <Typography
+        component="p"
+        sx={[sx.title, ...(Array.isArray(titleSx) ? titleSx : [titleSx])]}
+        variant="h6">
         {title}
       </Typography>
       {details.length > 0 && (
@@ -57,6 +72,11 @@ const MediaCard = ({
             );
           })}
         </Box>
+      )}
+      {description && (
+        <Typography component="p" sx={sx.description} variant="body1">
+          {description}
+        </Typography>
       )}
     </>
   );

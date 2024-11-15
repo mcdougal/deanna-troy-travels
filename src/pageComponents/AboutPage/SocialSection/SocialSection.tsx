@@ -26,11 +26,6 @@ const SocialSection = (): JSX.Element => {
       url: `https://www.facebook.com/deannatroytravels`,
     },
     {
-      icon: <PoshmarkIcon sx={sx.poshmarkIcon} />,
-      label: `Poshmark`,
-      url: `https://poshmark.com/closet/deannatroyshop`,
-    },
-    {
       icon: <TikTokIcon sx={sx.tikTokIcon} />,
       label: `TikTok`,
       url: `https://www.tiktok.com/@deannatroytravels`,
@@ -40,29 +35,35 @@ const SocialSection = (): JSX.Element => {
       label: `Amazon`,
       url: `https://www.amazon.com/shop/deannatroytravels`,
     },
+    {
+      icon: <PoshmarkIcon sx={sx.poshmarkIcon} />,
+      label: `Poshmark`,
+      url: `https://poshmark.com/closet/deannatroyshop`,
+    },
   ];
 
   return (
-    <Container component="section" maxWidth="md">
+    <Container component="section" maxWidth="sm">
       <Box sx={sx.sectionTitleContainer}>
         <SectionTitle>Follow Me</SectionTitle>
       </Box>
-      {socials.map(({ icon, label, url }) => {
-        return (
-          <Button
-            key={label}
-            color="primary"
-            fullWidth
-            href={url}
-            size="large"
-            startIcon={icon}
-            sx={sx.button}
-            target="_blank"
-            variant="outlined">
-            <Box sx={sx.buttonLabel}>{label}</Box>
-          </Button>
-        );
-      })}
+      <Box sx={sx.buttonsContainer}>
+        {socials.map(({ icon, label, url }) => {
+          return (
+            <Button
+              key={label}
+              color="inherit"
+              href={url}
+              size="large"
+              startIcon={icon}
+              sx={sx.button}
+              target="_blank"
+              variant="outlined">
+              <Box sx={sx.buttonLabel}>{label}</Box>
+            </Button>
+          );
+        })}
+      </Box>
     </Container>
   );
 };

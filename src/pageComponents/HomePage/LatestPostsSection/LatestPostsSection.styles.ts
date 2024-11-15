@@ -1,10 +1,10 @@
 export default {
   sectionTitleContainer: {
-    marginBottom: 3,
+    marginBottom: 5,
   },
   ctaContainer: {
     display: `flex`,
     justifyContent: `center`,
-    marginTop: 4,
+    marginTop: { xs: 5, md: 8 },
   },
 };

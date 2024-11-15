@@ -8,7 +8,4 @@ export default {
     marginLeft: 1,
     marginTop: `-1px`,
   },
-  deannaTroy: {
-    color: `primary.main`,
-  },
 };

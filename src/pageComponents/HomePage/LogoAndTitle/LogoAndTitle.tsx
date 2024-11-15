@@ -1,31 +1,16 @@
-import YouTubeIcon from '@mui/icons-material/YouTube';
-import { Box, Button, Typography } from '@mui/material';
-
-import { SiteLogo } from '@components/site';
+import { Box, Typography } from '@mui/material';
 
 import sx from './LogoAndTitle.styles';
 
 const LogoAndTitle = (): JSX.Element => {
   return (
     <Box sx={sx.logoAndTitleContainer}>
-      <SiteLogo height={11} />
-      <Typography component="h1" sx={sx.title} variant="h3">
-        <Box sx={sx.deannaTroy}>Deanna Troy</Box> Travels
+      <Typography align="center" component="h1" sx={sx.title} variant="h1">
+        Deanna Troy Travels
       </Typography>
-      <Typography sx={sx.subtitle} variant="body2">
-        Budget Travel Vlogs
+      <Typography sx={sx.subtitle} variant="body1">
+        Budget & Vegan Travel
       </Typography>
-      <Box sx={sx.subscribeButtonContainer}>
-        <Button
-          color="secondary"
-          href="https://www.youtube.com/channel/UCJeRZkaH3ORHkNWUNqfXJEg?sub_confirmation=1"
-          size="large"
-          startIcon={<YouTubeIcon />}
-          target="_blank"
-          variant="contained">
-          Subscribe
-        </Button>
-      </Box>
     </Box>
   );
 };

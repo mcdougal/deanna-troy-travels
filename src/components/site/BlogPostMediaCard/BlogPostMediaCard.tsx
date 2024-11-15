@@ -14,6 +14,7 @@ interface BlogPost {
   destination: {
     name: string;
   } | null;
+  excerpt: string;
   publishedDate: string;
   title: string;
   slug: string;
@@ -22,9 +23,10 @@ interface BlogPost {
 
 interface Props {
   blogPost: BlogPost;
+  size?: `sm` | `md` | `lg`;
 }
 
-const BlogPostMediaCard = ({ blogPost }: Props): JSX.Element => {
+const BlogPostMediaCard = ({ blogPost, size = `sm` }: Props): JSX.Element => {
   const details: React.ComponentProps<typeof MediaCard>[`details`] = [
     {
       key: `date`,
@@ -43,7 +45,9 @@ const BlogPostMediaCard = ({ blogPost }: Props): JSX.Element => {
 
   return (
     <MediaCard
+      description={blogPost.excerpt}
       details={details}
+      size={size}
       thumbnail={getBlogPostThumbnail(blogPost)}
       title={blogPost.title}
       url={`/post/${blogPost.slug}`}

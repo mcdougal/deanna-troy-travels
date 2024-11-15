@@ -7,6 +7,7 @@ export interface BlogPost {
   } | null;
   destination: {
     name: string;
+    sys: { id: string };
   } | null;
   excerpt: string;
   publishedDate: string;
@@ -22,7 +23,7 @@ export default async (): Promise<Array<BlogPost>> => {
     };
   }>(
     `
-      query BlogPageGetStaticPropsBlogPosts {
+      query DestinationPageGetStaticPropsBlogPosts {
         blogPostCollection(order: publishedDate_DESC) {
           items {
             coverImage {
@@ -31,6 +32,7 @@ export default async (): Promise<Array<BlogPost>> => {
             }
             destination {
               name
+              sys { id }
             }
             excerpt
             publishedDate

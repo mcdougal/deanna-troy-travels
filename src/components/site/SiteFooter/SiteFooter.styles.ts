@@ -8,14 +8,16 @@ export default {
   },
   siteFooterContent: {
     display: `flex`,
-    flexDirection: { xs: `column-reverse`, sm: `column` },
+    flexDirection: `column`,
   },
   logoContainer: {
     display: `flex`,
     justifyContent: `center`,
-    marginBottom: { xs: 0, sm: 3 },
-    marginTop: { xs: 3, sm: 0 },
+    marginBottom: 3,
     minWidth: spacing(36),
+  },
+  travelWithMe: {
+    marginBottom: 4,
   },
   navItems: {
     display: `flex`,
