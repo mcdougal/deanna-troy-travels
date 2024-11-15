@@ -42,7 +42,7 @@ const MediaCard = ({
           src={thumbnail.url}
         />
       </Box>
-      <Typography sx={sx.title} variant="body1">
+      <Typography component="p" sx={sx.title} variant="h6">
         {title}
       </Typography>
       {details.length > 0 && (

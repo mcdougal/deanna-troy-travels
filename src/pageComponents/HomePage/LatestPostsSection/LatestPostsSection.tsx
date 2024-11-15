@@ -1,8 +1,7 @@
-import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
-import { Box, Button, Container, Grid } from '@mui/material';
+import { Box, Container, Grid } from '@mui/material';
 import Link from 'next/link';
 
-import { BlogPostMediaCard, SectionTitle } from '@components/site';
+import { BlogPostMediaCard, SectionCta, SectionTitle } from '@components/site';
 
 import { BlogPost } from '../getStaticProps';
 
@@ -14,11 +13,11 @@ interface Props {
 
 const LatestPostsSection = ({ recentBlogPosts }: Props): JSX.Element => {
   return (
-    <Container component="section" maxWidth="md">
+    <Container component="section" maxWidth="lg">
       <Box sx={sx.sectionTitleContainer}>
         <SectionTitle>Latest Posts</SectionTitle>
       </Box>
-      <Grid alignItems="stretch" container spacing={2}>
+      <Grid alignItems="start" container spacing={4}>
         {recentBlogPosts.map((blogPost) => {
           return (
             <Grid key={blogPost.slug} item sm={4} xs={12}>
@@ -29,13 +28,7 @@ const LatestPostsSection = ({ recentBlogPosts }: Props): JSX.Element => {
       </Grid>
       <Box sx={sx.ctaContainer}>
         <Link href="/blog" legacyBehavior passHref>
-          <Button
-            color="primary"
-            endIcon={<ArrowForwardIcon fontSize="small" />}
-            size="large"
-            variant="contained">
-            All Posts
-          </Button>
+          <SectionCta>See All Posts</SectionCta>
         </Link>
       </Box>
     </Container>

@@ -7,11 +7,14 @@ import Title from './Title';
 const LogoAndTitle = (): JSX.Element => {
   return (
     <Box sx={sx.logoAndTitleContainer}>
-      <Title />
+      <Typography align="center" component="h1" sx={sx.title} variant="h1">
+        Deanna Troy Travels
+      </Typography>
+      {/* <Title /> */}
       <Typography sx={sx.subtitle} variant="body1">
         Budget Travel Expert
       </Typography>
-      <Box sx={sx.subscribeButtonContainer}>
+      {/* <Box sx={sx.subscribeButtonContainer}>
         <Button
           color="secondary"
           href="https://www.youtube.com/channel/UCJeRZkaH3ORHkNWUNqfXJEg?sub_confirmation=1"
@@ -21,7 +24,7 @@ const LogoAndTitle = (): JSX.Element => {
           variant="contained">
           Subscribe
         </Button>
-      </Box>
+      </Box> */}
     </Box>
   );
 };

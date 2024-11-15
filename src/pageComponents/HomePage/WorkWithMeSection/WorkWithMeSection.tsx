@@ -1,9 +1,8 @@
-import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
-import { Box, Button, Container, Typography, useTheme } from '@mui/material';
+import { Box, Container, Typography, useTheme } from '@mui/material';
 import Image from 'next/legacy/image';
 import Link from 'next/link';
 
-import { SectionTitle } from '@components/site';
+import { SectionCta, SectionTitle } from '@components/site';
 import { cloudinaryLoader } from '@lib/cloudinary';
 
 import sx from './WorkWithMeSection.styles';
@@ -14,7 +13,7 @@ const WorkWithMeSection = (): JSX.Element => {
   return (
     <Container component="section" maxWidth="md">
       <Box sx={sx.sectionTitleContainer}>
-        <SectionTitle>Work With Me 🤝</SectionTitle>
+        <SectionTitle>Work With Me</SectionTitle>
       </Box>
       <Box sx={sx.imageContainer}>
         <Image
@@ -31,19 +30,13 @@ const WorkWithMeSection = (): JSX.Element => {
         />
       </Box>
       <Typography sx={sx.description} variant="body1">
-        Deanna is a travel influencer who creates YouTube content featuring
-        budget-friendly and vegan travel experiences in Southeast Asia, the
-        U.S.A. and Europe.
+        I’m a travel influencer who creates content featuring budget-friendly
+        and vegan travel experiences in Southeast Asia, the U.S. and Europe. I
+        can provide YouTube videos, Instagram posts, Amazon videos, and more!
       </Typography>
       <Box sx={sx.ctaContainer}>
         <Link href="/work-with-me" legacyBehavior passHref>
-          <Button
-            color="primary"
-            endIcon={<ArrowForwardIcon fontSize="small" />}
-            size="large"
-            variant="contained">
-            Learn More
-          </Button>
+          <SectionCta>Learn More</SectionCta>
         </Link>
       </Box>
     </Container>

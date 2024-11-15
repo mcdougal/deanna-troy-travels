@@ -30,7 +30,7 @@ const BlogSubscribeForm = (): JSX.Element => {
         variant="outlined"
       />
       <Button
-        color="secondary"
+        color="inherit"
         fullWidth
         size="large"
         sx={sx.submitButton}

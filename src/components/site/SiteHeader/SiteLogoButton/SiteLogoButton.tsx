@@ -34,7 +34,7 @@ const SiteLogoButton = ({ hideLogoUntilScroll }: Props): JSX.Element => {
           </Link>
         </Box>
       </Grow>
-      <Box sx={sx.subscribeButtonContainer}>
+      {/* <Box sx={sx.subscribeButtonContainer}>
         <Grow
           appear={false}
           in={isMdUp && (!hideLogoUntilScroll || trigger)}
@@ -47,11 +47,11 @@ const SiteLogoButton = ({ hideLogoUntilScroll }: Props): JSX.Element => {
             startIcon={<YouTubeIcon />}
             sx={sx.subscribeButton}
             target="_blank"
-            variant="outlined">
+            variant="contained">
             Subscribe
           </Button>
         </Grow>
-      </Box>
+      </Box> */}
     </>
   );
 };

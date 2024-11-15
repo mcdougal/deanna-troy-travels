@@ -17,6 +17,9 @@ export default {
     marginTop: { xs: 3, sm: 0 },
     minWidth: spacing(36),
   },
+  travelWithMe: {
+    marginBottom: 4,
+  },
   navItems: {
     display: `flex`,
     flexDirection: { xs: `column`, sm: `row` },

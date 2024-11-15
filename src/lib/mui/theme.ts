@@ -72,6 +72,9 @@ const theme = createTheme({
     error: {
       main: red.A400,
     },
+    // text: {
+    //   primary: `#000`,
+    // },
   },
   typography: {
     fontFamily: `Fredoka, Arial`,
@@ -80,22 +83,22 @@ const theme = createTheme({
     fontWeightMedium: 600,
     fontWeightBold: 700,
     h1: {
-      fontWeight: 700,
+      fontWeight: 300,
     },
     h2: {
-      fontWeight: 700,
+      fontWeight: 300,
     },
     h3: {
-      fontWeight: 700,
+      fontWeight: 300,
     },
     h4: {
-      fontWeight: 700,
+      fontWeight: 300,
     },
     h5: {
-      fontWeight: 700,
+      fontWeight: 300,
     },
     h6: {
-      fontWeight: 700,
+      fontWeight: 300,
     },
     subtitle1: {
       letterSpacing: `0.1em`,
@@ -119,6 +122,7 @@ const theme = createTheme({
     button: {
       letterSpacing: `0.1em`,
       fontSize: `0.9rem`,
+      fontWeight: 500,
     },
   },
 });

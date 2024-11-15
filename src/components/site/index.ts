@@ -4,6 +4,8 @@ import BlogSubscribeDialog from './BlogSubscribeDialog';
 import BlogSubscribeForm from './BlogSubscribeForm';
 import ContactDialog from './ContactDialog';
 import ContactForm from './ContactForm';
+import GlobalAboutSection from './GlobalAboutSection';
+import SectionCta from './SectionCta';
 import SectionTitle from './SectionTitle';
 import SiteFooter from './SiteFooter';
 import SiteHeader from './SiteHeader';
@@ -19,6 +21,8 @@ export {
   BlogSubscribeForm,
   ContactDialog,
   ContactForm,
+  GlobalAboutSection,
+  SectionCta,
   SectionTitle,
   SiteFooter,
   SiteHeader,

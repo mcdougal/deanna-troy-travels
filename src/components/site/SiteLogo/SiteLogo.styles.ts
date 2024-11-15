@@ -9,6 +9,6 @@ export default {
     marginTop: `-1px`,
   },
   deannaTroy: {
-    color: `primary.main`,
+    // color: `primary.main`,
   },
 };

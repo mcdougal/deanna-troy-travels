@@ -1,7 +1,5 @@
 export default {
   logoAndTitleContainer: {
-    paddingBottom: { xs: 5, md: 16 },
-    paddingTop: { xs: 3, md: 18 },
     position: `relative`,
   },
   logoBackground: {
@@ -13,20 +11,14 @@ export default {
   logoAndTitle: {
     position: `relative`,
   },
-  featuredPostsContainer: {
+  topSection: {
     marginTop: { xs: 6, md: 8 },
   },
-  featuredVideosContainer: {
-    marginTop: { xs: 8, md: 10 },
+  section: {
+    marginTop: { xs: 12, md: 10 },
   },
-  subscribeToBlogContainer: {
-    marginTop: { xs: 8, md: 10 },
-  },
-  instagramContainer: {
-    marginTop: { xs: 8, md: 10 },
-  },
-  workWithMeContainer: {
+  bottomSection: {
     marginBottom: 20,
-    marginTop: { xs: 8, md: 10 },
+    marginTop: { xs: 8, md: 12 },
   },
 };
