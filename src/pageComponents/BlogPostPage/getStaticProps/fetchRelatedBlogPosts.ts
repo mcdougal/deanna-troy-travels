@@ -9,6 +9,7 @@ export interface RelatedBlogPost {
   } | null;
   destination: {
     name: string;
+    sys: { id: string };
   } | null;
   excerpt: string;
   publishedDate: string;
@@ -33,6 +34,7 @@ export default async (blogPost: BlogPost): Promise<Array<RelatedBlogPost>> => {
             }
             destination {
               name
+              sys { id }
             }
             excerpt
             publishedDate
@@ -46,6 +48,17 @@ export default async (blogPost: BlogPost): Promise<Array<RelatedBlogPost>> => {
   );
 
   const allBlogPosts = response.blogPostCollection.items;
+
+  const sameDestinationBlogPosts = allBlogPosts.filter((otherBlogPost) => {
+    return (
+      otherBlogPost.slug !== blogPost.slug &&
+      otherBlogPost.destination?.sys.id === blogPost.destination?.sys.id
+    );
+  });
+
+  if (sameDestinationBlogPosts.length > 0) {
+    return sameDestinationBlogPosts.slice(0, 4);
+  }
 
   const blogPostIndex = allBlogPosts.findIndex((otherBlogPost) => {
     return otherBlogPost.slug === blogPost.slug;

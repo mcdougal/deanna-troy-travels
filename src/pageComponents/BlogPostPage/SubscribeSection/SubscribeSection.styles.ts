@@ -1,6 +1,6 @@
 export default {
   sectionTitleContainer: {
-    marginBottom: 1,
+    marginBottom: 4,
   },
   subtitle: {
     marginBottom: 1,

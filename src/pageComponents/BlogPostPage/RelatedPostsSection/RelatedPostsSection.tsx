@@ -1,8 +1,12 @@
-import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
-import { Box, Button, Grid } from '@mui/material';
+import { Box, Grid } from '@mui/material';
 import Link from 'next/link';
 
-import { BlogPostMediaCard, SectionTitle } from '@components/site';
+import {
+  BlogPostMediaCard,
+  GlobalAboutSection,
+  SectionCta,
+  SectionTitle,
+} from '@components/site';
 
 import { RelatedBlogPost } from '../getStaticProps';
 
@@ -18,24 +22,25 @@ const RelatedPostsSection = ({ relatedBlogPosts }: Props): JSX.Element => {
       <Box sx={sx.sectionTitleContainer}>
         <SectionTitle>Related Posts</SectionTitle>
       </Box>
-      <Grid alignItems="stretch" container spacing={2}>
-        {relatedBlogPosts.map((blogPost) => {
-          return (
-            <Grid key={blogPost.slug} item sm={6} xs={12}>
-              <BlogPostMediaCard blogPost={blogPost} />
-            </Grid>
-          );
-        })}
-      </Grid>
+      <Box sx={sx.content}>
+        <Box>
+          <Grid alignItems="start" columnSpacing={2} container rowSpacing={5}>
+            {relatedBlogPosts.map((blogPost) => {
+              return (
+                <Grid key={blogPost.slug} item xs={12}>
+                  <BlogPostMediaCard blogPost={blogPost} size="md" />
+                </Grid>
+              );
+            })}
+          </Grid>
+        </Box>
+        <Box sx={sx.globalAboutSectionContainer}>
+          <GlobalAboutSection includeImage={false} variant="short" />
+        </Box>
+      </Box>
       <Box sx={sx.ctaContainer}>
         <Link href="/blog" legacyBehavior passHref>
-          <Button
-            color="primary"
-            endIcon={<ArrowForwardIcon fontSize="small" />}
-            size="large"
-            variant="contained">
-            All Posts
-          </Button>
+          <SectionCta>All Posts</SectionCta>
         </Link>
       </Box>
     </Box>

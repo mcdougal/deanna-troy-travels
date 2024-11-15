@@ -16,7 +16,4 @@ export default {
     position: `sticky`,
     top: 80,
   },
-  recentVideosContainer: {
-    marginTop: { xs: 8, md: 10 },
-  },
 };

@@ -52,6 +52,7 @@ export interface BlogPost {
   } | null;
   destination: {
     name: string;
+    sys: { id: string };
   } | null;
   excerpt: string;
   publishedDate: string;
@@ -122,6 +123,7 @@ export default async (slug: string): Promise<BlogPost | null> => {
             }
             destination {
               name
+              sys { id }
             }
             excerpt
             publishedDate

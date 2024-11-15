@@ -33,12 +33,12 @@ const BlogPostPage = ({
         <Box sx={sx.shareButtonsContainer}>
           <ShareButtons />
         </Box>
-        <Box sx={sx.relatedPostsSectionContainer}>
-          <RelatedPostsSection relatedBlogPosts={relatedBlogPosts} />
-        </Box>
-        <Box sx={sx.subscribeSectionContainer}>
-          <SubscribeSection />
-        </Box>
+      </Container>
+      <Container maxWidth="md" sx={sx.relatedPostsSectionContainer}>
+        <RelatedPostsSection relatedBlogPosts={relatedBlogPosts} />
+      </Container>
+      <Container maxWidth="sm" sx={sx.subscribeSectionContainer}>
+        <SubscribeSection />
       </Container>
       <SiteFooter />
     </>
