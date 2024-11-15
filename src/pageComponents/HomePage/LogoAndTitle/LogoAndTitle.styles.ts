@@ -4,24 +4,18 @@ export default {
     display: `flex`,
     flexDirection: `column`,
   },
-  deannaTroy: {
-    color: `white`,
-    display: `inline`,
-  },
-  title: {
-    color: `white`,
-    marginTop: 1,
-    textShadow: `0 0 300px rgba(0, 0, 0, 1),0 0 250px rgba(0, 0, 0, 1),0 0 50px rgba(0, 0, 0, 1),0 0 10px rgba(0, 0, 0, 0.5)`,
-  },
   subtitle: {
     color: `white`,
-    fontWeight: 600,
+    backgroundColor: `primary.main`,
+    borderRadius: 20,
+    paddingX: 2,
+    fontWeight: `fontWeightBold`,
+    fontSize: { xs: `caption.fontSize`, md: `1rem` },
     letterSpacing: `0.1em`,
-    marginTop: 2,
+    marginTop: { xs: 2, md: 6 },
     textTransform: `uppercase`,
-    textShadow: `0 0 300px rgba(0, 0, 0, 1),0 0 250px rgba(0, 0, 0, 1),0 0 50px rgba(0, 0, 0, 1),0 0 10px rgba(0, 0, 0, 0.5)`,
   },
   subscribeButtonContainer: {
-    marginTop: 3,
+    marginTop: { xs: 3, md: 6 },
   },
 };

@@ -23,7 +23,7 @@ const HomePage = ({
   return (
     <>
       <PageMetadata recentVideos={recentVideos} />
-      <SiteHeader hideLogoUntilScroll />
+      <SiteHeader />
       <Box sx={sx.logoAndTitleContainer}>
         <Box sx={sx.logoBackground}>
           <Image
@@ -38,6 +38,9 @@ const HomePage = ({
           <LogoAndTitle />
         </Box>
       </Box>
+      <Box sx={sx.featuredPostsContainer}>
+        <LatestPostsSection recentBlogPosts={recentBlogPosts} />
+      </Box>
       <Box sx={sx.featuredVideosContainer}>
         <FeaturedVideosSection recentVideos={recentVideos} />
       </Box>
@@ -46,9 +49,6 @@ const HomePage = ({
       </Box>
       <Box sx={sx.instagramContainer}>
         <InstagramSection recentInstagramPosts={recentInstagramPosts} />
-      </Box>
-      <Box sx={sx.featuredPostsContainer}>
-        <LatestPostsSection recentBlogPosts={recentBlogPosts} />
       </Box>
       <Box sx={sx.workWithMeContainer}>
         <WorkWithMeSection />

@@ -22,7 +22,7 @@ const DesktopNav = (): JSX.Element => {
     {
       type: `externalLink`,
       key: `videos`,
-      label: `Videos`,
+      label: `YouTube`,
       externalUrl: `https://www.youtube.com/deannatroytravels/videos`,
     },
     {

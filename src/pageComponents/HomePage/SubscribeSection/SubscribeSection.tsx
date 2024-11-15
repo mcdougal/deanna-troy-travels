@@ -16,7 +16,7 @@ const SubscribeSection = (): JSX.Element => {
           <SectionTitle>Subscribe to Blog</SectionTitle>
         </Box>
         <Typography sx={sx.subtitle} variant="subtitle1">
-          Get new posts delivered straight to your inbox!
+          Get new blog posts delivered straight to your inbox!
         </Typography>
         <BlogSubscribeForm />
       </BlogSubscribeContainer>
