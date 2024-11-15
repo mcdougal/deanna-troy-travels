@@ -43,26 +43,27 @@ const SocialSection = (): JSX.Element => {
   ];
 
   return (
-    <Container component="section" maxWidth="md">
+    <Container component="section" maxWidth="sm">
       <Box sx={sx.sectionTitleContainer}>
         <SectionTitle>Follow Me</SectionTitle>
       </Box>
-      {socials.map(({ icon, label, url }) => {
-        return (
-          <Button
-            key={label}
-            color="primary"
-            fullWidth
-            href={url}
-            size="large"
-            startIcon={icon}
-            sx={sx.button}
-            target="_blank"
-            variant="outlined">
-            <Box sx={sx.buttonLabel}>{label}</Box>
-          </Button>
-        );
-      })}
+      <Box sx={sx.buttonsContainer}>
+        {socials.map(({ icon, label, url }) => {
+          return (
+            <Button
+              key={label}
+              color="inherit"
+              href={url}
+              size="large"
+              startIcon={icon}
+              sx={sx.button}
+              target="_blank"
+              variant="outlined">
+              <Box sx={sx.buttonLabel}>{label}</Box>
+            </Button>
+          );
+        })}
+      </Box>
     </Container>
   );
 };

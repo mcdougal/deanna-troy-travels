@@ -1,12 +1,12 @@
 export default {
   introSectionContainer: {
-    marginTop: 3,
+    marginTop: { xs: 3, md: 6 },
   },
   socialSectionContainer: {
-    marginTop: 6,
+    marginTop: 8,
   },
   contactSectionContainer: {
     marginBottom: 20,
-    marginTop: 6,
+    marginTop: { xs: 8, md: 12 },
   },
 };

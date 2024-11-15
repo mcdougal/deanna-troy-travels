@@ -1,6 +1,7 @@
 import { Box, Container, Typography, useTheme } from '@mui/material';
 import Image from 'next/legacy/image';
 
+import { PageTitle } from '@components/site';
 import { cloudinaryLoader } from '@lib/cloudinary';
 
 import sx from './IntroSection.styles';
@@ -25,26 +26,19 @@ const IntroSection = (): JSX.Element => {
           src="/upload/deanna-troy-travels/about/hero.jpg"
         />
       </Box>
-      <Typography component="h1" sx={sx.title} variant="h2">
-        Hey there! 👋
-      </Typography>
-      <Typography component="p" paragraph sx={sx.firstParagraph} variant="h5">
-        Deanna Troy Travels started in 2016 during a two year long backpacking
-        adventure. From 2016 to 2018, my husband and I traveled all over
-        Southeast Asia.
+      <PageTitle>Hey There!</PageTitle>
+      <Typography paragraph variant="body1">
+        Welcome to Deanna Troy Travels, your go-to guide for vegan and budget
+        travel adventures! Since 2016, my husband Cedric and I have been
+        exploring the world. From Thailand’s bustling streets to Japan’s serene
+        temples, we’ve discovered hidden gems, local life and unforgettable
+        cultures — and now, we’re sharing them with you!
       </Typography>
       <Typography paragraph variant="body1">
-        During our travels, we visited 12 countries: Thailand, Laos, Cambodia,
-        Vietnam, Malaysia, Indonesia, Hong Kong, Singapore, Philippines,
-        Australia, Japan and Taiwan.
-      </Typography>
-      <Typography paragraph variant="body1">
-        I am a fun, outgoing and quirky travel content creator. I focus on vegan
-        and budget travel in Southeast Asia and Europe. In my videos series I
-        give insight into local life and showcase different cultures around the
-        world while inspiring others to explore! I’d love to have you join me
-        and my husband, Cedric, on our journeys worldwide! Find my socials
-        below!
+        Join me for travel tips, insider stories, and a quirky perspective on
+        exploring the world while keeping it budget-friendly and plant-powered.
+        Let’s inspire each other to see more, spend less and experience the joy
+        of travel! 🌍
       </Typography>
     </Container>
   );
