@@ -1,18 +1,19 @@
 export default {
   pageContainer: {
-    marginBottom: 20,
+    marginBottom: 16,
   },
-  title: {
-    color: `primary.main`,
-    marginBottom: { xs: 4, sm: 6 },
-    marginTop: 5,
-    textAlign: `center`,
+  filters: {
+    marginBottom: { xs: 4, md: 6 },
   },
-  featuredPostContainer: {
-    marginTop: 1,
+  content: {
+    display: { xs: `block`, md: `flex` },
+    alignItems: `start`,
   },
-  blogPostsSectionContainer: {
-    marginTop: { xs: 6, md: 6 },
+  globalAboutSectionContainer: {
+    marginLeft: { xs: 0, md: 4 },
+    marginTop: { xs: 8, md: 0 },
+    position: `sticky`,
+    top: 80,
   },
   recentVideosContainer: {
     marginTop: { xs: 8, md: 10 },

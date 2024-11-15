@@ -1,9 +1,0 @@
-.svg {
-  height: 124px;
-}
-
-@media (max-width: 600px) {
-  .svg {
-    height: 72px;
-  }
-}

@@ -1,13 +1,4 @@
-import YouTubeIcon from '@mui/icons-material/YouTube';
-import {
-  Box,
-  Button,
-  ButtonBase,
-  Grow,
-  useMediaQuery,
-  useScrollTrigger,
-  useTheme,
-} from '@mui/material';
+import { Box, ButtonBase, Grow, useScrollTrigger } from '@mui/material';
 import Link from 'next/link';
 
 import SiteLogo from '../../SiteLogo';
@@ -19,8 +10,6 @@ interface Props {
 }
 
 const SiteLogoButton = ({ hideLogoUntilScroll }: Props): JSX.Element => {
-  const theme = useTheme();
-  const isMdUp = useMediaQuery(theme.breakpoints.up(`sm`), { noSsr: true });
   const trigger = useScrollTrigger({ disableHysteresis: true });
 
   return (
@@ -34,24 +23,6 @@ const SiteLogoButton = ({ hideLogoUntilScroll }: Props): JSX.Element => {
           </Link>
         </Box>
       </Grow>
-      {/* <Box sx={sx.subscribeButtonContainer}>
-        <Grow
-          appear={false}
-          in={isMdUp && (!hideLogoUntilScroll || trigger)}
-          mountOnEnter
-          style={{ transitionDelay: `250ms` }}>
-          <Button
-            color="secondary"
-            href="https://www.youtube.com/channel/UCJeRZkaH3ORHkNWUNqfXJEg?sub_confirmation=1"
-            size="small"
-            startIcon={<YouTubeIcon />}
-            sx={sx.subscribeButton}
-            target="_blank"
-            variant="contained">
-            Subscribe
-          </Button>
-        </Grow>
-      </Box> */}
     </>
   );
 };

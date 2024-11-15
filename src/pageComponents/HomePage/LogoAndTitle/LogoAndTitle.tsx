@@ -1,8 +1,6 @@
-import YouTubeIcon from '@mui/icons-material/YouTube';
-import { Box, Button, Typography } from '@mui/material';
+import { Box, Typography } from '@mui/material';
 
 import sx from './LogoAndTitle.styles';
-import Title from './Title';
 
 const LogoAndTitle = (): JSX.Element => {
   return (
@@ -10,21 +8,9 @@ const LogoAndTitle = (): JSX.Element => {
       <Typography align="center" component="h1" sx={sx.title} variant="h1">
         Deanna Troy Travels
       </Typography>
-      {/* <Title /> */}
       <Typography sx={sx.subtitle} variant="body1">
-        Budget Travel Expert
+        Budget & Vegan Travel
       </Typography>
-      {/* <Box sx={sx.subscribeButtonContainer}>
-        <Button
-          color="secondary"
-          href="https://www.youtube.com/channel/UCJeRZkaH3ORHkNWUNqfXJEg?sub_confirmation=1"
-          size="large"
-          startIcon={<YouTubeIcon />}
-          target="_blank"
-          variant="contained">
-          Subscribe
-        </Button>
-      </Box> */}
     </Box>
   );
 };

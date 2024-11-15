@@ -12,4 +12,8 @@ export default {
   destinationsContainer: {
     marginBottom: 20,
   },
+  aboutFooter: {
+    marginBottom: 20,
+    marginTop: 10,
+  },
 };

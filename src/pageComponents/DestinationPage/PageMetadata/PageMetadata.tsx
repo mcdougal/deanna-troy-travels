@@ -1,25 +1,31 @@
 import { HtmlHead } from '@components/generic';
 import { getBlogPostThumbnail } from '@lib/blogPosts';
 
-import { Destination, YouTubeVideo } from '../getStaticProps';
+import { BlogPost, Destination, YouTubeVideo } from '../getStaticProps';
 
 import getStructuredData from './getStructuredData';
 
 interface Props {
-  destination: Destination;
+  blogPosts: Array<BlogPost>;
+  destination: Destination | null;
   videos: Array<YouTubeVideo>;
 }
 
-const PageMetadata = ({ destination, videos }: Props): JSX.Element => {
-  const blogPosts = destination.linkedFrom.blogPostCollection.items;
+const PageMetadata = ({
+  blogPosts,
+  destination,
+  videos,
+}: Props): JSX.Element => {
   const featuredBlogPost = blogPosts[0];
   const featuredBlogPostThumbnail = getBlogPostThumbnail(featuredBlogPost);
 
-  const title = destination.name;
+  const title = destination?.name ?? `Travel Blog`;
 
   const description = featuredBlogPost.excerpt;
 
-  const canonicalUrl = `https://www.deannatroytravels.com/${destination.slug}`;
+  const canonicalUrl = destination
+    ? `https://www.deannatroytravels.com/${destination.slug}`
+    : `https://www.deannatroytravels.com/blog`;
 
   const imageUrl = featuredBlogPostThumbnail.loader({
     src: featuredBlogPostThumbnail.url,

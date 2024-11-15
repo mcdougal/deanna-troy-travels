@@ -19,7 +19,15 @@ import SectionTitle from '../SectionTitle';
 
 import sx from './GlobalAboutSection.styles';
 
-const GlobalAboutSection = (): JSX.Element => {
+type Props = {
+  includeImage?: boolean;
+  variant?: `full` | `short`;
+};
+
+const GlobalAboutSection = ({
+  includeImage = true,
+  variant = `full`,
+}: Props): JSX.Element => {
   const theme = useTheme();
 
   const socials = [
@@ -62,21 +70,23 @@ const GlobalAboutSection = (): JSX.Element => {
 
   return (
     <Box sx={sx.container}>
-      <Box sx={sx.imageContainer}>
-        <Image
-          alt="Deanna sitting on a beach doing yoga"
-          layout="fill"
-          loader={cloudinaryLoader}
-          objectFit="cover"
-          objectPosition="center"
-          priority
-          sizes={[
-            `(max-width: ${theme.breakpoints.values.sm}px) 100vw`,
-            `900px`,
-          ].join(`,`)}
-          src="/upload/deanna-troy-travels/global-about-photo.jpg"
-        />
-      </Box>
+      {includeImage && (
+        <Box sx={sx.imageContainer}>
+          <Image
+            alt="Deanna sitting on a beach doing yoga"
+            layout="fill"
+            loader={cloudinaryLoader}
+            objectFit="cover"
+            objectPosition="center"
+            priority
+            sizes={[
+              `(max-width: ${theme.breakpoints.values.sm}px) 100vw`,
+              `900px`,
+            ].join(`,`)}
+            src="/upload/deanna-troy-travels/global-about-photo.jpg"
+          />
+        </Box>
+      )}
       <Box sx={sx.textContainer}>
         <Box sx={sx.sectionTitleContainer}>
           <SectionTitle>Hi, I’m Deanna</SectionTitle>
@@ -88,12 +98,14 @@ const GlobalAboutSection = (): JSX.Element => {
           serene temples, we’ve discovered hidden gems, local life and
           unforgettable cultures — and now, we’re sharing them with you!
         </Typography>
-        <Typography paragraph variant="body1">
-          Join me for travel tips, insider stories, and a quirky perspective on
-          exploring the world while keeping it budget-friendly and
-          plant-powered. Let’s inspire each other to see more, spend less and
-          experience the joy of travel! 🌍
-        </Typography>
+        {variant === `full` && (
+          <Typography paragraph variant="body1">
+            Join me for travel tips, insider stories, and a quirky perspective
+            on exploring the world while keeping it budget-friendly and
+            plant-powered. Let’s inspire each other to see more, spend less and
+            experience the joy of travel! 🌍
+          </Typography>
+        )}
         <Stack direction="row" sx={sx.socialsContainer}>
           {socials.map(({ icon, label, url }) => {
             return (

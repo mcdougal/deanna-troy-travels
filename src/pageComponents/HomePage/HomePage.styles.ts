@@ -3,7 +3,7 @@ export default {
     position: `relative`,
   },
   logoBackground: {
-    filter: `brightness(1.1)`,
+    filter: { xs: `brightness(.9)`, md: `brightness(1.1)` },
     position: `absolute`,
     inset: 0,
     overflow: `hidden`,

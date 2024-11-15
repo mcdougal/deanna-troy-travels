@@ -3,26 +3,19 @@ import { fetchContentfulGraphQl } from '@lib/contentful';
 export interface Destination {
   linkedFrom: {
     blogPostCollection: {
-      items: Array<{
-        coverImage: {
-          description: string | null;
-          url: string;
-        } | null;
-        excerpt: string;
-        publishedDate: string;
-        slug: string;
-        title: string;
-        youTubeVideoId: string | null;
-      }>;
+      total: number;
     };
   };
   name: string;
+  order: number;
   slug: string;
+  sys: { id: string };
+  thumbnail: {
+    description: string;
+    url: string;
+  };
   youTubePlaylistId: string | null;
 }
-
-export type BlogPost =
-  Destination[`linkedFrom`][`blogPostCollection`][`items`][number];
 
 export default async (slug: string): Promise<Destination | null> => {
   const response = await fetchContentfulGraphQl<{
@@ -36,21 +29,17 @@ export default async (slug: string): Promise<Destination | null> => {
           items {
             linkedFrom {
               blogPostCollection {
-                items {
-                  coverImage {
-                    description
-                    url
-                  }
-                  excerpt
-                  publishedDate
-                  slug
-                  title
-                  youTubeVideoId
-                }
+                total
               }
             }
             name
+            order
             slug
+            sys { id }
+            thumbnail {
+              description
+              url
+            }
             youTubePlaylistId
           }
         }
