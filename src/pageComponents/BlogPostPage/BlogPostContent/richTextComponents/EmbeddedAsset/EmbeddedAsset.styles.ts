@@ -1,9 +1,11 @@
 export default {
   imageContainer: {
+    alignItems: `center`,
+    display: `flex`,
+    flexDirection: `column`,
     marginBottom: { xs: 2, sm: 3 },
   },
   imageButton: {
-    display: `block`,
     marginBottom: 1,
   },
   caption: {
