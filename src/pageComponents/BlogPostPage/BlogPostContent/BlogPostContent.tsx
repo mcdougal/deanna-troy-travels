@@ -34,6 +34,8 @@ type Props = {
 const BlogPostContent = ({ blogPost }: Props): JSX.Element => {
   const { json, links } = blogPost.content;
 
+  console.log(json);
+
   return (
     <article>
       {documentToReactComponents(json, {

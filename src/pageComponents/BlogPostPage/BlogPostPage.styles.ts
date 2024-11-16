@@ -5,6 +5,7 @@ export default {
     marginBottom: 8,
     marginTop: { xs: 3, sm: 8 },
     maxWidth: spacing(90),
+    paddingX: { xs: 2, sm: 2 },
   },
   contentContainer: {
     marginTop: { xs: 3, sm: 5 },
@@ -22,7 +23,7 @@ export default {
     paddingTop: { xs: 5, sm: 7 },
   },
   subscribeSectionContainer: {
-    marginBottom: 10,
-    marginTop: { xs: 7, sm: 9 },
+    marginBottom: 18,
+    marginTop: { xs: 7, sm: 14 },
   },
 };

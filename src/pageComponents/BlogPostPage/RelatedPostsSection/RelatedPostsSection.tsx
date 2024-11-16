@@ -33,15 +33,15 @@ const RelatedPostsSection = ({ relatedBlogPosts }: Props): JSX.Element => {
               );
             })}
           </Grid>
+          <Box sx={sx.ctaContainer}>
+            <Link href="/blog" legacyBehavior passHref>
+              <SectionCta>All Posts</SectionCta>
+            </Link>
+          </Box>
         </Box>
         <Box sx={sx.globalAboutSectionContainer}>
           <GlobalAboutSection variant="narrow" />
         </Box>
-      </Box>
-      <Box sx={sx.ctaContainer}>
-        <Link href="/blog" legacyBehavior passHref>
-          <SectionCta>All Posts</SectionCta>
-        </Link>
       </Box>
     </Box>
   );
