@@ -16,7 +16,7 @@ export default {
   youTubeIcon: {
     '&&': {
       fontSize: 20,
-      marginTop: `-3px`,
+      // marginTop: `-1px`,
     },
   },
   instagramIcon: {
@@ -27,25 +27,25 @@ export default {
   facebookIcon: {
     '&&': {
       fontSize: 18,
-      marginTop: `-3px`,
-    },
-  },
-  poshmarkIcon: {
-    '&&': {
-      fontSize: 18,
-      marginTop: `-2px`,
+      marginTop: `-1px`,
     },
   },
   tikTokIcon: {
     '&&': {
       fontSize: 18,
-      marginTop: `-3px`,
+      marginTop: `-2px`,
     },
   },
   amazonIcon: {
     '&&': {
       fontSize: 17,
       marginBottom: `-1px`,
+    },
+  },
+  poshmarkIcon: {
+    '&&': {
+      fontSize: 18,
+      marginTop: `-1px`,
     },
   },
   buttonLabel: {

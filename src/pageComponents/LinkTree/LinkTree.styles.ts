@@ -1,66 +1,66 @@
+import { spacing } from '@lib/mui';
+
 export default {
-  header: {
-    background: `#fff`,
-    paddingBottom: 2,
-    paddingTop: 1,
-  },
-  socials: {
-    display: `flex`,
-    justifyContent: `center`,
-    gap: 2,
-    marginTop: 2,
-  },
-  links: {
-    alignItems: `center`,
-    display: `flex`,
-    flexDirection: `column`,
-    gap: 2,
-    marginTop: {
-      xs: 2,
-      sm: 3,
-    },
+  container: {
     paddingX: 2,
   },
+
+  // Header Section
+  headerSection: {
+    marginTop: { xs: 1, sm: 3 },
+  },
+
+  // Socials Section
+  socialsSection: {
+    marginTop: { xs: 1, sm: 2 },
+  },
+
+  // Links Section
+  linksSection: {
+    marginTop: { xs: 2, sm: 3 },
+  },
   link: {
-    background: `#fff`,
-    borderRadius: 12,
-    boxShadow: `rgba(10, 11, 13, 0.08) 0px 2px 4px 0px`,
     justifyContent: `flex-start`,
-    maxWidth: `400px`,
-    padding: `8px 40px 8px 16px`,
-    width: `100%`,
+    paddingLeft: 2,
   },
   linkIconImageContainer: {
-    alignItems: `center`,
-    borderRadius: `50%`,
-    display: `flex`,
-    justifyContent: `center`,
+    borderRadius: 2,
+    height: 32,
+    letterSpacing: `0.8px`,
+    marginRight: 1,
     overflow: `hidden`,
+    position: `relative`,
+    width: 32,
   },
   linkLabel: {
-    fontWeight: `400`,
-    fontSize: {
-      xs: `0.9rem`,
-      sm: `0.9rem`,
-      md: `0.9rem`,
-      lg: `0.9rem`,
-      xl: `0.9rem`,
-    },
-    letterSpacing: `0.8px`,
-    marginLeft: 2,
+    letterSpacing: 0,
   },
-  shops: {
-    display: `flex`,
-    justifyContent: `center`,
-    gap: 2,
-    marginBottom: 1,
+
+  // Shops Section
+  shopsSection: {
+    marginTop: { xs: 5, sm: 6 },
   },
-  mostRecentVideoSection: {
-    marginTop: 1,
+  shopsTitleContainer: {
+    marginBottom: 4,
   },
-  mostRecentVideoContainer: {
-    maxWidth: `400px`,
-    margin: `16px auto`,
+  shopButton: {
+    flex: `1 0 auto`,
+  },
+  shopButtonLabel: {
+    minWidth: spacing(10),
+  },
+
+  // Videos Section
+  videosSection: {
+    marginBottom: 20,
+    marginTop: { xs: 6, sm: 6 },
+  },
+  videosTitleContainer: {
+    marginBottom: 4,
+  },
+  videosContent: {
+    display: { xs: `block`, md: `flex` },
+    alignItems: `start`,
   },
   viewsIcon: {
     fontSize: 15,
@@ -71,5 +71,12 @@ export default {
   commentsIcon: {
     fontSize: 15,
     marginBottom: `-1px`,
+  },
+  globalAboutSectionContainer: {
+    marginLeft: { xs: 0, md: 4 },
+    marginTop: { xs: 8, md: 0 },
+    position: `sticky`,
+    top: 80,
+    width: { xs: `auto`, md: `350px` },
   },
 };

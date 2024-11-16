@@ -15,7 +15,7 @@ export default {
     '& li + li': {
       marginTop: 2,
     },
-    '& p': {
+    '& li > p': {
       margin: 0,
     },
   },
