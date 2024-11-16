@@ -5,7 +5,6 @@ import { cloudinaryLoader } from '@lib/cloudinary';
 
 import SectionTitle from '../SectionTitle';
 import SocialsIcons from '../SocialsIcons';
-import SubscribeButton from '../SubscribeButton';
 
 import sx from './GlobalAboutSection.styles';
 
