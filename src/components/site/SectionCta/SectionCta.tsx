@@ -8,6 +8,7 @@ type Ref = any;
 interface Props {
   children: React.ReactNode;
   href?: string;
+  onClick?: () => void;
   target?: string;
 }
 

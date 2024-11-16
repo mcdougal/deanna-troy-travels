@@ -9,11 +9,8 @@ export default {
     marginBottom: { xs: 4, sm: 6 },
     textAlign: `center`,
   },
-  destinationsContainer: {
-    marginBottom: 20,
-  },
   aboutFooter: {
     marginBottom: 20,
-    marginTop: 10,
+    marginTop: { xs: 10, md: 16 },
   },
 };

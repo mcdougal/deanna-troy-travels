@@ -26,7 +26,7 @@ const DestinationsPage = ({
         <Typography component="p" sx={sx.subtitle} variant="h4">
           Where do you want to go?
         </Typography>
-        <Box sx={sx.destinationsContainer}>
+        <Box>
           <Grid alignItems="stretch" container spacing={3}>
             {destinations.map((destination) => {
               return (

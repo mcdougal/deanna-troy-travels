@@ -1,16 +1,4 @@
 export default {
-  logoAndTitleContainer: {
-    position: `relative`,
-  },
-  logoBackground: {
-    filter: { xs: `brightness(.9)`, md: `brightness(1.1)` },
-    position: `absolute`,
-    inset: 0,
-    overflow: `hidden`,
-  },
-  logoAndTitle: {
-    position: `relative`,
-  },
   topSection: {
     marginTop: { xs: 6, md: 8 },
   },

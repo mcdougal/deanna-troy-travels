@@ -10,4 +10,9 @@ export default {
     fontSize: 20,
     marginTop: `1px`,
   },
+  ctaContainer: {
+    display: `flex`,
+    justifyContent: `center`,
+    marginTop: { xs: 5, md: 5 },
+  },
 };

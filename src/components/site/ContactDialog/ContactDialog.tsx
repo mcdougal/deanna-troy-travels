@@ -1,3 +1,4 @@
+import SendIcon from '@mui/icons-material/Send';
 import {
   Button,
   Dialog,
@@ -23,7 +24,6 @@ const ContactDialog = ({ onClose, open }: Props): JSX.Element => {
       <Dialog
         disablePortal
         fullScreen={isFullScreen}
-        keepMounted
         onClose={onClose}
         open={open}>
         <DialogTitle>Get In Touch</DialogTitle>
@@ -63,12 +63,13 @@ const ContactDialog = ({ onClose, open }: Props): JSX.Element => {
           />
         </DialogContent>
         <DialogActions>
-          <Button color="primary" onClick={onClose} size="large" variant="text">
-            Close
+          <Button color="inherit" onClick={onClose} size="large" variant="text">
+            Cancel
           </Button>
           <Button
             color="primary"
             size="large"
+            startIcon={<SendIcon />}
             type="submit"
             variant="contained">
             Send

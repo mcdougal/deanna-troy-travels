@@ -24,7 +24,7 @@ const Service = ({ icon, label, onClick, thumbnail }: Props): JSX.Element => {
         <Box sx={sx.titleContainer}>
           <Box sx={sx.iconContainer}>{icon}</Box>
           <Typography sx={sx.title} variant="h6">
-            <b>{label}</b>
+            {label}
           </Typography>
         </Box>
         <Box sx={sx.thumbnailContainer}>

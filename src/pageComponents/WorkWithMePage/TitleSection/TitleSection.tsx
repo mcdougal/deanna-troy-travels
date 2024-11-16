@@ -2,14 +2,14 @@ import { Container } from '@mui/material';
 
 import { PageTitle } from '@components/site';
 
-import sx from './HeroSection.styles';
+import sx from './TitleSection.styles';
 
-const HeroSection = (): JSX.Element => {
+const TitleSection = (): JSX.Element => {
   return (
-    <Container maxWidth="md" sx={sx.heroSectionContainer}>
+    <Container maxWidth="md" sx={sx.container}>
       <PageTitle>Work With Me</PageTitle>
     </Container>
   );
 };
 
-export default HeroSection;
+export default TitleSection;
