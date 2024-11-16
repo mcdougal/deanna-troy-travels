@@ -1,12 +1,12 @@
 import { StructuredDataObject } from './types';
 
-interface Args {
+type Args = {
   items: Array<{
     name: string;
     url?: string;
   }>;
   webPageUrl: string;
-}
+};
 
 export default ({ items, webPageUrl }: Args): StructuredDataObject => {
   return {

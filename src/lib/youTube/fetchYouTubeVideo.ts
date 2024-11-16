@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-export interface YouTubeVideo {
+export type YouTubeVideo = {
   id: string;
   contentDetails: {
     caption: string;
@@ -57,7 +57,7 @@ export interface YouTubeVideo {
     privacyStatus: string;
     uploadStatus: string;
   };
-}
+};
 
 export default async (videoId: string): Promise<YouTubeVideo> => {
   const { GOOGLE_CLOUD_API_KEY } = process.env;

@@ -3,9 +3,9 @@ import React from 'react';
 
 import sx from './Table.styles';
 
-interface Props {
+type Props = {
   children: React.ReactNode;
-}
+};
 
 const Table = ({ children }: Props): JSX.Element => {
   return (

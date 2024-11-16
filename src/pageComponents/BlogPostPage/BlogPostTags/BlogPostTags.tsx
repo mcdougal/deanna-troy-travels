@@ -4,9 +4,9 @@ import { BlogPost } from '../getStaticProps';
 
 import sx from './BlogPostTags.styles';
 
-interface Props {
+type Props = {
   blogPost: BlogPost;
-}
+};
 
 const BlogPostTags = ({ blogPost }: Props): JSX.Element => {
   return (

@@ -6,9 +6,9 @@ export const YOUTUBE_EMBED_REGEX_1 =
 export const YOUTUBE_EMBED_REGEX_2 =
   /^\s*https:\/\/youtu\.be\/(?<videoId>[A-Za-z0-9_-]+)\s*$/i;
 
-interface YouTubeEmbed {
+type YouTubeEmbed = {
   videoId: string;
-}
+};
 
 export default (node: Block | Inline): YouTubeEmbed | null => {
   if (!node.content || !Array.isArray(node.content)) {

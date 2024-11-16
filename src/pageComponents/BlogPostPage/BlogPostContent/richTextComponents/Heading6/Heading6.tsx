@@ -6,10 +6,10 @@ import Anchor from '../../Anchor';
 
 import sx from './Heading6.styles';
 
-interface Props {
+type Props = {
   children: React.ReactNode;
   node: Block | Inline;
-}
+};
 
 const Heading6 = ({ children, node }: Props): JSX.Element => {
   return (

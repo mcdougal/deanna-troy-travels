@@ -8,15 +8,15 @@ import fetchRelatedBlogPosts, {
   RelatedBlogPost,
 } from './fetchRelatedBlogPosts';
 
-interface Params extends ParsedUrlQuery {
+type Params = ParsedUrlQuery & {
   slug: string;
-}
+};
 
-interface Props {
+type Props = {
   blogPost: BlogPost;
   blogPostVideo: BlogPostVideo | null;
   relatedBlogPosts: Array<RelatedBlogPost>;
-}
+};
 
 const getStaticProps: GetStaticProps<Props, Params> = async ({ params }) => {
   const { slug } = params || {};

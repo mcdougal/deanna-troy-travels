@@ -2,9 +2,9 @@ import type { GetStaticProps } from 'next';
 
 import fetchBlogFeatures, { BlogFeature } from './fetchBlogFeatures';
 
-interface Props {
+type Props = {
   blogFeatures: Array<BlogFeature>;
-}
+};
 
 const getStaticProps: GetStaticProps<Props> = async () => {
   return {

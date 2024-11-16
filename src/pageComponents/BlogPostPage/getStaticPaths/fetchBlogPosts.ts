@@ -1,8 +1,8 @@
 import { fetchContentfulGraphQl } from '@lib/contentful';
 
-interface BlogPost {
+type BlogPost = {
   slug: string;
-}
+};
 
 export default async (): Promise<Array<BlogPost>> => {
   const response = await fetchContentfulGraphQl<{

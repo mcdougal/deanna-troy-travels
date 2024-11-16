@@ -5,10 +5,10 @@ import { BlogPost } from '../../../getStaticProps';
 import BlogPostImageGallery from './BlogPostImageGallery';
 import EmbeddedSnippet from './EmbeddedSnippet';
 
-interface Props {
+type Props = {
   links?: BlogPost[`content`][`links`];
   node: Block | Inline;
-}
+};
 
 const EmbeddedEntry = ({ links, node }: Props): JSX.Element | null => {
   const entry = links?.entries.block.find((contentEntry) => {

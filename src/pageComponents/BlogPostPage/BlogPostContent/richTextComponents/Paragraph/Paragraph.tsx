@@ -12,10 +12,10 @@ import getTikTokEmbed from './getTikTokEmbed';
 import getYouTubeEmbed from './getYouTubeEmbed';
 import sx from './Paragraph.styles';
 
-interface Props {
+type Props = {
   children: React.ReactNode;
   node: Block | Inline;
-}
+};
 
 const Paragraph = ({ children, node }: Props): JSX.Element => {
   const instagramEmbed = getInstagramEmbed(node);

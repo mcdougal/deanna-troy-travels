@@ -3,9 +3,9 @@ import React from 'react';
 
 import sx from './TableHeaderCell.styles';
 
-interface Props {
+type Props = {
   children: React.ReactNode;
-}
+};
 
 const TableHeaderCell = ({ children }: Props): JSX.Element => {
   return (

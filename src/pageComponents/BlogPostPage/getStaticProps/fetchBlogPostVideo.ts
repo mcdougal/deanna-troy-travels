@@ -2,7 +2,7 @@ import { fetchYouTubeVideo } from '@lib/youTube';
 
 import { BlogPost } from './fetchBlogPost';
 
-export interface BlogPostVideo {
+export type BlogPostVideo = {
   commentCount: number;
   description: string;
   duration: string;
@@ -13,7 +13,7 @@ export interface BlogPostVideo {
   title: string;
   videoId: string;
   viewCount: number;
-}
+};
 
 export default async (blogPost: BlogPost): Promise<BlogPostVideo | null> => {
   if (!blogPost.youTubeVideoId) {

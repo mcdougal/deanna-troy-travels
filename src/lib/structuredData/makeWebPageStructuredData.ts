@@ -1,6 +1,6 @@
 import { StructuredDataObject } from './types';
 
-interface Args {
+type Args = {
   about?: StructuredDataObject;
   additionalTypes?: Array<string>;
   breadcrumb?: StructuredDataObject;
@@ -9,7 +9,7 @@ interface Args {
   title: string;
   webPageUrl: string;
   website: StructuredDataObject;
-}
+};
 
 export default ({
   about,

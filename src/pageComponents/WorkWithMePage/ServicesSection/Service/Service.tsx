@@ -5,7 +5,7 @@ import { cloudinaryLoader } from '@lib/cloudinary';
 
 import sx from './Service.styles';
 
-interface Props {
+type Props = {
   icon: React.ReactElement;
   label: string;
   onClick: () => void;
@@ -13,7 +13,7 @@ interface Props {
     alt: string;
     url: string;
   };
-}
+};
 
 const Service = ({ icon, label, onClick, thumbnail }: Props): JSX.Element => {
   const theme = useTheme();

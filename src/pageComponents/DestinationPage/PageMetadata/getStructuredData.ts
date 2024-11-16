@@ -12,13 +12,13 @@ import {
 
 import { YouTubeVideo } from '../getStaticProps';
 
-interface Args {
+type Args = {
   canonicalUrl: string;
   description: string;
   imageUrl: string;
   title: string;
   videos: Array<YouTubeVideo>;
-}
+};
 
 export default ({
   canonicalUrl,

@@ -5,7 +5,7 @@ import Link from 'next/link';
 import sx from './MediaCard.styles';
 import MediaCardDetail from './MediaCardDetail';
 
-interface Props {
+type Props = {
   alignDetails?: `left` | `right`;
   description?: string;
   details?: Array<{
@@ -21,7 +21,7 @@ interface Props {
   };
   title: string;
   url: string;
-}
+};
 
 const MediaCard = ({
   alignDetails = `left`,

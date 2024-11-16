@@ -1,9 +1,9 @@
 import { StructuredDataObject } from './types';
 
-interface Args {
+type Args = {
   imageUrl: string;
   webPageUrl: string;
-}
+};
 
 export default ({ imageUrl, webPageUrl }: Args): StructuredDataObject => {
   return {

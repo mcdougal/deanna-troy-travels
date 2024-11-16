@@ -1,8 +1,8 @@
 import { useEffect } from 'react';
 
-interface Props {
+type Props = {
   videoId: string;
-}
+};
 
 const EmbeddedTikTokPost = ({ videoId }: Props): JSX.Element => {
   useEffect(() => {

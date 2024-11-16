@@ -12,9 +12,9 @@ import { RelatedBlogPost } from '../getStaticProps';
 
 import sx from './RelatedPostsSection.styles';
 
-interface Props {
+type Props = {
   relatedBlogPosts: Array<RelatedBlogPost>;
-}
+};
 
 const RelatedPostsSection = ({ relatedBlogPosts }: Props): JSX.Element => {
   return (

@@ -7,9 +7,9 @@ import { BlogPost } from '../getStaticProps';
 
 import sx from './LatestPostsSection.styles';
 
-interface Props {
+type Props = {
   recentBlogPosts: Array<BlogPost>;
-}
+};
 
 const LatestPostsSection = ({ recentBlogPosts }: Props): JSX.Element => {
   return (

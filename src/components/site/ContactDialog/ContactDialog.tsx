@@ -10,10 +10,10 @@ import {
   useTheme,
 } from '@mui/material';
 
-interface Props {
+type Props = {
   onClose: () => void;
   open: boolean;
-}
+};
 
 const ContactDialog = ({ onClose, open }: Props): JSX.Element => {
   const theme = useTheme();

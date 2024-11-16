@@ -5,9 +5,9 @@ import SiteLogo from '../../SiteLogo';
 
 import sx from './SiteLogoButton.styles';
 
-interface Props {
+type Props = {
   hideLogoUntilScroll: boolean;
-}
+};
 
 const SiteLogoButton = ({ hideLogoUntilScroll }: Props): JSX.Element => {
   const trigger = useScrollTrigger({ disableHysteresis: true });

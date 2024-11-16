@@ -8,12 +8,12 @@ import {
   StructuredData,
 } from '@lib/structuredData';
 
-interface Args {
+type Args = {
   canonicalUrl: string;
   description: string;
   imageUrl: string;
   title: string;
-}
+};
 
 export default ({
   canonicalUrl,

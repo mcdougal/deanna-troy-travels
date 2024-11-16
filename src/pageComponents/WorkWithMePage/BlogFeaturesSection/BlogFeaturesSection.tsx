@@ -7,9 +7,9 @@ import { BlogFeature as IBlogFeature } from '../getStaticProps';
 import BlogFeature from './BlogFeature';
 import sx from './BlogFeaturesSection.styles';
 
-interface Props {
+type Props = {
   blogFeatures: Array<IBlogFeature>;
-}
+};
 
 const BlogFeaturesSection = ({ blogFeatures }: Props): JSX.Element => {
   return (

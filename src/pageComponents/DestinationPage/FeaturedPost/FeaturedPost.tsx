@@ -8,9 +8,9 @@ import { BlogPost } from '../getStaticProps';
 
 import sx from './FeaturedPost.styles';
 
-interface Props {
+type Props = {
   blogPost: BlogPost;
-}
+};
 
 const FeaturedPost = ({ blogPost }: Props): JSX.Element => {
   const theme = useTheme();

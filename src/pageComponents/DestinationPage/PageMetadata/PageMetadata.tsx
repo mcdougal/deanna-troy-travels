@@ -5,11 +5,11 @@ import { BlogPost, Destination, YouTubeVideo } from '../getStaticProps';
 
 import getStructuredData from './getStructuredData';
 
-interface Props {
+type Props = {
   blogPosts: Array<BlogPost>;
   destination: Destination | null;
   videos: Array<YouTubeVideo>;
-}
+};
 
 const PageMetadata = ({
   blogPosts,

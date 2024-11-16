@@ -3,11 +3,11 @@ import { Box, Typography } from '@mui/material';
 
 import sx from './Testimonial.styles';
 
-interface Props {
+type Props = {
   company: string;
   person: string;
   testimonial: string;
-}
+};
 
 const Testimonial = ({ company, person, testimonial }: Props): JSX.Element => {
   return (

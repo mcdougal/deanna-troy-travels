@@ -2,10 +2,10 @@ import { Block, Inline } from '@contentful/rich-text-types';
 import { Link as MuiLink } from '@mui/material';
 import React from 'react';
 
-interface Props {
+type Props = {
   children: React.ReactNode;
   node: Block | Inline;
-}
+};
 
 const HyperLink = ({ children, node }: Props): JSX.Element => {
   return (

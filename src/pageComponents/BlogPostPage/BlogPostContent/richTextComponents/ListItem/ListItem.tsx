@@ -3,9 +3,9 @@ import React from 'react';
 
 import sx from './ListItem.styles';
 
-interface Props {
+type Props = {
   children: React.ReactNode;
-}
+};
 
 const ListItem = ({ children }: Props): JSX.Element => {
   return (

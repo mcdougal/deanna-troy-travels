@@ -5,9 +5,9 @@ import { YouTubeVideo } from '../getStaticProps';
 
 import getStructuredData from './getStructuredData';
 
-interface Props {
+type Props = {
   recentVideos: Array<YouTubeVideo>;
-}
+};
 
 const PageMetadata = ({ recentVideos }: Props): JSX.Element => {
   const title = `Deanna Troy Travels`;

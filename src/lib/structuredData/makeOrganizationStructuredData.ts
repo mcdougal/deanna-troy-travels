@@ -1,8 +1,8 @@
 import { StructuredDataObject } from './types';
 
-interface Args {
+type Args = {
   logo: StructuredDataObject;
-}
+};
 
 export default ({ logo }: Args): StructuredDataObject => {
   return {

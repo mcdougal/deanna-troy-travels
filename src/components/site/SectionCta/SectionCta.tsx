@@ -5,12 +5,12 @@ import { forwardRef } from 'react';
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 type Ref = any;
 
-interface Props {
+type Props = {
   children: React.ReactNode;
   href?: string;
   onClick?: () => void;
   target?: string;
-}
+};
 
 const SectionCta = forwardRef<Ref, Props>(
   ({ children, href, target, ...buttonProps }, ref): JSX.Element => {

@@ -2,7 +2,7 @@ import axios from 'axios';
 
 export default async <T>(
   query: string,
-  variables?: { [key: string]: string | number | boolean | null | undefined },
+  variables?: Record<string, string | number | boolean | null | undefined>,
 ): Promise<T> => {
   const { CONTENTFUL_ACCESS_TOKEN, CONTENTFUL_SPACE_ID } = process.env;
 

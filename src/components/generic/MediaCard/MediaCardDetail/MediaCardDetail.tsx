@@ -2,10 +2,10 @@ import { Box, Typography } from '@mui/material';
 
 import sx from './MediaCardDetail.styles';
 
-interface Props {
+type Props = {
   icon: React.ReactElement;
   value: string;
-}
+};
 
 const MediaCardDetail = ({ icon, value }: Props): JSX.Element => {
   return (

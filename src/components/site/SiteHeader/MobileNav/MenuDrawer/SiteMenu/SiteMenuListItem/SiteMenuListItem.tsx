@@ -29,9 +29,9 @@ export type SiteMenuItem =
       internalPath: string;
     };
 
-interface Props {
+type Props = {
   menuItem: SiteMenuItem;
-}
+};
 
 const SiteMenuListItem = ({ menuItem }: Props): JSX.Element => {
   const listItemProps = {

@@ -2,9 +2,9 @@ import React from 'react';
 
 import { ANCHOR_ID_REGEX } from '../../Anchor';
 
-interface Props {
+type Props = {
   text: string;
-}
+};
 
 const Text = ({ text }: Props): JSX.Element => {
   const textWithoutAnchorId = text.replace(ANCHOR_ID_REGEX, ``);

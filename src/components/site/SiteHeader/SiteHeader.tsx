@@ -7,9 +7,9 @@ import MobileNav from './MobileNav';
 import sx from './SiteHeader.styles';
 import SiteLogoButton from './SiteLogoButton';
 
-interface Props {
+type Props = {
   hideLogoUntilScroll?: boolean;
-}
+};
 
 const SiteHeader = ({ hideLogoUntilScroll = false }: Props): JSX.Element => {
   return (

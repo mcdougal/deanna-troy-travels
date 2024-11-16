@@ -3,9 +3,9 @@ import React from 'react';
 
 import sx from './TableCell.styles';
 
-interface Props {
+type Props = {
   children: React.ReactNode;
-}
+};
 
 const TableCell = ({ children }: Props): JSX.Element => {
   return <MuiTableCell sx={sx.tableCell}>{children}</MuiTableCell>;

@@ -15,14 +15,14 @@ import {
 
 import { BlogPost, BlogPostVideo } from '../getStaticProps';
 
-interface Args {
+type Args = {
   blogPost: BlogPost;
   blogPostVideo: BlogPostVideo | null;
   canonicalUrl: string;
   description: string;
   imageUrl: string;
   title: string;
-}
+};
 
 export default ({
   blogPost,

@@ -12,7 +12,7 @@ const BlogSubscribeSuccessPage = (): React.ReactElement => {
           key="description"
           content="You are now subscribed to the Deanna Troy Travels blog"
         />
-        <meta key="robots" content="noindex" name="robots"></meta>
+        <meta key="robots" content="noindex" name="robots" />
       </Head>
       <Container sx={sx.pageContainer}>
         <Typography component="h1" variant="h3">

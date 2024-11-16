@@ -2,9 +2,9 @@ import { Box } from '@mui/material';
 
 import sx from './BlogSubscribeContainer.styles';
 
-interface Props {
+type Props = {
   children: React.ReactNode;
-}
+};
 
 const BlogSubscribeContainer = ({ children }: Props): JSX.Element => {
   return (

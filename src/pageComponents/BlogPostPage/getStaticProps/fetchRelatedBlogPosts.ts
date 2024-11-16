@@ -2,7 +2,7 @@ import { fetchContentfulGraphQl } from '@lib/contentful';
 
 import { BlogPost } from './fetchBlogPost';
 
-export interface RelatedBlogPost {
+export type RelatedBlogPost = {
   coverImage: {
     description: string | null;
     url: string;
@@ -16,7 +16,7 @@ export interface RelatedBlogPost {
   slug: string;
   title: string;
   youTubeVideoId: string | null;
-}
+};
 
 export default async (blogPost: BlogPost): Promise<Array<RelatedBlogPost>> => {
   const response = await fetchContentfulGraphQl<{

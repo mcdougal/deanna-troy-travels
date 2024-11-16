@@ -2,14 +2,14 @@ import { MediaCard } from '@components/generic';
 import { cloudinaryLoader } from '@lib/cloudinary';
 import { contentfulLoader } from '@lib/contentful';
 
-interface BlogPost {
+type BlogPost = {
   coverImage: {
     description: string | null;
     url: string;
   } | null;
   title: string;
   youTubeVideoId: string | null;
-}
+};
 
 export default (
   blogPost: BlogPost,

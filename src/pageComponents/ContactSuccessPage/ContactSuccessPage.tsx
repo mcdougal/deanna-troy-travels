@@ -13,7 +13,7 @@ const ContactSuccessPage = (): React.ReactElement => {
           content="I’ll reach out to you shortly. Keep an eye on your inbox!"
           name="description"
         />
-        <meta key="robots" content="noindex" name="robots"></meta>
+        <meta key="robots" content="noindex" name="robots" />
       </Head>
       <Container sx={sx.pageContainer}>
         <Typography component="h1" variant="h3">

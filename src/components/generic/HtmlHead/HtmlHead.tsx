@@ -3,7 +3,7 @@ import Head from 'next/head';
 
 import { StructuredData } from '@lib/structuredData';
 
-interface Props {
+type Props = {
   canonicalUrl: string;
   description: string;
   imageUrl: string;
@@ -11,7 +11,7 @@ interface Props {
   title: string;
   type?: string;
   videoUrl?: string;
-}
+};
 
 const HtmlHead = ({
   canonicalUrl,

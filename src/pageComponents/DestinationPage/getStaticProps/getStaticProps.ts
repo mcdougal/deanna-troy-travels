@@ -7,16 +7,16 @@ import fetchDestination, { Destination } from './fetchDestination';
 import fetchDestinations from './fetchDestinations';
 import fetchVideos, { YouTubeVideo } from './fetchVideos';
 
-interface Params extends ParsedUrlQuery {
+type Params = ParsedUrlQuery & {
   destinationSlug: string;
-}
+};
 
-interface Props {
+type Props = {
   blogPosts: Array<BlogPost>;
   destination: Destination | null;
   destinations: Array<Destination>;
   videos: Array<YouTubeVideo>;
-}
+};
 
 const getStaticProps: GetStaticProps<Props, Params> = async ({ params }) => {
   const { destinationSlug } = params || {};

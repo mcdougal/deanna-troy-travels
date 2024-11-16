@@ -1,6 +1,6 @@
 import { fetchContentfulGraphQl } from '@lib/contentful';
 
-export interface BlogPost {
+export type BlogPost = {
   coverImage: {
     description: string | null;
     url: string;
@@ -13,7 +13,7 @@ export interface BlogPost {
   slug: string;
   title: string;
   youTubeVideoId: string | null;
-}
+};
 
 export default async (): Promise<Array<BlogPost>> => {
   const response = await fetchContentfulGraphQl<{

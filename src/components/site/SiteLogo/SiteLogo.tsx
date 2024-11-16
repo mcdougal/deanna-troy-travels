@@ -7,10 +7,10 @@ import sx from './SiteLogo.styles';
 
 const YOUTUBE_LOGO_RATIO = 1.18518;
 
-interface Props {
+type Props = {
   height: number;
   variant?: `logoOnly` | `logoAndTitle`;
-}
+};
 
 const SiteLogo = ({ height, variant = `logoOnly` }: Props): JSX.Element => {
   const theme = useTheme();
