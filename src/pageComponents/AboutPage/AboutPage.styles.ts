@@ -2,8 +2,11 @@ export default {
   introSectionContainer: {
     marginTop: { xs: 3, md: 6 },
   },
+  travelStatsSectionContainer: {
+    marginTop: { xs: 8, md: 8 },
+  },
   socialSectionContainer: {
-    marginTop: 8,
+    marginTop: { xs: 10, md: 12 },
   },
   contactSectionContainer: {
     marginBottom: 20,

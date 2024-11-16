@@ -1,7 +1,19 @@
+import FacebookIcon from '@mui/icons-material/Facebook';
+import InstagramIcon from '@mui/icons-material/Instagram';
 import YouTubeIcon from '@mui/icons-material/YouTube';
-import { Box, ButtonBase, Container, Typography } from '@mui/material';
+import {
+  Box,
+  ButtonBase,
+  Container,
+  IconButton,
+  Stack,
+  Tooltip,
+  Typography,
+} from '@mui/material';
 import Link from 'next/link';
 import { useState } from 'react';
+
+import { AmazonIcon, PoshmarkIcon, TikTokIcon } from '@components/icons';
 
 import ContactDialog from '../ContactDialog';
 import SiteLogo from '../SiteLogo';
@@ -37,7 +49,7 @@ const SiteFooter = (): JSX.Element => {
     {
       type: `externalLink`,
       key: `videos`,
-      label: `Videos`,
+      label: `YouTube`,
       externalUrl: `https://www.youtube.com/deannatroytravels/videos`,
     },
     {
@@ -48,15 +60,15 @@ const SiteFooter = (): JSX.Element => {
     },
     {
       type: `internalLink`,
-      key: `about`,
-      label: `About`,
-      internalPath: `/about`,
-    },
-    {
-      type: `internalLink`,
       key: `workWithMe`,
       label: `Work With Me`,
       internalPath: `/work-with-me`,
+    },
+    {
+      type: `internalLink`,
+      key: `about`,
+      label: `About`,
+      internalPath: `/about`,
     },
     {
       type: `button`,
@@ -89,6 +101,39 @@ const SiteFooter = (): JSX.Element => {
     },
   ];
 
+  const socials = [
+    {
+      icon: <YouTubeIcon />,
+      label: `YouTube`,
+      url: `https://www.youtube.com/deannatroytravels`,
+    },
+    {
+      icon: <InstagramIcon />,
+      label: `Instagram`,
+      url: `https://www.instagram.com/deanna_troy_travels`,
+    },
+    {
+      icon: <FacebookIcon />,
+      label: `Facebook`,
+      url: `https://www.facebook.com/deannatroytravels`,
+    },
+    {
+      icon: <TikTokIcon />,
+      label: `TikTok`,
+      url: `https://www.tiktok.com/@deannatroytravels`,
+    },
+    {
+      icon: <AmazonIcon />,
+      label: `Amazon`,
+      url: `https://www.amazon.com/shop/deannatroytravels`,
+    },
+    {
+      icon: <PoshmarkIcon />,
+      label: `Poshmark`,
+      url: `https://poshmark.com/closet/deannatroyshop`,
+    },
+  ];
+
   return (
     <Box component="footer" sx={sx.siteFooter}>
       <Container maxWidth="md" sx={sx.siteFooterContent}>
@@ -115,6 +160,21 @@ const SiteFooter = (): JSX.Element => {
             );
           })}
         </Box>
+        <Stack
+          direction="row"
+          justifyContent="center"
+          spacing={1}
+          sx={sx.socialsContainer}>
+          {socials.map(({ icon, label, url }) => {
+            return (
+              <Tooltip key={label} title={label}>
+                <IconButton component="a" href={url} target="_blank">
+                  {icon}
+                </IconButton>
+              </Tooltip>
+            );
+          })}
+        </Stack>
       </Container>
       <SocialsMenu
         anchor={socialsMenuAnchor}
