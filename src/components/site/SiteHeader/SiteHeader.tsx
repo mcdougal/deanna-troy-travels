@@ -1,10 +1,11 @@
 import { AppBar, Box, Toolbar } from '@mui/material';
 
+import SocialsIcons from '../SocialsIcons';
+
 import DesktopNav from './DesktopNav';
 import MobileNav from './MobileNav';
 import sx from './SiteHeader.styles';
 import SiteLogoButton from './SiteLogoButton';
-import Socials from './Socials';
 
 interface Props {
   hideLogoUntilScroll?: boolean;
@@ -24,7 +25,7 @@ const SiteHeader = ({ hideLogoUntilScroll = false }: Props): JSX.Element => {
           <DesktopNav />
         </Box>
         <Box sx={sx.socials}>
-          <Socials />
+          <SocialsIcons justifyContent="end" spacing={1} />
         </Box>
       </Toolbar>
     </AppBar>

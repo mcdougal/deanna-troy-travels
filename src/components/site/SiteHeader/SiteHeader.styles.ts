@@ -16,8 +16,8 @@ export default {
     display: { xs: `none`, lg: `block` },
   },
   socials: {
-    display: { xs: `none`, lg: `flex` },
-    justifyContent: `flex-end`,
+    display: { xs: `none`, lg: `block` },
+    marginRight: -1,
     minWidth: `280px`,
   },
 };

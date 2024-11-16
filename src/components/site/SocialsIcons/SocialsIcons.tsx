@@ -5,13 +5,15 @@ import { IconButton, Stack, Tooltip } from '@mui/material';
 
 import { AmazonIcon, PoshmarkIcon, TikTokIcon } from '@components/icons';
 
+import sx from './SocialsIcons.styles';
+
 export interface SocialsMenuAnchor {
   element: HTMLButtonElement | HTMLDivElement | null;
   elementId: string;
 }
 
 interface Props {
-  justifyContent?: `center` | `space-between` | `start`;
+  justifyContent?: `center` | `end` | `space-between` | `start`;
   size?: 'small' | 'medium' | 'large';
   spacing?: number;
 }
@@ -43,7 +45,7 @@ const SocialsIcons = ({
       url: `https://www.tiktok.com/@deannatroytravels`,
     },
     {
-      icon: <AmazonIcon fontSize={size} />,
+      icon: <AmazonIcon fontSize={size} sx={sx.amazonIcon} />,
       label: `Amazon`,
       url: `https://www.amazon.com/shop/deannatroytravels`,
     },
