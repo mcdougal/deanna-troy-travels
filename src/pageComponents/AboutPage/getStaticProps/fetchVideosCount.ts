@@ -1,7 +1,7 @@
 import { fetchPlaylistSize } from '@lib/youTube';
 
-const ALL_VIDEOS_PLAYLIST_ID = `PLupawb160v0xF0_SUX5yHJE2GQogd7lx-`;
+const USER_UPLOADS_PLAYLIST_ID = `UUJeRZkaH3ORHkNWUNqfXJEg`;
 
 export default async (): Promise<number> => {
-  return fetchPlaylistSize(ALL_VIDEOS_PLAYLIST_ID);
+  return fetchPlaylistSize(USER_UPLOADS_PLAYLIST_ID);
 };

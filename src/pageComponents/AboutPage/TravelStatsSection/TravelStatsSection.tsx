@@ -16,7 +16,7 @@ const TravelStatsSection = ({
   videosCount,
 }: Props): JSX.Element => {
   const stats = [
-    { label: `Countries Visited`, value: `23` },
+    { label: `Countries Visited`, value: `22` },
     { label: `Blog Posts`, value: blogPostsCount },
     { label: `Travel Videos`, value: videosCount },
   ];
