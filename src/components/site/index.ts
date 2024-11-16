@@ -13,6 +13,7 @@ import SiteHeader from './SiteHeader';
 import SiteLogo from './SiteLogo';
 import SocialsIcons from './SocialsIcons';
 import SocialsMenu, { SocialsMenuAnchor } from './SocialsMenu';
+import SubscribeButton from './SubscribeButton';
 import VideoMediaCard from './VideoMediaCard';
 
 export type { SocialsMenuAnchor };
@@ -33,5 +34,6 @@ export {
   SiteLogo,
   SocialsIcons,
   SocialsMenu,
+  SubscribeButton,
   VideoMediaCard,
 };
