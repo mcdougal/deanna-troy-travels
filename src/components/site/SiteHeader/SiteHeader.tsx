@@ -25,7 +25,7 @@ const SiteHeader = ({ hideLogoUntilScroll = false }: Props): JSX.Element => {
           <DesktopNav />
         </Box>
         <Box sx={sx.socials}>
-          <SocialsIcons justifyContent="end" spacing={1} />
+          <SocialsIcons justifyContent="end" size="small" spacing={1} />
         </Box>
       </Toolbar>
     </AppBar>
