@@ -35,7 +35,7 @@ const RelatedPostsSection = ({ relatedBlogPosts }: Props): JSX.Element => {
           </Grid>
         </Box>
         <Box sx={sx.globalAboutSectionContainer}>
-          <GlobalAboutSection includeImage={false} variant="short" />
+          <GlobalAboutSection variant="narrow" />
         </Box>
       </Box>
       <Box sx={sx.ctaContainer}>

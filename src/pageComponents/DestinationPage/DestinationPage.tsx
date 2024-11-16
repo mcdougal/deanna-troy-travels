@@ -101,7 +101,7 @@ const DestinationPage = ({
             </Box>
           )}
           <Box sx={sx.globalAboutSectionContainer}>
-            <GlobalAboutSection includeImage={false} variant="short" />
+            <GlobalAboutSection variant="narrow" />
           </Box>
         </Box>
       </Container>

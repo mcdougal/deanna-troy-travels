@@ -12,8 +12,8 @@ export default {
   globalAboutSectionContainer: {
     marginLeft: { xs: 0, md: 4 },
     marginTop: { xs: 8, md: 0 },
-    minWidth: `350px`,
     position: `sticky`,
     top: 80,
+    width: { xs: `auto`, md: `350px` },
   },
 };

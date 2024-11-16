@@ -13,9 +13,9 @@ export type SocialsMenuAnchor = {
 };
 
 type Props = {
-  justifyContent?: `center` | `end` | `space-between` | `start`;
+  justifyContent?: React.ComponentProps<typeof Stack>['justifyContent'];
   size?: 'small' | 'medium' | 'large';
-  spacing?: number;
+  spacing?: React.ComponentProps<typeof Stack>['spacing'];
 };
 
 const SocialsIcons = ({
