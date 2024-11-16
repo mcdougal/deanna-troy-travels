@@ -65,7 +65,6 @@ const SiteMenu = (): JSX.Element => {
           return <SiteMenuListItem key={menuItem.key} menuItem={menuItem} />;
         })}
       </List>
-
       <ContactDialog onClose={closeContactDialog} open={isContactDialogOpen} />
     </>
   );
