@@ -8,15 +8,15 @@ export default {
     alignItems: `center`,
     display: `flex`,
     justifyContent: `center`,
+    marginLeft: -1,
   },
   titleContainer: {
     marginLeft: 2,
   },
-  deannaTroy: {
-    display: `inline`,
-  },
   title: {
+    fontSize: { xs: `h4.fontSize`, sm: `h2.fontSize` },
     marginTop: 1,
+    whiteSpace: `nowrap`,
   },
   subtitle: {
     letterSpacing: `0.1em`,

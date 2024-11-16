@@ -2,7 +2,7 @@ import { Stack, Typography, TypographyProps } from '@mui/material';
 
 import { SquigglyDividerSvg } from '@components/generic';
 
-type Props = TypographyProps & {
+type Props = {
   children: React.ReactNode;
   color?: TypographyProps[`color`];
   variant?: TypographyProps[`variant`];

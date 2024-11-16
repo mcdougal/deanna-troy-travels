@@ -43,5 +43,6 @@ export default {
   },
   description: {
     marginTop: 2,
+    wordBreak: `break-word`,
   },
 };

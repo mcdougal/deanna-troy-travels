@@ -1,29 +1,20 @@
-import FacebookIcon from '@mui/icons-material/Facebook';
-import InstagramIcon from '@mui/icons-material/Instagram';
-import ModeCommentIcon from '@mui/icons-material/ModeComment';
-import ThumbUpIcon from '@mui/icons-material/ThumbUp';
-import VisibilityIcon from '@mui/icons-material/Visibility';
-import YouTubeIcon from '@mui/icons-material/YouTube';
-import {
-  Box,
-  Button,
-  GlobalStyles,
-  IconButton,
-  Typography,
-} from '@mui/material';
+import { Box, Button, Container, Grid, Stack } from '@mui/material';
 import { InferGetStaticPropsType } from 'next';
 import Image from 'next/legacy/image';
 
-import { MediaCard } from '@components/generic';
 import {
   AmazonIcon,
   DepopIcon,
   MercariIcon,
   PoshmarkIcon,
-  TikTokIcon,
 } from '@components/icons';
-import { SiteFooter } from '@components/site';
-import { cloudinaryLoader } from '@lib/cloudinary';
+import {
+  GlobalAboutSection,
+  SectionTitle,
+  SiteFooter,
+  SocialsIcons,
+  VideoMediaCard,
+} from '@components/site';
 import { contentfulLoader } from '@lib/contentful';
 
 import getStaticProps from './getStaticProps';
@@ -33,8 +24,8 @@ import PageMetadata from './PageMetadata';
 
 const SVG_ICON_STYLES = {
   color: `#ff1694`,
-  height: 28,
-  width: 28,
+  height: 20,
+  width: 20,
 } as const;
 
 const LinkTree = ({
@@ -42,29 +33,6 @@ const LinkTree = ({
   playlistTitle,
   playlistVideos,
 }: InferGetStaticPropsType<typeof getStaticProps>): React.ReactElement => {
-  const socials = [
-    {
-      icon: <YouTubeIcon style={SVG_ICON_STYLES} />,
-      label: `YouTube`,
-      url: `https://www.youtube.com/deannatroytravels`,
-    },
-    {
-      icon: <TikTokIcon style={SVG_ICON_STYLES} />,
-      label: `TikTok`,
-      url: `https://www.tiktok.com/@deannatroytravels`,
-    },
-    {
-      icon: <InstagramIcon style={SVG_ICON_STYLES} />,
-      label: `Instagram`,
-      url: `https://www.instagram.com/deanna_troy_travels`,
-    },
-    {
-      icon: <FacebookIcon style={SVG_ICON_STYLES} />,
-      label: `Facebook`,
-      url: `https://www.facebook.com/deannatroytravels`,
-    },
-  ];
-
   const shops = [
     {
       icon: <AmazonIcon style={SVG_ICON_STYLES} />,
@@ -91,27 +59,20 @@ const LinkTree = ({
   return (
     <>
       <PageMetadata />
-      <GlobalStyles styles={{ body: { background: `#f7f7f7` } }} />
-      <Box sx={sx.header}>
-        <Box>
-          <LogoAndTitle />
-        </Box>
-        <Box sx={sx.socials}>
-          {socials.map(({ icon, label, url }) => {
-            return (
-              <IconButton
-                key={label}
-                component="a"
-                href={url}
-                target="_blank"
-                title={label}>
-                {icon}
-              </IconButton>
-            );
-          })}
-        </Box>
-      </Box>
-      <Box sx={sx.links}>
+      <Container maxWidth="md" sx={{ ...sx.container, ...sx.headerSection }}>
+        <LogoAndTitle />
+      </Container>
+      <Container maxWidth="md" sx={{ ...sx.container, ...sx.socialsSection }}>
+        <SocialsIcons
+          include={[`youTube`, `tikTok`, `instagram`, `facebook`]}
+          spacing={2}
+        />
+      </Container>
+      <Container
+        component={Stack}
+        maxWidth="xs"
+        spacing={1}
+        sx={{ ...sx.container, ...sx.linksSection }}>
         {linkTreeItems.map(({ label, image, url }) => {
           return (
             <Button
@@ -119,91 +80,70 @@ const LinkTree = ({
               color="inherit"
               component="a"
               focusRipple
+              fullWidth
               href={url}
               size="large"
               startIcon={
                 <Box sx={sx.linkIconImageContainer}>
                   <Image
                     alt=""
-                    height={48}
-                    layout="fixed"
+                    layout="fill"
                     loader={contentfulLoader}
+                    objectFit="cover"
+                    objectPosition="center"
+                    sizes="100px"
                     src={image.url}
-                    width={48}
                   />
                 </Box>
               }
               sx={sx.link}
               target="_blank"
-              variant="contained">
-              <Typography component="span" sx={sx.linkLabel} variant="h5">
-                {label}
-              </Typography>
+              variant="outlined">
+              <Box sx={sx.linkLabel}>{label}</Box>
             </Button>
           );
         })}
-      </Box>
-      <Box mt={5}>
-        <Box mb={2}>
-          <Typography align="center" variant="h5">
-            Online Shops
-          </Typography>
+      </Container>
+      <Container maxWidth="sm" sx={{ ...sx.container, ...sx.shopsSection }}>
+        <Box sx={sx.shopsTitleContainer}>
+          <SectionTitle variant="h4">Online Shops</SectionTitle>
         </Box>
-        <Box sx={sx.shops}>
+        <Grid container spacing={2}>
           {shops.map(({ icon, label, url }) => {
             return (
-              <IconButton
-                key={label}
-                component="a"
-                href={url}
-                target="_blank"
-                title={label}>
-                {icon}
-              </IconButton>
+              <Grid key={label} item sm={6} xs={12}>
+                <Button
+                  color="inherit"
+                  fullWidth
+                  href={url}
+                  size="large"
+                  startIcon={icon}
+                  sx={sx.shopButton}
+                  target="_blank"
+                  variant="outlined">
+                  <Box sx={sx.shopButtonLabel}>{label}</Box>
+                </Button>
+              </Grid>
             );
           })}
-        </Box>
-      </Box>
+        </Grid>
+      </Container>
       {playlistVideos.length > 0 && (
-        <Box pt={4} sx={sx.mostRecentVideoSection}>
-          <Box mb={2}>
-            <Typography align="center" variant="h5">
-              {playlistTitle}
-            </Typography>
+        <Container maxWidth="md" sx={{ ...sx.container, ...sx.videosSection }}>
+          <Box sx={sx.videosTitleContainer}>
+            <SectionTitle variant="h4">{playlistTitle}</SectionTitle>
           </Box>
-          {playlistVideos.map((video) => {
-            return (
-              <Box key={video.videoId} px={1} sx={sx.mostRecentVideoContainer}>
-                <MediaCard
-                  details={[
-                    {
-                      key: `views`,
-                      icon: <VisibilityIcon sx={sx.viewsIcon} />,
-                      value: video.viewCount.toLocaleString(),
-                    },
-                    {
-                      key: `likes`,
-                      icon: <ThumbUpIcon sx={sx.likesIcon} />,
-                      value: video.likeCount.toLocaleString(),
-                    },
-                    {
-                      key: `comments`,
-                      icon: <ModeCommentIcon sx={sx.commentsIcon} />,
-                      value: video.commentCount.toLocaleString(),
-                    },
-                  ]}
-                  thumbnail={{
-                    alt: video.title,
-                    loader: cloudinaryLoader,
-                    url: `/youtube/${video.videoId}`,
-                  }}
-                  title={video.title}
-                  url={`https://www.youtube.com/watch?v=${video.videoId}`}
-                />
-              </Box>
-            );
-          })}
-        </Box>
+          <Box sx={sx.videosContent}>
+            <Stack spacing={5}>
+              {playlistVideos.map((video) => {
+                return <VideoMediaCard key={video.videoId} video={video} />;
+              })}
+            </Stack>
+            <Box sx={sx.globalAboutSectionContainer}>
+              <GlobalAboutSection variant="narrow" />
+            </Box>
+          </Box>
+        </Container>
       )}
       <SiteFooter />
     </>
