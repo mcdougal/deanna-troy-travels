@@ -16,6 +16,7 @@ export default {
   },
   letsChatParagraph: {
     lineHeight: 1.6,
+    marginTop: { xs: 0, sm: 1 },
   },
   ctaContainer: {
     display: `flex`,
@@ -25,6 +26,7 @@ export default {
     marginTop: 4,
   },
   ctaButton: {
+    flex: 1,
     whiteSpace: `nowrap`,
     '& .MuiButton-endIcon > *:nth-of-type(1)': {
       fontSize: 18,

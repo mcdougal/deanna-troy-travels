@@ -1,9 +1,9 @@
 export default {
-  heroSectionContainer: {
+  titleSectionContainer: {
     marginTop: 6,
   },
   introSectionContainer: {
-    marginTop: { xs: 6, md: 10 },
+    marginTop: { xs: 6, md: 8 },
   },
   workedWithSectionContainer: {
     marginTop: { xs: 8, md: 10 },
@@ -12,13 +12,13 @@ export default {
     marginTop: { xs: 6, md: 6 },
   },
   testimonialsSectionContainer: {
-    marginTop: { xs: 7, md: 10 },
+    marginTop: { xs: 10, md: 10 },
   },
   blogFeaturesSectionContainer: {
-    marginTop: { xs: 6, md: 8 },
+    marginTop: { xs: 9, md: 10 },
   },
   contactSectionContainer: {
     marginBottom: 20,
-    marginTop: { xs: 7, md: 10 },
+    marginTop: { xs: 9, md: 12 },
   },
 };

@@ -3,7 +3,7 @@ import { spacing } from '@lib/mui';
 export default {
   siteFooter: {
     backgroundColor: `grey.50`,
-    paddingBottom: { xs: 10, md: 15 },
+    paddingBottom: { xs: 10, md: 18 },
     paddingTop: { xs: 8, md: 12 },
   },
   siteFooterContent: {
@@ -24,8 +24,9 @@ export default {
     flexDirection: { xs: `column`, sm: `row` },
     flexWrap: `wrap`,
     justifyContent: `center`,
-    marginX: `auto`,
-    maxWidth: 650,
+  },
+  socialsContainer: {
+    marginTop: { xs: 4, sm: 2 },
   },
   navItemContainer: {
     marginBottom: 2,

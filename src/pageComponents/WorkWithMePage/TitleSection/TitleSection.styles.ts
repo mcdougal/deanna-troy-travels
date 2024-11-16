@@ -1,5 +1,5 @@
 export default {
-  heroSectionContainer: {
+  container: {
     textAlign: `center`,
   },
   title: {

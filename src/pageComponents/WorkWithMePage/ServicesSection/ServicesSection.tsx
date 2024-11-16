@@ -3,7 +3,7 @@ import SellIcon from '@mui/icons-material/Sell';
 import { Box, Container, Grid } from '@mui/material';
 import { useState } from 'react';
 
-import { ContactDialog, SectionTitle } from '@components/site';
+import { ContactDialog, SectionCta, SectionTitle } from '@components/site';
 
 import Service from './Service';
 import sx from './ServicesSection.styles';
@@ -49,6 +49,9 @@ const ServicesSection = (): JSX.Element => {
             />
           </Grid>
         </Grid>
+        <Box sx={sx.ctaContainer}>
+          <SectionCta onClick={openContactDialog}>Let’s Chat</SectionCta>
+        </Box>
       </Container>
       <ContactDialog onClose={closeContactDialog} open={isContactDialogOpen} />
     </>

@@ -6,13 +6,18 @@ export default {
     paddingBottom: 1,
     paddingTop: 1,
   },
-  left: {
-    flex: 1,
+  siteLogoButtonContainer: {
+    minWidth: { xs: `none`, lg: `280px` },
   },
   mobileNav: {
-    display: { md: `none` },
+    display: { lg: `none` },
   },
   desktopNav: {
-    display: { xs: `none`, md: `block` },
+    display: { xs: `none`, lg: `block` },
+  },
+  socials: {
+    display: { xs: `none`, lg: `block` },
+    marginRight: -1,
+    minWidth: `280px`,
   },
 };

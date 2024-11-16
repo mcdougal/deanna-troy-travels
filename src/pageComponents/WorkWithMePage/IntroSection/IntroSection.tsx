@@ -48,7 +48,7 @@ const IntroSection = (): JSX.Element => {
             sx={sx.ctaButton}
             target="_blank"
             variant="outlined">
-            Résumé
+            Media Kit
           </Button>
           <Button
             color="primary"
@@ -57,7 +57,7 @@ const IntroSection = (): JSX.Element => {
             sx={sx.ctaButton}
             target="_blank"
             variant="contained">
-            Email Deanna
+            Email Me
           </Button>
         </Box>
       </Box>

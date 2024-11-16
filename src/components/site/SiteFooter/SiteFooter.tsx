@@ -5,18 +5,14 @@ import { useState } from 'react';
 
 import ContactDialog from '../ContactDialog';
 import SiteLogo from '../SiteLogo';
-import SocialsMenu, { SocialsMenuAnchor } from '../SocialsMenu';
+import SocialsIcons from '../SocialsIcons';
 
 import NavItemButton, { NavItem } from './NavItemButton';
 import sx from './SiteFooter.styles';
 
-const SOCIALS_BUTTON_HTML_ID = `site-footer-socials-button`;
 const CONTACT_BUTTON_HTML_ID = `site-footer-contact-button`;
 
 const SiteFooter = (): JSX.Element => {
-  const [socialsMenuAnchor, setSocialsMenuAnchor] =
-    useState<SocialsMenuAnchor | null>(null);
-
   const [isContactDialogOpen, setIsContactDialogOpen] = useState(false);
 
   const openContactDialog = (): void => {
@@ -37,7 +33,7 @@ const SiteFooter = (): JSX.Element => {
     {
       type: `externalLink`,
       key: `videos`,
-      label: `Videos`,
+      label: `YouTube`,
       externalUrl: `https://www.youtube.com/deannatroytravels/videos`,
     },
     {
@@ -48,15 +44,15 @@ const SiteFooter = (): JSX.Element => {
     },
     {
       type: `internalLink`,
-      key: `about`,
-      label: `About`,
-      internalPath: `/about`,
-    },
-    {
-      type: `internalLink`,
       key: `workWithMe`,
       label: `Work With Me`,
       internalPath: `/work-with-me`,
+    },
+    {
+      type: `internalLink`,
+      key: `about`,
+      label: `About`,
+      internalPath: `/about`,
     },
     {
       type: `button`,
@@ -64,18 +60,6 @@ const SiteFooter = (): JSX.Element => {
       label: `Contact Me`,
       id: CONTACT_BUTTON_HTML_ID,
       onClick: openContactDialog,
-    },
-    {
-      type: `button`,
-      key: `socials`,
-      label: `Socials`,
-      id: SOCIALS_BUTTON_HTML_ID,
-      onClick: (event): void => {
-        setSocialsMenuAnchor({
-          element: event.currentTarget,
-          elementId: SOCIALS_BUTTON_HTML_ID,
-        });
-      },
     },
     {
       type: `externalLink`,
@@ -115,13 +99,10 @@ const SiteFooter = (): JSX.Element => {
             );
           })}
         </Box>
+        <Box sx={sx.socialsContainer}>
+          <SocialsIcons spacing={1} />
+        </Box>
       </Container>
-      <SocialsMenu
-        anchor={socialsMenuAnchor}
-        onClose={(): void => {
-          setSocialsMenuAnchor(null);
-        }}
-      />
       <ContactDialog onClose={closeContactDialog} open={isContactDialogOpen} />
     </Box>
   );

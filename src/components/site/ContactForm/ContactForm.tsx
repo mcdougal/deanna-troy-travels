@@ -38,6 +38,7 @@ const ContactForm = (): JSX.Element => {
       />
       <Button
         color="primary"
+        fullWidth
         size="large"
         sx={sx.submitButton}
         type="submit"

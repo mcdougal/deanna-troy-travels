@@ -1,15 +1,22 @@
 import { List } from '@mui/material';
 import { useState } from 'react';
 
-import SocialsMenu, { SocialsMenuAnchor } from '../../../../SocialsMenu';
+import ContactDialog from '../../../../ContactDialog';
 
 import SiteMenuListItem, { SiteMenuItem } from './SiteMenuListItem';
 
-const SOCIALS_BUTTON_HTML_ID = `site-header-mobile-nav-socials-button`;
+const CONTACT_BUTTON_HTML_ID = `mobile-menu-contact-button`;
 
 const SiteMenu = (): JSX.Element => {
-  const [socialsMenuAnchor, setSocialsMenuAnchor] =
-    useState<SocialsMenuAnchor | null>(null);
+  const [isContactDialogOpen, setIsContactDialogOpen] = useState(false);
+
+  const openContactDialog = (): void => {
+    setIsContactDialogOpen(true);
+  };
+
+  const closeContactDialog = (): void => {
+    setIsContactDialogOpen(false);
+  };
 
   const menuItems: Array<SiteMenuItem> = [
     {
@@ -44,15 +51,10 @@ const SiteMenu = (): JSX.Element => {
     },
     {
       type: `button`,
-      key: `socials`,
-      label: `Socials`,
-      id: SOCIALS_BUTTON_HTML_ID,
-      onClick: (event): void => {
-        setSocialsMenuAnchor({
-          element: event.currentTarget,
-          elementId: SOCIALS_BUTTON_HTML_ID,
-        });
-      },
+      key: `contact`,
+      label: `Contact Me`,
+      id: CONTACT_BUTTON_HTML_ID,
+      onClick: openContactDialog,
     },
   ];
 
@@ -63,12 +65,7 @@ const SiteMenu = (): JSX.Element => {
           return <SiteMenuListItem key={menuItem.key} menuItem={menuItem} />;
         })}
       </List>
-      <SocialsMenu
-        anchor={socialsMenuAnchor}
-        onClose={(): void => {
-          setSocialsMenuAnchor(null);
-        }}
-      />
+      <ContactDialog onClose={closeContactDialog} open={isContactDialogOpen} />
     </>
   );
 };

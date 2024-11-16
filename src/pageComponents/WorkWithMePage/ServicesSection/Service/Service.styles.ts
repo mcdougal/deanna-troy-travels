@@ -1,3 +1,5 @@
+import { Theme } from '@mui/material';
+
 import { spacing } from '@lib/mui';
 
 export default {
@@ -9,7 +11,6 @@ export default {
   },
   titleContainer: {
     alignItems: `center`,
-    color: `primary.main`,
     display: `flex`,
     justifyContent: `center`,
     marginBottom: 2,
@@ -21,6 +22,10 @@ export default {
     marginLeft: 1,
   },
   thumbnailContainer: {
+    boxShadow: (theme: Theme): string => {
+      const shadowColor = theme.palette.grey[200];
+      return `12px 12px 0px ${shadowColor}`;
+    },
     height: spacing({ xs: 22, sm: 30 }),
     overflow: `hidden`,
     position: `relative`,

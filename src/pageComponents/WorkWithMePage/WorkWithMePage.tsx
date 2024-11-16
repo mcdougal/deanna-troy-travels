@@ -6,11 +6,11 @@ import { SiteFooter, SiteHeader } from '@components/site';
 import BlogFeaturesSection from './BlogFeaturesSection';
 import ContactSection from './ContactSection';
 import getStaticProps from './getStaticProps';
-import HeroSection from './HeroSection';
 import IntroSection from './IntroSection';
 import PageMetadata from './PageMetadata';
 import ServicesSection from './ServicesSection';
 import TestimonialsSection from './TestimonialsSection';
+import TitleSection from './TitleSection';
 import WorkedWithSection from './WorkedWithSection';
 import sx from './WorkWithMePage.styles';
 
@@ -21,8 +21,8 @@ const WorkWithMePage = ({
     <>
       <PageMetadata />
       <SiteHeader />
-      <Box sx={sx.heroSectionContainer}>
-        <HeroSection />
+      <Box sx={sx.titleSectionContainer}>
+        <TitleSection />
       </Box>
       <Box sx={sx.introSectionContainer}>
         <IntroSection />
