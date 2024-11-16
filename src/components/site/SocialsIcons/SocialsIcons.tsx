@@ -7,16 +7,16 @@ import { AmazonIcon, PoshmarkIcon, TikTokIcon } from '@components/icons';
 
 import sx from './SocialsIcons.styles';
 
-export interface SocialsMenuAnchor {
+export type SocialsMenuAnchor = {
   element: HTMLButtonElement | HTMLDivElement | null;
   elementId: string;
-}
+};
 
-interface Props {
+type Props = {
   justifyContent?: `center` | `end` | `space-between` | `start`;
   size?: 'small' | 'medium' | 'large';
   spacing?: number;
-}
+};
 
 const SocialsIcons = ({
   justifyContent = `center`,

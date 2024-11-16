@@ -5,10 +5,10 @@ import { BlogPost, BlogPostVideo } from '../getStaticProps';
 
 import getStructuredData from './getStructuredData';
 
-interface Props {
+type Props = {
   blogPost: BlogPost;
   blogPostVideo: BlogPostVideo | null;
-}
+};
 
 const PageMetadata = ({ blogPost, blogPostVideo }: Props): JSX.Element => {
   const blogPostThumbnail = getBlogPostThumbnail(blogPost);

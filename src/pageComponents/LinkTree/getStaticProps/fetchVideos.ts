@@ -1,6 +1,6 @@
 import { fetchPlaylistItems, fetchYouTubeVideos } from '@lib/youTube';
 
-export interface YouTubeVideo {
+export type YouTubeVideo = {
   commentCount: number;
   description: string;
   duration: string;
@@ -10,7 +10,7 @@ export interface YouTubeVideo {
   title: string;
   videoId: string;
   viewCount: number;
-}
+};
 
 export default async (playlistId: string): Promise<Array<YouTubeVideo>> => {
   const playlistItems = await fetchPlaylistItems(playlistId, {

@@ -1,6 +1,6 @@
 import { StructuredDataObject } from './types';
 
-interface Args {
+type Args = {
   commentCount: number;
   description: string;
   duration: string;
@@ -10,7 +10,7 @@ interface Args {
   uploadDate: string;
   videoUrl: string;
   viewCount: number;
-}
+};
 
 export default ({
   commentCount,

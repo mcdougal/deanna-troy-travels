@@ -1,12 +1,7 @@
 import { ImageLoader } from 'next/legacy/image';
 
 const cloudinaryLoader: ImageLoader = ({ quality, src, width }) => {
-  const params = [
-    `f_auto`,
-    `c_limit`,
-    `w_` + width,
-    `q_` + (quality || `auto`),
-  ];
+  const params = [`f_auto`, `c_limit`, `w_${width}`, `q_${quality || `auto`}`];
 
   const paramsString = params.join(`,`);
 

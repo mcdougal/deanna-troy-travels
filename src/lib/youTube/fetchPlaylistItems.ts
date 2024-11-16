@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-interface PlaylistItem {
+type PlaylistItem = {
   id: string;
   contentDetails: {
     videoId: string;
@@ -51,7 +51,7 @@ interface PlaylistItem {
   status: {
     privacyStatus: string;
   };
-}
+};
 
 export default async (
   playlistId: string,

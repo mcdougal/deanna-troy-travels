@@ -2,11 +2,11 @@ import { Stack, Typography, TypographyProps } from '@mui/material';
 
 import { SquigglyDividerSvg } from '@components/generic';
 
-interface Props extends TypographyProps {
+type Props = TypographyProps & {
   children: React.ReactNode;
   color?: TypographyProps[`color`];
   variant?: TypographyProps[`variant`];
-}
+};
 
 const SectionTitle = ({
   children,

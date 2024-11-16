@@ -18,7 +18,7 @@ const Http404Page = (): JSX.Element => {
           content="The page you’re looking for doesn’t exist!"
           name="description"
         />
-        <meta key="robots" content="noindex" name="robots"></meta>
+        <meta key="robots" content="noindex" name="robots" />
       </Head>
       <SiteHeader />
       <Container maxWidth="sm" sx={sx.pageContainer}>

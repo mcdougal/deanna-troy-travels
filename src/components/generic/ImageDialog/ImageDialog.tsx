@@ -10,7 +10,7 @@ import Image, { ImageLoader } from 'next/legacy/image';
 
 import sx from './ImageDialog.styles';
 
-interface Props {
+type Props = {
   image: {
     alt: string | null;
     loader: ImageLoader;
@@ -18,7 +18,7 @@ interface Props {
   };
   onClose: () => void;
   open: boolean;
-}
+};
 
 const ImageDialog = ({ image, onClose, open }: Props): JSX.Element => {
   const theme = useTheme();

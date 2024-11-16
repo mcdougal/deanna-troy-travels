@@ -1,6 +1,6 @@
 import { StructuredDataObject } from './types';
 
-interface Args {
+type Args = {
   articleSection?: Array<string>;
   author: StructuredDataObject;
   datePublished: string;
@@ -11,7 +11,7 @@ interface Args {
   webPage: StructuredDataObject;
   website: StructuredDataObject;
   wordCount: number;
-}
+};
 
 export default ({
   articleSection,

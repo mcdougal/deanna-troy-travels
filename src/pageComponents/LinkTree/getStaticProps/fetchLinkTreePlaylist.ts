@@ -1,9 +1,9 @@
 import { fetchContentfulGraphQl } from '@lib/contentful';
 
-export interface LinkTreePlaylist {
+export type LinkTreePlaylist = {
   playlistId: string;
   playlistTitle: string;
-}
+};
 
 export default async (): Promise<LinkTreePlaylist | null> => {
   const response = await fetchContentfulGraphQl<{

@@ -27,9 +27,9 @@ import {
   UlList,
 } from './richTextComponents';
 
-interface Props {
+type Props = {
   blogPost: BlogPost;
-}
+};
 
 const BlogPostContent = ({ blogPost }: Props): JSX.Element => {
   const { json, links } = blogPost.content;

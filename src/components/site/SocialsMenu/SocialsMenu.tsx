@@ -7,15 +7,15 @@ import { AmazonIcon, PoshmarkIcon, TikTokIcon } from '@components/icons';
 
 import sx from './SocialsMenu.styles';
 
-export interface SocialsMenuAnchor {
+export type SocialsMenuAnchor = {
   element: HTMLButtonElement | HTMLDivElement | null;
   elementId: string;
-}
+};
 
-interface Props {
+type Props = {
   anchor: SocialsMenuAnchor | null;
   onClose: () => void;
-}
+};
 
 const SocialsMenu = ({ anchor, onClose }: Props): JSX.Element => {
   const socials = [

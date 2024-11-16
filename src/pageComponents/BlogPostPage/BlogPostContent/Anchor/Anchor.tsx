@@ -4,9 +4,9 @@ import { Box } from '@mui/material';
 import sx from './Anchor.styles';
 import makeAnchorIdForNode from './makeAnchorIdForNode';
 
-interface Props {
+type Props = {
   node: Block | Inline;
-}
+};
 
 const Anchor = ({ node }: Props): JSX.Element | null => {
   const anchorId = makeAnchorIdForNode(node);

@@ -5,9 +5,9 @@ import { useInView } from 'react-intersection-observer';
 
 import sx from './EmbeddedSnippet.styles';
 
-interface Props {
+type Props = {
   snippet: string;
-}
+};
 
 const EmbeddedSnippet = ({ snippet }: Props): JSX.Element => {
   const { ref, inView } = useInView({

@@ -6,7 +6,7 @@ import { getBlogPostThumbnail } from '@lib/blogPosts';
 
 import sx from './BlogPostMediaCard.styles';
 
-interface BlogPost {
+type BlogPost = {
   coverImage: {
     description: string | null;
     url: string;
@@ -19,12 +19,12 @@ interface BlogPost {
   title: string;
   slug: string;
   youTubeVideoId: string | null;
-}
+};
 
-interface Props {
+type Props = {
   blogPost: BlogPost;
   size?: `sm` | `md` | `lg`;
-}
+};
 
 const BlogPostMediaCard = ({ blogPost, size = `sm` }: Props): JSX.Element => {
   const details: React.ComponentProps<typeof MediaCard>[`details`] = [

@@ -5,9 +5,9 @@ import { BlogPostImageGallery as IBlogPostImageGallery } from '../../../../getSt
 import BlogPostImage from './BlogPostImage';
 import sx from './BlogPostImageGallery.styles';
 
-interface Props {
+type Props = {
   blogPostImageGallery: IBlogPostImageGallery;
-}
+};
 
 const BlogPostImageGallery = ({ blogPostImageGallery }: Props): JSX.Element => {
   return (

@@ -6,9 +6,9 @@ import SiteLogo from '../../../../SiteLogo';
 
 import sx from './MenuDrawerHeader.styles';
 
-interface Props {
+type Props = {
   onClickClose: () => void;
-}
+};
 
 const MenuDrawerHeader = ({ onClickClose }: Props): JSX.Element => {
   return (

@@ -6,11 +6,11 @@ import fetchVideos, { YouTubeVideo } from './fetchVideos';
 
 const LAS_VEGAS_PLAYLIST_ID = `PLupawb160v0yCwLfh4Eg3AfHYiAoJiTeY`;
 
-interface Props {
+type Props = {
   linkTreeItems: Array<LinkTreeItem>;
   playlistTitle: string;
   playlistVideos: Array<YouTubeVideo>;
-}
+};
 
 const getStaticProps: GetStaticProps<Props> = async () => {
   const playlist = await fetchLinkTreePlaylist();

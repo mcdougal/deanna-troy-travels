@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-document-import-in-page */
 import { EmotionCache } from '@emotion/cache';
 import type { AppProps } from 'next/app';
 import { DocumentInitialProps } from 'next/document';

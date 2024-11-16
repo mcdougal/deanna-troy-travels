@@ -1,10 +1,10 @@
 import { fetchInstagramMediaItems } from '@lib/instagram';
 
-export interface InstagramPost {
+export type InstagramPost = {
   id: string;
   caption: string | null;
   permalink: string;
-}
+};
 
 export default async (): Promise<Array<InstagramPost>> => {
   const recentMediaItems = await fetchInstagramMediaItems();

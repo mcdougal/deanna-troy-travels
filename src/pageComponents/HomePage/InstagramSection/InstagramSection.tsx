@@ -8,9 +8,9 @@ import { InstagramPost } from '../getStaticProps';
 
 import sx from './InstagramSection.styles';
 
-interface Props {
+type Props = {
   recentInstagramPosts: Array<InstagramPost>;
-}
+};
 
 const InstagramSection = ({ recentInstagramPosts }: Props): JSX.Element => {
   return (

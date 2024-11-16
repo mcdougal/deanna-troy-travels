@@ -16,7 +16,7 @@ const SubscribeToBlogPage = (): React.ReactElement => {
           content="Get blog posts delivered straight to your inbox!"
           name="description"
         />
-        <meta key="robots" content="noindex" name="robots"></meta>
+        <meta key="robots" content="noindex" name="robots" />
       </Head>
       <SiteHeader />
       <Container maxWidth="sm" sx={sx.pageContainer}>

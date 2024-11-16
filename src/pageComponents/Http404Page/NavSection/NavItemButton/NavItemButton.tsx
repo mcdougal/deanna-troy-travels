@@ -24,9 +24,9 @@ export type NavItem =
       internalPath: string;
     };
 
-interface Props {
+type Props = {
   navItem: NavItem;
-}
+};
 
 const NavItemButton = ({ navItem }: Props): JSX.Element => {
   const baseButtonProps = {

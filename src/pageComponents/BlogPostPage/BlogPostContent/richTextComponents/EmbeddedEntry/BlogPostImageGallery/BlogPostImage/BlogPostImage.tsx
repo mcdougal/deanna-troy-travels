@@ -9,9 +9,9 @@ import { BlogPostImageGallery } from '../../../../../getStaticProps';
 
 import sx from './BlogPostImage.styles';
 
-interface Props {
+type Props = {
   image: BlogPostImageGallery['imagesCollection']['items'][number];
-}
+};
 
 const BlogPostImage = ({ image }: Props): JSX.Element => {
   const theme = useTheme();

@@ -2,9 +2,9 @@ import { Box } from '@mui/material';
 
 import sx from './OlList.styles';
 
-interface Props {
+type Props = {
   children: React.ReactNode;
-}
+};
 
 const OlList = ({ children }: Props): JSX.Element => {
   return (

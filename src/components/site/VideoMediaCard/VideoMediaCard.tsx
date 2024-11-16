@@ -7,7 +7,7 @@ import { cloudinaryLoader } from '@lib/cloudinary';
 
 import sx from './VideoMediaCard.styles';
 
-interface YouTubeVideo {
+type YouTubeVideo = {
   commentCount: number;
   description: string;
   duration: string;
@@ -17,12 +17,12 @@ interface YouTubeVideo {
   title: string;
   videoId: string;
   viewCount: number;
-}
+};
 
-interface Props {
+type Props = {
   size?: `sm` | `md` | `lg`;
   video: YouTubeVideo;
-}
+};
 
 const VideoMediaCard = ({ size = `sm`, video }: Props): JSX.Element => {
   const descriptionParts = video.description.split(`\n`);

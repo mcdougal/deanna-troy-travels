@@ -1,11 +1,12 @@
+/* eslint-disable max-len */
 import { Block, Inline } from '@contentful/rich-text-types';
 
 export const TIK_TOK_EMBED_REGEX =
   /^\s*https:\/\/www\.tiktok\.com\/@deannatroytravels\/video\/(?<videoId>[A-Za-z0-9_-]+)\s*\/?$/i;
 
-interface TikTokEmbed {
+type TikTokEmbed = {
   videoId: string;
-}
+};
 
 export default (node: Block | Inline): TikTokEmbed | null => {
   if (!node.content || !Array.isArray(node.content)) {

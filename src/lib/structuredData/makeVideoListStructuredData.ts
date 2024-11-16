@@ -1,8 +1,8 @@
 import { StructuredDataObject } from './types';
 
-interface Args {
+type Args = {
   videos: Array<StructuredDataObject>;
-}
+};
 
 export default ({ videos }: Args): StructuredDataObject => {
   return {

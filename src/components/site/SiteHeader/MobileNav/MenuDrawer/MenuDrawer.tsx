@@ -7,10 +7,10 @@ import sx from './MenuDrawer.styles';
 import MenuDrawerHeader from './MenuDrawerHeader';
 import SiteMenu from './SiteMenu';
 
-interface Props {
+type Props = {
   onClose: () => void;
   open: boolean;
-}
+};
 
 const MenuDrawer = ({ onClose, open }: Props): JSX.Element => {
   return (

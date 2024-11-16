@@ -1,8 +1,8 @@
 import axios from 'axios';
 
-interface PlaylistItem {
+type PlaylistItem = {
   id: string;
-}
+};
 
 export default async (playlistId: string): Promise<number> => {
   const { GOOGLE_CLOUD_API_KEY } = process.env;

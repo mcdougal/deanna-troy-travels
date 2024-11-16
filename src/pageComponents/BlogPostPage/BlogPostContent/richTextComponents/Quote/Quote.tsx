@@ -3,9 +3,9 @@ import React from 'react';
 
 import sx from './Quote.styles';
 
-interface Props {
+type Props = {
   children: React.ReactNode;
-}
+};
 
 const Quote = ({ children }: Props): JSX.Element => {
   return <Box sx={sx.quote}>{children}</Box>;

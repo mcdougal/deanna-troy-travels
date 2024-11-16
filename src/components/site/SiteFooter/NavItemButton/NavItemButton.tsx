@@ -3,10 +3,10 @@ import Link from 'next/link';
 
 import sx from './NavItemButton.styles';
 
-interface ButtonPropOverrides {
+type ButtonPropOverrides = {
   color?: ButtonProps['color'];
   startIcon?: ButtonProps['startIcon'];
-}
+};
 
 export type NavItem =
   | {
@@ -32,9 +32,9 @@ export type NavItem =
       internalPath: string;
     };
 
-interface Props {
+type Props = {
   navItem: NavItem;
-}
+};
 
 const NavItemButton = ({ navItem }: Props): JSX.Element => {
   const baseButtonProps = {

@@ -1,8 +1,9 @@
+/* eslint-disable @typescript-eslint/naming-convention */
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 
 import { fetchContentfulGraphQl } from '@lib/contentful';
 
-export interface BlogPostImageGallery {
+export type BlogPostImageGallery = {
   __typename: `BlogPostImageGallery`;
   imagesCollection: {
     items: Array<{
@@ -16,17 +17,17 @@ export interface BlogPostImageGallery {
   sys: {
     id: string;
   };
-}
+};
 
-export interface EmbeddedSnippet {
+export type EmbeddedSnippet = {
   __typename: `EmbeddedSnippet`;
   snippet: string;
   sys: {
     id: string;
   };
-}
+};
 
-export interface BlogPost {
+export type BlogPost = {
   content: {
     json: Parameters<typeof documentToReactComponents>[0];
     links: {
@@ -64,7 +65,7 @@ export interface BlogPost {
   tags: Array<string>;
   title: string;
   youTubeVideoId: string | null;
-}
+};
 
 export default async (slug: string): Promise<BlogPost | null> => {
   const response = await fetchContentfulGraphQl<{

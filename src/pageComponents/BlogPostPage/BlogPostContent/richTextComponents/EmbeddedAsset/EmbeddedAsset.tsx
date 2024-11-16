@@ -12,10 +12,10 @@ import sx from './EmbeddedAsset.styles';
 
 const MAX_HEIGHT = 500;
 
-interface Props {
+type Props = {
   links?: BlogPost[`content`][`links`];
   node: Block | Inline;
-}
+};
 
 const EmbeddedAsset = ({ links, node }: Props): JSX.Element | null => {
   const [isImageDialogOpen, setIsImageDialogOpen] = useState(false);

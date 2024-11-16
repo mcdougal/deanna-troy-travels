@@ -6,11 +6,11 @@ import fetchRecentInstagramPosts, {
 } from './fetchRecentInstagramPosts';
 import fetchRecentVideos, { YouTubeVideo } from './fetchRecentVideos';
 
-interface Props {
+type Props = {
   recentBlogPosts: Array<BlogPost>;
   recentInstagramPosts: Array<InstagramPost>;
   recentVideos: Array<YouTubeVideo>;
-}
+};
 
 const getStaticProps: GetStaticProps<Props> = async () => {
   return {

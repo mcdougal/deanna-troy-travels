@@ -1,8 +1,9 @@
+/* eslint-disable @typescript-eslint/naming-convention */
 import axios from 'axios';
 
 const DEANNA_TROY_TRAVELS_USER_ID = `17841402384050982`;
 
-export interface InstagramMediaItem {
+export type InstagramMediaItem = {
   id: string;
   caption?: string;
   media_type: string;
@@ -10,9 +11,9 @@ export interface InstagramMediaItem {
   permalink?: string;
   thumbnail_url?: string;
   timestamp: string;
-}
+};
 
-interface InstagramMediaResponse {
+type InstagramMediaResponse = {
   data: Array<InstagramMediaItem>;
   paging: {
     cursors: {
@@ -21,7 +22,7 @@ interface InstagramMediaResponse {
     };
     next: string;
   };
-}
+};
 
 export default async (): Promise<Array<InstagramMediaItem>> => {
   const { INSTAGRAM_ACCESS_TOKEN } = process.env;

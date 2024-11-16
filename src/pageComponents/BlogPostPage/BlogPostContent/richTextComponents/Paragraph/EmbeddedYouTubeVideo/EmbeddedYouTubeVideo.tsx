@@ -2,9 +2,9 @@ import { Box } from '@mui/material';
 
 import sx from './EmbeddedYouTubeVideo.styles';
 
-interface Props {
+type Props = {
   videoId: string;
-}
+};
 
 const EmbeddedYouTubeVideo = ({ videoId }: Props): JSX.Element => {
   return (

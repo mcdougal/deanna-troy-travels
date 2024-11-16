@@ -1,7 +1,7 @@
-interface Props {
+type Props = {
   includeCaption: boolean;
   postId: string;
-}
+};
 
 const EmbeddedInstagramPost = ({
   includeCaption,

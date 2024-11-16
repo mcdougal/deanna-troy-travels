@@ -6,9 +6,9 @@ import { BlogPost } from '../getStaticProps';
 
 import sx from './BlogPostHeader.styles';
 
-interface Props {
+type Props = {
   blogPost: BlogPost;
-}
+};
 
 const BlogPostHeader = ({ blogPost }: Props): JSX.Element => {
   return (

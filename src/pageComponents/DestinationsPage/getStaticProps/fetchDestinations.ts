@@ -1,6 +1,6 @@
 import { fetchContentfulGraphQl } from '@lib/contentful';
 
-export interface Destination {
+export type Destination = {
   linkedFrom: {
     blogPostCollection: {
       total: number;
@@ -13,7 +13,7 @@ export interface Destination {
     description: string;
     url: string;
   };
-}
+};
 
 export default async (): Promise<Array<Destination>> => {
   const response = await fetchContentfulGraphQl<{

@@ -1,12 +1,12 @@
 import { fetchContentfulGraphQl } from '@lib/contentful';
 
-export interface LinkTreeItem {
+export type LinkTreeItem = {
   image: {
     url: string;
   };
   label: string;
   url: string;
-}
+};
 
 export default async (): Promise<Array<LinkTreeItem>> => {
   const response = await fetchContentfulGraphQl<{

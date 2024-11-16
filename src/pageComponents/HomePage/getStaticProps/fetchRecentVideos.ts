@@ -2,7 +2,7 @@ import { fetchPlaylistItems, fetchYouTubeVideos } from '@lib/youTube';
 
 const ALL_VIDEOS_PLAYLIST_ID = `PLupawb160v0xF0_SUX5yHJE2GQogd7lx-`;
 
-export interface YouTubeVideo {
+export type YouTubeVideo = {
   commentCount: number;
   description: string;
   duration: string;
@@ -12,7 +12,7 @@ export interface YouTubeVideo {
   title: string;
   videoId: string;
   viewCount: number;
-}
+};
 
 export default async (): Promise<Array<YouTubeVideo>> => {
   const playlistItems = await fetchPlaylistItems(ALL_VIDEOS_PLAYLIST_ID, {

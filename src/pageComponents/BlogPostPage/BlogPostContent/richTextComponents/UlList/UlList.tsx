@@ -3,9 +3,9 @@ import React from 'react';
 
 import sx from './UlList.styles';
 
-interface Props {
+type Props = {
   children: React.ReactNode;
-}
+};
 
 const UlList = ({ children }: Props): JSX.Element => {
   return (
