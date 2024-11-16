@@ -11,6 +11,7 @@ import SectionTitle from './SectionTitle';
 import SiteFooter from './SiteFooter';
 import SiteHeader from './SiteHeader';
 import SiteLogo from './SiteLogo';
+import SocialsIcons from './SocialsIcons';
 import SocialsMenu, { SocialsMenuAnchor } from './SocialsMenu';
 import VideoMediaCard from './VideoMediaCard';
 
@@ -30,6 +31,7 @@ export {
   SiteFooter,
   SiteHeader,
   SiteLogo,
+  SocialsIcons,
   SocialsMenu,
   VideoMediaCard,
 };

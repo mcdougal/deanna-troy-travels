@@ -1,20 +1,10 @@
-import FacebookIcon from '@mui/icons-material/Facebook';
-import InstagramIcon from '@mui/icons-material/Instagram';
-import YouTubeIcon from '@mui/icons-material/YouTube';
-import {
-  Box,
-  IconButton,
-  Stack,
-  Tooltip,
-  Typography,
-  useTheme,
-} from '@mui/material';
+import { Box, Typography, useTheme } from '@mui/material';
 import Image from 'next/image';
 
-import { AmazonIcon, PoshmarkIcon, TikTokIcon } from '@components/icons';
 import { cloudinaryLoader } from '@lib/cloudinary';
 
 import SectionTitle from '../SectionTitle';
+import SocialsIcons from '../SocialsIcons';
 
 import sx from './GlobalAboutSection.styles';
 
@@ -28,39 +18,6 @@ const GlobalAboutSection = ({
   variant = `full`,
 }: Props): JSX.Element => {
   const theme = useTheme();
-
-  const socials = [
-    {
-      icon: <YouTubeIcon />,
-      label: `YouTube`,
-      url: `https://www.youtube.com/deannatroytravels`,
-    },
-    {
-      icon: <InstagramIcon />,
-      label: `Instagram`,
-      url: `https://www.instagram.com/deanna_troy_travels`,
-    },
-    {
-      icon: <FacebookIcon />,
-      label: `Facebook`,
-      url: `https://www.facebook.com/deannatroytravels`,
-    },
-    {
-      icon: <TikTokIcon />,
-      label: `TikTok`,
-      url: `https://www.tiktok.com/@deannatroytravels`,
-    },
-    {
-      icon: <AmazonIcon />,
-      label: `Amazon`,
-      url: `https://www.amazon.com/shop/deannatroytravels`,
-    },
-    {
-      icon: <PoshmarkIcon />,
-      label: `Poshmark`,
-      url: `https://poshmark.com/closet/deannatroyshop`,
-    },
-  ];
 
   return (
     <Box sx={sx.container}>
@@ -100,17 +57,9 @@ const GlobalAboutSection = ({
             experience the joy of travel! 🌍
           </Typography>
         )}
-        <Stack direction="row" sx={sx.socialsContainer}>
-          {socials.map(({ icon, label, url }) => {
-            return (
-              <Tooltip key={label} title={label}>
-                <IconButton component="a" href={url} target="_blank">
-                  {icon}
-                </IconButton>
-              </Tooltip>
-            );
-          })}
-        </Stack>
+        <Box sx={sx.socialsContainer}>
+          <SocialsIcons justifyContent="start" />
+        </Box>
       </Box>
     </Box>
   );

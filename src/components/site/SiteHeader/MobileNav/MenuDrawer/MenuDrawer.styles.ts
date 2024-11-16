@@ -6,8 +6,13 @@ export default {
       width: `100%`,
     },
   },
+  socialsIconsContainer: {
+    paddingX: 1,
+  },
+  siteMenuContainer: {
+    marginTop: 2,
+  },
   subscribeButtonContainer: {
-    marginTop: 1,
     paddingLeft: 2,
     paddingRight: 2,
   },
@@ -16,8 +21,5 @@ export default {
       fontSize: 25,
       marginTop: `-1px`,
     },
-  },
-  siteMenuContainer: {
-    marginTop: 2,
   },
 };
