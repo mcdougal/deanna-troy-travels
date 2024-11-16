@@ -4,6 +4,7 @@ import React from 'react';
 
 import { BlogPost } from '../getStaticProps';
 
+import cleanUpBlogPostJson from './cleanUpBlogPostJson';
 import getRichTextElementRenderer from './getRichTextElementRenderer';
 import {
   EmbeddedAsset,
@@ -14,6 +15,7 @@ import {
   Heading4,
   Heading5,
   Heading6,
+  Hr,
   HyperLink,
   ListItem,
   OlList,
@@ -34,11 +36,9 @@ type Props = {
 const BlogPostContent = ({ blogPost }: Props): JSX.Element => {
   const { json, links } = blogPost.content;
 
-  console.log(json);
-
   return (
     <article>
-      {documentToReactComponents(json, {
+      {documentToReactComponents(cleanUpBlogPostJson(json), {
         renderNode: {
           [BLOCKS.EMBEDDED_ASSET]: getRichTextElementRenderer(
             EmbeddedAsset,
@@ -54,6 +54,7 @@ const BlogPostContent = ({ blogPost }: Props): JSX.Element => {
           [BLOCKS.HEADING_4]: getRichTextElementRenderer(Heading4),
           [BLOCKS.HEADING_5]: getRichTextElementRenderer(Heading5),
           [BLOCKS.HEADING_6]: getRichTextElementRenderer(Heading6),
+          [BLOCKS.HR]: getRichTextElementRenderer(Hr),
           [INLINES.HYPERLINK]: getRichTextElementRenderer(HyperLink),
           [BLOCKS.LIST_ITEM]: getRichTextElementRenderer(ListItem),
           [BLOCKS.OL_LIST]: getRichTextElementRenderer(OlList),

@@ -6,6 +6,7 @@ import Heading3 from './Heading3';
 import Heading4 from './Heading4';
 import Heading5 from './Heading5';
 import Heading6 from './Heading6';
+import Hr from './Hr';
 import HyperLink from './HyperLink';
 import ListItem from './ListItem';
 import OlList from './OlList';
@@ -27,6 +28,7 @@ export {
   Heading4,
   Heading5,
   Heading6,
+  Hr,
   HyperLink,
   ListItem,
   OlList,

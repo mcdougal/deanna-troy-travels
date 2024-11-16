@@ -1,14 +1,22 @@
 export default {
-  embedContainer: {
+  instagramEmbedContainer: {
+    marginBottom: { xs: 3, sm: 4 },
+    marginX: `auto`,
+    maxWidth: `540px`,
+  },
+  tikTokEmbedContainer: {
+    marginBottom: { xs: 3, sm: 4 },
+    marginX: `auto`,
+    maxWidth: `540px`,
+  },
+  youTubeEmbedContainer: {
     marginBottom: { xs: 3, sm: 4 },
   },
   paragraph: {
+    // Keep these styles in sync with ULList and OLList component styles
     color: `#212529`,
     fontFamily: `Inter, Roboto, Arial`,
-    fontSize: {
-      xs: `1rem`,
-      sm: `1.125rem`,
-    },
+    fontSize: { xs: `1rem`, sm: `1.125rem` },
     fontWeight: `fontWeightRegular`,
     letterSpacing: 0,
     lineHeight: { xs: 1.625, sm: 1.7 },

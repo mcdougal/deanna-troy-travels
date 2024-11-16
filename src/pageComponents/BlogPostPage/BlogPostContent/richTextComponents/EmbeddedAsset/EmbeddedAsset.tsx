@@ -10,7 +10,7 @@ import { BlogPost } from '../../../getStaticProps';
 
 import sx from './EmbeddedAsset.styles';
 
-const MAX_HEIGHT = 500;
+const MAX_HEIGHT = 640;
 
 type Props = {
   links?: BlogPost[`content`][`links`];
@@ -63,7 +63,7 @@ const EmbeddedAsset = ({ links, node }: Props): JSX.Element | null => {
           />
         </ButtonBase>
         {asset.description && (
-          <Typography color="textSecondary" sx={sx.caption} variant="caption">
+          <Typography color="textSecondary" sx={sx.caption} variant="body2">
             {asset.description}
           </Typography>
         )}

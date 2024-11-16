@@ -7,5 +7,8 @@ export default {
     '& p': {
       margin: 0,
     },
+    '& p + p': {
+      marginTop: 1,
+    },
   },
 };

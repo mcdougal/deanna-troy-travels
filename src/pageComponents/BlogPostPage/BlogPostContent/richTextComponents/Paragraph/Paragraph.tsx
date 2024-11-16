@@ -22,7 +22,7 @@ const Paragraph = ({ children, node }: Props): JSX.Element => {
 
   if (instagramEmbed) {
     return (
-      <Box sx={sx.embedContainer}>
+      <Box sx={sx.instagramEmbedContainer}>
         <EmbeddedInstagramPost
           includeCaption={instagramEmbed.includeCaption}
           postId={instagramEmbed.postId}
@@ -35,7 +35,7 @@ const Paragraph = ({ children, node }: Props): JSX.Element => {
 
   if (tikTokEmbed) {
     return (
-      <Box sx={sx.embedContainer}>
+      <Box sx={sx.tikTokEmbedContainer}>
         <EmbeddedTikTokPost videoId={tikTokEmbed.videoId} />
       </Box>
     );
@@ -45,7 +45,7 @@ const Paragraph = ({ children, node }: Props): JSX.Element => {
 
   if (youTubeEmbed) {
     return (
-      <Box sx={sx.embedContainer}>
+      <Box sx={sx.youTubeEmbedContainer}>
         <EmbeddedYouTubeVideo videoId={youTubeEmbed.videoId} />
       </Box>
     );
