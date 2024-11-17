@@ -42,7 +42,7 @@ export default {
     justifyContent: `flex-end`,
   },
   description: {
-    marginTop: 2,
+    marginTop: 1.5,
     wordBreak: `break-word`,
   },
 };

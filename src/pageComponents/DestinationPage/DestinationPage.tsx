@@ -1,11 +1,15 @@
-import { Box, Button, Container, Grid, Stack } from '@mui/material';
+import { Box, Button, Container, Grid, Stack, Typography } from '@mui/material';
 import type { InferGetStaticPropsType } from 'next';
 import Link from 'next/link';
 
 import {
   BlogPostMediaCard,
+  BlogSubscribeContainer,
+  BlogSubscribeForm,
+  DestinationsSection,
   GlobalAboutSection,
   PageTitle,
+  SectionTitle,
   SiteFooter,
   SiteHeader,
   VideoMediaCard,
@@ -45,13 +49,16 @@ const DestinationPage = ({
         videos={videos}
       />
       <SiteHeader />
-      <Container maxWidth="lg" sx={sx.pageContainer}>
+      <Container maxWidth="lg">
         <PageTitle>{destination?.name ?? `Travel Blog`}</PageTitle>
         <Stack
           direction="row"
           flexWrap="wrap"
           justifyContent="center"
-          sx={sx.filters}>
+          sx={{
+            ...sx.filtersHeader,
+            display: { xs: destination ? `none` : `flex`, sm: `flex` },
+          }}>
           <Link href="/blog" passHref>
             <Button color="inherit" size="small" variant="text">
               All
@@ -104,6 +111,26 @@ const DestinationPage = ({
             <GlobalAboutSection variant="narrow" />
           </Box>
         </Box>
+        <Box sx={sx.destinationsSection}>
+          <DestinationsSection destinations={destinations} />
+        </Box>
+      </Container>
+      <Container component="section" maxWidth="md" sx={sx.subscribeSection}>
+        <BlogSubscribeContainer>
+          <Box sx={sx.subscribeSectionTitleContainer}>
+            <SectionTitle>Your Next Adventure Awaits!</SectionTitle>
+          </Box>
+          <Box sx={sx.subscribeFormContainer}>
+            <Typography
+              align="center"
+              sx={sx.subscribeFormSubtitle}
+              variant="subtitle1">
+              Let’s explore together — subscribe for travel tips, hidden gems
+              and inspiring stories to fuel your next adventure!
+            </Typography>
+            <BlogSubscribeForm />
+          </Box>
+        </BlogSubscribeContainer>
       </Container>
       <SiteFooter />
     </>

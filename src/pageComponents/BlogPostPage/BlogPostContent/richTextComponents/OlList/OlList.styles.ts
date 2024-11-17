@@ -5,7 +5,7 @@ export default {
     // Keep these styles in sync with Paragraph
     color: `#212529`,
     fontFamily: `Inter, Roboto, Arial`,
-    fontSize: { xs: `1rem`, sm: `1.125rem` },
+    fontSize: { xs: `1.125rem`, sm: `1.125rem` },
     fontWeight: `fontWeightRegular`,
     letterSpacing: 0,
     lineHeight: { xs: 1.625, sm: 1.7 },
