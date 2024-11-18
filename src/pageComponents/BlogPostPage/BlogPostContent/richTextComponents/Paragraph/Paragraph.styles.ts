@@ -24,4 +24,13 @@ export default {
     overflowWrap: `anywhere`,
     wordBreak: `break-word`,
   },
+  paragraphLabel: {
+    marginBottom: 0,
+    '& + ul': {
+      marginTop: 0.5,
+    },
+    '& + ol': {
+      marginTop: 0.5,
+    },
+  },
 };

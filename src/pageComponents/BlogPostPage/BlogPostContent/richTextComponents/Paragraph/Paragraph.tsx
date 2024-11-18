@@ -51,8 +51,16 @@ const Paragraph = ({ children, node }: Props): JSX.Element => {
     );
   }
 
+  const isLabel =
+    node.content.length === 1 &&
+    node.content[0].nodeType === `text` &&
+    node.content[0].value.endsWith(`:`);
+
   return (
-    <Typography component="p" sx={sx.paragraph} variant="body1">
+    <Typography
+      component="p"
+      sx={{ ...sx.paragraph, ...(isLabel ? sx.paragraphLabel : {}) }}
+      variant="body1">
       <Anchor node={node} />
       {children}
     </Typography>
