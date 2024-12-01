@@ -8,7 +8,7 @@ const ContactForm = (): JSX.Element => {
       <input name="form-name" type="hidden" value="contact" />
       <TextField
         fullWidth
-        id="contact-section-name"
+        id="contact-form-name"
         label="Your Name"
         name="name"
         required
@@ -16,7 +16,7 @@ const ContactForm = (): JSX.Element => {
       />
       <TextField
         fullWidth
-        id="contact-section-email"
+        id="contact-form-email"
         label="Your Email"
         margin="normal"
         name="email"
@@ -26,7 +26,7 @@ const ContactForm = (): JSX.Element => {
       />
       <TextField
         fullWidth
-        id="contact-section-message"
+        id="contact-form-message"
         label="Message"
         margin="normal"
         maxRows={20}
