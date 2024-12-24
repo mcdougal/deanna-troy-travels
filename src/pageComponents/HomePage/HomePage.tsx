@@ -7,7 +7,6 @@ import AboutSection from './AboutSection';
 import getStaticProps from './getStaticProps';
 import Hero from './Hero';
 import sx from './HomePage.styles';
-import InstagramSection from './InstagramSection';
 import LatestPostsSection from './LatestPostsSection';
 import PageMetadata from './PageMetadata';
 import SubscribeSection from './SubscribeSection';
@@ -15,7 +14,6 @@ import WorkWithMeSection from './WorkWithMeSection';
 
 const HomePage = ({
   recentBlogPosts,
-  recentInstagramPosts,
   recentVideos,
 }: InferGetStaticPropsType<typeof getStaticProps>): React.ReactElement => {
   return (
@@ -31,9 +29,6 @@ const HomePage = ({
       </Box>
       <Box sx={sx.section}>
         <AboutSection />
-      </Box>
-      <Box sx={sx.section}>
-        <InstagramSection recentInstagramPosts={recentInstagramPosts} />
       </Box>
       <Box sx={sx.bottomSection}>
         <WorkWithMeSection />
