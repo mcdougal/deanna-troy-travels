@@ -29,13 +29,13 @@ const IntroSection = (): JSX.Element => {
       <PageTitle>Hey There!</PageTitle>
       <Typography paragraph variant="body1">
         Welcome to Deanna Troy Travels, your go-to guide for vegan and budget
-        travel adventures! Since 2016, my husband Cedric and I have been
-        exploring the world. From Thailand’s bustling streets to Japan’s serene
-        temples, we’ve discovered hidden gems, local life and unforgettable
-        cultures — and now, we’re sharing them with you!
+        travel adventures! Since 2016, I’ve been uncovering hidden gems, vibrant
+        local life and unforgettable cultures across 22 countries — from
+        Vietnam’s bustling streets to Japan’s serene temples — and now, I’m
+        sharing them with you!
       </Typography>
       <Typography paragraph variant="body1">
-        Join me for travel tips, insider stories, and a quirky perspective on
+        Join me for travel tips, insider stories and a quirky perspective on
         exploring the world while keeping it budget-friendly and plant-powered.
         Let’s inspire each other to see more, spend less and experience the joy
         of travel! 🌍
