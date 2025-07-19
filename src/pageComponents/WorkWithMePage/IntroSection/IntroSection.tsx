@@ -3,9 +3,15 @@ import Image from 'next/legacy/image';
 
 import { cloudinaryLoader } from '@lib/cloudinary';
 
+import { Miscellaneous } from '../getStaticProps';
+
 import sx from './IntroSection.styles';
 
-const IntroSection = (): JSX.Element => {
+type Props = {
+  miscellaneous: Miscellaneous;
+};
+
+const IntroSection = ({ miscellaneous }: Props): JSX.Element => {
   const theme = useTheme();
 
   return (
@@ -43,12 +49,12 @@ const IntroSection = (): JSX.Element => {
         <Box sx={sx.ctaContainer}>
           <Button
             color="primary"
-            href="https://www.canva.com/design/DAGPEesf8x0/_7auoRKDGPCke1vBn0c0TA/view"
+            href={miscellaneous.resumeButton.url}
             size="large"
             sx={sx.ctaButton}
             target="_blank"
             variant="outlined">
-            Media Kit
+            {miscellaneous.resumeButton.label}
           </Button>
           <Button
             color="primary"

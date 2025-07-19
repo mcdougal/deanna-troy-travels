@@ -16,6 +16,7 @@ import sx from './WorkWithMePage.styles';
 
 const WorkWithMePage = ({
   blogFeatures,
+  miscellaneous,
 }: InferGetStaticPropsType<typeof getStaticProps>): React.ReactElement => {
   return (
     <>
@@ -25,7 +26,7 @@ const WorkWithMePage = ({
         <TitleSection />
       </Box>
       <Box sx={sx.introSectionContainer}>
-        <IntroSection />
+        <IntroSection miscellaneous={miscellaneous} />
       </Box>
       <Box sx={sx.workedWithSectionContainer}>
         <WorkedWithSection />
