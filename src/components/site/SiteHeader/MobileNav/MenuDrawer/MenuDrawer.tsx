@@ -2,17 +2,19 @@ import YouTubeIcon from '@mui/icons-material/YouTube';
 import { Box, Button, Drawer } from '@mui/material';
 
 import SocialsIcons from '@components/site/SocialsIcons';
+import { Miscellaneous } from '@lib/miscellaneous';
 
 import sx from './MenuDrawer.styles';
 import MenuDrawerHeader from './MenuDrawerHeader';
 import SiteMenu from './SiteMenu';
 
 type Props = {
+  miscellaneous: Miscellaneous;
   onClose: () => void;
   open: boolean;
 };
 
-const MenuDrawer = ({ onClose, open }: Props): JSX.Element => {
+const MenuDrawer = ({ miscellaneous, onClose, open }: Props): JSX.Element => {
   return (
     <Drawer anchor="right" onClose={onClose} open={open} sx={sx.menuDrawer}>
       <Box>
@@ -22,7 +24,7 @@ const MenuDrawer = ({ onClose, open }: Props): JSX.Element => {
         <SocialsIcons justifyContent="space-between" spacing={1} />
       </Box>
       <Box sx={sx.siteMenuContainer}>
-        <SiteMenu />
+        <SiteMenu miscellaneous={miscellaneous} />
       </Box>
       <Box sx={sx.subscribeButtonContainer}>
         <Button

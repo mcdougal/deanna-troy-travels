@@ -5,6 +5,9 @@ export default {
   introSectionContainer: {
     marginTop: { xs: 6, md: 8 },
   },
+  doForYouSectionContainer: {
+    marginTop: { xs: 8, md: 10 },
+  },
   workedWithSectionContainer: {
     marginTop: { xs: 8, md: 10 },
   },

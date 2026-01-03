@@ -2,11 +2,14 @@ import { Block, Inline } from '@contentful/rich-text-types';
 import { Box, Typography } from '@mui/material';
 import React from 'react';
 
+import {
+  EmbeddedInstagramPost,
+  EmbeddedTikTokPost,
+  EmbeddedYouTubeVideo,
+} from '@components/embed';
+
 import Anchor from '../../Anchor';
 
-import EmbeddedInstagramPost from './EmbeddedInstagramPost';
-import EmbeddedTikTokPost from './EmbeddedTikTokPost';
-import EmbeddedYouTubeVideo from './EmbeddedYouTubeVideo';
 import getInstagramEmbed from './getInstagramEmbed';
 import getTikTokEmbed from './getTikTokEmbed';
 import getYouTubeEmbed from './getYouTubeEmbed';

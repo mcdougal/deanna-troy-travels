@@ -1,5 +1,7 @@
 import { AppBar, Box, Toolbar } from '@mui/material';
 
+import { Miscellaneous } from '@lib/miscellaneous';
+
 import SocialsIcons from '../SocialsIcons';
 
 import DesktopNav from './DesktopNav';
@@ -9,9 +11,13 @@ import SiteLogoButton from './SiteLogoButton';
 
 type Props = {
   hideLogoUntilScroll?: boolean;
+  miscellaneous: Miscellaneous;
 };
 
-const SiteHeader = ({ hideLogoUntilScroll = false }: Props): JSX.Element => {
+const SiteHeader = ({
+  hideLogoUntilScroll = false,
+  miscellaneous,
+}: Props): JSX.Element => {
   return (
     <AppBar color="inherit" elevation={0} position="sticky">
       <Toolbar sx={sx.toolbar}>
@@ -19,10 +25,10 @@ const SiteHeader = ({ hideLogoUntilScroll = false }: Props): JSX.Element => {
           <SiteLogoButton hideLogoUntilScroll={hideLogoUntilScroll} />
         </Box>
         <Box sx={sx.mobileNav}>
-          <MobileNav />
+          <MobileNav miscellaneous={miscellaneous} />
         </Box>
         <Box sx={sx.desktopNav}>
-          <DesktopNav />
+          <DesktopNav miscellaneous={miscellaneous} />
         </Box>
         <Box sx={sx.socials}>
           <SocialsIcons justifyContent="end" size="small" spacing={1} />

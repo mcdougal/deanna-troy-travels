@@ -1,10 +1,15 @@
 import { HtmlHead } from '@components/generic';
 import { cloudinaryLoader } from '@lib/cloudinary';
+import { Miscellaneous } from '@lib/miscellaneous';
 
 import getStructuredData from './getStructuredData';
 
-const PageMetadata = (): JSX.Element => {
-  const title = `Work With Me`;
+type Props = {
+  miscellaneous: Miscellaneous;
+};
+
+const PageMetadata = ({ miscellaneous }: Props): JSX.Element => {
+  const title = miscellaneous.workWithMeTitle.text;
 
   const description = `Deanna is a travel influencer who creates YouTube content featuring budget-friendly and vegan travel experiences in Southeast Asia, the U.S.A. and Europe.`;
 

@@ -2,6 +2,8 @@ import { ParsedUrlQuery } from 'querystring';
 
 import type { GetStaticProps } from 'next';
 
+import { fetchMiscellaneous, Miscellaneous } from '@lib/miscellaneous';
+
 import fetchBlogPosts, { BlogPost } from './fetchBlogPosts';
 import fetchDestination, { Destination } from './fetchDestination';
 import fetchDestinations from './fetchDestinations';
@@ -15,6 +17,7 @@ type Props = {
   blogPosts: Array<BlogPost>;
   destination: Destination | null;
   destinations: Array<Destination>;
+  miscellaneous: Miscellaneous;
   videos: Array<YouTubeVideo>;
 };
 
@@ -27,6 +30,7 @@ const getStaticProps: GetStaticProps<Props, Params> = async ({ params }) => {
 
   const destinations = await fetchDestinations();
   const blogPosts = await fetchBlogPosts();
+  const miscellaneous = await fetchMiscellaneous();
 
   if (destinationSlug === `blog`) {
     return {
@@ -34,6 +38,7 @@ const getStaticProps: GetStaticProps<Props, Params> = async ({ params }) => {
         blogPosts,
         destination: null,
         destinations,
+        miscellaneous,
         videos: [],
       },
       revalidate: 60,
@@ -61,6 +66,7 @@ const getStaticProps: GetStaticProps<Props, Params> = async ({ params }) => {
       blogPosts: destinationBlogPosts,
       destination,
       destinations,
+      miscellaneous,
       videos,
     },
     revalidate: 60,

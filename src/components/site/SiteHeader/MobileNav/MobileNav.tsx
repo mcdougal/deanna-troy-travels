@@ -2,10 +2,16 @@ import MenuIcon from '@mui/icons-material/Menu';
 import { IconButton } from '@mui/material';
 import { useState } from 'react';
 
+import { Miscellaneous } from '@lib/miscellaneous';
+
 import MenuDrawer from './MenuDrawer';
 import sx from './MobileNav.styles';
 
-const MobileNav = (): JSX.Element => {
+type Props = {
+  miscellaneous: Miscellaneous;
+};
+
+const MobileNav = ({ miscellaneous }: Props): JSX.Element => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const openMenu = (): void => {
@@ -26,7 +32,11 @@ const MobileNav = (): JSX.Element => {
         size="small">
         <MenuIcon sx={sx.openMenuIcon} />
       </IconButton>
-      <MenuDrawer onClose={closeMenu} open={isMenuOpen} />
+      <MenuDrawer
+        miscellaneous={miscellaneous}
+        onClose={closeMenu}
+        open={isMenuOpen}
+      />
     </>
   );
 };

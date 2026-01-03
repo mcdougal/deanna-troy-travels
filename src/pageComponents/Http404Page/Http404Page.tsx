@@ -1,14 +1,18 @@
 import { Box, Container, Typography } from '@mui/material';
+import { InferGetStaticPropsType } from 'next';
 import Head from 'next/head';
 import Image from 'next/legacy/image';
 
 import { SiteHeader } from '@components/site';
 import { cloudinaryLoader } from '@lib/cloudinary';
 
+import getStaticProps from './getStaticProps';
 import sx from './Http404Page.styles';
 import NavSection from './NavSection';
 
-const Http404Page = (): JSX.Element => {
+const Http404Page = ({
+  miscellaneous,
+}: InferGetStaticPropsType<typeof getStaticProps>): JSX.Element => {
   return (
     <>
       <Head>
@@ -20,7 +24,7 @@ const Http404Page = (): JSX.Element => {
         />
         <meta key="robots" content="noindex" name="robots" />
       </Head>
-      <SiteHeader />
+      <SiteHeader miscellaneous={miscellaneous} />
       <Container maxWidth="sm" sx={sx.pageContainer}>
         <Typography color="primary" component="h1" sx={sx.title} variant="h3">
           Oops!

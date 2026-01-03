@@ -1,12 +1,16 @@
 import { Container } from '@mui/material';
+import { InferGetStaticPropsType } from 'next';
 import Head from 'next/head';
 
 import { SiteHeader } from '@components/site';
 
+import getStaticProps from './getStaticProps';
 import SubscribeSection from './SubscribeSection';
 import sx from './SubscribeToBlogPage.styles';
 
-const SubscribeToBlogPage = (): React.ReactElement => {
+const SubscribeToBlogPage = ({
+  miscellaneous,
+}: InferGetStaticPropsType<typeof getStaticProps>): React.ReactElement => {
   return (
     <>
       <Head>
@@ -18,7 +22,7 @@ const SubscribeToBlogPage = (): React.ReactElement => {
         />
         <meta key="robots" content="noindex" name="robots" />
       </Head>
-      <SiteHeader />
+      <SiteHeader miscellaneous={miscellaneous} />
       <Container maxWidth="sm" sx={sx.pageContainer}>
         <SubscribeSection />
       </Container>

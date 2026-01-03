@@ -1,13 +1,18 @@
 import { Container } from '@mui/material';
 
 import { PageTitle } from '@components/site';
+import { Miscellaneous } from '@lib/miscellaneous';
 
 import sx from './TitleSection.styles';
 
-const TitleSection = (): JSX.Element => {
+type Props = {
+  miscellaneous: Miscellaneous;
+};
+
+const TitleSection = ({ miscellaneous }: Props): JSX.Element => {
   return (
     <Container maxWidth="md" sx={sx.container}>
-      <PageTitle>Work With Me</PageTitle>
+      <PageTitle>{miscellaneous.workWithMeTitle.text}</PageTitle>
     </Container>
   );
 };

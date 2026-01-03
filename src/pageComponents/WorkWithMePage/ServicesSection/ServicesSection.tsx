@@ -8,6 +8,7 @@ import { ContactDialog, SectionCta, SectionTitle } from '@components/site';
 import Service from './Service';
 import sx from './ServicesSection.styles';
 
+// Removed on 2026-01-03, but keeping around for reference for now
 const ServicesSection = (): JSX.Element => {
   const [isContactDialogOpen, setIsContactDialogOpen] = useState(false);
 

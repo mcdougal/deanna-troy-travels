@@ -2,6 +2,8 @@ import { ParsedUrlQuery } from 'querystring';
 
 import type { GetStaticProps } from 'next';
 
+import { fetchMiscellaneous, Miscellaneous } from '@lib/miscellaneous';
+
 import fetchBlogPost, { BlogPost } from './fetchBlogPost';
 import fetchBlogPostVideo, { BlogPostVideo } from './fetchBlogPostVideo';
 import fetchRelatedBlogPosts, {
@@ -15,6 +17,7 @@ type Params = ParsedUrlQuery & {
 type Props = {
   blogPost: BlogPost;
   blogPostVideo: BlogPostVideo | null;
+  miscellaneous: Miscellaneous;
   relatedBlogPosts: Array<RelatedBlogPost>;
 };
 
@@ -39,6 +42,7 @@ const getStaticProps: GetStaticProps<Props, Params> = async ({ params }) => {
     props: {
       blogPost,
       blogPostVideo,
+      miscellaneous: await fetchMiscellaneous(),
       relatedBlogPosts: await fetchRelatedBlogPosts(blogPost),
     },
     revalidate: 60,

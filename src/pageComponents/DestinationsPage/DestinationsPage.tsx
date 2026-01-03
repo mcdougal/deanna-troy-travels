@@ -16,11 +16,12 @@ import PageMetadata from './PageMetadata';
 
 const DestinationsPage = ({
   destinations,
+  miscellaneous,
 }: InferGetStaticPropsType<typeof getStaticProps>): React.ReactElement => {
   return (
     <>
       <PageMetadata />
-      <SiteHeader />
+      <SiteHeader miscellaneous={miscellaneous} />
       <Container maxWidth="lg">
         <PageTitle>Destinations</PageTitle>
         <Typography component="p" sx={sx.subtitle} variant="h4">

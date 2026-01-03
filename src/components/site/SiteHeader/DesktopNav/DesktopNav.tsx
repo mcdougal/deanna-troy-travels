@@ -1,9 +1,15 @@
 import { Box } from '@mui/material';
 
+import { Miscellaneous } from '@lib/miscellaneous';
+
 import sx from './DesktopNav.styles';
 import NavItemButton, { NavItem } from './NavItemButton';
 
-const DesktopNav = (): JSX.Element => {
+type Props = {
+  miscellaneous: Miscellaneous;
+};
+
+const DesktopNav = ({ miscellaneous }: Props): JSX.Element => {
   const navItems: Array<NavItem> = [
     {
       type: `internalLink`,
@@ -26,7 +32,7 @@ const DesktopNav = (): JSX.Element => {
     {
       type: `internalLink`,
       key: `workWithMe`,
-      label: `Work With Me`,
+      label: miscellaneous.workWithMeTitle.text,
       internalPath: `/work-with-me`,
     },
     {

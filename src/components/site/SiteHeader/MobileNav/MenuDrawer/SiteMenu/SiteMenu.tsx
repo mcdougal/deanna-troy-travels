@@ -1,13 +1,19 @@
 import { List } from '@mui/material';
 import { useState } from 'react';
 
+import { Miscellaneous } from '@lib/miscellaneous';
+
 import ContactDialog from '../../../../ContactDialog';
 
 import SiteMenuListItem, { SiteMenuItem } from './SiteMenuListItem';
 
 const CONTACT_BUTTON_HTML_ID = `mobile-menu-contact-button`;
 
-const SiteMenu = (): JSX.Element => {
+type Props = {
+  miscellaneous: Miscellaneous;
+};
+
+const SiteMenu = ({ miscellaneous }: Props): JSX.Element => {
   const [isContactDialogOpen, setIsContactDialogOpen] = useState(false);
 
   const openContactDialog = (): void => {
@@ -40,7 +46,7 @@ const SiteMenu = (): JSX.Element => {
     {
       type: `internalLink`,
       key: `workWithMe`,
-      label: `Work With Me`,
+      label: miscellaneous.workWithMeTitle.text,
       internalPath: `/work-with-me`,
     },
     {

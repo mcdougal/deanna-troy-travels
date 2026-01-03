@@ -1,7 +1,8 @@
 import { BlogFeature } from './fetchBlogFeatures';
-import { Miscellaneous } from './fetchMiscellaneous';
+import { Testimonial } from './fetchTestimonials';
+import { WorkExample } from './fetchWorkExamples';
 import getStaticProps from './getStaticProps';
 
-export type { BlogFeature, Miscellaneous };
+export type { BlogFeature, Testimonial, WorkExample };
 
 export default getStaticProps;

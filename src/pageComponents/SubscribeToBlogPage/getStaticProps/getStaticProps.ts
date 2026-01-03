@@ -2,18 +2,13 @@ import type { GetStaticProps } from 'next';
 
 import { fetchMiscellaneous, Miscellaneous } from '@lib/miscellaneous';
 
-import fetchDestinations, { Destination } from './fetchDestinations';
-import sortDestinations from './sortDestinations';
-
 type Props = {
-  destinations: Array<Destination>;
   miscellaneous: Miscellaneous;
 };
 
 const getStaticProps: GetStaticProps<Props> = async () => {
   return {
     props: {
-      destinations: sortDestinations(await fetchDestinations()),
       miscellaneous: await fetchMiscellaneous(),
     },
     revalidate: 60,

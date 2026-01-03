@@ -1,29 +1,27 @@
 import { spacing } from '@lib/mui';
 
 export default {
-  introSectionContainer: {
-    display: { xs: `block`, sm: `flex` },
+  videoRow: {
+    display: `flex`,
+    justifyContent: `center`,
   },
-  imageContainer: {
+  videoContainer: {
+    aspectRatio: `9/16`,
     borderRadius: 5,
-    height: spacing({ xs: 35, sm: 60 }),
-    marginBottom: { xs: 2, sm: 0 },
-    marginRight: { xs: 0, sm: 4 },
-    minWidth: spacing({ sm: 38, md: 45 }),
+    maxWidth: spacing({ sm: 38, md: 45 }),
     overflow: `hidden`,
     position: `relative`,
     width: `100%`,
   },
-  letsChatParagraph: {
-    lineHeight: 1.6,
-    marginTop: { xs: 0, sm: 1 },
-  },
-  ctaContainer: {
-    display: `flex`,
-    gap: 2,
-    flexWrap: `wrap`,
-    justifyContent: { xs: `center`, sm: `flex-start` },
+  buttonsSection: {
+    marginX: `auto`,
     marginTop: 4,
+    maxWidth: spacing({ sm: 38, md: 45 }),
+  },
+  buttonsContainer: {
+    display: `flex`,
+    flexDirection: `column`,
+    gap: 2,
   },
   ctaButton: {
     flex: 1,

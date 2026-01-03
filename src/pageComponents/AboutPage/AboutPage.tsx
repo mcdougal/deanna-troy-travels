@@ -13,12 +13,13 @@ import TravelStatsSection from './TravelStatsSection';
 
 const AboutPage = ({
   blogPostsCount,
+  miscellaneous,
   videosCount,
 }: InferGetStaticPropsType<typeof getStaticProps>): React.ReactElement => {
   return (
     <>
       <PageMetadata />
-      <SiteHeader />
+      <SiteHeader miscellaneous={miscellaneous} />
       <Box sx={sx.introSectionContainer}>
         <IntroSection />
       </Box>

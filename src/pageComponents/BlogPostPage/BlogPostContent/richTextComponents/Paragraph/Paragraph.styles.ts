@@ -10,7 +10,11 @@ export default {
     maxWidth: `540px`,
   },
   youTubeEmbedContainer: {
+    display: `block`,
+    height: 0,
     marginBottom: { xs: 3, sm: 4 },
+    paddingTop: `56.25%`,
+    position: `relative`,
   },
   paragraph: {
     // Keep these styles in sync with ULList and OLList component styles

@@ -550,7 +550,7 @@ module.exports = {
         'react/jsx-filename-extension': [`error`, { extensions: [`.tsx`] }],
 
         // Not required to import React when using JSX.
-        'react/react-in-jsx-scope': 'off',
+        'react/react-in-jsx-scope': `off`,
 
         // So this one is a little hard to justify, but we're doing it anyways.
         // While we strongly believe in using blank lines to separate logical

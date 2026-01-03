@@ -9,6 +9,7 @@ import sx from './WorkedWithSection.styles';
 const AS_SEEN_ON_GLOBE_WIDTH = 70;
 const AS_SEEN_ON_GLOBE_RATIO = 1.0964;
 
+// Removed on 2026-01-03, but keeping around for reference for now
 const WorkedWithSection = (): JSX.Element => {
   const theme = useTheme();
 

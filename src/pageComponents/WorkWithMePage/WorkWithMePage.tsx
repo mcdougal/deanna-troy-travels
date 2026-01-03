@@ -5,37 +5,41 @@ import { SiteFooter, SiteHeader } from '@components/site';
 
 import BlogFeaturesSection from './BlogFeaturesSection';
 import ContactSection from './ContactSection';
+import DoForYouSection from './DoForYouSection';
 import getStaticProps from './getStaticProps';
 import IntroSection from './IntroSection';
 import PageMetadata from './PageMetadata';
-import ServicesSection from './ServicesSection';
 import TestimonialsSection from './TestimonialsSection';
 import TitleSection from './TitleSection';
-import WorkedWithSection from './WorkedWithSection';
 import sx from './WorkWithMePage.styles';
 
 const WorkWithMePage = ({
   blogFeatures,
   miscellaneous,
+  testimonials,
+  workExamples,
 }: InferGetStaticPropsType<typeof getStaticProps>): React.ReactElement => {
   return (
     <>
-      <PageMetadata />
-      <SiteHeader />
+      <PageMetadata miscellaneous={miscellaneous} />
+      <SiteHeader miscellaneous={miscellaneous} />
       <Box sx={sx.titleSectionContainer}>
-        <TitleSection />
+        <TitleSection miscellaneous={miscellaneous} />
       </Box>
       <Box sx={sx.introSectionContainer}>
         <IntroSection miscellaneous={miscellaneous} />
       </Box>
-      <Box sx={sx.workedWithSectionContainer}>
-        <WorkedWithSection />
-      </Box>
-      <Box sx={sx.servicesSectionContainer}>
-        <ServicesSection />
+      <Box sx={sx.doForYouSectionContainer}>
+        <DoForYouSection
+          miscellaneous={miscellaneous}
+          workExamples={workExamples}
+        />
       </Box>
       <Box sx={sx.testimonialsSectionContainer}>
-        <TestimonialsSection />
+        <TestimonialsSection
+          miscellaneous={miscellaneous}
+          testimonials={testimonials}
+        />
       </Box>
       <Box sx={sx.blogFeaturesSectionContainer}>
         <BlogFeaturesSection blogFeatures={blogFeatures} />

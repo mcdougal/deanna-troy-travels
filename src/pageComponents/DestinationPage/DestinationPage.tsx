@@ -23,6 +23,7 @@ const DestinationPage = ({
   blogPosts,
   destination,
   destinations,
+  miscellaneous,
   videos,
 }: InferGetStaticPropsType<typeof getStaticProps>): React.ReactElement => {
   const sortedBlogPosts = [...blogPosts].sort((a, b) => {
@@ -48,7 +49,7 @@ const DestinationPage = ({
         destination={destination}
         videos={videos}
       />
-      <SiteHeader />
+      <SiteHeader miscellaneous={miscellaneous} />
       <Container maxWidth="lg">
         <PageTitle>{destination?.name ?? `Travel Blog`}</PageTitle>
         <Stack

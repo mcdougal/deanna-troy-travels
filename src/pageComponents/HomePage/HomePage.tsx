@@ -13,13 +13,14 @@ import SubscribeSection from './SubscribeSection';
 import WorkWithMeSection from './WorkWithMeSection';
 
 const HomePage = ({
+  miscellaneous,
   recentBlogPosts,
   recentVideos,
 }: InferGetStaticPropsType<typeof getStaticProps>): React.ReactElement => {
   return (
     <>
       <PageMetadata recentVideos={recentVideos} />
-      <SiteHeader />
+      <SiteHeader miscellaneous={miscellaneous} />
       <Hero />
       <Box sx={sx.topSection}>
         <LatestPostsSection recentBlogPosts={recentBlogPosts} />
