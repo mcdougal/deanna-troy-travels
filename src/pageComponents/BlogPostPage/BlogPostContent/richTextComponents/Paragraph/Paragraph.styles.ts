@@ -11,9 +11,8 @@ export default {
   },
   youTubeEmbedContainer: {
     display: `block`,
-    height: 0,
     marginBottom: { xs: 3, sm: 4 },
-    paddingTop: `56.25%`,
+    marginX: `auto`,
     position: `relative`,
   },
   paragraph: {

@@ -1,13 +1,30 @@
+/* eslint-disable max-len */
 import { Block, Inline } from '@contentful/rich-text-types';
 
-export const YOUTUBE_EMBED_REGEX_1 =
-  /^\s*https:\/\/www\.youtube\.com\/watch\?v=(?<videoId>[A-Za-z0-9_-]+)\s*$/i;
-
-export const YOUTUBE_EMBED_REGEX_2 =
-  /^\s*https:\/\/youtu\.be\/(?<videoId>[A-Za-z0-9_-]+)\s*$/i;
+const YOUTUBE_EMBED_REGEXES = [
+  {
+    regex:
+      /^\s*https:\/\/www\.youtube\.com\/watch\?v=(?<videoId>[A-Za-z0-9_-]+)\s*$/i,
+    aspectRatio: `16 / 9`,
+    aspectRatioType: `landscape`,
+  },
+  {
+    regex: /^\s*https:\/\/youtu\.be\/(?<videoId>[A-Za-z0-9_-]+)\s*$/i,
+    aspectRatio: `16 / 9`,
+    aspectRatioType: `landscape`,
+  },
+  {
+    regex:
+      /\s*https:\/\/www\.youtube\.com\/shorts\/(?<videoId>[A-Za-z0-9_-]+)\s*$/i,
+    aspectRatio: `9 / 16`,
+    aspectRatioType: `portrait`,
+  },
+];
 
 type YouTubeEmbed = {
   videoId: string;
+  aspectRatio: string;
+  aspectRatioType: string;
 };
 
 export default (node: Block | Inline): YouTubeEmbed | null => {
@@ -29,19 +46,31 @@ export default (node: Block | Inline): YouTubeEmbed | null => {
     })
     .join(``);
 
-  const youTubeEmbedMatch1 = contentText.match(YOUTUBE_EMBED_REGEX_1);
-  const videoId1 = youTubeEmbedMatch1?.groups?.videoId;
+  const videoIds = YOUTUBE_EMBED_REGEXES.reduce(
+    (arr, regex) => {
+      const embedMatch = contentText.match(regex.regex);
+      const videoId = embedMatch?.groups?.videoId;
+      return videoId
+        ? [
+            ...arr,
+            {
+              videoId,
+              aspectRatio: regex.aspectRatio,
+              aspectRatioType: regex.aspectRatioType,
+            },
+          ]
+        : arr;
+    },
+    new Array<{
+      videoId: string;
+      aspectRatio: string;
+      aspectRatioType: string;
+    }>(),
+  );
 
-  const youTubeEmbedMatch2 = contentText.match(YOUTUBE_EMBED_REGEX_2);
-  const videoId2 = youTubeEmbedMatch2?.groups?.videoId;
-
-  const videoId = videoId1 || videoId2;
-
-  if (!videoId) {
+  if (videoIds.length === 0) {
     return null;
   }
 
-  return {
-    videoId,
-  };
+  return videoIds[0];
 };

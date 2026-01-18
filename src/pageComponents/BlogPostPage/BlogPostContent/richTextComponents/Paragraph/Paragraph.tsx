@@ -48,7 +48,13 @@ const Paragraph = ({ children, node }: Props): JSX.Element => {
 
   if (youTubeEmbed) {
     return (
-      <Box sx={sx.youTubeEmbedContainer}>
+      <Box
+        sx={{
+          ...sx.youTubeEmbedContainer,
+          aspectRatio: youTubeEmbed.aspectRatio,
+          maxWidth:
+            youTubeEmbed.aspectRatioType === `portrait` ? `400px` : `none`,
+        }}>
         <EmbeddedYouTubeVideo videoId={youTubeEmbed.videoId} />
       </Box>
     );
