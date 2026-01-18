@@ -19,6 +19,11 @@ const YOUTUBE_EMBED_REGEXES = [
     aspectRatio: `9 / 16`,
     aspectRatioType: `portrait`,
   },
+  {
+    regex: /\s*https:\/\/youtube\.com\/shorts\/(?<videoId>[A-Za-z0-9_-]+)\s*$/i,
+    aspectRatio: `9 / 16`,
+    aspectRatioType: `portrait`,
+  },
 ];
 
 type YouTubeEmbed = {
