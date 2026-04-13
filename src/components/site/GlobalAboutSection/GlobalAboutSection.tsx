@@ -41,11 +41,11 @@ const GlobalAboutSection = ({ variant = `full` }: Props): JSX.Element => {
           </SectionTitle>
         </Box>
         <Typography paragraph variant="body1">
-          Welcome to Deanna Troy Travels, your go-to guide for vegan and budget
-          travel adventures! Since 2016, I’ve been uncovering hidden gems,
-          vibrant local life and unforgettable cultures across 22 countries —
-          from Vietnam’s bustling streets to Japan’s serene temples — and now,
-          I’m sharing them with you!
+          Welcome to Deanna Troy Travels, your go-to guide for vegetarian and
+          budget travel adventures! Since 2016, I’ve been uncovering hidden
+          gems, vibrant local life and unforgettable cultures across 22
+          countries — from Vietnam’s bustling streets to Japan’s serene temples
+          — and now, I’m sharing them with you!
         </Typography>
         {variant === `full` && (
           <Typography paragraph variant="body1">

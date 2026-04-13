@@ -11,7 +11,7 @@ type Props = {
 const PageMetadata = ({ miscellaneous }: Props): JSX.Element => {
   const title = miscellaneous.workWithMeTitle.text;
 
-  const description = `Deanna is a travel influencer who creates YouTube content featuring budget-friendly and vegan travel experiences in Southeast Asia, the U.S.A. and Europe.`;
+  const description = `Deanna is a travel influencer who creates YouTube content featuring budget-friendly and vegetarian travel experiences in Southeast Asia, the U.S.A. and Europe.`;
 
   const canonicalUrl = `https://www.deannatroytravels.com/work-with-me`;
 

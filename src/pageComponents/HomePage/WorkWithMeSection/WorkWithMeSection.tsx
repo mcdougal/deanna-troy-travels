@@ -31,8 +31,9 @@ const WorkWithMeSection = (): JSX.Element => {
       </Box>
       <Typography sx={sx.description} variant="body1">
         I’m a travel influencer who creates content featuring budget-friendly
-        and vegan travel experiences in Southeast Asia, the U.S. and Europe. I
-        can provide YouTube videos, Instagram posts, Amazon videos, and more!
+        and vegetarian travel experiences in Southeast Asia, the U.S. and
+        Europe. I can provide YouTube videos, Instagram posts, Amazon videos,
+        and more!
       </Typography>
       <Box sx={sx.ctaContainer}>
         <Link href="/work-with-me" legacyBehavior passHref>

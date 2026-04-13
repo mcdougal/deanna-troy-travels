@@ -16,7 +16,7 @@ const LogoAndTitle = (): JSX.Element => {
               Deanna Troy Travels
             </Typography>
             <Typography sx={sx.subtitle} variant="caption">
-              Budget & Vegan Travel
+              Budget & Vegetarian Travel
             </Typography>
           </Box>
         </ButtonBase>
