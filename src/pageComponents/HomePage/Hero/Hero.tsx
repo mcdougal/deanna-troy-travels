@@ -22,7 +22,7 @@ const Hero = (): JSX.Element => {
           Deanna Troy Travels
         </Typography>
         <Typography sx={sx.subtitle} variant="body1">
-          Budget & Vegetarian Travel
+          Budget Travel
         </Typography>
       </Box>
     </Box>
