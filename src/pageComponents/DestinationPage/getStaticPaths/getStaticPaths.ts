@@ -1,12 +1,17 @@
 import type { GetStaticPaths } from 'next';
 
+import { isCustomDestinationPage } from '@lib/destinations';
+
 import fetchDestinations from './fetchDestinations';
 
 const getStaticPaths: GetStaticPaths = async () => {
   const destinations = await fetchDestinations();
 
   const destinationsWithPosts = destinations.filter((destination) => {
-    return destination.linkedFrom.blogPostCollection.items.length > 0;
+    return (
+      destination.linkedFrom.blogPostCollection.items.length > 0 &&
+      !isCustomDestinationPage(destination.slug)
+    );
   });
 
   const allPath = {

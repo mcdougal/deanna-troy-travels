@@ -41,6 +41,12 @@ const DesktopNav = ({ miscellaneous }: Props): JSX.Element => {
       label: `About`,
       internalPath: `/about`,
     },
+    {
+      type: `internalLink`,
+      key: `sproutsAndSpill`,
+      label: `Sprouts and Spill`,
+      internalPath: `/sprouts-and-spill`,
+    },
   ];
 
   return (

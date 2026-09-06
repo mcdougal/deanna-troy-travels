@@ -56,6 +56,12 @@ const SiteMenu = ({ miscellaneous }: Props): JSX.Element => {
       internalPath: `/about`,
     },
     {
+      type: `internalLink`,
+      key: `sproutsAndSpill`,
+      label: `Sprouts and Spill`,
+      internalPath: `/sprouts-and-spill`,
+    },
+    {
       type: `button`,
       key: `contact`,
       label: `Contact Me`,

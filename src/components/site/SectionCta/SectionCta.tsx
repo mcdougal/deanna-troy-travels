@@ -1,5 +1,5 @@
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
-import { Button } from '@mui/material';
+import { Button, ButtonProps } from '@mui/material';
 import { forwardRef } from 'react';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -7,24 +7,36 @@ type Ref = any;
 
 type Props = {
   children: React.ReactNode;
+  color?: ButtonProps[`color`];
   href?: string;
   onClick?: () => void;
   target?: string;
+  variant?: `contained` | `outlined`;
 };
 
 const SectionCta = forwardRef<Ref, Props>(
-  ({ children, href, target, ...buttonProps }, ref): JSX.Element => {
+  (
+    {
+      children,
+      color = `inherit`,
+      href,
+      target,
+      variant = `outlined`,
+      ...buttonProps
+    },
+    ref,
+  ): JSX.Element => {
     if (href) {
       return (
         <Button
           ref={ref}
-          color="inherit"
+          color={color}
           component="a"
           endIcon={<ArrowForwardIcon fontSize="small" />}
           href={href}
           size="small"
           target={target}
-          variant="outlined"
+          variant={variant}
           {...buttonProps}>
           {children}
         </Button>
@@ -34,10 +46,10 @@ const SectionCta = forwardRef<Ref, Props>(
     return (
       <Button
         ref={ref}
-        color="inherit"
+        color={color}
         endIcon={<ArrowForwardIcon fontSize="small" />}
         size="small"
-        variant="outlined"
+        variant={variant}
         {...buttonProps}>
         {children}
       </Button>

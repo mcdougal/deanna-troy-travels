@@ -7,7 +7,7 @@ export default {
     paddingTop: 1,
   },
   siteLogoButtonContainer: {
-    minWidth: { xs: `none`, lg: `280px` },
+    minWidth: { xs: `none`, lg: `192px`, xl: `280px` },
   },
   mobileNav: {
     display: { lg: `none` },

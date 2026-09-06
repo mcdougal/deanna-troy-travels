@@ -6,6 +6,7 @@ export default (): Array<SitemapItemLoose> => {
     { url: `/about` },
     { url: `/blog` },
     { url: `/destinations` },
+    { url: `/sprouts-and-spill` },
     { url: `/work-with-me` },
   ];
 };
