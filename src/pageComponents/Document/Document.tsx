@@ -56,7 +56,7 @@ class Document extends NextDocument<ExtendedDocumentInitialProps> {
           <meta
             key="og:site_name"
             content="Deanna Troy Travels"
-            property="site_name"
+            property="og:site_name"
           />
           <Script
             src={`https://www.googletagmanager.com/gtag/js?id=${gaMeasurementId}`}

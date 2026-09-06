@@ -2,7 +2,6 @@ import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import { BLOCKS, INLINES } from '@contentful/rich-text-types';
 import { Box, Container, Grid, Link, Typography } from '@mui/material';
 import { InferGetStaticPropsType } from 'next';
-import Head from 'next/head';
 import Image from 'next/legacy/image';
 
 import {
@@ -16,6 +15,7 @@ import {
 import { cloudinaryLoader } from '@lib/cloudinary';
 
 import getStaticProps from './getStaticProps';
+import PageMetadata from './PageMetadata';
 import sx from './SproutsAndSpillPage.styles';
 
 const COMING_SOON_CARD_KEYS = [
@@ -52,12 +52,13 @@ const SproutsAndSpillPage = ({
 
   return (
     <>
-      <Head>
-        <title>Sprouts and Spill | Deanna Troy Travels</title>
-      </Head>
+      <PageMetadata videos={videos} />
       <SiteHeader miscellaneous={miscellaneous} />
       <Box component="main" sx={sx.pageContent}>
         <Container maxWidth="lg">
+          <Typography component="h1" sx={sx.pageTitle}>
+            Sprouts and Spill
+          </Typography>
           <Box sx={sx.intro}>
             <Box sx={sx.logoContainer}>
               <Image
@@ -65,6 +66,8 @@ const SproutsAndSpillPage = ({
                 height={2000}
                 layout="responsive"
                 loader={cloudinaryLoader}
+                priority
+                sizes="(max-width: 600px) 100vw, 320px"
                 src="/upload/deanna-troy-travels/sprouts-and-spill/sprouts-and-spill-logo.png"
                 width={2000}
               />
