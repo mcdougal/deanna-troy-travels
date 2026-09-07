@@ -10,6 +10,7 @@ type Props = {
   color?: ButtonProps[`color`];
   href?: string;
   onClick?: () => void;
+  showArrow?: boolean;
   target?: string;
   variant?: `contained` | `outlined`;
 };
@@ -20,6 +21,7 @@ const SectionCta = forwardRef<Ref, Props>(
       children,
       color = `inherit`,
       href,
+      showArrow = true,
       target,
       variant = `outlined`,
       ...buttonProps
@@ -32,7 +34,7 @@ const SectionCta = forwardRef<Ref, Props>(
           ref={ref}
           color={color}
           component="a"
-          endIcon={<ArrowForwardIcon fontSize="small" />}
+          endIcon={showArrow ? <ArrowForwardIcon fontSize="small" /> : undefined}
           href={href}
           size="small"
           target={target}
@@ -47,7 +49,7 @@ const SectionCta = forwardRef<Ref, Props>(
       <Button
         ref={ref}
         color={color}
-        endIcon={<ArrowForwardIcon fontSize="small" />}
+        endIcon={showArrow ? <ArrowForwardIcon fontSize="small" /> : undefined}
         size="small"
         variant={variant}
         {...buttonProps}>

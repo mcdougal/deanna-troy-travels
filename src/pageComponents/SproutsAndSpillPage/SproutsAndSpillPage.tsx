@@ -49,6 +49,10 @@ const SproutsAndSpillPage = ({
   });
 
   const hasEpisodes = blogPosts.length > 0 || videos.length > 0;
+  const showSecondaryButton = Boolean(
+    miscellaneous.sproutsAndSpillSecondaryButton.label &&
+      miscellaneous.sproutsAndSpillSecondaryButton.url,
+  );
 
   return (
     <>
@@ -135,15 +139,28 @@ const SproutsAndSpillPage = ({
                   </Typography>
                 </>
               )}
-              {miscellaneous.sproutsAndSpillFollowPodcast.url && (
-                <Box sx={sx.followPodcastCta}>
-                  <SectionCta
-                    color="primary"
-                    href={miscellaneous.sproutsAndSpillFollowPodcast.url}
-                    target="_blank"
-                    variant="contained">
-                    {miscellaneous.sproutsAndSpillFollowPodcast.label}
-                  </SectionCta>
+              {(miscellaneous.sproutsAndSpillFollowPodcast.url ||
+                showSecondaryButton) && (
+                <Box sx={sx.podcastCtas}>
+                  {miscellaneous.sproutsAndSpillFollowPodcast.url && (
+                    <SectionCta
+                      color="primary"
+                      href={miscellaneous.sproutsAndSpillFollowPodcast.url}
+                      target="_blank"
+                      variant="contained">
+                      {miscellaneous.sproutsAndSpillFollowPodcast.label}
+                    </SectionCta>
+                  )}
+                  {showSecondaryButton && (
+                    <SectionCta
+                      color="primary"
+                      href={miscellaneous.sproutsAndSpillSecondaryButton.url}
+                      showArrow={false}
+                      target="_blank"
+                      variant="outlined">
+                      {miscellaneous.sproutsAndSpillSecondaryButton.label}
+                    </SectionCta>
+                  )}
                 </Box>
               )}
             </Box>

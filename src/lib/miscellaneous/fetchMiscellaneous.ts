@@ -11,6 +11,10 @@ export type Miscellaneous = {
     label: string;
     url: string;
   };
+  sproutsAndSpillSecondaryButton: {
+    label: string;
+    url: string;
+  };
   sproutsAndSpillDescription: Document | null;
   workWithMeContactMeButton: {
     label: string;
@@ -90,6 +94,10 @@ export default async (): Promise<Miscellaneous> => {
     sproutsAndSpillFollowPodcast: {
       label: field1(`sprouts-and-spill-follow-podcast`, `Follow Podcast`),
       url: field2(`sprouts-and-spill-follow-podcast`, ``).trim(),
+    },
+    sproutsAndSpillSecondaryButton: {
+      label: field1(`sprouts-and-spill-secondary-button`, ``).trim(),
+      url: field2(`sprouts-and-spill-secondary-button`, ``).trim(),
     },
     sproutsAndSpillDescription: field3(`sprouts-and-spill-description`),
     workWithMeContactMeButton: {

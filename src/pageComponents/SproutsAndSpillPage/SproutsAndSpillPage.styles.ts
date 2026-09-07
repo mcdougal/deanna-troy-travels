@@ -32,8 +32,10 @@ export default {
   creatorLink: {
     fontWeight: `fontWeightBold`,
   },
-  followPodcastCta: {
+  podcastCtas: {
     display: `flex`,
+    flexWrap: `wrap`,
+    gap: 2,
     marginTop: 3,
   },
   episodesSection: {
