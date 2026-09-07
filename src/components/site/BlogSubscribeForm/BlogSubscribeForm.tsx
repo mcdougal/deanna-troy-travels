@@ -62,7 +62,7 @@ const BlogSubscribeForm = (): JSX.Element => {
           sx={sx.submitButton}
           type="submit"
           variant="outlined">
-          Subscribe
+          Subscribe to Blog
         </Button>
       </form>
       <Dialog
