@@ -1,6 +1,6 @@
 import { Destination } from './fetchDestinations';
 
-export default (destinations: Array<Destination>): Array<Destination> => {
+export default <T extends Destination>(destinations: Array<T>): Array<T> => {
   return [...destinations].sort((destinationA, destinationB) => {
     const orderA = destinationA.order;
     const orderB = destinationB.order;

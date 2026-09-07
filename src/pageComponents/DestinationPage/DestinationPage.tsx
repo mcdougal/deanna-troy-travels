@@ -76,7 +76,8 @@ const DestinationPage = ({
           })}
         </Stack>
         <Box sx={sx.content}>
-          {sortedBlogPosts.length > 0 && (
+          {(sortedBlogPosts.length > 0 ||
+            videosWithoutBlogPosts.length > 0) && (
             <Box>
               <Grid
                 alignItems="start"

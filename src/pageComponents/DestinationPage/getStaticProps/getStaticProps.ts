@@ -4,6 +4,8 @@ import type { GetStaticProps } from 'next';
 
 import { fetchMiscellaneous, Miscellaneous } from '@lib/miscellaneous';
 
+import sortDestinations from '../../DestinationsPage/getStaticProps/sortDestinations';
+
 import fetchBlogPosts, { BlogPost } from './fetchBlogPosts';
 import fetchDestination, { Destination } from './fetchDestination';
 import fetchDestinations from './fetchDestinations';
@@ -28,7 +30,7 @@ const getStaticProps: GetStaticProps<Props, Params> = async ({ params }) => {
     throw new Error(`URL missing destination slug`);
   }
 
-  const destinations = await fetchDestinations();
+  const destinations = sortDestinations(await fetchDestinations());
   const blogPosts = await fetchBlogPosts();
   const miscellaneous = await fetchMiscellaneous();
 

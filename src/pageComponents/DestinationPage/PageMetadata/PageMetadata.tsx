@@ -17,20 +17,30 @@ const PageMetadata = ({
   videos,
 }: Props): JSX.Element => {
   const featuredBlogPost = blogPosts[0];
-  const featuredBlogPostThumbnail = getBlogPostThumbnail(featuredBlogPost);
+  const featuredVideo = videos[0];
 
   const title = destination?.name ?? `Travel Blog`;
 
-  const description = featuredBlogPost.excerpt;
+  const description =
+    featuredBlogPost?.excerpt ||
+    (destination
+      ? `Watch ${title} travel videos from Deanna Troy Travels.`
+      : `Explore travel stories from Deanna Troy Travels.`);
 
   const canonicalUrl = destination
     ? `https://www.deannatroytravels.com/${destination.slug}`
     : `https://www.deannatroytravels.com/blog`;
 
-  const imageUrl = featuredBlogPostThumbnail.loader({
-    src: featuredBlogPostThumbnail.url,
-    width: 1200,
-  });
+  let imageUrl = featuredVideo?.thumbnailUrl || destination?.thumbnail.url || ``;
+
+  if (featuredBlogPost) {
+    const featuredBlogPostThumbnail = getBlogPostThumbnail(featuredBlogPost);
+
+    imageUrl = featuredBlogPostThumbnail.loader({
+      src: featuredBlogPostThumbnail.url,
+      width: 1200,
+    });
+  }
 
   const structuredData = getStructuredData({
     canonicalUrl,

@@ -9,6 +9,7 @@ type Destination = {
     };
   };
   slug: string;
+  youTubePlaylistId: string | null;
 };
 
 export default async (): Promise<Array<Destination>> => {
@@ -29,6 +30,7 @@ export default async (): Promise<Array<Destination>> => {
               }
             }
             slug
+            youTubePlaylistId
           }
         }
       }

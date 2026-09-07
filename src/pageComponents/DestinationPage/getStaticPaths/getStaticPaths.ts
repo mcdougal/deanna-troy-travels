@@ -7,9 +7,10 @@ import fetchDestinations from './fetchDestinations';
 const getStaticPaths: GetStaticPaths = async () => {
   const destinations = await fetchDestinations();
 
-  const destinationsWithPosts = destinations.filter((destination) => {
+  const destinationsWithContent = destinations.filter((destination) => {
     return (
-      destination.linkedFrom.blogPostCollection.items.length > 0 &&
+      (destination.linkedFrom.blogPostCollection.items.length > 0 ||
+        Boolean(destination.youTubePlaylistId)) &&
       !isCustomDestinationPage(destination.slug)
     );
   });
@@ -20,7 +21,7 @@ const getStaticPaths: GetStaticPaths = async () => {
     },
   };
 
-  const paths = destinationsWithPosts.map((destination) => {
+  const paths = destinationsWithContent.map((destination) => {
     return {
       params: {
         destinationSlug: destination.slug,
