@@ -5,7 +5,7 @@ const ALL_VIDEOS_PLAYLIST_ID = `PLupawb160v0xF0_SUX5yHJE2GQogd7lx-`;
 export type YouTubeVideo = {
   commentCount: number;
   description: string;
-  duration: string;
+  duration: string | null;
   likeCount: number;
   publishedAt: string;
   thumbnailUrl: string;
@@ -37,7 +37,7 @@ export default async (): Promise<Array<YouTubeVideo>> => {
     playlistVideos.push({
       commentCount: parseInt(video.statistics.commentCount, 10),
       description: video.snippet.description,
-      duration: video.contentDetails.duration,
+      duration: video.contentDetails.duration ?? null,
       likeCount: parseInt(video.statistics.likeCount, 10),
       publishedAt: video.snippet.publishedAt,
       thumbnailUrl:

@@ -10,7 +10,7 @@ import sx from './VideoMediaCard.styles';
 type YouTubeVideo = {
   commentCount: number;
   description: string;
-  duration: string;
+  duration: string | null;
   likeCount: number;
   publishedAt: string;
   thumbnailUrl: string;

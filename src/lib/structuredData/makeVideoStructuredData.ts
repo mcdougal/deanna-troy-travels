@@ -3,7 +3,7 @@ import { StructuredDataObject } from './types';
 type Args = {
   commentCount: number;
   description: string;
-  duration: string;
+  duration: string | null;
   likeCount: number;
   thumbnailUrl: string;
   title: string;
@@ -28,7 +28,7 @@ export default ({
     '@type': `VideoObject`,
     contentUrl: videoUrl,
     description,
-    duration,
+    ...(duration ? { duration } : {}),
     interactionStatistic: [
       {
         '@type': `InteractionCounter`,

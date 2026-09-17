@@ -5,7 +5,7 @@ import { BlogPost } from './fetchBlogPost';
 export type BlogPostVideo = {
   commentCount: number;
   description: string;
-  duration: string;
+  duration: string | null;
   likeCount: number;
   publishedAt: string;
   tags: Array<string>;
@@ -25,7 +25,7 @@ export default async (blogPost: BlogPost): Promise<BlogPostVideo | null> => {
   return {
     commentCount: parseInt(video.statistics.commentCount, 10),
     description: video.snippet.description,
-    duration: video.contentDetails.duration,
+    duration: video.contentDetails.duration ?? null,
     likeCount: parseInt(video.statistics.likeCount, 10),
     publishedAt: video.snippet.publishedAt,
     tags: video.snippet.tags,
